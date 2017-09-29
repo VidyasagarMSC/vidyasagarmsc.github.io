@@ -1,0 +1,45 @@
+<template>
+  <v-app dark>
+    <v-container fluid>
+  <topbar></topbar>
+  <main>
+    <v-container fluid>
+      <router-view>
+        <home></home>
+      </router-view>
+    </v-container>
+  </main>
+  <bottombar></bottombar>
+    </v-container>
+</v-app>
+</template>
+
+<script>
+import Topbar from './components/Topbar'
+import Home from './components/Home'
+import Engagements from './components/Engagements'
+import Bottombar from './components/Bottombar'
+
+export default {
+  name: 'app',
+  components: {
+    Topbar,
+    Home,
+    Engagements,
+    Bottombar
+  }
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+#app {
+  font-family: 'Allerta Stencil', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #515151;
+  margin-top: 20px;
+
+}
+</style>
