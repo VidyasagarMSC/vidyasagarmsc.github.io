@@ -49,7 +49,7 @@ export default {
       drawer: false,
       mini: false,
       items: [
-        { title: 'Engagements', icon: 'user-o', link: '/#/mysite/engagements' },
+        { title: 'Engagements', icon: 'user-o', link: '/engagements' },
         { title: 'Medium', icon: 'medium', link: 'https://medium.com/@VidyasagarMSC' },
         { title: 'Blog', icon: 'wordpress', link: 'http://vmacwrites.wordpress.com' },
         { title: 'Twitter', icon: 'twitter', link: 'https://twitter.com/VidyasagarMSC' },
