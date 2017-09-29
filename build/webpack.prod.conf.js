@@ -9,6 +9,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
+var StaticSiteGenerator = require('webpack-static-site-generator')
+
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.build.env
@@ -94,7 +96,16 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new StaticSiteGenerator(
+      // path to the output dir
+      path.join(__dirname, './dist'), 
+      // array of routes to generate
+      [ '/', '/engagements' ],
+      // [OPTIONAL] element (in querySelector style) to wait for before rendering.
+      // defaults to 'body'
+      '.main-container'
+  )
   ]
 })
 
