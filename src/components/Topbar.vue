@@ -1,6 +1,6 @@
 <template>
-<div>
-<v-navigation-drawer absolute persistent dark :mini-variant.sync="mini" v-model="drawer" overflow>
+<div toolbar>
+<v-navigation-drawer temporary dark v-model="drawer">
       <v-toolbar flat class="transparent">
         <v-list class="pa-0">
           <v-list-tile avatar>
@@ -10,11 +10,6 @@
             <v-list-tile-content>
               <v-list-tile-title>VMac</v-list-tile-title>
             </v-list-tile-content>
-            <v-list-tile-action>
-              <v-btn icon @click.native.stop="mini = !mini">
-                <v-icon>chevron_left</v-icon>
-              </v-btn>
-            </v-list-tile-action>
           </v-list-tile>
         </v-list>
       </v-toolbar>
