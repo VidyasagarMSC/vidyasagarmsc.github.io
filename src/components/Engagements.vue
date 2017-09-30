@@ -26,12 +26,11 @@
         </v-card-media>
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">{{item.title}}</h3>
             <div>{{item.title}}</div>
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat :href="item.link" class="orange--text">Explore</v-btn>
+          <v-btn flat :href="item.link" target="_blank" class="orange--text">Explore</v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -42,11 +41,11 @@
     name: 'about',
     data () {
       return {
-        card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.',
         items: [
-        { title: 'Mobile and Serverless: an untold story', event: 'Mobile Developer Summit', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic' },
+        { title: 'Mobile and Serverless: an untold story', event: 'Mobile Developer Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic' },
         { title: '2 Talks and a lab', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic' },
         { title: 'An Android Chatbot powered by Watson', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code' },
+        { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic' },
         { title: 'My Contributions', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
         ]
       }

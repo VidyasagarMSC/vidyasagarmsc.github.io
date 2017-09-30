@@ -2,8 +2,13 @@
   <v-app dark>
     <v-container fluid>
   <topbar></topbar>
+  <main>
+    <v-container fluid>
       <router-view>
+        <home></home>
       </router-view>
+    </v-container>
+  </main>
   <bottombar></bottombar>
     </v-container>
 </v-app>
