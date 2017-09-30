@@ -7,6 +7,7 @@
       <router-view>
         <home></home>
       </router-view>
+    <expertise></expertise>
     </v-container>
   </main>
   <bottombar></bottombar>
@@ -19,6 +20,7 @@ import Topbar from './components/Topbar'
 import Home from './components/Home'
 import Engagements from './components/Engagements'
 import Bottombar from './components/Bottombar'
+import Expertise from './components/Expertise'
 
 export default {
   name: 'app',
@@ -26,7 +28,8 @@ export default {
     Topbar,
     Home,
     Engagements,
-    Bottombar
+    Bottombar,
+    Expertise
   }
 }
 </script>

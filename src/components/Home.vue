@@ -16,13 +16,7 @@
     <li>May 2013 | Indecomm Top Gun Award for Innovation and Excellence.</li>
 </ul><p>
 <v-divider></v-divider>
-    <div class="engagements"><h4 class="inline">Engagements</h4>
-    <ul>
-      <li><a href="https://vmacwrites.wordpress.com/about-2/my-contributions-to-developer-community/" target="_blank">Contributions</a></li>
-      <li><a href="https://vmacwrites.wordpress.com/about-2/my-contributions-to-developer-community/#speaker" target="_blank">Speaking</a></li>
-      <li><a href="https://www.instagram.com/vidyasagarmsc/" target="_blank">Photography</a></li>
-      <li><a href="https://vmacwrites.wordpress.com/about-2/my-contributions-to-developer-community/#videos" target="_blank">Technical Videos</a></li>
-    </ul>
+    <div class="engagements"><h4 class="inline">Expertise</h4>
     </div>
   </div>
 

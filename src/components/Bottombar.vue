@@ -13,7 +13,7 @@
                   <icon name="github-alt" scale="1"></icon>
             </a>
              <a v-tooltip:top="{ html: 'Click to view source on GitHub' }"
-                href="https://github.com/VidyasagarMSC/mysite" target="_blank">
+                href="https://github.com/VidyasagarMSC/vidyasagarmsc.github.io" target="_blank">
                   <icon name="code" scale="1"></icon>
             </a>
     </div>
