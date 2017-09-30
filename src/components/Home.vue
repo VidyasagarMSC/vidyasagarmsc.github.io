@@ -1,4 +1,5 @@
 <template>
+  <v-container fluid>
   <div class="home">
   <img :src="require('@/assets/vidyasagar.jpg')" />
     <div class = "inline"><h3>Hi, I'm Vidyasagar Machupalli</h3></div>
@@ -17,14 +18,17 @@
 </ul><p>
 <v-divider></v-divider>
     <div class="engagements"><h4 class="inline">Expertise</h4>
+    <expertise></expertise>
     </div>
   </div>
-
+ </v-container>
 </template>
 
 <script>
+import Expertise from './Expertise'
 export default {
   name: 'home',
+  components: { Expertise },
   data () {
     return {
       msg: 'Vidyasagar Machupalli',
