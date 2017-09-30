@@ -7,6 +7,7 @@ import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
 import 'vuetify/dist/vuetify.min.css'
 import 'vue-awesome/icons'
+import VueAnalytics from 'vue-analytics'
 
 /* Register component with one of 2 methods */
 
@@ -17,6 +18,9 @@ Vue.component('icon', Icon)
 Vue.use(VueRouter)
 Vue.use(Vuetify)
 Vue.config.productionTip = false
+Vue.use(VueAnalytics, {
+  id: 'UA-30026605-1'
+})
 
 /* eslint-disable no-new */
 new Vue({
