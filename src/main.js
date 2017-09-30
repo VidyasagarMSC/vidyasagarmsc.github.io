@@ -19,7 +19,9 @@ Vue.use(VueRouter)
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 Vue.use(VueAnalytics, {
-  id: 'UA-30026605-1'
+  id: 'UA-30026605-1',
+  router,
+  linkers: ['vmac.xyz', 'vmac.wordpress.com']
 })
 
 /* eslint-disable no-new */
