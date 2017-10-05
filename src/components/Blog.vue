@@ -70,7 +70,7 @@ export default {
         {
           title: 'DZone',
           content: 'A collection of my technical articles. Catering Cloud, Cognitive, and many more...',
-          imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/plane.jpg',
+          imgUrl: 'https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg',
           more: 'https://dzone.com/users/2567192/vidyasagarmsc.html'
         }
       ],
