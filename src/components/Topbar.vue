@@ -56,10 +56,10 @@ export default {
       mini: false,
       locals: [
         { title: 'Home', icon: 'home', link: '/' },
-        { title: 'Engagements', icon: 'user-o', link: '/#/engagements' }
+        { title: 'Engagements', icon: 'user-o', link: '/#/engagements' },
+        { title: 'Writes', icon: 'sticky-note-o', link: '/#/writes' }
       ],
       items: [
-        { title: 'Blog', icon: 'wordpress', link: 'http://vmacwrites.wordpress.com' },
         { title: 'Code', icon: 'github-alt', link: 'https://github.com/vidyasagarmsc' },
         { title: 'Twitter', icon: 'twitter', link: 'https://twitter.com/VidyasagarMSC' },
         { title: 'Profile', icon: 'linkedin', link: 'https://www.linkedin.com/in/vidyasagarmsc' },

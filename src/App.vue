@@ -20,6 +20,7 @@ import Home from './components/Home'
 import Engagements from './components/Engagements'
 import Bottombar from './components/Bottombar'
 import Expertise from './components/Expertise'
+import Blog from './components/Blog'
 
 export default {
   name: 'app',
@@ -28,7 +29,8 @@ export default {
     Home,
     Engagements,
     Bottombar,
-    Expertise
+    Expertise,
+    Blog
   }
 }
 </script>

@@ -7,6 +7,7 @@
          <v-card-media
           class="white--text"
           height="200px"
+          :src= item.imgUrl
         >
           <v-container fill-height fluid>
             <v-layout fill-height>
@@ -30,7 +31,17 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat :href="item.link" target="_blank" class="orange--text">Explore</v-btn>
+           <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=' + item.link + '&title=I am attending ' + item.title">
+                    <icon name="reddit-alien"></icon>
+                  </v-btn>
+                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url='+ item.link +'&via=VidyasagarMSC&text=I am attending '+ item.title">
+                    <icon name="twitter"></icon>
+                  </v-btn>
+                  <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u='+ item.link +'&t=' + item.title">
+                    <icon name="facebook-f"></icon>
+                  </v-btn>
+                  <v-spacer></v-spacer>
+          <v-btn flat :href="item.link" target="_blank" class="orange--text">Details</v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -42,8 +53,8 @@
     data () {
       return {
         items: [
-        { title: 'Mobile and Serverless: an untold story', event: 'Mobile Developer Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic' },
-        { title: '2 Talks and a lab', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic' },
+        { title: 'October 5-6 | Mobile and Serverless: an untold story', event: 'Mobile & Disruptive Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic', imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/drop.jpg' },
+        { title: 'October 10-13 | 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/docks.jpg' },
         { title: 'An Android Chatbot powered by Watson', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code' },
         { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic' },
         { title: 'My Contributions', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
