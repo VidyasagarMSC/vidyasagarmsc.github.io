@@ -8,7 +8,7 @@
                   :src="require('@/assets/vidyasagar.jpg')"
                 >
               </v-avatar>
-              <h5 class="text-xs-center">Writer | Blogger</h5>
+              <h5 class="text-xs-center title">Writer | Blogger</h5>
               <v-layout justify-space-between>
               <span v-for="link in links" :key="link.category">
                 <a :href="link.url" class="orange--text" target="_blank">{{link.category}}</a>
@@ -103,8 +103,8 @@ export default {
 }
 </script>
 <style>
-h4,h5{
-color: white !important;
+.title{
+color: white;
 font-weight: bold;
 }
 </style>
