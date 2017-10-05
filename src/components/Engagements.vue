@@ -41,7 +41,7 @@
                     <icon name="facebook-f"></icon>
                   </v-btn>
                   <v-spacer></v-spacer>
-          <v-btn flat :href="item.link" target="_blank" class="orange--text">Details</v-btn>
+          <v-btn flat :href="item.link" target="_blank" class="orange--text">Link</v-btn>
         </v-card-actions>
       </v-card>
     </div>
@@ -57,7 +57,7 @@
         { title: 'October 10-13 | 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/docks.jpg' },
         { title: 'An Android Chatbot powered by Watson', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code' },
         { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic' },
-        { title: 'My Contributions', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
+        { title: 'My Contributions >>>>>', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
         ]
       }
     }

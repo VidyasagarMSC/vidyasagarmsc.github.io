@@ -8,11 +8,10 @@
                   :src="require('@/assets/vidyasagar.jpg')"
                 >
               </v-avatar>
-              <h4>Vidyasagar MSC</h4>
               <h5 class="text-xs-center">Writer | Blogger</h5>
               <v-layout justify-space-between>
               <span v-for="link in links" :key="link.category">
-                <a :href="link.url" class="body-2" target="_blank">{{link.category}}</a>
+                <a :href="link.url" class="orange--text" target="_blank">{{link.category}}</a>
               </span>
               </v-layout>
             </div>
@@ -47,7 +46,7 @@
                     <icon name="facebook-f"></icon>
                   </v-btn>
                   <v-spacer></v-spacer>
-                  <v-btn flat class="blue--text" :href="post.more" target="_blank">Read More</v-btn>
+                  <v-btn flat class="orange--text" :href="post.more" target="_blank">Read More</v-btn>
                 </v-card-actions>
               </v-card>
             </div>
@@ -105,7 +104,7 @@ export default {
 </script>
 <style>
 h4,h5{
-color: white;
+color: white !important;
 font-weight: bold;
 }
 </style>
