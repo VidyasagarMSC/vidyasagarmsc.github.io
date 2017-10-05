@@ -2,15 +2,10 @@
         <v-layout row wrap align-center>
           <v-flex xs12 md4>
             <div class="text-xs-center">
-              <v-avatar size="125px">
-                <img
-                  class="img-circle elevation-7 mb-1"
-                  :src="require('@/assets/vidyasagar.jpg')"
-                >
-              </v-avatar>
-              <h5 class="text-xs-center title">Writer | Blogger</h5>
+              <h4 class="inline">Writer | Blogger</h4>
               <v-layout justify-space-between>
               <span v-for="link in links" :key="link.category">
+                <v-spacer></v-spacer>
                 <a :href="link.url" class="orange--text" target="_blank">{{link.category}}</a>
               </span>
               </v-layout>
@@ -103,8 +98,8 @@ export default {
 }
 </script>
 <style>
-.title{
-color: white;
-font-weight: bold;
+.inline{
+background-color: #F0F8FF;
+display: inline-block;
 }
 </style>
