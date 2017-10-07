@@ -58,13 +58,13 @@ export default {
         {
           title: 'VMac Writes',
           content: 'VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.',
-          imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/drop.jpg',
+          imgUrl: '/static/images/cards/drop.jpg',
           more: 'https://vmacwrites.wordpress.com/'
         },
         {
           title: 'Medium',
           content: 'Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ',
-          imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/docks.jpg',
+          imgUrl: '/static/images/cards/docks.jpg',
           more: 'https://medium.com/@VidyasagarMSC'
         },
         {
