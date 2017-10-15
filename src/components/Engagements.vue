@@ -56,8 +56,10 @@
         { title: 'October 27 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: 'October 10-13 / 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
         { title: 'October 5-6 / Mobile and Serverless: an untold story', event: 'Mobile & Disruptive Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: 'An Android Chatbot powered by Watson', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
+        { title: 'An Android Chatbot powered by Watson - Cognitive Computing', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
         { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '1 Talk & 4 Hands-On Labs covering Cloud & Mobile', event: 'IBM Interconnect 2017 ,Las Vegas ,USA', link: 'https://myibm.ibm.com/events/interconnect/all-sessions', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
+        { title: 'My personal website built with Vue.JS as I am exploring it :) ', event: 'VidyasagarMSC', link: 'https://github.com/VidyasagarMSC/vidyasagarmsc.github.io', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
         { title: 'My Contributions >>>>>', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
         ]
       }

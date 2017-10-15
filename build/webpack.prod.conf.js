@@ -10,6 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var StaticSiteGenerator = require('webpack-static-site-generator')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -105,6 +106,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       // [OPTIONAL] element (in querySelector style) to wait for before rendering.
       // defaults to 'body'
       '.main-container'
+  ),
+  new PrerenderSpaPlugin(
+    // Path to compiled app
+    path.join(__dirname, '../dist'),
+    // List of endpoints you wish to prerender
+    [ '/','/engagements','/writes' ]
   )
   ]
 })

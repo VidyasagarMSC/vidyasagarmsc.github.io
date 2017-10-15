@@ -56,8 +56,8 @@ export default {
       mini: false,
       locals: [
         { title: 'Home', icon: 'home', link: '/' },
-        { title: 'Engagements', icon: 'user-o', link: '/#/engagements' },
-        { title: 'Writes', icon: 'sticky-note-o', link: '/#/writes' }
+        { title: 'Engagements', icon: 'user-o', link: '/engagements' },
+        { title: 'Writes', icon: 'sticky-note-o', link: '/writes' }
       ],
       items: [
         { title: 'Code', icon: 'github-alt', link: 'https://github.com/vidyasagarmsc' },
