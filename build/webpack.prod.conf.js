@@ -111,7 +111,20 @@ var webpackConfig = merge(baseWebpackConfig, {
     // Path to compiled app
     path.join(__dirname, '../dist'),
     // List of endpoints you wish to prerender
-    [ '/','/engagements','/writes' ]
+    [ '/','/engagements','/writes' ],
+    {
+    postProcessHtml: function (context) {
+      var titles = {
+        '/': 'Home',
+        '/engagements': 'My Contributions',
+        '/writes': 'Blog'
+      }
+      return context.html.replace(
+        /<title>[^<]*<\/title>/i,
+        '<title>' + titles[context.route] + '</title>'
+      )
+    }
+  }
   )
   ]
 })
