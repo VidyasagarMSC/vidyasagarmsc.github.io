@@ -8,7 +8,7 @@
               <img :src="require('@/assets/vidyasagar.jpg')" />
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>VMac</v-list-tile-title>
+              <v-list-tile-title>Vidyasagar Machupalli</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
