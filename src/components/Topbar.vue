@@ -5,7 +5,7 @@
         <v-list class="pa-0">
           <v-list-tile avatar>
             <v-list-tile-avatar>
-              <img :src="require('@/assets/vidyasagar.jpg')" />
+              <img :src="require('../assets/vidyasagar.jpg')" />
             </v-list-tile-avatar>
             <v-list-tile-content>
               <v-list-tile-title>Vidyasagar Machupalli</v-list-tile-title>
