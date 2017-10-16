@@ -34,7 +34,7 @@
                   <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=' + post.more + '&title=' + post.title">
                     <icon name="reddit-alien"></icon>
                   </v-btn>
-                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url='+ post.more +'&via=VidyasagarMSC&text=I am reading '+ post.title">
+                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url='+ post.more +'&via=VidyasagarMSC&text='+ post.title">
                     <icon name="twitter"></icon>
                   </v-btn>
                   <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u='+ post.more +'&t=' + post.title">

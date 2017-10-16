@@ -9,7 +9,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
-var StaticSiteGenerator = require('webpack-static-site-generator')
 var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 var env = process.env.NODE_ENV === 'testing'
@@ -98,15 +97,6 @@ var webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-    new StaticSiteGenerator(
-      // path to the output dir
-      path.join(__dirname, './dist'), 
-      // array of routes to generate
-      [ '/', '/engagements' ],
-      // [OPTIONAL] element (in querySelector style) to wait for before rendering.
-      // defaults to 'body'
-      '.main-container'
-  ),
   new PrerenderSpaPlugin(
     // Path to compiled app
     path.join(__dirname, '../dist'),
@@ -115,9 +105,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     {
     postProcessHtml: function (context) {
       var titles = {
-        '/': 'Home',
-        '/engagements': 'My Contributions',
-        '/writes': 'Blog'
+        '/': 'Home | Vidyasagar MSC',
+        '/engagements': 'My Contributions | Vidyasagar MSC',
+        '/writes': 'Blog | Vidyasagar MSC'
       }
       return context.html.replace(
         /<title>[^<]*<\/title>/i,
