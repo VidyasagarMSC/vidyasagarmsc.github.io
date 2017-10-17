@@ -1,11 +1,11 @@
 <template>
   <div class="home">
   <img :src="require('@/assets/vidyasagar.jpg')" />
-    <div class = "inline"><h3>Hi, I'm Vidyasagar Machupalli</h3></div>
+   <h3 class="inline">HI, I'm Vidyasagar Machupalli (VMac)</h3>
     <p>{{ about }}</p>
     <p>{{ more }}</p>
     <v-divider></v-divider><br>
-    <h4 class="inline">Recognitions</h4>
+    <h3 class="inline">Recognitions</h3>
 
 <p><ul>
     <li>November 2015 | DZone Most Valuable Blogger(MVB)</li><br>
@@ -16,7 +16,7 @@
     <li>May 2013 | Indecomm Top Gun Award for Innovation and Excellence.</li>
 </ul><p>
 <v-divider></v-divider>
-    <div class="engagements"><h4 class="inline">Skill Set</h4>
+    <h3 class="inline">Skill Set</h3>
     <expertise></expertise>
     </div>
   </div>
@@ -41,6 +41,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700');
 h1, h2 {
   font-weight: normal;
 }
@@ -64,11 +65,11 @@ font-weight: bold;
 transition: color 0.2s
 }
 p{
-font-family: 'Montserrat', sans-serif;
+font-family: 'Quattrocento Sans', sans-serif;
   position: relative;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  font-size: 16px;
+  font-size: 18px;
  line-height: 2;
  color: #F0F8FF;
  text-rendering: optimizeLegibility;
@@ -90,12 +91,7 @@ font-weight: bold;
 }
 
 .inline{
-background-color: #F0F8FF;
-display: inline-block;
-}
-
-.engagements{
-margin-bottom: 15px;
+color:#66c0ec !important;
 }
 
 </style>

@@ -35,7 +35,7 @@
     </v-navigation-drawer>
   <v-toolbar fixed>
 <span class="hidden-md-and-up"><v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon></span>
-    <v-toolbar-title><router-link class="title" :to="{ path: '/' }">Vidyasagar MSC</router-link></v-toolbar-title>
+    <v-toolbar-title><router-link class="title" :to="{ path: '/' }">VIDYASAGAR MSC</router-link></v-toolbar-title>
     <v-spacer></v-spacer>
      <v-toolbar-items class="hidden-sm-and-down" v-for="local in locals" :key="local.title" :href="local.link">
       <v-btn :href="local.link" dark v-tooltip:bottom="{ html: local.title }"><icon :name="local.icon" scale="1" ripple></icon></v-btn>

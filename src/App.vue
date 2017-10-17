@@ -37,8 +37,9 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 #app {
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

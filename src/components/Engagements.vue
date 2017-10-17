@@ -72,7 +72,6 @@
 </script>
 <style>
 .inline{
-background-color: #F0F8FF;
-display: inline-block;
+color: #66c0ec;
 }
 </style>

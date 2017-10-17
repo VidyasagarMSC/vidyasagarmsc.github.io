@@ -63,4 +63,7 @@ h4 {
   justify-content: space-around;
   flex-direction: column;
 }
+.blue{
+  color: #66c0ec;
+}
 </style>
