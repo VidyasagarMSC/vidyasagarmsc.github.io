@@ -1,7 +1,7 @@
 <template>
   <v-footer class="card elevation-7" fixed dark>
     <div>
-    &copy; 2017 Made with <v-spacer></v-spacer>
+    &copy; 2017 Vidyasagar Machupalli | Made with <v-spacer></v-spacer>
         <icon name="heart" class="red--text" scale="1"></icon>
         <a v-tooltip:top="{ html: 'Vue.js' }" href="https://vuejs.org/" target="_blank">
               <img :src="icons.vuejs" height="14"/>

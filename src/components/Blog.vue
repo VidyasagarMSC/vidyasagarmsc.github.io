@@ -22,7 +22,7 @@
                   <v-container fill-height fluid>
                     <v-layout fill-height>
                       <v-flex xs12 align-end flexbox>
-                        <span class="headline">{{ post.title }}</span>
+                        <span class="headline inline-block">{{ post.title }}</span>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -56,7 +56,7 @@ export default {
       title: 'Your Logo',
       posts: [
         {
-          title: 'VMac Writes',
+          title: 'Blog',
           content: 'VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.',
           imgUrl: '/static/images/cards/drop.jpg',
           more: 'https://vmacwrites.wordpress.com/'
@@ -100,5 +100,10 @@ export default {
 <style>
 .inline{
 color:#66c0ec
+}
+.inline-block{
+background-color: #66c0ec;
+display: inline-block;
+
 }
 </style>

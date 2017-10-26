@@ -16,6 +16,7 @@
          <v-chip class="teal">M - Mobile</v-chip>
           <v-chip class="teal">L - Language</v-chip>
         <v-chip class="teal">C - Cloud</v-chip>
+         <v-chip class="teal">O - Others</v-chip>
         </div>
       </v-flex>
     </v-layout>
@@ -42,7 +43,8 @@ export default {
        { type: 'C', name: 'Microsoft Azure' },
        { type: 'W', name: 'AngularJS' },
         { type: 'W', name: 'VueJS' },
-       { type: 'B', name: 'SQL Server' }
+       { type: 'B', name: 'SQL Server' },
+       { type: 'O', name: 'Unity 3D' }
 
       ]
     }

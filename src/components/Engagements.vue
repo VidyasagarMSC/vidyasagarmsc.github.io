@@ -24,7 +24,7 @@
                 </v-chip>
               </v-flex>
               <v-flex xs6 align-end flexbox>
-                <span class="headline mb-0">{{item.event}}</span>
+                <span class="headline mb-0 inline-block">{{item.event}}</span>
               </v-flex>
             </v-layout>
           </v-container>
@@ -57,11 +57,11 @@
     data () {
       return {
         items: [
-        { title: 'November 08 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: 'October 27 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: 'October 25 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: 'October 10-13 / 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
-        { title: 'October 5-6 / Mobile and Serverless: an untold story', event: 'Mobile & Disruptive Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '08.11.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '27.10.2017 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '25.10.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '10-13.10.2017 / 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
+        { title: '5-6.10.2017 / Mobile and Serverless: an untold story', event: 'Mobile & Disruptive Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: 'An Android Chatbot powered by Watson with Speaker Diarization.', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
         { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '1 Talk & 4 Hands-On Labs covering Cloud & Mobile', event: 'IBM Interconnect 2017 ,Las Vegas ,USA', link: 'https://myibm.ibm.com/events/interconnect/all-sessions', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
@@ -75,5 +75,10 @@
 <style>
 .inline{
 color: #66c0ec;
+}
+.inline-block{
+background-color: #66c0ec;
+display: inline-block;
+
 }
 </style>
