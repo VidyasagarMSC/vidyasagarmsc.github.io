@@ -33,13 +33,13 @@
                   {{ item.title }}
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=' + item.link + '&title=' + item.title">
+                  <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=https://vidyasagarmsc.github.io/engagements/' + '&title=' + item.event +' '+ item.title">
                     <icon name="reddit-alien"></icon>
                   </v-btn>
-                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url='+ item.link +'&via=VidyasagarMSC&text='+ item.title">
+                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url=https://vidyasagarmsc.github.io/engagements/'+'&via=VidyasagarMSC&text='+ item.event +' '+ item.title">
                     <icon name="twitter"></icon>
                   </v-btn>
-                  <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u='+ item.link +'&t=' + item.title">
+                  <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u=https://vidyasagarmsc.github.io/engagements/' +'&t=' + item.event +' '+ item.title">
                     <icon name="facebook-f"></icon>
                   </v-btn>
                   <v-spacer></v-spacer>
