@@ -1,31 +1,10 @@
-# My Personal Website hosted on github.io and Made with Vue.js + Vuetify + .....
-![](images/screenshot.png)
+# My Personal Website
+![](images/screenshot.gif)
 
-> A Vue.js project
+Personal Website of Vidyasagar Machupalli aka Vidyasagar MSC showcasing his code, speaking engagements,recognitions and skills.
+## Technologies
+- [VueJS](https://vuejs.org)
+- [VuetifyJS](http://vuetifyjs.com/)
+- Hosted on github.io pages
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+The site is LIVE at [http://vmac.xyz](http://vmac.xyz)
