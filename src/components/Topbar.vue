@@ -64,7 +64,8 @@ export default {
         { title: 'Twitter', icon: 'twitter', link: 'https://twitter.com/VidyasagarMSC' },
         { title: 'Profile', icon: 'linkedin', link: 'https://www.linkedin.com/in/vidyasagarmsc' },
         { title: 'Videos', icon: 'youtube-play', link: 'https://www.youtube.com/user/mscvidyasagar' },
-        { title: 'Photos', icon: 'instagram', link: 'http://instagram.com/vidyasagarmsc/' }
+        { title: 'Photos', icon: 'instagram', link: 'http://instagram.com/vidyasagarmsc/' },
+        { title: 'Slides', icon: 'slideshare', link: 'https://www.slideshare.net/vidyasagarMachupalli' }
       ],
       nav: {
         edge: 'right'
