@@ -5,7 +5,7 @@
     <p>{{ about }}</p>
     <p>{{ more }}</p>
     <v-divider></v-divider><br>
-    <h3 class="inline">Recognitions</h3>
+    <h3 class="inline">Accomplishments</h3>
 
 <p><ul>
     <li>November 2015 | DZone Most Valuable Blogger(MVB)</li><br>
