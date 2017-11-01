@@ -30,8 +30,7 @@ export default {
   data () {
     return {
       msg: 'Vidyasagar Machupalli',
-      about: 'A Polyglot and Pragmatic programmer, who loves technologies changing lives. I am a blogger and also a speaker at various technical conferences, meetups, and events. I currently work for IBM as Technical Offering Manager developing solutions, promoting the use of IBM Cloud through talks, articles, blogging, user demonstrations, recorded demonstrations, or by the creation of sample projects. I have been awarded as Microsoft MVP, Intel Software Innovator, and DZone MVB. I am passionate about game development and works in his free time developing games and Mobile apps.',
-
+      about: 'A Polyglot and Pragmatic programmer, who loves technologies changing lives. I am a blogger and also a speaker at various technical conferences, meetups, and events. I currently work for IBM as Technical Product Manager & Developer Advocate exploring & defining Cloud Solutions,Tutorials & products, working closely with product teams, Coding code samples, Enabling SIs and Startups on IBM Cloud, Presenting at Conferences covering Cloud, AI, DevOps, and Mobile, Exploring new cloud paradigms, programming languages, and technologies.',
       more: 'I have 10+ years of industry experience and a broad set of skills in software development and design. I started my career as a .Net Developer in early 2007 and continued to hone my kills from that point on. I am a tech addict, constant Learner, and a technology enthusiast. I am also a Core Member and Organiser of BlueCoders Meetup Group.'
     }
   }
@@ -93,5 +92,7 @@ font-weight: bold;
 .inline{
 color:#66c0ec !important;
 }
-
+.background{
+  background-color: #fff;
+}
 </style>

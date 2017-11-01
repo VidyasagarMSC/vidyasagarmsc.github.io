@@ -58,6 +58,7 @@
       return {
         items: [
         { title: '14.11.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
+        { title: '11.11.2017 / Compositions and FSH: The next leap in Serverless Computing', event: 'Above Serverless and Beyond Containers', link: 'https://www.meetup.com/BlueCoders/events/244683579', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '27.10.2017 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/serverless.png' },
         { title: '25.10.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '10-13.10.2017 / 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
