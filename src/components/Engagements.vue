@@ -57,6 +57,7 @@
     data () {
       return {
         items: [
+        { title: '06.12.2017 / Tutorials to get your mobile development up and running', event: 'Webinar', link: 'https://www.youtube.com/watch?v=eDKaubbb6FM', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '14.11.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '11.11.2017 / Compositions and FSH: The next leap in Serverless Computing', event: 'Above Serverless and Beyond Containers', link: 'https://www.meetup.com/BlueCoders/events/244683579', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
         { title: '27.10.2017 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/serverless.png' },
