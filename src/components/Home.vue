@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-  <img :src="require('@/assets/vidyasagar.jpg')" />
+  <img src= "/static/images/vidyasagar.jpg"/>
    <h3 class="inline">HI, I'm Vidyasagar Machupalli (VMac)</h3>
     <p>{{ about }}</p>
     <p>{{ more }}</p>
