@@ -52,25 +52,32 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     name: 'about',
     data () {
       return {
-        items: [
-        { title: '06.12.2017 / Tutorials to get your mobile development up and running', event: 'Webinar', link: 'https://www.youtube.com/watch?v=eDKaubbb6FM', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: '14.11.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: '11.11.2017 / Compositions and FSH: The next leap in Serverless Computing', event: 'Above Serverless and Beyond Containers', link: 'https://www.meetup.com/BlueCoders/events/244683579', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: '27.10.2017 / Panel Discussion', event: 'Serverless Summit, Bangalore', link: 'http://inserverless.com/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/serverless.png' },
-        { title: '25.10.2017 / IBM Cloud - The growth platform for your business', event: 'Webinar enabling startups', link: 'https://bluemix.net/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/docks.jpg' },
-        { title: '10-13.10.2017 / 2 Talks and a lab covering Mobile & Cloud', event: 'IBM Cloud University, Berlin, Germany', link: 'http://conference.learnquest.com/CTU17/sessions/', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
-        { title: '5-6.10.2017 / Mobile and Serverless: an untold story', event: 'Mobile & Disruptive Summit, Bangalore', link: 'http://www.developermarch.com/mds/session.html?insert=Vidyasagar', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/mods.jpeg' },
-        { title: 'An Android Chatbot powered by Watson with Speaker Diarization.', event: 'WatBot', link: 'https://github.com/VidyasagarMSC/WatBot', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
-        { title: 'Master the art of data science | Watson Machine Learning', event: 'BlueCoders Meetup, Bangalore', link: 'http://meetu.ps/c/2M8MP/sM1Rj/f', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/bluecoders_ml.jpeg' },
-        { title: '1 Talk & 4 Hands-On Labs covering Cloud & Mobile', event: 'IBM Interconnect 2017 ,Las Vegas ,USA', link: 'https://myibm.ibm.com/events/interconnect/all-sessions', type: 'talk', icon: 'mic', imgUrl: '/static/images/cards/plane.jpg' },
-        { title: 'My personal website built with Vue.JS as I am exploring it :) ', event: 'VidyasagarMSC', link: 'https://github.com/VidyasagarMSC/vidyasagarmsc.github.io', type: 'project', icon: 'code', imgUrl: '/static/images/cards/drop.jpg' },
-        { title: 'My Contributions >>>>>', event: 'Older Engagements', link: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/', type: 'talk', icon: 'mic' }
-        ]
+        items: []
       }
+    },
+    created () {
+      axios.get('/static/items.json')
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.items = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+
+    // async / await version (created() becomes async created())
+    //
+    // try {
+    //   const response = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
+    //   this.posts = response.data
+    // } catch (e) {
+    //   this.errors.push(e)
+    // }
     }
   }
 </script>
