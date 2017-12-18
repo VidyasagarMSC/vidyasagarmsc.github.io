@@ -1,9 +1,9 @@
 <template>
   <div class="home">
   <img src= "/static/images/vidyasagar.jpg"/>
-   <h3 class="inline">HI, I'm Vidyasagar Machupalli (VMac)</h3>
-    <p>{{ about }}</p>
-    <p>{{ more }}</p>
+   <h3 class="inline">Vidyasagar Machupalli</h3>
+    <p v-html="about"></p>
+   <p v-html="more"></p>
     <v-divider></v-divider><br>
     <h3 class="inline">Accomplishments</h3>
 
@@ -19,7 +19,6 @@
     <h3 class="inline">Skill Set</h3>
     <expertise></expertise>
     </div>
-  </div>
 </template>
 
 <script>
@@ -30,8 +29,8 @@ export default {
   data () {
     return {
       msg: 'Vidyasagar Machupalli',
-      about: 'A Polyglot and Pragmatic programmer, who loves technologies changing lives. I am a blogger and also a speaker at various technical conferences, meetups, and events. I currently work for IBM as Technical Product Manager & Developer Advocate exploring & defining Cloud Solutions,Tutorials & products, working closely with product teams, Coding code samples, Enabling SIs and Startups on IBM Cloud, Presenting at Conferences covering Cloud, AI, DevOps, and Mobile, Exploring new cloud paradigms, programming languages, and technologies.',
-      more: 'I have 10+ years of industry experience and a broad set of skills in software development and design. I started my career as a .Net Developer in early 2007 and continued to hone my kills from that point on. I am a tech addict, constant Learner, and a technology enthusiast. I am also a Core Member and Organiser of BlueCoders Meetup Group.'
+      about: 'is a polyglot and pragmatic programmer, who loves technologies changing lives. He is a well-known <a href="/writes" style="color: #EA8E28 !important;" target="_blank">blogger</a> and also <a href="/engagements" style="color: #EA8E28 !important;" target="_blank">speaker</a> at various technical conferences, meetups, and events. He currently works for IBM as Technical Product Manager & Developer Advocate. His role involves in exploring & defining cloud solutions, tutorials & products, working closely with product teams, coding <a href="https://github.com/vidyasagarmsc" style="color: #EA8E28 !important;" target="_blank">code samples</a>, enabling SIs and startups on IBM Cloud, presenting at Conferences covering cloud, AI, devops, and mobile. He loves exploring new cloud paradigms, programming languages, and technologies.',
+      more: 'Vidyasagar has 10+ years of industry experience and a broad set of skills in software development and design. He started his career as a .Net Developer in early 2007 and continued to hone his skills from that point on.  He is a tech addict, constant Learner, and a technology enthusiast. He is a Core Member and Organiser of <a href="https://bluecodersdev.github.io" style="color: #EA8E28 !important;" target="_blank">BlueCoders Meetup Group</a>. <br>Vidyasagar is an adjunct faculty at the Christ University where he teaches Cloud Computing to the students enrolled for the Masters course.'
     }
   }
 }
@@ -41,6 +40,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 h1, h2 {
   font-weight: normal;
 }
@@ -64,7 +64,7 @@ font-weight: bold;
 transition: color 0.2s
 }
 p{
-font-family: 'Quattrocento Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
   position: relative;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
@@ -95,4 +95,5 @@ color:#66c0ec !important;
 .background{
   background-color: #fff;
 }
+
 </style>

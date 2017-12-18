@@ -61,7 +61,7 @@
       }
     },
     created () {
-      axios.get('/static/items.json')
+      axios.get('/static/json/engagements.json')
     .then(response => {
       // JSON responses are automatically parsed.
       this.items = response.data

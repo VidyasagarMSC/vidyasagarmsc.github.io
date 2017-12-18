@@ -49,31 +49,13 @@
         </v-layout>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'blog',
   data: () => {
     return {
       title: 'Your Logo',
-      posts: [
-        {
-          title: 'Blog',
-          content: 'VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.',
-          imgUrl: '/static/images/cards/drop.jpg',
-          more: 'https://vmacwrites.wordpress.com/'
-        },
-        {
-          title: 'Medium',
-          content: 'Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ',
-          imgUrl: '/static/images/cards/docks.jpg',
-          more: 'https://medium.com/@VidyasagarMSC'
-        },
-        {
-          title: 'DZone',
-          content: 'A collection of my technical articles. Catering Cloud, Cognitive, and many more...',
-          imgUrl: 'https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg',
-          more: 'https://dzone.com/users/2567192/vidyasagarmsc.html'
-        }
-      ],
+      posts: [],
       links: [
         {
           url: 'https://vmacwrites.wordpress.com/category/cloud/',
@@ -94,6 +76,16 @@ export default {
       ]
 
     }
+  },
+  created () {
+    axios.get('/static/json/writings.json')
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.posts = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 </script>
