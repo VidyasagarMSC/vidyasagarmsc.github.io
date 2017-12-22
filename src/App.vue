@@ -21,6 +21,7 @@ import Engagements from './components/Engagements'
 import Bottombar from './components/Bottombar'
 import Expertise from './components/Expertise'
 import Blog from './components/Blog'
+import Carousel from './components/Carousel'
 
 export default {
   name: 'app',
@@ -30,7 +31,8 @@ export default {
     Engagements,
     Bottombar,
     Expertise,
-    Blog
+    Blog,
+    Carousel
   }
 }
 </script>

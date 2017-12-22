@@ -16,6 +16,9 @@
     <li>May 2013 | Indecomm Top Gun Award for Innovation and Excellence.</li>
 </ul><p>
 <v-divider></v-divider>
+    <h3 class="inline">Recommendations</h3>
+    <carousel></carousel>
+<v-divider></v-divider>
     <h3 class="inline">Skill Set</h3>
     <expertise></expertise>
     </div>
@@ -23,9 +26,10 @@
 
 <script>
 import Expertise from './Expertise'
+import Carousel from './Carousel'
 export default {
   name: 'home',
-  components: { Expertise },
+  components: { Expertise, Carousel },
   data () {
     return {
       msg: 'Vidyasagar Machupalli',

@@ -7,7 +7,10 @@ import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
 import 'vuetify/dist/vuetify.min.css'
 import 'vue-awesome/icons'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueAnalytics from 'vue-analytics'
+import BootstrapVue from 'bootstrap-vue'
 
 /* Register component with one of 2 methods */
 
@@ -23,6 +26,7 @@ Vue.use(VueAnalytics, {
   router,
   linkers: ['vmac.xyz', 'vmac.wordpress.com']
 })
+Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */
 new Vue({
