@@ -1,4 +1,5 @@
 # My Personal Website
+[![Build Status](https://travis-ci.org/VidyasagarMSC/vidyasagarmsc.github.io.svg?branch=source)](https://travis-ci.org/VidyasagarMSC/vidyasagarmsc.github.io)
 ![](images/screenshot.gif)
 
 Personal Website of Vidyasagar Machupalli aka Vidyasagar MSC showcasing his code, speaking engagements,recognitions and skills.
