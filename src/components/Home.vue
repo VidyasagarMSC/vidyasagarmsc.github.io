@@ -1,20 +1,21 @@
 <template>
   <div class="home">
   <img src= "/static/images/vidyasagar.jpg"/>
-   <h3 class="inline">Vidyasagar Machupalli</h3>
-    <p v-html="about"></p>
+   <h1 class="inline">Vidyasagar Machupalli</h1>
+   <h3 class="inline">Coder | Speaker | Writer | Explorer</h3>
+   <p v-html="about"></p>
    <p v-html="more"></p>
     <v-divider></v-divider><br>
     <h3 class="inline">Accomplishments</h3>
 
 <p><ul>
-    <li>November 2015 | DZone Most Valuable Blogger(MVB)</li><br>
-    <li>Apr 2015 | Intel Software Innovator – RealSense</li><br>
-    <li>Feb 2015 | Dell-Silver Award – Breakthrough Thinker</li><br>
-    <li>Nov 2014 | Microsoft Most Active Individual in the gaming community.</li><br>
-    <li>July 2014 – June 2017 | Microsoft Most Valuable Professional – Gaming, Xbox & Visual Studio Tools.</li><br>
-    <li>May 2013 | Indecomm Top Gun Award for Innovation and Excellence.</li>
-</ul><p>
+    <li>November 2015 | <strong>DZone</strong> Most Valuable Blogger(MVB)</li><br>
+    <li>Apr 2015 | <strong>Intel</strong> Software Innovator – RealSense</li><br>
+    <li>Feb 2015 | <strong>Dell</strong>-Silver Award – Breakthrough Thinker</li><br>
+    <li>Nov 2014 | <strong>Microsoft</strong> Most Active Individual in the gaming community.</li><br>
+    <li>July 2014 – June 2017 | <strong>Microsoft</strong> Most Valuable Professional – Gaming, Xbox & Visual Studio Tools.</li><br>
+    <li>May 2013 | <strong>Indecomm</strong> Top Gun Award for Innovation and Excellence.</li>
+</ul></p>
 <v-divider></v-divider>
     <h3 class="inline">Recommendations</h3>
     <carousel></carousel>

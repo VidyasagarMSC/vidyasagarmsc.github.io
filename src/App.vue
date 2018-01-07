@@ -10,7 +10,7 @@
     </v-container>
   </main>
   <bottombar></bottombar>
-    </v-container>
+ </v-container>
 </v-app>
 </template>
 
