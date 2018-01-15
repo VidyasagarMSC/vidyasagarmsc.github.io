@@ -46,6 +46,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 h1, h2 {
   font-weight: normal;
 }
@@ -69,7 +70,7 @@ font-weight: bold;
 transition: color 0.2s
 }
 p{
-font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
   position: relative;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;

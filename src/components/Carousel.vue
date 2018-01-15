@@ -57,6 +57,6 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 p,h5 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 </style>
