@@ -1,13 +1,12 @@
 <template>
- <v-layout row wrap align-center>
-          <v-flex xs12 md4>
+<v-layout row wrap align-center>
+  <v-flex xs12 md4>
             <div class="text-xs-center">
               <h4 class="inline"> Coder | Speaker</h4>
             </div>
           </v-flex>
-          <v-flex xs12 md5 offset-md2>
-            <div v-for="item in items" :key="item.title">
-              <v-card class="my-3" hover>
+    <v-flex md4 class="my-2" v-for="item in items" :key="item.title">
+              <v-card class="mr-2" hover>
                 <v-card-media
                   class="white--text"
                   height="190px"
@@ -46,9 +45,8 @@
                   <v-btn flat class="orange--text" :href="item.link" target="_blank">Link</v-btn>
                 </v-card-actions>
               </v-card>
-            </div>
-          </v-flex>
-        </v-layout>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

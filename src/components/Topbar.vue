@@ -40,9 +40,23 @@
      <v-toolbar-items class="hidden-sm-and-down" v-for="local in locals" :key="local.title" :href="local.link">
       <v-btn :href="local.link" dark v-tooltip:bottom="{ html: local.title }"><icon :name="local.icon" scale="1" ripple></icon></v-btn>
     </v-toolbar-items>
-    <v-toolbar-items class="hidden-sm-and-down" v-for="item in items" :key="item.title" :href="item.link">
+   <v-toolbar-items class="hidden-sm-and-down" v-for="item in items" :key="item.title" :href="item.link">
       <v-btn :href="item.link" target="_blank" dark v-tooltip:bottom="{ html: item.title }"><icon :name="item.icon" scale="1" ripple></icon></v-btn>
     </v-toolbar-items>
+    <!--<v-menu :nudge-width="100" bottom :offset-y="true" transition="v-slide-y-transition">
+            <v-toolbar-title slot="activator">
+              <span>Contact</span>
+              <v-icon dark>arrow_drop_down</v-icon>
+            </v-toolbar-title>
+            <v-list>
+              <v-list-tile v-for="item in items" :key="item" :href="item.link" target="_blank">
+               <v-list-tile-avatar>
+                 <icon :name="item.icon" scale="1" ripple></icon>
+                </v-list-tile-avatar>
+                <v-list-tile-title v-text="item.title"></v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>-->
   </v-toolbar>
   </div>
 </template>
