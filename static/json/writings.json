@@ -60,5 +60,12 @@
   "imgUrl": "https://dzone.com/storage/temp/5333766-watson-speaker-diarization.gif",
   "type": "Dzone MVB",
   "more": "https://dzone.com/articles/whos-speaking-speaker-recognition-with-watson-spee"
+},
+{
+  "title": "A hybrid Cordova mobile app with Push and Analytics in minutes",
+  "content": "Following the solution tutorial, you will learn how easy it is to quickly create a Hybrid Cordova application with high-value mobile services like push notifications and mobile analytics on IBM Cloud.",
+  "imgUrl": "https://console.bluemix.net/docs/api/content/tutorials/images/solution15/Architecture.png?lang=en",
+  "type": "IBM Cloud Blog",
+  "more": "https://www.ibm.com/blogs/bluemix/2018/01/hybrid-cordova-mobile-app-push-analytics-minutes/"
 }
 ]
