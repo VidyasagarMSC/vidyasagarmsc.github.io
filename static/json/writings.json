@@ -20,44 +20,45 @@
   "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
 },
 {
-    "title": "For Performant Serverless Swift actions…",
-    "content": "This tutorial goes through the steps of setting up the server side of an iOS mobile app with Swift, including the code and commands for the project.",
-    "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*Ml7OWZUorYNxQGEsei7ptA.png",
-    "type": "Medium.com",
-    "more": "https://medium.com/@VidyasagarMSC/for-performant-serverless-swift-actions-b11fa50eeb8f"
-  },
-  {
-    "title": "Personifying Chatbots: A Guide to Realistic Conversation",
-    "content": "If you want your chatbot to pass the Turing Test, it needs to be personified and personalized. Luckily, that's not *too* difficult to do!",
-    "imgUrl": "https://vmacwrites.files.wordpress.com/2017/10/context_variables.gif",
-    "type": "DZone MVB",
-    "more": "https://dzone.com/articles/this-is-how-you-personify-and-make-your-chatbot-co"
-  },
-  {
-    "title": "My High Sierra Story...",
-    "content": "Disclaimer: This post is just to help macOS users who are facing installation failures or stuck while installing/upgrading to High Sierra.",
-    "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
-    "type": "Blog",
-    "more": "https://vmacwrites.wordpress.com/2017/11/28/my-high-sierra-story/"
-  },
-  {
-    "title": "Love Kubernetes?? Now, manage your containers with it on IBM Cloud Container Service",
-    "content": "This post helps you in getting started with Kubernetes on IBM Cloud via CLI. After a post on how to get started with Docker Containers on IBM Cloud, the next destination was to play with container orchestration on IBM Cloud.",
-    "imgUrl": "https://cdn-images-1.medium.com/max/1600/0*e5MiDOZQgylnQtNC.",
-    "type": "Medium.com",
-    "more": "https://medium.com/@VidyasagarMSC/kubernetes-on-ibm-cloud-b3a2a662c1f1"
-  },
-  {
-    "title": "A Voice-enabled ChatBot powered by IBM Watson in Mins",
-    "content": "WatBot is a Voice-enabled Android Native ChatBot built using Watson Conversation, Speech-to-Text and Text-to-Speech Services on IBM Cloud (open standards cloud platform for building, running, and managing apps and services).",
-    "imgUrl": "https://raw.githubusercontent.com/VidyasagarMSC/WatBot/master/images/WatBot_5X.png",
-    "type": "Blog",
-    "more": "https://vmacwrites.wordpress.com/2017/01/05/an-android-chatbot-powered-by-ibm-watson/"
-  },
-  {
-    "title": "Speaker Recognition With Watson Speech-to-Text API",
-    "content": "Learn how to take advantage of IBM Watson’s speaker diarization feature, which distinguishes between speakers in real time.",
-    "imgUrl": "https://dzone.com/storage/temp/5333766-watson-speaker-diarization.gif",
-    "type": "Dzone MVB",
-    "more": "https://dzone.com/articles/whos-speaking-speaker-recognition-with-watson-spee"
-  }]
+  "title": "For Performant Serverless Swift actions…",
+  "content": "This tutorial goes through the steps of setting up the server side of an iOS mobile app with Swift, including the code and commands for the project.",
+  "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*Ml7OWZUorYNxQGEsei7ptA.png",
+  "type": "Medium.com",
+  "more": "https://medium.com/@VidyasagarMSC/for-performant-serverless-swift-actions-b11fa50eeb8f"
+},
+{
+  "title": "Personifying Chatbots: A Guide to Realistic Conversation",
+  "content": "If you want your chatbot to pass the Turing Test, it needs to be personified and personalized. Luckily, that's not *too* difficult to do!",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/10/context_variables.gif",
+  "type": "DZone MVB",
+  "more": "https://dzone.com/articles/this-is-how-you-personify-and-make-your-chatbot-co"
+},
+{
+  "title": "My High Sierra Story...",
+  "content": "Disclaimer: This post is just to help macOS users who are facing installation failures or stuck while installing/upgrading to High Sierra.",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+  "type": "Blog",
+  "more": "https://vmacwrites.wordpress.com/2017/11/28/my-high-sierra-story/"
+},
+{
+  "title": "Love Kubernetes?? Now, manage your containers with it on IBM Cloud Container Service",
+  "content": "This post helps you in getting started with Kubernetes on IBM Cloud via CLI. After a post on how to get started with Docker Containers on IBM Cloud, the next destination was to play with container orchestration on IBM Cloud.",
+  "imgUrl": "https://cdn-images-1.medium.com/max/1600/0*e5MiDOZQgylnQtNC.",
+  "type": "Medium.com",
+  "more": "https://medium.com/@VidyasagarMSC/kubernetes-on-ibm-cloud-b3a2a662c1f1"
+},
+{
+  "title": "A Voice-enabled ChatBot powered by IBM Watson in Mins",
+  "content": "WatBot is a Voice-enabled Android Native ChatBot built using Watson Conversation, Speech-to-Text and Text-to-Speech Services on IBM Cloud (open standards cloud platform for building, running, and managing apps and services).",
+  "imgUrl": "https://raw.githubusercontent.com/VidyasagarMSC/WatBot/master/images/WatBot_5X.png",
+  "type": "Blog",
+  "more": "https://vmacwrites.wordpress.com/2017/01/05/an-android-chatbot-powered-by-ibm-watson/"
+},
+{
+  "title": "Speaker Recognition With Watson Speech-to-Text API",
+  "content": "Learn how to take advantage of IBM Watson’s speaker diarization feature, which distinguishes between speakers in real time.",
+  "imgUrl": "https://dzone.com/storage/temp/5333766-watson-speaker-diarization.gif",
+  "type": "Dzone MVB",
+  "more": "https://dzone.com/articles/whos-speaking-speaker-recognition-with-watson-spee"
+}
+]

@@ -72,7 +72,7 @@ export default {
         { title: 'Home', icon: 'home', link: '/' },
         { title: 'Engagements', icon: 'user-o', link: '/engagements' },
         { title: 'Writes', icon: 'pencil', link: '/writes' },
-        { title: 'Videos', icon: 'play', link: '/videos' }
+        { title: 'Talks', icon: 'play', link: '/videos' }
       ],
       items: [
         { title: 'Code', icon: 'github-alt', link: 'https://github.com/vidyasagarmsc' },
