@@ -1,0 +1,63 @@
+[{
+    "title": "Subscribe",
+    "content": "Mostly technical videos including talks covering Cloud, Mobile, Cognitive and other aspects of Software programming and engineering. Expect a few music videos here and there as I love listening to music and coding.",
+    "imgUrl": "/static/images/cards/drop.jpg",
+    "type": "Youtube",
+    "more": "https://www.youtube.com/user/mscvidyasagar/"
+  },
+  {
+    "title": "Follow",
+    "content": "Videos on Vimeo",
+    "imgUrl": "/static/images/cards/docks.jpg",
+    "type": "Vimeo",
+    "more": "https://vimeo.com/user46992986"
+  },
+  {
+    "title": "Tutorials to get your mobile development up and running",
+    "content": "Recently, we announced new tutorials to get you started on IBM Cloud. In continuation of our effort to bring in structured and well-defined tutorials, we are adding mobile section where you can Easily follow step-by-step instructions.",
+    "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+    "type": "Webinar",
+    "more": "https://www.youtube.com/watch?v=eDKaubbb6FM&list=PLN9zz9KWW6tHM6eJoJK890drnDSjUiqH_"
+  },
+  {
+      "title": "WatBot: A Voice-enabled Android Chatbot",
+      "content": "WatBot is a Voice-enabled Android Native ChatBot built using Watson Conversation, Speech to Text and Text to Speech Services on IBM Cloud",
+      "imgUrl": "https://raw.githubusercontent.com/VidyasagarMSC/WatBot/master/images/WatBot_5X.png",
+      "type": "Demo",
+      "more": "https://www.youtube.com/watch?v=hLETr8t7_bU&index=7&list=PLN9zz9KWW6tHM6eJoJK890drnDSjUiqH_"
+    },
+    {
+        "title": "A walkthrough of IBM Cloud - Vidyasagar Machupalli",
+        "content": "IBM innovators and industry thinkers emphasized on the latest trends of cloud-led business transformation at IBM Cloud Innovation Forum 2016.",
+        "imgUrl": "/static/images/cards/vidyasagar_machupalli.png",
+        "type": "On stage",
+        "more": "https://www.youtube.com/watch?v=GPGg-1IqhVs&t=161s"
+    },
+    {
+      "title": "Talks",
+      "content": "As a Speaker & Presenter....",
+      "imgUrl": "https://vmacwrites.files.wordpress.com/2017/10/context_variables.gif",
+      "type": "Playlist",
+      "more": "https://www.youtube.com/playlist?list=PLN9zz9KWW6tHM6eJoJK890drnDSjUiqH_"
+    },
+    {
+      "title": "The Magic of Music",
+      "content": "as I listen language-agnostically",
+      "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+      "type": "Playlist",
+      "more": "https://www.youtube.com/playlist?list=PLN9zz9KWW6tFbJ8C66M2zpfMEeSypbBsh"
+    },
+    {
+      "title": "Vidyasagar Machupalli on IBM Cloud Tools for Swift",
+      "content": "Vidyasagar Machupalli (Developer Advocate, IBM Cloud & Mobile) introduces client and server code in Swift using IBM Cloud Tools for Swift.",
+      "imgUrl": "/static/images/cards/vidyasagar_machupalli.png",
+      "type": "On Stage",
+      "more": "https://www.youtube.com/watch?v=0MfNyLxRkHI&t=39s"
+    },
+    {
+      "title": "Vidyasagar S Machupalli on building a chatbot with ease",
+      "content": "Hear from Vidyasagar S Machupalli (Developer Advocate and Technical Offering Manager, IBM Cloud) on how #WatsonConversation helps in building a chatbot with ease. ",
+      "imgUrl": "https://dzone.com/storage/temp/5333766-watson-speaker-diarization.gif",
+      "type": "Youtube",
+      "more": "https://www.youtube.com/watch?v=9_LgyrXEPm8&t=9s"
+    }]

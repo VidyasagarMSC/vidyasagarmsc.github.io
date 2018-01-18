@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Engagements from '@/components/Engagements'
 import Blog from '@/components/Blog'
+import Videos from '@/components/Videos'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/writes',
       name: 'Blog',
       component: Blog
+    },
+    {
+      path: '/videos',
+      name: 'videos',
+      component: Videos
     }
   ]
 })

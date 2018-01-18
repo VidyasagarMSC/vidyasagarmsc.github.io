@@ -22,6 +22,7 @@ import Bottombar from './components/Bottombar'
 import Expertise from './components/Expertise'
 import Blog from './components/Blog'
 import Carousel from './components/Carousel'
+import Videos from './components/Videos'
 
 export default {
   name: 'app',
@@ -32,7 +33,8 @@ export default {
     Bottombar,
     Expertise,
     Blog,
-    Carousel
+    Carousel,
+    Videos
   }
 }
 </script>
