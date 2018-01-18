@@ -101,13 +101,14 @@ var webpackConfig = merge(baseWebpackConfig, {
     // Path to compiled app
     path.join(__dirname, '../dist'),
     // List of endpoints you wish to prerender
-    [ '/','/engagements','/writes' ],
+    [ '/','/engagements','/writes','/videos' ],
     {
     postProcessHtml: function (context) {
       var titles = {
         '/': 'Home | Vidyasagar MSC',
         '/engagements': 'Engagements | Vidyasagar MSC',
-        '/writes': 'Writings | Vidyasagar MSC'
+        '/writes': 'Writings | Vidyasagar MSC',
+        '/videos': 'Talks | Vidyasagar MSC'
       }
       return context.html.replace(
         /<title>[^<]*<\/title>/i,
