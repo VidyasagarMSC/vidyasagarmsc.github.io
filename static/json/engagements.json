@@ -1,4 +1,11 @@
 [{
+	"title": "20.01.2018 / Intro to Deep Learning & TensorFlow with demonstration and hands on experience using Jupyter notebook - 2 hours",
+	"event": "Jigsaw Academy meetup",
+	"link": "https://vidyasagarmsc.github.io/",
+	"type": "talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/docks.jpg"
+},{
 	"title": "06.12.2017 / Tutorials to get your mobile development up and running",
 	"event": "Webinar",
 	"link": "https://www.youtube.com/watch?v=eDKaubbb6FM",
