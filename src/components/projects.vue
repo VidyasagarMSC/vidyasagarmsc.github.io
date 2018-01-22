@@ -58,7 +58,6 @@ export default {
   created () {
     axios.get('/static/json/projects.json')
     .then(response => {
-      // JSON responses are automatically parsed.
       this.projects = response.data
     })
     .catch(e => {
