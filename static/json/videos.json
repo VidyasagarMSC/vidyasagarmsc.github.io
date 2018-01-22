@@ -1,17 +1,4 @@
-[{
-    "title": "Subscribe",
-    "content": "Mostly technical videos including talks covering Cloud, Mobile, Cognitive and other aspects of Software programming and engineering. Expect a few music videos here and there as I love listening to music and coding.",
-    "imgUrl": "/static/images/cards/drop.jpg",
-    "type": "Youtube",
-    "more": "https://www.youtube.com/user/mscvidyasagar/"
-  },
-  {
-    "title": "Follow",
-    "content": "Videos on Vimeo",
-    "imgUrl": "/static/images/cards/docks.jpg",
-    "type": "Vimeo",
-    "more": "https://vimeo.com/user46992986"
-  },
+[
   {
     "title": "Tutorials to get your mobile development up and running",
     "content": "Recently, we announced new tutorials to get you started on IBM Cloud. In continuation of our effort to bring in structured and well-defined tutorials, we are adding mobile section where you can Easily follow step-by-step instructions.",
@@ -41,13 +28,6 @@
       "more": "https://www.youtube.com/playlist?list=PLN9zz9KWW6tHM6eJoJK890drnDSjUiqH_"
     },
     {
-      "title": "The Magic of Music",
-      "content": "as I listen language-agnostically",
-      "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
-      "type": "Playlist",
-      "more": "https://www.youtube.com/playlist?list=PLN9zz9KWW6tFbJ8C66M2zpfMEeSypbBsh"
-    },
-    {
       "title": "Vidyasagar Machupalli on IBM Cloud Tools for Swift",
       "content": "Vidyasagar Machupalli (Developer Advocate, IBM Cloud & Mobile) introduces client and server code in Swift using IBM Cloud Tools for Swift.",
       "imgUrl": "/static/images/cards/vidyasagar_machupalli.png",
@@ -60,4 +40,17 @@
       "imgUrl": "https://dzone.com/storage/temp/5333766-watson-speaker-diarization.gif",
       "type": "Youtube",
       "more": "https://www.youtube.com/watch?v=9_LgyrXEPm8&t=9s"
+    },{
+      "title": "SUBSCRIBE",
+      "content": "Mostly technical videos including talks covering Cloud, Mobile, Cognitive and other aspects of Software programming and engineering. Expect a few music videos here and there as I love listening to music and coding.",
+      "imgUrl": "/static/images/vidyasagar.jpg",
+      "type": "YOUTUBE CHANNEL",
+      "more": "https://www.youtube.com/user/mscvidyasagar/"
+    },
+    {
+      "title": "FOLLOW",
+      "content": "Videos on Vimeo",
+      "imgUrl": "/static/images/cards/docks.jpg",
+      "type": "VIMEO",
+      "more": "https://vimeo.com/user46992986"
     }]

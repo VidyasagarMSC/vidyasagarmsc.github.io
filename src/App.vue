@@ -23,6 +23,7 @@ import Expertise from './components/Expertise'
 import Blog from './components/Blog'
 import Carousel from './components/Carousel'
 import Videos from './components/Videos'
+import Projects from './components/Projects'
 
 export default {
   name: 'app',
@@ -34,7 +35,8 @@ export default {
     Expertise,
     Blog,
     Carousel,
-    Videos
+    Videos,
+    Projects
   }
 }
 </script>

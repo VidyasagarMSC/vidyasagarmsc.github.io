@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Engagements from '@/components/Engagements'
 import Blog from '@/components/Blog'
 import Videos from '@/components/Videos'
+import Projects from '@/components/Projects'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/videos',
       name: 'Videos',
       component: Videos
+    },
+    {
+      path: '/projects',
+      name: 'Projects',
+      component: Projects
     }
   ]
 })

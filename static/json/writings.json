@@ -1,24 +1,4 @@
-[{
-  "title": "VMAC Writes",
-  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
-  "imgUrl": "/static/images/cards/drop.jpg",
-  "type": "Blog",
-  "more": "https://vmacwrites.wordpress.com/"
-},
-{
-  "title": "Medium",
-  "content": "Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ",
-  "imgUrl": "/static/images/cards/docks.jpg",
-  "type": "Medium.com",
-  "more": "https://medium.com/@VidyasagarMSC"
-},
-{
-  "title": "DZone",
-  "content": "DZone Most Valuable Blogger | A collection of my technical articles. Catering Cloud, Cognitive, and many more...",
-  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
-  "type": "DZone MVB",
-  "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
-},
+[
 {
   "title": "For Performant Serverless Swift actions…",
   "content": "This tutorial goes through the steps of setting up the server side of an iOS mobile app with Swift, including the code and commands for the project.",
@@ -67,5 +47,25 @@
   "imgUrl": "https://console.bluemix.net/docs/api/content/tutorials/images/solution15/Architecture.png?lang=en",
   "type": "IBM Cloud Blog",
   "more": "https://www.ibm.com/blogs/bluemix/2018/01/hybrid-cordova-mobile-app-push-analytics-minutes/"
+},{
+  "title": "VMAC WRITES",
+  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
+  "imgUrl": "/static/images/vidyasagar.jpg",
+  "type": "PERSONAL BLOG",
+  "more": "https://vmacwrites.wordpress.com/"
+},
+{
+  "title": "MEDIUM",
+  "content": "Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ",
+  "imgUrl": "/static/images/cards/docks.jpg",
+  "type": "MEDIUM.COM",
+  "more": "https://medium.com/@VidyasagarMSC"
+},
+{
+  "title": "DZONE",
+  "content": "DZone Most Valuable Blogger | A collection of my technical articles. Catering Cloud, Cognitive, and many more...",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+  "type": "DZONE MVB",
+  "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
 }
 ]

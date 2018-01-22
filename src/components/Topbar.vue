@@ -72,10 +72,10 @@ export default {
         { title: 'Home', icon: 'home', link: '/' },
         { title: 'Engagements', icon: 'user-o', link: '/engagements' },
         { title: 'Writes', icon: 'pencil', link: '/writes' },
-        { title: 'Talks', icon: 'play', link: '/videos' }
+        { title: 'Talks', icon: 'play', link: '/videos' },
+        { title: 'Projects', icon: 'code', link: '/projects' }
       ],
       items: [
-        { title: 'Code', icon: 'github-alt', link: 'https://github.com/vidyasagarmsc' },
         { title: 'Twitter', icon: 'twitter', link: 'https://twitter.com/VidyasagarMSC' },
         { title: 'Profile', icon: 'linkedin', link: 'https://www.linkedin.com/in/vidyasagarmsc' },
         { title: 'Facebook', icon: 'facebook', link: 'http://facebook.com/mscvidyasagar' },

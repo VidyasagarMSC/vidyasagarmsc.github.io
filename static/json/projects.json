@@ -1,0 +1,49 @@
+[
+  {
+    "title": "WatBot",
+    "content": "An Android ChatBot powered by IBM Watson Services (Conversation, Text-to-Speech, and Speech-to-Text with Speaker Recognition) on IBM Cloud.",
+    "imgUrl": "https://raw.githubusercontent.com/VidyasagarMSC/WatBot/master/images/WatBot_5X.png",
+    "type": "Android | Watson",
+    "more": "https://github.com/VidyasagarMSC/WatBot"
+  },
+  {
+    "title": "VidyasagarMSC",
+    "content": "My personal website built with Vue.JS as I am exploring it :)",
+    "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+    "type": "VueJS | Javascript",
+    "more": "https://github.com/VidyasagarMSC/vidyasagarmsc.github.io"
+  },
+  {
+      "title": "Dockerized-OpenWhisk-NodeJS-Console",
+      "content": "An OpenWhisk query console written in NodeJS and Docker-ized to run and manage easily on Bluemix",
+      "imgUrl": "/static/images/cards/docks.jpg",
+      "type": "Javascript | Docker",
+      "more": "https://github.com/VidyasagarMSC/Dockerized-OpenWhisk-NodeJS-Console"
+    },
+    {
+        "title": "A feedback App",
+        "content": "An Ionic mobile feedback app using Cloudant NoSQL DB service on IBM Cloud.",
+        "imgUrl": "/static/images/cards/vidyasagar_machupalli.png",
+        "type": "Ionic | Cloudant",
+        "more": "https://github.com/VidyasagarMSC/Ionic-Cloudant-FeedbackApp"
+    },
+    {
+      "title": "iOS Serverless FollowUp App",
+      "content": "A mobile follow-up app using a serverless backend in Swift",
+      "imgUrl": "https://github.com/IBM-Bluemix-Docs/tutorials/raw/master/images/solution11/Architecture.png?raw=true",
+      "type": "Swift | Serverless",
+      "more": "https://github.com/IBM-Cloud/serverless-followupapp-ios"
+    },
+    {
+        "title": "Anomaly Detection of IoT(mobile) sensor data",
+        "content": "A web application which acts as an IoT device when loaded in a smart phone browser.",
+        "imgUrl": "https://console.bluemix.net/docs/api/content/tutorials/images/solution16/Architecture.png?lang=en",
+        "type": "IoT | DataScience",
+        "more": "https://github.com/IBM-Cloud/iot-device-phone-simulator"
+      },{
+        "title": "GITHUB",
+        "content": "For more code samples and Projects >>>>",
+        "imgUrl": "/static/images/vidyasagar.jpg",
+        "type": "Code | Projects",
+        "more": "https://github.com/VidyasagarMSC"
+      }]

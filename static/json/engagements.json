@@ -4,7 +4,7 @@
 	"link": "https://vidyasagarmsc.github.io/",
 	"type": "talk",
 	"icon": "mic",
-	"imgUrl": "/static/images/cards/docks.jpg"
+	"imgUrl": "/static/images/cards/drop.jpg"
 },{
 	"title": "06.12.2017 / Tutorials to get your mobile development up and running",
 	"event": "Webinar",
@@ -18,7 +18,7 @@
 	"link": "https://bluemix.net/",
 	"type": "talk",
 	"icon": "mic",
-	"imgUrl": "/static/images/cards/docks.jpg"
+	"imgUrl": "/static/images/cards/drop.jpg"
 }, {
 	"title": "11.11.2017 / Compositions and FSH: The next leap in Serverless Computing",
 	"event": "Above Serverless and Beyond Containers",
@@ -55,13 +55,6 @@
 	"icon": "mic",
 	"imgUrl": "/static/images/cards/mods.jpeg"
 }, {
-	"title": "An Android Chatbot powered by Watson with Speaker Diarization.",
-	"event": "WatBot",
-	"link": "https://github.com/VidyasagarMSC/WatBot",
-	"type": "project",
-	"icon": "code",
-	"imgUrl": "/static/images/cards/drop.jpg"
-}, {
 	"title": "Master the art of data science | Watson Machine Learning",
 	"event": "BlueCoders Meetup, Bangalore",
 	"link": "http://meetu.ps/c/2M8MP/sM1Rj/f",
@@ -76,16 +69,10 @@
 	"icon": "mic",
 	"imgUrl": "/static/images/cards/plane.jpg"
 }, {
-	"title": "My personal website built with Vue.JS as I am exploring it :) ",
-	"event": "VidyasagarMSC",
-	"link": "https://github.com/VidyasagarMSC/vidyasagarmsc.github.io",
-	"type": "project",
-	"icon": "code",
-	"imgUrl": "/static/images/cards/drop.jpg"
-}, {
 	"title": "My Contributions >>>>>",
 	"event": "Older Engagements",
 	"link": "https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/",
 	"type": "talk",
-	"icon": "mic"
+	"icon": "mic",
+	"imgUrl": "/static/images/vidyasagar.jpg"
 }]
