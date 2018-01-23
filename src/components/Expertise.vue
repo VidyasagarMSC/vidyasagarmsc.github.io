@@ -20,7 +20,11 @@
         </div>
       </v-flex>
     </v-layout>
+     <p class="mt-4">
+      <a href="https://www.linkedin.com/in/vidyasagarmsc" target="_blank">Other Featured Skills & Endorsements</a>
+    </p>
   </v-container>
+  
 </template>
 
 <script>
@@ -53,9 +57,7 @@ export default {
 </script>
 
 <style scoped>
-* {
-  color: #2B3940;
-}
+
 h4 {
   font-weight: bold;
 }
