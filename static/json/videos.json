@@ -1,5 +1,11 @@
 [
   {
+    "title": "Secure your mobile serverless backend with App ID",
+    "content": "Learn how to secure your serverless mobile app with an interesting use case.",
+    "type": "Webinar",
+    "imgUrl": "/static/images/cards/docks.jpg",
+    "more": "https://t.co/PUdiLKcW19"
+  },{
     "title": "Tutorials to get your mobile development up and running",
     "content": "Recently, we announced new tutorials to get you started on IBM Cloud. In continuation of our effort to bring in structured and well-defined tutorials, we are adding mobile section where you can Easily follow step-by-step instructions.",
     "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",

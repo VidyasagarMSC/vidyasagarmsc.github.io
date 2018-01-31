@@ -1,4 +1,11 @@
 [{
+	"title": "14.02.2018 / Serverless Python with Deployed Machine Learning Model",
+	"event": "IBM Code Day",
+	"link": "https://developer.ibm.com/in/ibm-code-day-agenda/",
+	"type": "Talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/drop.jpg"
+},{
 	"title": "24.01.2018 / Secure your mobile serverless backend with App ID",
 	"event": "Webinar - Mobile",
 	"link": "https://t.co/PUdiLKcW19",
