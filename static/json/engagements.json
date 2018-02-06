@@ -5,6 +5,14 @@
 	"type": "Talk",
 	"icon": "mic",
 	"imgUrl": "/static/images/cards/drop.jpg"
+},
+{
+	"title": "05-09.02.2018 / Lab covering Terraform and Kubernetes",
+	"event": "IBM Cloud Fast Start Asia Pacific 2018, Bangkok, Thailand",
+	"link": "https://www.ibm.com/partnerworld/watson/fast-start/bangkok",
+	"type": "Talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/plane.jpg"
 },{
 	"title": "24.01.2018 / Secure your mobile serverless backend with App ID",
 	"event": "Webinar - Mobile",

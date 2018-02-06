@@ -1,4 +1,11 @@
 [
+  {
+    "title": "Infrastructure as code with Terraform on Windows",
+    "content": "This blog post is a quick guide on how to setup Terraform and IBM Cloud Provider on Windows operating system.",
+    "imgUrl": "https://vmacwrites.files.wordpress.com/2018/02/3dbef-0xgjsz3w4gs8m8md.png?w=740&zoom=2",
+    "type": "Blog",
+    "more": "https://vmacwrites.wordpress.com/2018/02/01/infrastructure-as-code-with-terraform-on-windows/"
+  },
 {
   "title": "For Performant Serverless Swift actions…",
   "content": "This tutorial goes through the steps of setting up the server side of an iOS mobile app with Swift, including the code and commands for the project.",
