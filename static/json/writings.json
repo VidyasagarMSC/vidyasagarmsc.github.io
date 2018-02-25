@@ -1,5 +1,12 @@
 [
   {
+    "title": "Anomaly Detection in mobile sensor data using Machine Learning",
+    "content": "The post walks you through setting up an IoT device, gathering mobile sensor data in the Watson IoT Platform, exploring data and creating visualizations and then using advanced machine learning services to analyze data and detect anomalies in the historical data.",
+    "imgUrl": "https://cdn-images-1.medium.com/max/800/0*yKbCjSBy1tmvOW30.",
+    "type": "Medium.com",
+    "more": "https://towardsdatascience.com/anomaly-detection-in-mobile-sensor-data-48ef62d0f7fc"
+  },
+  {
     "title": "Infrastructure as code with Terraform on Windows",
     "content": "This blog post is a quick guide on how to setup Terraform and IBM Cloud Provider on Windows operating system.",
     "imgUrl": "https://vmacwrites.files.wordpress.com/2018/02/3dbef-0xgjsz3w4gs8m8md.png?w=740&zoom=2",

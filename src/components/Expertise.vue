@@ -48,7 +48,8 @@ export default {
        { type: 'W', name: 'AngularJS' },
         { type: 'W', name: 'VueJS' },
        { type: 'B', name: 'SQL Server' },
-       { type: 'O', name: 'Unity 3D' }
+       { type: 'O', name: 'Unity 3D' },
+        { type: 'O', name: 'Machine Intelligence' }
 
       ]
     }
