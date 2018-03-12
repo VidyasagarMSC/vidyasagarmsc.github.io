@@ -1,4 +1,19 @@
 [{
+	"title": "19-22.03.2018 / Talks and Labs",
+	"event": "IBM Think 2018, Las Vegas, US",
+	"link": "https://myibm.ibm.com/events/think/all-sessions/session/5218A",
+	"type": "Talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/plane.jpg"
+},
+	{
+	"title": "02-04.03.2018 / AI at your finger tips",
+	"event": "Innovation Festival 2018, Regional Science Centre, Tirupati",
+	"link": "https://www.facebook.com/photo.php?fbid=10211416607119788&set=a.2843367172220.2114957.1500587796&type=3&theater&notif_t=feedback_reaction_generic&notif_id=1520141211372627",
+	"type": "Talk",
+	"icon": "mic",
+	"imgUrl": "https://scontent.fblr2-1.fna.fbcdn.net/v/t31.0-8/28514998_10211416607119788_6609421512514658549_o.jpg?oh=887b514a45e78a411d358b999782d57f&oe=5B02C2AB"
+},{
 	"title": "14.02.2018 / Serverless Python with Deployed Machine Learning Model",
 	"event": "IBM Code Day",
 	"link": "https://developer.ibm.com/in/ibm-code-day-agenda/",

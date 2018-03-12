@@ -38,10 +38,10 @@
     <v-toolbar-title><router-link class="title" :to="{ path: '/' }">VIDYASAGAR MSC</router-link></v-toolbar-title>
     <v-spacer></v-spacer>
      <v-toolbar-items class="hidden-sm-and-down" v-for="local in locals" :key="local.title" :href="local.link">
-      <v-btn :href="local.link" dark v-tooltip:bottom="{ html: local.title }"><icon :name="local.icon" scale="1" ripple></icon></v-btn>
+      <v-btn :href="local.link" dark v-tooltip:bottom="{ html: local.title }"><icon :name="local.icon" scale="1.3" ripple></icon></v-btn>
     </v-toolbar-items>
    <v-toolbar-items class="hidden-sm-and-down" v-for="item in items" :key="item.title" :href="item.link">
-      <v-btn :href="item.link" target="_blank" dark v-tooltip:bottom="{ html: item.title }"><icon :name="item.icon" scale="1" ripple></icon></v-btn>
+      <v-btn :href="item.link" target="_blank" dark v-tooltip:bottom="{ html: item.title }"><icon :name="item.icon" scale="1.3" ripple></icon></v-btn>
     </v-toolbar-items>
     <!--<v-menu :nudge-width="100" bottom :offset-y="true" transition="v-slide-y-transition">
             <v-toolbar-title slot="activator">
