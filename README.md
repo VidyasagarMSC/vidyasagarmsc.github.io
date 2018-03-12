@@ -9,7 +9,7 @@ Personal Website of Vidyasagar Machupalli aka Vidyasagar MSC showcasing his code
 - [VuetifyJS](http://vuetifyjs.com/)
 - Hosted on github.io pages
 
-The site is LIVE at [https://vidyasagarmsc.github.io/](http://vmac.xyz)
+The site is LIVE at [https://vidyasagarmsc.github.io/](https://vidyasagarmsc.github.io/)
 
 ## License
 Check [License](/License.md)
