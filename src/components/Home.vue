@@ -3,12 +3,6 @@
   <img src= "/static/images/vidyasagar.jpg"/>
    <h1 class="inline">Vidyasagar Machupalli</h1>
    <h3 class="inline">Coder | Speaker | Writer | Explorer</h3>
-   <div class="space">
-    <section id="section08" class="demo">
-      <a href="#last"><span></span>Scroll</a>
-    </section>
-    </div>
-   <v-spacer></v-spacer>
    <p v-html="about"></p>
    <p v-html="more"></p>
     <v-divider></v-divider><br>
@@ -26,7 +20,7 @@
     <h3 class="inline">Recommendations</h3>
     <carousel></carousel>
 <v-divider></v-divider>
-    <h3 class="inline" id="last" >Skill Set</h3>
+    <h3 class="inline">Skill Set</h3>
     <expertise></expertise>
     </div>
 </template>
