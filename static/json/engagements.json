@@ -1,4 +1,11 @@
 [{
+	"title": "26.04.2018 / Bringing the Best of Containers & Machine Learning Together",
+	"event": "Great Indian Developer Summit",
+	"link": "http://www.developermarch.com/developersummit/session.html?insert=Vidyasagar",
+	"type": "Talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/drop.jpg"
+},{
 	"title": "19-22.03.2018 / Talks and Labs",
 	"event": "IBM Think 2018, Las Vegas, US",
 	"link": "https://myibm.ibm.com/events/think/all-sessions/session/5218A",
