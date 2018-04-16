@@ -29,13 +29,13 @@
                   {{ video.content }}
                 </v-card-text>
                 <v-card-actions>
-                  <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=https://vidyasagarmsc.github.io/writes/' + '&title=' + video.title +' '+ video.content">
+                  <v-btn icon class="red--text" :href="'http://reddit.com/submit?url=https://vidyasagarmsc.github.io/videos/' + '&title=' + video.title +' '+ video.content">
                     <icon name="reddit-alien"></icon>
                   </v-btn>
-                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url=https://vidyasagarmsc.github.io/writes/'+'&via=VidyasagarMSC&text='+ video.title +' '+ video.content">
+                  <v-btn icon class="light-blue--text" :href="'https://twitter.com/share?url=https://vidyasagarmsc.github.io/videos/'+'&via=VidyasagarMSC&text='+ video.title +' '+ video.content">
                     <icon name="twitter"></icon>
                   </v-btn>
-                  <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u=https://vidyasagarmsc.github.io/writes/' +'&t=' + video.title +' '+ video.content">
+                  <v-btn icon class="blue--text text--darken-3" :href="'http://www.facebook.com/sharer.php?'+'u=https://vidyasagarmsc.github.io/videos/' +'&t=' + video.title +' '+ video.content">
                     <icon name="facebook-f"></icon>
                   </v-btn>
                   <v-spacer></v-spacer>
