@@ -1,10 +1,16 @@
 [
   {
+    "title": "Interact with this Chatbot through voice and audio",
+    "content": "Check step-by-step instructions showing how easy it is to quickly create a voice-enabled Android-native chatbot with Watson Assistant, Text to Speech, Speech to Text and mobile analytics services on IBM Cloud.",
+    "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*90cyrbBFBQ4Zc5vzwn-1Ig.png",
+    "type": "Chatbotslife on Medium",
+    "more": "https://chatbotslife.com/interact-with-this-chatbot-through-voice-and-audio-81b5c0c9b10b"
+  },{
     "title": "Build,deploy, and retrain a machine learning model using iris dataset",
     "content": "This post walks you through the process of building a predictive machine learning model, deploying it as an API to be used in applications, testing the model and retraining the model with feedback data.",
     "imgUrl": "https://cdn-images-1.medium.com/max/2000/0*NIs3apl7FL5U0PS7.",
-    "type": "Blog",
-    "more": "https://vmacwrites.wordpress.com/2018/03/12/build-deploy-test-and-retrain-a-predictive-machine-learning-model/"
+    "type": "Experfy",
+    "more": "https://www.experfy.com/blog/the-journey-of-a-machine-learning-model-from-building-to-retraining"
   },{
     "title": "Anomaly Detection in mobile sensor data using Machine Learning",
     "content": "The post walks you through setting up an IoT device, gathering mobile sensor data in the Watson IoT Platform, exploring data and creating visualizations and then using advanced machine learning services to analyze data and detect anomalies in the historical data.",
