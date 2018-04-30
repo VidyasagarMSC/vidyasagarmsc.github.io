@@ -1,4 +1,11 @@
 [{
+	"title": "12.05.2018 / Accelerate feature deployment and delivery - DevOps hands-on approach",
+	"event": "BlueCoders meetup",
+	"link": "https://www.meetup.com/BlueCoders/events/249796835/",
+	"type": "meetup",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/docks.jpg"
+},{
 	"title": "28.04.2018 / Container Orchestration with Kubernetes: A real-time experience ",
 	"event": "IBM Developer Day",
 	"link": "http://ibmdevday.mybluemix.net",
