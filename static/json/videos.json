@@ -1,5 +1,12 @@
 [
   {
+    "title": "What's in IBM Cloud for Developers",
+    "content": "Learn what IBM Cloud - The cloud platform offers for developers offers 170+ unique services. The video showcases demos.",
+    "type": "Demo",
+    "imgUrl": "/static/images/cards/vidyasagar_machupalli.png",
+    "more": "https://youtu.be/6VNzkZHvxDk"
+  },
+  {
     "title": "Secure your mobile serverless backend with App ID",
     "content": "Learn how to secure your serverless mobile app with an interesting use case.",
     "type": "Demo",
