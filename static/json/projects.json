@@ -1,5 +1,12 @@
 [
   {
+    "title": "Awesome-AI",
+    "content": "A curated list of articles, books, MOOCs, infographics and many more covering Artificial Intelligence, Machine Learning and Deep Learning.",
+    "imgUrl": "https://github.com/VidyasagarMSC/Awesome-AI/blob/master/infographics/AI-Timeline.jpg?raw=true",
+    "type": "AI",
+    "more": "https://github.com/VidyasagarMSC/Awesome-AI"
+  },
+  {
     "title": "WatBot",
     "content": "An Android ChatBot powered by IBM Watson Services (Conversation, Text-to-Speech, and Speech-to-Text with Speaker Recognition) on IBM Cloud.",
     "imgUrl": "https://raw.githubusercontent.com/VidyasagarMSC/WatBot/master/images/WatBot_5X.png",
