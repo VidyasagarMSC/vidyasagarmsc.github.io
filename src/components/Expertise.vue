@@ -49,8 +49,8 @@ export default {
         { type: 'W', name: 'VueJS' },
        { type: 'B', name: 'SQL Server' },
        { type: 'O', name: 'Unity 3D' },
-        { type: 'O', name: 'Machine Learning' }
-        { type: 'C', name: 'Kubernetes' },
+        { type: 'O', name: 'Machine Learning' },
+        { type: 'C', name: 'Containers' }
 
       ]
     }
