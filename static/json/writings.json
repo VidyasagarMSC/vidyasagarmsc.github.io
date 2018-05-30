@@ -1,5 +1,11 @@
 [
   {
+    "title": "WHAT’S IN IBM CLOUD FOR DEVELOPERS",
+    "content": "In this post, you will learn what’s in store for developers and how they can leverage 170+ unique services on IBM Cloud platform.",
+    "imgUrl": "https://vmacwrites.files.wordpress.com/2018/05/cloud-3.png",
+    "type": "Blog",
+    "more": "https://vmacwrites.wordpress.com/2018/05/26/whats-in-ibm-cloud-for-developers/"
+  },{
     "title": "Interact with this Chatbot through voice and audio",
     "content": "Check step-by-step instructions showing how easy it is to quickly create a voice-enabled Android-native chatbot with Watson Assistant, Text to Speech, Speech to Text and mobile analytics services on IBM Cloud.",
     "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*90cyrbBFBQ4Zc5vzwn-1Ig.png",
