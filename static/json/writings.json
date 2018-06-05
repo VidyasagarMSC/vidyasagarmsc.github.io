@@ -1,5 +1,11 @@
 [
   {
+    "title": "Deploy a scalable web app to Kubernetes using Helm",
+    "content": "This blog post walks you through how to scaffold a web application, run it locally in a container, and then deploy it to a Kubernetes cluster created with IBM Cloud Kubernetes Service using a Helm chart.",
+    "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*y1qJ8aRExZ2O6mGX8Ok6cQ.png",
+    "type": "Medium.com",
+    "more": "https://medium.com/@VidyasagarMSC/deploy-a-scalable-web-application-to-kubernetes-using-helm-f33581a9381"
+  },{
     "title": "WHAT’S IN IBM CLOUD FOR DEVELOPERS",
     "content": "In this post, you will learn what’s in store for developers and how they can leverage 170+ unique services on IBM Cloud platform.",
     "imgUrl": "https://vmacwrites.files.wordpress.com/2018/05/cloud-3.png",
