@@ -1,4 +1,11 @@
 [{
+	"title": "28.06.2018 / Being Cloud Native with IBM Cloud",
+	"event": "IBM Tech Thursday Webinar series",
+	"link": "https://ibmtechthursday.mybluemix.net/",
+	"type": "webinar",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/docks.jpg"
+},{
 	"title": "19.05.2018 / Accelerate feature deployment and delivery - DevOps hands-on approach",
 	"event": "BlueCoders meetup",
 	"link": "https://www.meetup.com/BlueCoders/events/249796835/",
