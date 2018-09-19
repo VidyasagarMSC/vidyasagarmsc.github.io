@@ -1,4 +1,11 @@
 [{
+	"title": "22.09.2018 / Reactive Microservices with Eclipse Vert.x",
+	"event": "Eclipse Day India",
+	"link": "http://eclipsedayindia.mybluemix.net/Program#talk6",
+	"type": "talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/docks.jpg"
+},{
 	"title": "08.09.2018 / Public cloud made Private with Cloud Foundry & Kubernetes",
 	"event": "Cloud Foundry Days 2018",
 	"link": "https://www.eventbrite.com/e/cloud-foundry-day-bengaluru-2018-registration-48441148780#",
