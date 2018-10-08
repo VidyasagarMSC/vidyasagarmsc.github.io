@@ -1,5 +1,12 @@
 [
   {
+    "title": "Build a container image inside a K8s cluster and push it to IBM Cloud Container Registry",
+    "content": "Learn how to build a source into a container image from a Dockerfile inside a Kubernetes cluster and push the image to IBM Cloud Container Registry; all of this using Google’s Kaniko tool.",
+    "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*bPl6PUNMUPBV9uS5Qtv5Hg.png",
+    "type": "Medium",
+    "more": "https://medium.com/@VidyasagarMSC/build-a-container-image-inside-a-k8s-cluster-and-push-it-to-ibm-cloud-container-registry-abac9b1e5246"
+  },
+  {
     "title": "Install Knative with Istio and deploy an app on IBM Cloud",
     "content": "In this tutorial, learn how easy it is to install Knative with Istio on IBM Cloud Kubernetes Service(IKS), build and push an image to IBM Cloud Container Registry and deploy a nodejs app.",
     "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*vSO4ZX1LYIs-UlDatTPfYg.png",
