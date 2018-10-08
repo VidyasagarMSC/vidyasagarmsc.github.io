@@ -1,5 +1,12 @@
 [
   {
+    "title": "Knative-Deploy",
+    "content": "Install Knative with Istio on IBM Cloud Kubernetes Service(IKS), build and push your image to IBM Cloud Container Registry (using Docker or Kaniko) and deploy the app.",
+    "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*bPl6PUNMUPBV9uS5Qtv5Hg.png",
+    "type": "Knative | Serverless",
+    "more": "https://github.com/VidyasagarMSC/knative-deploy"
+  },
+  {
     "title": "Awesome-AI",
     "content": "A curated list of articles, books, MOOCs, infographics and many more covering Artificial Intelligence, Machine Learning and Deep Learning.",
     "imgUrl": "https://github.com/VidyasagarMSC/Awesome-AI/blob/master/infographics/AI-Timeline.jpg?raw=true",
