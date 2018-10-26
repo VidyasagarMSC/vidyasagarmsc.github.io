@@ -70,10 +70,10 @@ export default {
       mini: false,
       locals: [
         { title: 'Home', icon: 'home', link: '/' }
-        //{ title: 'Engagements', icon: 'user-o', link: '/engagements' },
-        //{ title: 'Writes', icon: 'pencil', link: '/writes' },
-        //{ title: 'Talks', icon: 'play', link: '/videos' },
-        //{ title: 'Projects', icon: 'code', link: '/projects' }
+        // { title: 'Engagements', icon: 'user-o', link: '/engagements' },
+        // { title: 'Writes', icon: 'pencil', link: '/writes' },
+        // { title: 'Talks', icon: 'play', link: '/videos' },
+        // { title: 'Projects', icon: 'code', link: '/projects' }
       ],
       items: [
         { title: 'GitHub', icon: 'github-alt', link: 'https://github.com/VidyasagarMSC' },
