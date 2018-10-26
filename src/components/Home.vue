@@ -2,7 +2,7 @@
   <div class="home">
   <img src= "/static/images/Vidyasagar_400x400.jpg"/>
    <h1 class="inline">Vidyasagar Machupalli</h1>
-   <h3 class="inline">Coder | Speaker | Writer | Explorer</h3>
+   <h3 class="inline">Coder | Speaker | Writer | Explorer | Photographer</h3>
    <p v-html="about"></p>
    <p v-html="more"></p>
     <v-divider></v-divider><br>
