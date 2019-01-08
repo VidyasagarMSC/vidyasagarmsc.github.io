@@ -69,9 +69,9 @@ export default {
       drawer: false,
       mini: false,
       locals: [
-        // { title: 'Home', icon: 'home', link: '/' }
-        // { title: 'Engagements', icon: 'user-o', link: '/engagements' },
-        // { title: 'Writes', icon: 'pencil', link: '/writes' },
+         { title: 'Home', icon: 'home', link: '/' }
+         { title: 'Engagements', icon: 'microphone-alt', link: '/engagements' },
+         { title: 'Writes', icon: 'blog', link: '/writes' },
         // { title: 'Talks', icon: 'play', link: '/videos' },
         // { title: 'Projects', icon: 'code', link: '/projects' }
       ],
