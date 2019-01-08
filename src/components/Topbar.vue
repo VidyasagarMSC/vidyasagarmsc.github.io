@@ -69,7 +69,7 @@ export default {
       drawer: false,
       mini: false,
       locals: [
-         { title: 'Home', icon: 'home', link: '/' }
+         { title: 'Home', icon: 'home', link: '/' },
          { title: 'Engagements', icon: 'microphone-alt', link: '/engagements' },
          { title: 'Writes', icon: 'blog', link: '/writes' }
         // { title: 'Talks', icon: 'play', link: '/videos' },
