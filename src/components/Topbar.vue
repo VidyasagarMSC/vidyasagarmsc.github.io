@@ -70,17 +70,17 @@ export default {
       mini: false,
       locals: [
          { title: 'Home', icon: 'home', link: '/' },
-         { title: 'Engagements', icon: 'microphone-alt', link: '/engagements' },
-         { title: 'Writes', icon: 'blog', link: '/writes' }
+         { title: 'Engagements', icon: 'microphone', link: '/engagements' },
+         { title: 'Writes', icon: 'pencil', link: '/writes' }
         // { title: 'Talks', icon: 'play', link: '/videos' },
         // { title: 'Projects', icon: 'code', link: '/projects' }
       ],
       items: [
-        { title: 'GitHub', icon: 'github-alt', link: 'https://github.com/VidyasagarMSC' },
-        { title: 'Twitter', icon: 'twitter', link: 'https://twitter.com/VidyasagarMSC' },
+        { title: 'GitHub', icon: 'github', link: 'https://github.com/VidyasagarMSC' },
+        { title: 'Twitter', icon: 'twitter-square', link: 'https://twitter.com/VidyasagarMSC' },
         { title: 'Profile', icon: 'linkedin', link: 'https://www.linkedin.com/in/vidyasagarmsc' },
         { title: 'Facebook', icon: 'facebook', link: 'http://facebook.com/mscvidyasagar' },
-        { title: 'YouTube', icon: 'youtube-play', link: 'https://www.youtube.com/user/mscvidyasagar' },
+        { title: 'YouTube', icon: 'youtube', link: 'https://www.youtube.com/user/mscvidyasagar' },
         { title: 'Instagram', icon: 'instagram', link: 'http://instagram.com/vmacfotography/' },
         { title: 'Presentations', icon: 'slideshare', link: 'https://www.slideshare.net/vidyasagarMachupalli' }
       ],
