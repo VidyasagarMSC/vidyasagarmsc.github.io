@@ -1,16 +1,42 @@
-[
+[{
+  "title": "VMAC WRITES",
+  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
+  "imgUrl": "/static/images/vidyasagar.jpg",
+  "type": "PERSONAL BLOG",
+  "more": "https://vmacwrites.wordpress.com/"
+},
+{
+  "title": "MEDIUM",
+  "content": "Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ",
+  "imgUrl": "/static/images/cards/docks.jpg",
+  "type": "Editor on Medium",
+  "more": "https://medium.com/@VidyasagarMSC"
+},
+{
+  "title": "DZONE",
+  "content": "DZone Most Valuable Blogger | A collection of my technical articles. Catering Cloud, Cognitive, and many more...",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+  "type": "DZONE MVB",
+  "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
+},{
+  "title": "Knative Log analysis with LogDNA on IBM Cloud",
+  "content": "In this post, you will learn how to use the IBM Log Analysis with LogDNA service to configure cluster-level logging for an app named Knative-node-app published in IBM Cloud Kubernetes Service",
+  "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*BVIPdNzEmoTUaTGaoI6hAQ.png",
+  "type": "07-Jan-2019 | Medium",
+  "more": "https://medium.com/vmacwrites/knative-log-analysis-with-logdna-on-ibm-cloud-568c4f5edfa0"
+},
   {
     "title": "Knative monitoring with Grafana, Zipkin, Weavescope & other plugins..",
     "content": "In this post, you will see the telemetry side of Knative and Istio for a nodejs app named Knative-node-app published on IBM Cloud.",
     "imgUrl": "https://cdn-images-1.medium.com/max/1200/1*6azgps1dDbeLcNHqepNH7A.png",
-    "type": "Medium",
+    "type": "09-Oct-2018 | Medium",
     "more": "https://medium.com/vmacwrites/knative-monitoring-with-grafana-zipkin-weavescope-other-plugins-30a2d8d20344"
   },
   {
     "title": "Build a container image inside a K8s cluster and push it to IBM Cloud Container Registry",
     "content": "Learn how to build a source into a container image from a Dockerfile inside a Kubernetes cluster and push the image to IBM Cloud Container Registry; all of this using Google’s Kaniko tool.",
     "imgUrl": "https://cdn-images-1.medium.com/max/1600/1*bPl6PUNMUPBV9uS5Qtv5Hg.png",
-    "type": "Medium",
+    "type": "08-Oct-2018 | Medium",
     "more": "https://medium.com/@VidyasagarMSC/build-a-container-image-inside-a-k8s-cluster-and-push-it-to-ibm-cloud-container-registry-abac9b1e5246"
   },
   {
@@ -112,25 +138,5 @@
   "imgUrl": "https://console.bluemix.net/docs/api/content/tutorials/images/solution15/Architecture.png?lang=en",
   "type": "IBM Cloud Blog",
   "more": "https://www.ibm.com/blogs/bluemix/2018/01/hybrid-cordova-mobile-app-push-analytics-minutes/"
-},{
-  "title": "VMAC WRITES",
-  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
-  "imgUrl": "/static/images/vidyasagar.jpg",
-  "type": "PERSONAL BLOG",
-  "more": "https://vmacwrites.wordpress.com/"
-},
-{
-  "title": "MEDIUM",
-  "content": "Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ",
-  "imgUrl": "/static/images/cards/docks.jpg",
-  "type": "MEDIUM.COM",
-  "more": "https://medium.com/@VidyasagarMSC"
-},
-{
-  "title": "DZONE",
-  "content": "DZone Most Valuable Blogger | A collection of my technical articles. Catering Cloud, Cognitive, and many more...",
-  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
-  "type": "DZONE MVB",
-  "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
 }
 ]
