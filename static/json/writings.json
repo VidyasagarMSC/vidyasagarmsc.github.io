@@ -1,10 +1,4 @@
-[{
-  "title": "VMAC WRITES",
-  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
-  "imgUrl": "/static/images/vidyasagar.jpg",
-  "type": "PERSONAL BLOG",
-  "more": "https://vmacwrites.wordpress.com/"
-},
+[
 {
   "title": "MEDIUM",
   "content": "Interesting and important technical thoughts are posted here for your reference. Clap if you like and also check my claps. #AI #ML ",
@@ -19,13 +13,37 @@
   "type": "DZONE MVB",
   "more": "https://dzone.com/users/2567192/vidyasagarmsc.html"
 },{
+  "title": "VMAC WRITES",
+  "content": "VMac Writes is hosted on Wordpress.com and has more than 100 blog posts. From Cloud to AI to Gaming.",
+  "imgUrl": "/static/images/vidyasagar.jpg",
+  "type": "PERSONAL BLOG",
+  "more": "https://vmacwrites.wordpress.com/"
+},{
+  "title": "IBM Cloud blog",
+  "content": "IBM cloud technology related posts...",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2017/04/cropped-cropped-qtq80-tbq9tn-4.jpeg",
+  "type": "Cloud",
+  "more": "https://www.ibm.com/blogs/bluemix/author/vidyasagar-mscin-ibm-com/"
+},{
+  "title": "Knative Monitoring with Sysdig on IBM Cloud",
+  "content": "Learn how to monitor your Knative Kubernetes cluster using IBM Cloud Monitoring with Sysdig.",
+  "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*kfqbdpnlLzVZcPQp-A72qQ.png",
+  "type": "14-Jan-2019 | IBM Cloud Blog",
+  "more": "https://www.ibm.com/blogs/bluemix/2019/01/knative-monitoring-with-sysdig-on-ibm-cloud/"
+},{
   "title": "Knative Log analysis with LogDNA on IBM Cloud",
   "content": "In this post, you will learn how to use the IBM Log Analysis with LogDNA service to configure cluster-level logging for an app named Knative-node-app published in IBM Cloud Kubernetes Service",
   "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*BVIPdNzEmoTUaTGaoI6hAQ.png",
   "type": "07-Jan-2019 | Medium",
   "more": "https://medium.com/vmacwrites/knative-log-analysis-with-logdna-on-ibm-cloud-568c4f5edfa0"
 },
-  {
+{
+  "title": "Knative monitoring with Grafana, Zipkin, Weavescope & other plugins..",
+  "content": "In this post, you will see the telemetry side of Knative and Istio for a nodejs app named Knative-node-app published on IBM Cloud.",
+  "imgUrl": "https://cdn-images-1.medium.com/max/1200/1*6azgps1dDbeLcNHqepNH7A.png",
+  "type": "09-Oct-2018 | Medium",
+  "more": "https://medium.com/vmacwrites/knative-monitoring-with-grafana-zipkin-weavescope-other-plugins-30a2d8d20344"
+},{
     "title": "Knative monitoring with Grafana, Zipkin, Weavescope & other plugins..",
     "content": "In this post, you will see the telemetry side of Knative and Istio for a nodejs app named Knative-node-app published on IBM Cloud.",
     "imgUrl": "https://cdn-images-1.medium.com/max/1200/1*6azgps1dDbeLcNHqepNH7A.png",
