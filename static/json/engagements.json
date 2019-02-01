@@ -1,4 +1,11 @@
 [{
+	"title": "12-15.02.2019 / Talk and labs (Kubernetes)",
+	"event": "Think 2019",
+	"link": "https://www.ibm.com/events/think/",
+	"type": "talk",
+	"icon": "mic",
+	"imgUrl": "/static/images/cards/plane.jpg"
+},{
 	"title": "22.09.2018 / Reactive Microservices with Eclipse Vert.x",
 	"event": "Eclipse Day India",
 	"link": "http://eclipsedayindia.mybluemix.net/Program#talk6",
