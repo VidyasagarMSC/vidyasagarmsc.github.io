@@ -25,6 +25,12 @@
   "type": "Cloud",
   "more": "https://www.ibm.com/blogs/bluemix/author/vidyasagar-mscin-ibm-com/"
 },{
+  "title": "DEV",
+  "content": "on DEV.to...",
+  "imgUrl": "https://vmacwrites.files.wordpress.com/2018/03/writer.jpg?resize=438%2C438",
+  "type": "DEV",
+  "more": "https://dev.to/vidyasagarmsc"
+},{
   "title": "Knative Monitoring with Sysdig on IBM Cloud",
   "content": "Learn how to monitor your Knative Kubernetes cluster using IBM Cloud Monitoring with Sysdig.",
   "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*kfqbdpnlLzVZcPQp-A72qQ.png",
