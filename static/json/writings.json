@@ -31,6 +31,12 @@
   "type": "DEV",
   "more": "https://dev.to/vidyasagarmsc"
 },{
+  "title": "Tutorial: Virtual Private Cloud with Public and Private Subnets",
+  "content": "A new solution tutorial covering virtual private cloud with public and private subnets.",
+  "imgUrl": "https://1.cms.s81c.com/sites/default/files/2019-06-06/vpc1.png",
+  "type": "07-June-2019 | IBM Cloud Blog",
+  "more": "https://www.ibm.com/cloud/blog/tutorial-virtual-private-cloud-with-public-and-private-subnets"
+},{
   "title": "Knative Monitoring with Sysdig on IBM Cloud",
   "content": "Learn how to monitor your Knative Kubernetes cluster using IBM Cloud Monitoring with Sysdig.",
   "imgUrl": "https://cdn-images-1.medium.com/max/2000/1*kfqbdpnlLzVZcPQp-A72qQ.png",
