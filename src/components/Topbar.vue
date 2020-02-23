@@ -81,7 +81,7 @@ export default {
         { title: 'Profile', icon: 'linkedin', link: 'https://www.linkedin.com/in/vidyasagarmsc' },
         { title: 'Facebook', icon: 'facebook', link: 'http://facebook.com/mscvidyasagar' },
         { title: 'YouTube', icon: 'youtube', link: 'https://www.youtube.com/user/mscvidyasagar' },
-        { title: 'Instagram', icon: 'instagram', link: 'http://instagram.com/vmacfotography/' },
+        { title: 'Instagram', icon: 'instagram', link: 'http://instagram.com/vidyasagar.msc/' },
         { title: 'Presentations', icon: 'slideshare', link: 'https://www.slideshare.net/vidyasagarMachupalli' }
       ],
       nav: {
