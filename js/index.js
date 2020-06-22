@@ -65,8 +65,23 @@ $(document).ready(function () {
 
   });
 
-  
 
+
+$('.toggler').on('click', () => {
+     $('.fullscreen').toggleClass("light");
+     $("#home").toggleClass("is-dark");
+      //$("#home").addClass("is-dark");
+     $("#about").toggleClass("is-black");
+     //$("#about").addClass("is-black");
+      //$("#blog").removeClass("has-background-white-bis");
+     $("#blog").toggleClass("is-dark");
+      $("#photos").toggleClass("is-black");
+     $("article").toggleClass("has-background-dark");
+     $(".card-content").toggleClass("text-color-invert");
+     $(".content").children("h4").toggleClass("text-color-invert");
+     $(".card").toggleClass("has-background-dark");
+     $(".tag").toggleClass("is-dark");
+})
 });
 
 // function to toggle between light and dark theme

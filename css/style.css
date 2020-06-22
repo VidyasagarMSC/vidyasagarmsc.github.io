@@ -804,3 +804,70 @@ span.twitter:hover {
 	-o-animation-name: moveUp;
 	animation-name: moveUp;
 }
+
+
+.title {
+    color: orange;
+    margin: 0;
+}
+
+.toggler-container {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggler {
+    width: 60px;
+    margin: 0 10px;
+    background: #222;
+    height: 100%;
+    border-radius: 100px;
+    position: relative;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.circle {
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out
+}
+
+/* .toggler:hover {
+    cursor: pointer;
+    background: limegreen;
+}
+.toggler:hover .circle {
+    transform: translateX(30px);
+    background-color: black;
+} */
+
+
+/* CSS to handle light mode */
+
+
+.light .toggler {
+    background: #777;
+}
+
+.light .toggler .circle {
+    transform: translateX(30px);
+    background-color: white;
+}
+
+.fullscreen.light {
+    color: black;
+}
+
+.light nav {
+    background-color: #10A881;
+}
+
+.light nav h1 {
+    color: black;
+}
