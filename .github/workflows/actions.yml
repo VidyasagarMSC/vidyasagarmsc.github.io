@@ -2,7 +2,7 @@ name: scrape-and-update-blog-stats
 
 on:
   schedule:
-    - cron: "* * * * *" # runs at 12:00 UTC everyday
+    - cron: "* * * * 6" # runs every saturday
 
 jobs:
   build:
