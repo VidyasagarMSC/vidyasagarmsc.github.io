@@ -28,4 +28,5 @@ if __name__ == "__main__":
             .replace("{{ medium_followers }}", medium_followers[-1].text.split(" ")[0]) \
             .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1])
     with open("blog.html", "w") as output_file:
+        print(file_data)
         output_file.write(file_data)
