@@ -25,7 +25,6 @@ jobs:
       - name: execute py script
         run: python scrape.py
 
-      - name: commit and push changes
       - uses: actions/checkout@v2
       - run: |
           date > generated.txt
