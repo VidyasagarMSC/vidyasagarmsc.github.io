@@ -10,12 +10,12 @@ jobs:
 
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # checkout the repository content to github runner
 
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.8"
+          python-version: "3.8" # install the python version needed
 
       - name: install python packages
         run: |
@@ -25,11 +25,15 @@ jobs:
       - name: execute py script
         run: python scrape.py
 
-      - uses: actions/checkout@v2
-      - run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated: Updated blog.html file"
-          git push
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "updated blog.html with new stats" -a
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
