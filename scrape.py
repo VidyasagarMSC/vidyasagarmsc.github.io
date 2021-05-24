@@ -1,16 +1,21 @@
 # TODO: Add concurrency and simplify the replace :)
 from requests import get
+from urllib.error import URLError
 from bs4 import BeautifulSoup
 import os
 
 
 def scrape_data(tag, url, attributes):
-    response = get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    # print(soup.prettify())
-    if soup:
-        user_score = soup.find_all(tag, attrs=attributes)
-        return user_score
+    try:
+        response = get(url)
+    except URLError as url_error:
+        print(url_error)
+    else:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        # print(soup.prettify())
+        if soup:
+            user_score = soup.find_all(tag, attrs=attributes)
+            return user_score
 
 
 if __name__ == "__main__":
