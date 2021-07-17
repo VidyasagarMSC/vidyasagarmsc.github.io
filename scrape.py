@@ -24,7 +24,7 @@ if __name__ == "__main__":
         "p", "https://dzone.com/users/2567192/vidyasagarmsc.html", {'class': 'user-score'})
     # print(dzone_views[-1].text)
     medium_followers = scrape_data(
-        "a", "https://vidyasagarmsc.medium.com/", {'href': '/followers'})
+        "a", "https://vidyasagarmsc.medium.com/", {'href': '/followers?source=user_profile-------------------------------------'})
     #print(medium_followers[-1].text.split(" ")[0])
     wordpress_followers = scrape_data(
         "div", "https://vmacwrites.wordpress.com/", {'class': 'jetpack-subscribe-count'})
