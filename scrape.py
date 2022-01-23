@@ -1,10 +1,12 @@
 # TODO: Add concurrency and simplify the replace :)
+from dataclasses import replace
 from requests import get
 from urllib.error import URLError
 from bs4 import BeautifulSoup
 import os
+from datetime import date
 
-
+today = date.today()
 def scrape_data(tag, url, attributes):
     try:
         response = get(url)
@@ -34,7 +36,9 @@ if __name__ == "__main__":
         file_data = input_file.read()
         file_data = file_data.replace("{{ dzone_views }}", dzone_views[-1].text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
-            .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1])
+            .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1]) \
+            .replace("{{ last_updated }}",today.strftime("%B %d, %Y"))
+
         if os.path.exists("blog.html"):
             os.remove("blog.html")
         else:
