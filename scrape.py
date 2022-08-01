@@ -30,13 +30,13 @@ if __name__ == "__main__":
     medium_followers = medium_followers_content[0].get("content")
     #print(medium_followers.split(" ")[0])
     wordpress_followers = scrape_data(
-        "div", "https://vmacwrites.wordpress.com/", {'class': 'jetpack-subscribe-count'})
+        "div", "https://vmacwrites.wordpress.com/", {'class': 'wp-block-jetpack-subscriptions__subscount'})
     #print(wordpress_followers[-1].text.split(" ")[1])
     with open("templates/blog_template.html", "r") as input_file:
         file_data = input_file.read()
         file_data = file_data.replace("{{ dzone_views }}", dzone_views[-1].text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
-            .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1]) \
+            .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
             .replace("{{ last_updated }}",today.strftime("%B %d, %Y"))
 
         if os.path.exists("blog.html"):
