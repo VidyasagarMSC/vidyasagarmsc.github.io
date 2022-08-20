@@ -31,6 +31,10 @@ p {
   font-family: Rubik, Helvetica, sans-serif;
 }
 
+.menu {
+  color : #73FF33 !important;
+}
+
 a {
   padding-bottom: 10px;
   font-weight: 700;
@@ -69,7 +73,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 315px;
+    width: 270px;
   }
 }
 
@@ -205,7 +209,7 @@ img:hover {
 /*connect*/
 
 .connect {
-  background: linear-gradient(30deg, #43cea2 10%, #185a9d 90%);
+  background: linear-gradient(30deg, #43cea2 10%, #185a9d 90%) !important;
 }
 
 span.twitter:hover {
