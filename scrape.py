@@ -26,9 +26,11 @@ if __name__ == "__main__":
         "p", "https://dzone.com/users/2567192/vidyasagarmsc.html", {'class': 'user-score'})
     # print(dzone_views[-1].text)
     medium_followers_content = scrape_data(
-        "meta", "https://vidyasagarmsc.medium.com/followers", {'name': 'description'})
-    medium_followers = medium_followers_content[0].get("content")
-    #print(medium_followers.split(" ")[0])
+        "span", "https://vidyasagarmsc.medium.com", {'class': 'pw-follower-count'})
+    #print(medium_followers_content)
+    child_a_tag = medium_followers_content[0].find("a", recursive=False)
+    medium_followers = child_a_tag.contents[0]
+    #print(medium_followers)
     wordpress_followers = scrape_data(
         "div", "https://vmacwrites.wordpress.com/", {'class': 'wp-block-jetpack-subscriptions__subscount'})
     #print(wordpress_followers[-1].text.split(" ")[1])
