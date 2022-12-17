@@ -232,6 +232,11 @@ span.github:hover {
   color: #333;
 }
 
+span.youtube:hover {
+  cursor: pointer;
+  color: #c4302b;
+}
+
 .icon {
   margin: 10px;
 }
