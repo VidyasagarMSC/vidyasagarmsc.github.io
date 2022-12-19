@@ -7,6 +7,8 @@ import os
 from datetime import date
 
 today = date.today()
+
+
 def scrape_data(tag, url, attributes):
     try:
         response = get(url)
@@ -27,10 +29,10 @@ if __name__ == "__main__":
     # print(dzone_views[-1].text)
     medium_followers_content = scrape_data(
         "span", "https://vidyasagarmsc.medium.com", {'class': 'pw-follower-count'})
-    #print(medium_followers_content)
+    # print(medium_followers_content)
     child_a_tag = medium_followers_content[0].find("a", recursive=False)
     medium_followers = child_a_tag.contents[0]
-    #print(medium_followers)
+    # print(medium_followers)
     wordpress_followers = scrape_data(
         "div", "https://vmacwrites.wordpress.com/", {'class': 'wp-block-jetpack-subscriptions__subscount'})
     #print(wordpress_followers[-1].text.split(" ")[1])
@@ -39,7 +41,7 @@ if __name__ == "__main__":
         file_data = file_data.replace("{{ dzone_views }}", dzone_views[-1].text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
             .replace("{{ wordpress_followers }}", wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
-            .replace("{{ last_updated }}",today.strftime("%B %d, %Y"))
+            .replace("{{ last_updated }}", today.strftime("%B %d, %Y"))
 
         if os.path.exists("blog.html"):
             os.remove("blog.html")
@@ -47,5 +49,5 @@ if __name__ == "__main__":
             print("The file does not exist")
 
     with open("blog.html", "w") as output_file:
-        #print(file_data)
+        # print(file_data)
         output_file.write(file_data)
