@@ -34,17 +34,17 @@ p {
 
 .menu {
   font-family: "Syne";
-  color: #fff !important;
+  color: yellowgreen !important;
 }
 
 a {
-  padding-bottom: 10px;
-  font-weight: 700;
+  font-weight: 900;
   text-decoration: underline;
-  text-decoration-color: #777e83;
+  text-decoration-color: #F9CE21;
   text-decoration-thickness: 3px;
   color: #000;
 }
+
 a:active {
   color: red;
 }
@@ -75,7 +75,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 270px;
+    width: 275px;
   }
 }
 
