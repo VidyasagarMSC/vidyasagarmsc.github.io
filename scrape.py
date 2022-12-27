@@ -22,8 +22,7 @@ def scrape_data(tag, url, attributes):
             return user_score
 
 
-if __name__ == "__main__":
-
+def scrape_blog_stats():
     dzone_views = scrape_data(
         "p", "https://dzone.com/users/2567192/vidyasagarmsc.html", {'class': 'user-score'})
     # print(dzone_views[-1].text)
@@ -51,3 +50,46 @@ if __name__ == "__main__":
     with open("blog.html", "w") as output_file:
         # print(file_data)
         output_file.write(file_data)
+
+
+def scrape_socl():
+    #TODO: Twitter and LinkedIN scraping to be implemented
+    twitter_followers = "1296"
+    # print(dzone_views[-1].text)
+    linkedin_followers_content = scrape_data(
+        "span", "https://www.linkedin.com/in/vidyasagarmsc/", {'class': 'top-card__subline-item'})
+    
+    # GITHUB
+    github_followers = scrape_data(
+        "span", "https://github.com/VidyasagarMSC?tab=followers", {'class': 'text-bold color-fg-default'})
+    #print(github_followers[0].text)
+
+    # INSTAGRAM
+    instagram_followers = scrape_data("span", "https://instagram.com/vidyasagar.msc/", {'class': '_ac2a'})
+    #print(instagram_followers)
+
+    # YOUTUBE
+    youtube_subscribers = scrape_data("class", "https://www.youtube.com/channel/UCFLWcL-ADM-BnCMxNajtXIg", {'class': 'meta-item style-scope ytd-c4-tabbed-header-renderer'})
+    print(youtube_subscribers)
+    with open("templates/footer_template.html", "r") as input_file:
+        file_data = input_file.read()
+        file_data = file_data.replace("{{ twitter_followers }}", twitter_followers) \
+            .replace("{{ linkedin_followers }}", "2K") \
+            .replace("{{ github_followers }}", github_followers[0].text) \
+            .replace("{{ instagram_followers }}", "347") \
+            .replace("{{ youtube_subscribers }}", "71")
+
+        if os.path.exists("footer.html"):
+            os.remove("footer.html")
+        else:
+            print("The file does not exist")
+
+    with open("footer.html", "w") as output_file:
+        # print(file_data)
+        output_file.write(file_data)
+
+
+if __name__ == "__main__":
+    scrape_blog_stats()
+    scrape_socl()
+    
