@@ -34,15 +34,19 @@ p {
 
 .menu {
   font-family: "Syne";
-  color: yellowgreen !important;
+  color: #d0ff4b !important;
 }
 
 a {
   font-weight: 900;
-  text-decoration: underline;
+  /*text-decoration: underline;
   text-decoration-color: #F9CE21;
-  text-decoration-thickness: 3px;
+  text-decoration-thickness: 3px;*/
   color: #000;
+}
+
+a:hover {
+  box-shadow: inset 0 -8px 0 0 #d0ff4b;
 }
 
 a:active {
