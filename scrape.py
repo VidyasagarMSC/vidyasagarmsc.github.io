@@ -73,13 +73,23 @@ def scrape_socl():
     # YOUTUBE
     youtube_subscribers = scrape_data("text", "https://camo.githubusercontent.com/218812459a509b78f0515773b92dd7cabb645d2e7fa9f60749c5386b461edbb3/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f6368616e6e656c2f73756273637269626572732f5543464c57634c2d41444d2d426e434d784e616a745849673f7374796c653d666f722d7468652d6261646765", {'textlength': '165'})
     # print(youtube_subscribers)
+
+    # STACKOVERFLOW 
+    stackoverflow_reach = scrape_data("div", "https://stackoverflow.com/users/1432067/vidyasagar-machupalli", {'class': 'fs-body3 fc-dark'})
+
+    # MASTODON 
+    mastodon_followers = scrape_data("span", "https://qubit-social.xyz/users/Vmac/followers", {'class': 'counter-number'})
+
     with open("templates/footer_template.html", "r") as input_file:
         file_data = input_file.read()
         file_data = file_data.replace("{{ twitter_followers }}", twitter_followers[0].text) \
             .replace("{{ linkedin_followers }}", "2K") \
             .replace("{{ github_followers }}", github_followers[0].text) \
             .replace("{{ instagram_followers }}", "347") \
-            .replace("{{ youtube_subscribers }}", youtube_subscribers[0].text)
+            .replace("{{ youtube_subscribers }}", youtube_subscribers[0].text) \
+            .replace("{{ facebook_friends }}", "1.1K") \
+            .replace("{{ stackoverflow_reach }}", stackoverflow_reach[1].text) \
+            .replace("{{ mastodon_followers }}", mastodon_followers[2].text)
 
         if os.path.exists("footer.html"):
             os.remove("footer.html")

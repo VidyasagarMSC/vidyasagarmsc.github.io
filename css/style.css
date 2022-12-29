@@ -243,6 +243,21 @@ span.youtube:hover {
   color: #c4302b;
 }
 
+span.facebook:hover {
+  cursor: pointer;
+  color: #3b5998;
+}
+
+span.stack-overflow:hover {
+  cursor: pointer;
+  color: orange;
+}
+
+span.mastodon:hover {
+  cursor: pointer;
+  color: lightblue;
+}
+
 .icon {
   margin: 10px;
 }
