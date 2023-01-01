@@ -216,6 +216,7 @@ img:hover {
 
 .connect {
   background: linear-gradient(30deg, #43cea2 10%, #185a9d 90%) !important;
+  z-index: 10000;
 }
 
 span.twitter:hover {
