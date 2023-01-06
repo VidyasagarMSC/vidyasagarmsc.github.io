@@ -85,7 +85,7 @@ def scrape_socl():
         file_data = file_data.replace("{{ twitter_followers }}", twitter_followers[0].text) \
             .replace("{{ linkedin_followers }}", "2K") \
             .replace("{{ github_followers }}", github_followers[0].text) \
-            .replace("{{ instagram_followers }}", "347") \
+            .replace("{{ instagram_followers }}", "346") \
             .replace("{{ youtube_subscribers }}", youtube_subscribers[0].text) \
             .replace("{{ facebook_friends }}", "1.1K") \
             .replace("{{ stackoverflow_reach }}", stackoverflow_reach[1].text) \
