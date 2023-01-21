@@ -16,7 +16,7 @@ def scrape_data(tag, url, attributes):
         print(url_error)
     else:
         soup = BeautifulSoup(response.text, 'html.parser')
-        #print(soup.prettify())
+        # print(soup.prettify())
         if soup:
             user_score = soup.find_all(tag, attrs=attributes)
             return user_score
@@ -53,48 +53,69 @@ def scrape_blog_stats():
 
 
 def scrape_socl():
-    # TWITTER
-    twitter_followers = scrape_data("text","https://camo.githubusercontent.com/8626782e57e3e0de531b281809fe9de9b80f676be51d548a054ad67a44cbf3ce/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f566964796173616761724d53433f7374796c653d666f722d7468652d6261646765266c6f676f3d74776974746572", {'textlength':'300'})
-    #print(twitter_followers[0].text)
+    try:
+        # TWITTER
+        twitter_followers = scrape_data(
+            "text", "https://camo.githubusercontent.com/8626782e57e3e0de531b281809fe9de9b80f676be51d548a054ad67a44cbf3ce/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f566964796173616761724d53433f7374796c653d666f722d7468652d6261646765266c6f676f3d74776974746572", {'textlength': '300'})
+        # print(twitter_followers[0].text)
 
-    #TODO: LinkedIN scraping to be implemented
-    linkedin_followers_content = scrape_data(
-        "span", "https://www.linkedin.com/in/vidyasagarmsc/", {'class': 'top-card__subline-item'})
-    
-    # GITHUB
-    github_followers = scrape_data(
-        "span", "https://github.com/VidyasagarMSC?tab=followers", {'class': 'text-bold color-fg-default'})
-    #print(github_followers[0].text)
+        # TODO: LinkedIN scraping to be implemented
+        linkedin_followers_content = scrape_data(
+            "span", "https://www.linkedin.com/in/vidyasagarmsc/", {'class': 'top-card__subline-item'})
 
-    # INSTAGRAM
-    instagram_followers = scrape_data("span", "https://instagram.com/vidyasagar.msc/", {'class': '_ac2a'})
-    #print(instagram_followers)
+        # GITHUB
+        github_followers = scrape_data(
+            "span", "https://github.com/VidyasagarMSC?tab=followers", {'class': 'text-bold color-fg-default'})
+        # print(github_followers[0].text)
 
-    # YOUTUBE
-    youtube_subscribers = scrape_data("text", "https://camo.githubusercontent.com/218812459a509b78f0515773b92dd7cabb645d2e7fa9f60749c5386b461edbb3/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f6368616e6e656c2f73756273637269626572732f5543464c57634c2d41444d2d426e434d784e616a745849673f7374796c653d666f722d7468652d6261646765", {'textlength': '165'})
-    # print(youtube_subscribers)
+        # INSTAGRAM
+        instagram_followers = scrape_data(
+            "span", "https://instagram.com/vidyasagar.msc/", {'class': '_ac2a'})
+        # print(instagram_followers)
 
-    # STACKOVERFLOW 
-    stackoverflow_reach = scrape_data("div", "https://stackoverflow.com/users/1432067/vidyasagar-machupalli", {'class': 'fs-body3 fc-dark'})
+        # YOUTUBE
+        youtube_subscribers = scrape_data(
+            "text", "https://camo.githubusercontent.com/218812459a509b78f0515773b92dd7cabb645d2e7fa9f60749c5386b461edbb3/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f6368616e6e656c2f73756273637269626572732f5543464c57634c2d41444d2d426e434d784e616a745849673f7374796c653d666f722d7468652d6261646765", {'textlength': '165'})
+        # print(youtube_subscribers)
 
-    # MASTODON 
-    mastodon_followers = scrape_data("span", "https://qubit-social.xyz/users/Vmac/followers", {'class': 'counter-number'})
+        # STACKOVERFLOW
+        stackoverflow_reach = scrape_data(
+            "div", "https://stackoverflow.com/users/1432067/vidyasagar-machupalli", {'class': 'fs-body3 fc-dark'})
 
+        # MASTODON
+        mastodon_followers = scrape_data(
+            "span", "https://qubit-social.xyz/@Vmac/followers", {'class': 'counter-number'})
+
+        followers_count = {"twitter_followers": twitter_followers[0].text, "linkedin_followers": "2K", "instagram_followers": "340+", "facebook_friends": "1.1K", "github_followers": github_followers[0].text,
+                           "youtube_subscribers":  youtube_subscribers[0].text, "stackoverflow_reach": stackoverflow_reach[1].text, "mastodon_followers": mastodon_followers[2].text}
+        write_to_file(**followers_count)
+
+    except Exception:
+        pass
+
+    finally:
+        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "340+",
+                                   "facebook_friends": "1.1K", "github_followers": "83", "youtube_subscribers":  "70", "stackoverflow_reach": "95K", "mastodon_followers": "5"}
+        write_to_file(**followers_default_count)
+
+
+def write_to_file(**kwargs):
     with open("templates/footer_template.html", "r") as input_file:
         file_data = input_file.read()
-        file_data = file_data.replace("{{ twitter_followers }}", twitter_followers[0].text) \
-            .replace("{{ linkedin_followers }}", "2K") \
-            .replace("{{ github_followers }}", github_followers[0].text) \
-            .replace("{{ instagram_followers }}", "346") \
-            .replace("{{ youtube_subscribers }}", youtube_subscribers[0].text) \
-            .replace("{{ facebook_friends }}", "1.1K") \
-            .replace("{{ stackoverflow_reach }}", stackoverflow_reach[1].text) \
-            .replace("{{ mastodon_followers }}", mastodon_followers[2].text)
+        # twitter_followers[0].text) \
+        file_data = file_data.replace("{{ twitter_followers }}", kwargs["twitter_followers"]) \
+            .replace("{{ linkedin_followers }}", kwargs["linkedin_followers"]) \
+            .replace("{{ github_followers }}",  kwargs["github_followers"]) \
+            .replace("{{ instagram_followers }}", kwargs["instagram_followers"]) \
+            .replace("{{ youtube_subscribers }}", kwargs["youtube_subscribers"]) \
+            .replace("{{ facebook_friends }}", kwargs["facebook_friends"]) \
+            .replace("{{ stackoverflow_reach }}", kwargs["stackoverflow_reach"]) \
+            .replace("{{ mastodon_followers }}", kwargs["mastodon_followers"])
 
-        if os.path.exists("footer.html"):
-            os.remove("footer.html")
-        else:
-            print("The file does not exist")
+    if os.path.exists("footer.html"):
+        os.remove("footer.html")
+    else:
+        print("The file does not exist")
 
     with open("footer.html", "w") as output_file:
         # print(file_data)
@@ -104,4 +125,3 @@ def scrape_socl():
 if __name__ == "__main__":
     scrape_blog_stats()
     scrape_socl()
-    
