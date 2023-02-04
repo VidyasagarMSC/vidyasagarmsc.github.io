@@ -94,8 +94,8 @@ def scrape_socl():
         pass
 
     finally:
-        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "340+",
-                                   "facebook_friends": "1.1K", "github_followers": "83", "youtube_subscribers":  "70", "stackoverflow_reach": "95K", "mastodon_followers": "5"}
+        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "345",
+                                   "facebook_friends": "1.1K", "github_followers": "83", "youtube_subscribers":  "70", "stackoverflow_reach": "96K", "mastodon_followers": "7"}
         write_to_file(**followers_default_count)
 
 
