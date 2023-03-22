@@ -75,7 +75,7 @@ def scrape_socl():
 
         # YOUTUBE
         youtube_subscribers = scrape_data(
-            "text", "https://camo.githubusercontent.com/218812459a509b78f0515773b92dd7cabb645d2e7fa9f60749c5386b461edbb3/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f6368616e6e656c2f73756273637269626572732f5543464c57634c2d41444d2d426e434d784e616a745849673f7374796c653d666f722d7468652d6261646765", {'textlength': '165'})
+            "text", "https://camo.githubusercontent.com/218812459a509b78f0515773b92dd7cabb645d2e7fa9f60749c5386b461edbb3/68747470733a2f2f696d672e736869656c64732e696f2f796f75747562652f6368616e6e656c2f73756273637269626572732f5543464c57634c2d41444d2d426e434d784e616a745849673f7374796c653d666f722d7468652d6261646765", {'textLength': '165'})
         # print(youtube_subscribers)
 
         # STACKOVERFLOW
@@ -84,7 +84,7 @@ def scrape_socl():
 
         # MASTODON
         mastodon_followers = scrape_data(
-            "text", "https://camo.githubusercontent.com/cd95c0ebed387a301d92e95d5bea625a38559b996fd290cd651f1554f3b8c4fe/68747470733a2f2f696d672e736869656c64732e696f2f6d6173746f646f6e2f666f6c6c6f772f3130393337363433363832303033353830313f646f6d61696e3d687474707325334125324625324671756269742d736f6369616c2e78797a267374796c653d666f722d7468652d6261646765", {'textlength': '82.5'})
+            "text", "https://camo.githubusercontent.com/cd95c0ebed387a301d92e95d5bea625a38559b996fd290cd651f1554f3b8c4fe/68747470733a2f2f696d672e736869656c64732e696f2f6d6173746f646f6e2f666f6c6c6f772f3130393337363433363832303033353830313f646f6d61696e3d687474707325334125324625324671756269742d736f6369616c2e78797a267374796c653d666f722d7468652d6261646765", {'textLength': '82.5'})
 
         followers_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "346", "facebook_friends": "1.1K", "github_followers": github_followers[0].text,
                            "youtube_subscribers":  youtube_subscribers[0].text, "stackoverflow_reach": stackoverflow_reach[1].text, "mastodon_followers": mastodon_followers[0].text}
@@ -92,8 +92,8 @@ def scrape_socl():
 
 
     except Exception:
-        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "344",
-                                   "facebook_friends": "1.1K", "github_followers": "83", "youtube_subscribers":  "70", "stackoverflow_reach": "98K", "mastodon_followers": "8"}
+        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "345",
+                                   "facebook_friends": "1.1K", "github_followers": "84", "youtube_subscribers":  "71", "stackoverflow_reach": "100K", "mastodon_followers": "8"}
         write_to_file(**followers_default_count)
 
 
