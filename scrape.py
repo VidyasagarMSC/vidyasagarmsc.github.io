@@ -92,8 +92,8 @@ def scrape_socl():
 
 
     except Exception:
-        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "350",
-                                   "facebook_friends": "1.1K", "github_followers": "85", "youtube_subscribers":  "71", "stackoverflow_reach": "102K", "mastodon_followers": "8"}
+        followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "352",
+                                   "facebook_friends": "1.1K", "github_followers": "85", "youtube_subscribers":  "71", "stackoverflow_reach": "103K", "mastodon_followers": "8"}
         write_to_file(**followers_default_count)
 
 
