@@ -34,12 +34,13 @@ def scrape_blog_stats():
     # print(medium_followers)
     wordpress_followers = scrape_data(
         "div", "https://vmacwrites.wordpress.com/", {'class': 'wp-block-jetpack-subscriptions__subscount'})
-    #print(wordpress_followers[-1].text.split(" ")[1])
+    # print(wordpress_followers[-1].text.split(" ")[1])
+    # wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
     with open("templates/blog_template.html", "r") as input_file:
         file_data = input_file.read()
         file_data = file_data.replace("{{ dzone_views }}", dzone_views[-1].text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
-            .replace("{{ wordpress_followers }}", "1115") \ # wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
+            .replace("{{ wordpress_followers }}", "1115") \
             .replace("{{ last_updated }}", today.strftime("%B %d, %Y"))
 
         if os.path.exists("blog.html"):
@@ -89,7 +90,6 @@ def scrape_socl():
         followers_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "350", "facebook_friends": "1.1K", "github_followers": github_followers[0].text,
                            "youtube_subscribers":  youtube_subscribers[0].text, "stackoverflow_reach": stackoverflow_reach[1].text, "mastodon_followers": mastodon_followers[0].text}
         write_to_file(**followers_count)
-
 
     except Exception:
         followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "354",
