@@ -1,5 +1,5 @@
 body {
-  font-family: "Syne", serif;
+  font-family: "Montserrat", serif;
   font-weight: 400;
 }
 
@@ -18,13 +18,14 @@ h2 {
 
 .about,
 p.title {
-  font-family: "Arvo", serif;
+  font-family: "Cabin", serif;
   font-weight: 600;
   padding-bottom: 15px;
 }
 
 p {
   font-family: "Montserrat", Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
   font-weight: 600;
 }
 
@@ -33,7 +34,7 @@ p {
 }
 
 .menu {
-  font-family: "Syne";
+  font-family: "Cabin";
   color: #d0ff4b !important;
 }
 
