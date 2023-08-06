@@ -259,6 +259,11 @@ span.mastodon:hover {
   color: lightblue;
 }
 
+span.spotify:hover {
+  cursor: pointer;
+  color: #1DB954;
+}
+
 .icon {
   margin: 10px;
 }
