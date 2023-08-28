@@ -982,3 +982,29 @@ body {
   animation-delay: 0s;
   -webkit-animation-delay: 0s;
 }
+
+
+/* HEADER */ 
+
+/* Style the header: fixed position (always stay at the top) */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: linear-gradient(30deg, #43cea2 10%, #185a9d 90%) !important;
+  width: 0%;
+}
