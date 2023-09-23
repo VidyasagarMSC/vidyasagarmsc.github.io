@@ -38,7 +38,7 @@ def scrape_blog_stats():
     # wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
     with open("templates/blog_template.html", "r") as input_file:
         file_data = input_file.read()
-        file_data = file_data.replace("{{ dzone_views }}", dzone_views[-1].text) \
+        file_data = file_data.replace("{{ dzone_views }}", "368.2K") \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
             .replace("{{ wordpress_followers }}", "1115") \
             .replace("{{ last_updated }}", today.strftime("%B %d, %Y"))
