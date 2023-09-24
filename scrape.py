@@ -36,9 +36,10 @@ def scrape_blog_stats():
         "div", "https://vmacwrites.wordpress.com/", {'class': 'wp-block-jetpack-subscriptions__subscount'})
     # print(wordpress_followers[-1].text.split(" ")[1])
     # wordpress_followers[-1].text.split(" ")[1].replace(",", "")) \
+    # print(dzone_views)
     with open("templates/blog_template.html", "r") as input_file:
         file_data = input_file.read()
-        file_data = file_data.replace("{{ dzone_views }}", "368.2K") \
+        file_data = file_data.replace("{{ dzone_views }}", dzone_views[1].text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
             .replace("{{ wordpress_followers }}", "1115") \
             .replace("{{ last_updated }}", today.strftime("%B %d, %Y"))
@@ -93,7 +94,7 @@ def scrape_socl():
 
     except Exception:
         followers_default_count = {"twitter_followers": "1.3K", "linkedin_followers": "2K", "instagram_followers": "350+",
-                                   "facebook_friends": "1.1K", "github_followers": "85", "youtube_subscribers":  "71", "stackoverflow_reach": "110K", "mastodon_followers": "8"}
+                                   "facebook_friends": "1.1K", "github_followers": "86", "youtube_subscribers":  "71", "stackoverflow_reach": "110K+", "mastodon_followers": "8"}
         write_to_file(**followers_default_count)
 
 
