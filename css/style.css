@@ -1,6 +1,6 @@
 @import url('cabinet-grotesk.css');
 body {
-  font-family: "Syne", serif;
+  font-family: "CabinetGrotesk-Regular", serif;
   font-weight: 400;
 }
 
@@ -12,14 +12,16 @@ h1 {
   font-weight: 700;
 }
 
+
 h2 {
   font-family: "Quicksand", sans-serif;
   font-size: inherit;
 }
 
-h1.title {
+h3 {
   font-family: 'CabinetGrotesk-Regular';
 }
+
 .about,
 p.title {
   font-family: 'CabinetGrotesk-Regular';
@@ -92,7 +94,8 @@ h1.main {
 }
 
 .sub-main {
-  font-family: "Pacifico";
+  font-family: 'pacifico';
+  font-weight: 500;
   padding-bottom: 15px;
 }
 
@@ -103,7 +106,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 460px;
+    width: 288px;
   }
 }
 
