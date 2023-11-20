@@ -1,3 +1,4 @@
+@import url('cabinet-grotesk.css');
 body {
   font-family: "Syne", serif;
   font-weight: 400;
@@ -16,11 +17,34 @@ h2 {
   font-size: inherit;
 }
 
+h1.title {
+  font-family: 'CabinetGrotesk-Regular';
+}
 .about,
 p.title {
-  font-family: "Arvo", serif;
+  font-family: 'CabinetGrotesk-Regular';
   font-weight: 600;
   padding-bottom: 15px;
+}
+
+.date {
+  font-family: 'CabinetGrotesk-Regular';
+  color:#FBAB7E
+}
+
+#about {
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+#blog {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+#photos {
+  background-color: #F4D03F;
+  background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
 }
 
 p {
@@ -79,7 +103,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 285px;
+    width: 460px;
   }
 }
 
