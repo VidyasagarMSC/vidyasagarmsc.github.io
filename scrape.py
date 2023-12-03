@@ -23,8 +23,10 @@ def scrape_data(tag, url, attributes):
 
 
 def scrape_blog_stats():
-    dzone_views = scrape_data(
-        "p", "https://dzone.com/users/2567192/vidyasagarmsc.html", {'class': 'user-score'})
+    dzone_pageviews = scrape_data(
+        "div", "https://dzone.com/authors/vidyasagarmsc", {'class': 'profile-content-right'})
+    #print(dzone_pageviews)
+    dzone_views = dzone_pageviews[0].find_all("td" , recursive=True)[3]
     # print(dzone_views[-1].text)
     medium_followers_content = scrape_data(
         "span", "https://vidyasagarmsc.medium.com", {'class': 'pw-follower-count'})
@@ -39,7 +41,7 @@ def scrape_blog_stats():
     # print(dzone_views)
     with open("templates/blog_template.html", "r") as input_file:
         file_data = input_file.read()
-        file_data = file_data.replace("{{ dzone_views }}", dzone_views[1].text) \
+        file_data = file_data.replace("{{ dzone_views }}", dzone_views.text) \
             .replace("{{ medium_followers }}", medium_followers.split(" ")[0]) \
             .replace("{{ wordpress_followers }}", "1115") \
             .replace("{{ last_updated }}", today.strftime("%B %d, %Y"))
