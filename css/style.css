@@ -960,7 +960,7 @@ body {
 .arrows path {
   stroke: #1b9eda;
   fill: transparent;
-  stroke-width: 2px;
+  stroke-width: 4px;
   animation: arrow 2s infinite;
   -webkit-animation: arrow 2s infinite;
 }
