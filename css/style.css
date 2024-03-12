@@ -1,36 +1,36 @@
 @import url('cabinet-grotesk.css');
 body {
-  font-family: "CabinetGrotesk-Regular", serif;
+  font-family: "Agrandir", serif;
   font-weight: 400;
 }
 
 h1 {
   white-space: nowrap;
   overflow: hidden;
-  font-family: "Arvo", serif;
+  font-family: "Elianto", serif;
   font-size: inherit;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 
 h2 {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: inherit;
 }
 
 h3 {
-  font-family: 'CabinetGrotesk-Regular';
+  font-family: 'Gotham';
 }
 
 .about,
 p.title {
-  font-family: 'CabinetGrotesk-Regular';
+  font-family: 'Orkney';
   font-weight: 600;
   padding-bottom: 15px;
 }
 
 .date {
-  font-family: 'CabinetGrotesk-Regular';
+  font-family: 'Agrandir';
   color:#FBAB7E
 }
 
@@ -50,12 +50,13 @@ p.title {
 }
 
 p {
-  font-family: "Montserrat", Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Agrandir", Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 600;
+  font-size: larger;
 }
 
 .tag {
-  font-family: Rubik, Helvetica, sans-serif;
+  font-family: Gotham, Helvetica, sans-serif;
 }
 
 .menu {
@@ -94,7 +95,7 @@ h1.main {
 }
 
 .sub-main {
-  font-family: 'pacifico';
+  font-family: 'CartographCF-italic';
   font-weight: 500;
   padding-bottom: 15px;
 }
@@ -106,7 +107,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 288px;
+    width: 340px;
   }
 }
 

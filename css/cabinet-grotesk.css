@@ -129,3 +129,70 @@
        font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.otf') format('opentype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('../fonts/Agrandir-Regular.otf') format('opentype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oneday';
+  src: url('../fonts/ONEDAY.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orkney';
+  src: url('../fonts/Orkney-Regular.otf') format('opentype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Elianto';
+  src: url('../fonts/Elianto-Regular.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'CartographCF-regular';
+  src: url('../fonts/CartographCF-Regular.woff2') format('woff2'),
+       url('../fonts/CartographCF-Regular.woff') format('woff'),
+       url('../fonts/CartographCF-Regular.ttf') format('truetype');
+       font-weight: 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'CartographCF-italic';
+  src: url('../fonts/CartographCF-RegularItalic.woff2') format('woff2'),
+       url('../fonts/CartographCF-RegularItalic.woff') format('woff'),
+       url('../fonts/CartographCF-RegularItalic.ttf') format('truetype');
+       font-weight: 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Voyager';
+  src: url('../fonts/Voyager\ Grotesque\(regular\).ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
