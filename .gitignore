@@ -7,3 +7,4 @@ css/style.css
 .trunk/configs/.markdownlint.yaml
 .trunk/configs/.yamllint.yaml
 .trunk/configs/ruff.toml
+.vscode/settings.json
