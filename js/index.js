@@ -7,6 +7,23 @@ function myFunction() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
+  var app = document.getElementById('app');
+      var typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 100
+      });
+
+      typewriter
+        .pauseFor(2000)
+        .typeString('SARATH CHANDRA VIDYA SAGAR MACHUPALLI')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('<strong>VIDYASAGAR</strong> MACHUPALLI')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('<strong>VIDYASAGAR <span style="color: #27ae60;">M S C</span></strong>')
+        .pauseFor(1500)
+        .start();
 }
   $("#content").load("about.html");
   $("#blog #content").load("blog.html");
