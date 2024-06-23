@@ -12,6 +12,14 @@ h1 {
   font-weight: 900;
 }
 
+h4.name {
+  overflow: hidden;
+  font-family: "Elianto", serif;
+  font-size: inherit;
+  font-weight: 900;
+  text-wrap: wrap;
+}
+
 
 h2 {
   font-family: "Syne", sans-serif;
@@ -108,7 +116,7 @@ h1.main {
     width: 0;
   }
   to {
-    width: 340px;
+    width: 750px;
   }
 }
 
@@ -210,6 +218,12 @@ input:checked + .slider:before {
 .img-transparent {
   opacity: 0.3;
 }
+
+img.nogray {
+  /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+  filter: none; /* IE5+ */
+}
+
 
 img {
   /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
