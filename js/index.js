@@ -14,7 +14,7 @@ function myFunction() {
       });
 
       typewriter
-        .pauseFor(2000)
+        .pauseFor(1000)
         .typeString('SARATH CHANDRA VIDYA SAGAR MACHUPALLI')
         .pauseFor(1500)
         .deleteAll()
