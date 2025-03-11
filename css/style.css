@@ -7,14 +7,14 @@ body {
 h1 {
   white-space: nowrap;
   overflow: hidden;
-  font-family: "Elianto", serif;
+  font-family: "Prompt", serif;
   font-size: inherit;
   font-weight: 900;
 }
 
 h4.name {
   overflow: hidden;
-  font-family: "Elianto", serif;
+  font-family: "Prompt", serif;
   font-size: inherit;
   font-weight: 900;
   text-wrap: wrap;
@@ -32,7 +32,7 @@ h3 {
 
 .about,
 p.title {
-  font-family: 'Orkney';
+  font-family: 'Prompt';
   font-weight: 600;
   padding-bottom: 15px;
 }
@@ -64,7 +64,7 @@ p {
 }
 
 .tag {
-  font-family: Gotham, Helvetica, sans-serif;
+  font-family: Prompt, Helvetica, sans-serif;
 }
 
 .menu {
