@@ -120,3 +120,41 @@ function toggleTheme() {
   $(".card").toggleClass("has-background-dark");
   $(".tag").toggleClass("is-dark");
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const dots = document.querySelectorAll('.nav-dot');
+  const sections = document.querySelectorAll('.content-section');
+  // Click navigation
+  dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-section');
+          const targetSection = document.getElementById(targetId);
+          targetSection.scrollIntoView({
+              behavior: 'smooth'
+          });
+          updateActiveDot(targetId);
+      });
+  });
+  // Scroll detection
+  window.addEventListener('scroll', function() {
+      let current = '';
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+              current = section.getAttribute('id');
+          }
+      });
+      updateActiveDot(current);
+  });
+  // Update active dot
+  function updateActiveDot(sectionId) {
+      dots.forEach(dot => {
+          if (dot.getAttribute('data-section') === sectionId) {
+              dot.classList.add('active');
+          } else {
+              dot.classList.remove('active');
+          }
+      });
+  }
+});
