@@ -1075,8 +1075,7 @@ body {
 /* Content sections */
 .content-section {
   min-height: 100vh;
-  padding: 60px 20px 20px;
-  scroll-margin-top: 50px;
+  width: 100vw;
 }
 
 #home { background-color: #f8f9fa !important; }
@@ -1154,9 +1153,9 @@ body {
   }
 }
 
-/* Disable nav-dots on mobile devices */
 @media (max-width: 768px) {
-  .nav-dots {
-    display: none;
+  .nav-dot {
+    display: none !important;
   }
+
 }
