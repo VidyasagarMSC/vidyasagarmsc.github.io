@@ -1072,6 +1072,10 @@ body {
 	margin-top:22px;
 }
 
+.add-top-margin {
+  margin-top: 100px;
+}
+
 /* Content sections */
 .content-section {
   min-height: 100vh;
