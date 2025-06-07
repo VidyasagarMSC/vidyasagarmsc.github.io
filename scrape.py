@@ -23,9 +23,9 @@ BLOG_DEFAULTS = {
 
 SOCIAL_DEFAULTS = {
     "twitter_followers": "1.3K",
-    "linkedin_followers": "2.7K",
+    "linkedin_followers": "3K",
     "github_followers": "90",
-    "instagram_followers": "360+",
+    "instagram_followers": "370+",
     "youtube_subscribers": "71",
     "facebook_friends": "1.1K",
     "stackoverflow_reach": "143K+",
