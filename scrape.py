@@ -15,8 +15,8 @@ logger = logging.getLogger(__name__)
 # Constants
 TODAY = date.today().strftime("%B %d, %Y")
 BLOG_DEFAULTS = {
-    "dzone_views": "486K+",
-    "medium_followers": "652",
+    "dzone_views": "490K+",
+    "medium_followers": "653",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
 }
