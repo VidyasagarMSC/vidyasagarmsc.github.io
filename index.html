@@ -213,17 +213,29 @@
   </nav>
 
   <script>
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const burger = document.querySelector('.navbar-burger');
-      const menu = document.querySelector('.navbar-menu');
+    // Mobile menu functionality - run immediately to avoid DOMContentLoaded issues
+    (function() {
+      function initMobileNav() {
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.querySelector('.navbar-menu');
 
-      if (burger && menu) {
-        burger.addEventListener('click', function() {
-          burger.classList.toggle('is-active');
-          menu.classList.toggle('is-active');
-        });
+        if (burger && menu) {
+          burger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+          });
+        }
       }
+
+      // Try to run immediately
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileNav);
+      } else {
+        initMobileNav();
+      }
+    })();
 
       // Section navigation functionality
       const navDots = document.querySelectorAll('.nav-dot');
@@ -274,7 +286,6 @@
           }
         });
       });
-    });
   </script>
   </body>
 </html>
