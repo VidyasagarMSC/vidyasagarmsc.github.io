@@ -1,6 +1,7 @@
 import logging
 import os
 import re
+import subprocess
 from datetime import date
 
 from bs4 import BeautifulSoup, FeatureNotFound
@@ -215,8 +216,28 @@ def main():
     social_success = write_template(
         "templates/footer_template.html", "footer.html", social_stats
     )
+
+    # Generate latest posts page
+    try:
+        logger.info("Generating latest posts page")
+        result = subprocess.run(
+            ["python3", "scrape_latest_posts.py"],
+            capture_output=True,
+            text=True,
+            cwd=os.getcwd()
+        )
+        if result.returncode == 0:
+            logger.info("Latest posts page generated successfully")
+            latest_posts_success = True
+        else:
+            logger.error(f"Latest posts scraping failed: {result.stderr}")
+            latest_posts_success = False
+    except Exception as e:
+        logger.error(f"Error running latest posts scraper: {str(e)}")
+        latest_posts_success = False
+
     logger.info("Scraping process completed")
-    return blog_success and social_success
+    return blog_success and social_success and latest_posts_success
 
 
 if __name__ == "__main__":

@@ -9,3 +9,5 @@ css/style.css
 .trunk/configs/ruff.toml
 .vscode/settings.json
 test.*
+LATEST_POSTS_README.md
+cache/latest_posts_cache.json

@@ -1,2 +1,4 @@
 requests
 bs4
+feedparser
+lxml

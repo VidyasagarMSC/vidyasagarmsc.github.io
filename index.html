@@ -80,11 +80,21 @@
                 alt="…"
               />
             </a>
+            <a
+              role="button"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
           </div>
           <div class="header">
             <div class="progress-container">
               <div class="progress-bar" id="myBar"></div>
-            </div> 
+            </div>
           </div>
           <div class="container">
             <div id="navbarMenuHeroA" class="navbar-menu">
@@ -92,6 +102,9 @@
                 <a href="#home" class="navbar-item is-active menu"> Home </a>
                 <a href="#about" class="navbar-item is-active menu"> About </a>
                 <a href="#blog" class="navbar-item is-active menu"> Blog </a>
+                <a href="latest-posts.html" class="navbar-item is-active menu">
+                  Latest Posts
+                </a>
                 <a href="#photos" class="navbar-item is-active menu">
                   Photos
                 </a>
@@ -108,19 +121,6 @@
                   </div>
                 </a>
               </div>
-            </div>
-            <div class="navbar-brand">
-              <!-- navbar items, navbar burger... -->
-              <a
-                role="button"
-                class="navbar-burger"
-                aria-label="menu"
-                aria-expanded="false"
-              >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
             </div>
           </div>
         </nav>
@@ -201,15 +201,80 @@
     <a class="no-underline float" href="https://vidyasagarmsc-github-io.translate.goog/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en-US&_x_tr_pto=wapp" target="_blank">
       <i class="fa-solid fa-language my-float no-underline"></i></i>
       </a>
-    <!-- Section Navigator -->
     <nav class="section-nav">
       <div class="nav-dots">
           <div class="nav-dot active" data-label="Home" data-section="home"></div>
           <div class="nav-dot" data-label="About" data-section="about"></div>
           <div class="nav-dot" data-label="Blog" data-section="blog"></div>
+          <div class="nav-dot" data-label="Latest Posts" data-section="latest-posts.html"></div>
           <div class="nav-dot" data-label="Photos" data-section="photos"></div>
           <div class="nav-dot" data-label="Connect" data-section="connect"></div>
       </div>
   </nav>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.querySelector('.navbar-menu');
+
+      if (burger && menu) {
+        burger.addEventListener('click', function() {
+          burger.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
+        });
+      }
+
+      // Section navigation functionality
+      const navDots = document.querySelectorAll('.nav-dot');
+      navDots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          const section = this.getAttribute('data-section');
+          if (section === 'latest-posts.html') {
+            // Navigate to latest posts page
+            window.location.href = section;
+          } else {
+            // Scroll to section on current page
+            const targetSection = document.getElementById(section);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+
+              // Update active dot
+              navDots.forEach(d => d.classList.remove('active'));
+              this.classList.add('active');
+            }
+          }
+        });
+
+        // Add hover effect
+        dot.style.cursor = 'pointer';
+      });
+
+      // Smooth scrolling for navbar links
+      const navLinks = document.querySelectorAll('.navbar-item[href^="#"], .navbar-item[href*="latest-posts.html"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === 'latest-posts.html') {
+            // Navigate to latest posts page
+            window.location.href = href;
+          } else if (href.startsWith('#')) {
+            // Scroll to section on current page
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+
+              // Update active dot
+              navDots.forEach(d => d.classList.remove('active'));
+              const activeDot = document.querySelector(`[data-section="${targetId}"]`);
+              if (activeDot) activeDot.classList.add('active');
+            }
+          }
+        });
+      });
+    });
+  </script>
   </body>
 </html>

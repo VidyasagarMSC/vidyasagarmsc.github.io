@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-30026605-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-30026605-1");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Latest blog posts from all my websites - Vidyasagar Machupalli"
+    />
+    <meta name="keywords" content="blog, latest posts, articles, technical writing" />
+    <meta name="author" content="Vidyasagar Machupalli" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest Blog Posts - Vidyasagar Machupalli</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne&family=Jura:wght@300;400;500;600;700&family=Quicksand:wght@700&family=Montserrat&family=Dosis:wght@400;800&family=Prompt&family=Arvo&family=Rubik&family=Maitree&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      .post-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .post-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .filter-btn {
+        margin: 0.25rem;
+      }
+      .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex-grow: 1;
+      }
+      .nav-dot {
+        cursor: pointer !important;
+        transition: all 0.3s ease;
+      }
+      .nav-dot:hover {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      .nav-dot.active {
+        background-color: #3273dc !important;
+        transform: scale(1.1);
+      }
+      .content h4 {
+        margin-bottom: 0.5rem;
+      }
+      .content p {
+        margin-bottom: 1rem;
+      }
+      .navbar-menu.is-active {
+        display: block !important;
+      }
+      @media screen and (max-width: 768px) {
+        .navbar-menu {
+          display: none;
+        }
+        .navbar-menu.is-active {
+          display: block !important;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: white;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          z-index: 1000;
+        }
+      }
+      @media screen and (min-width: 769px) {
+        .navbar-menu {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      id="latest-posts"
+      class="hero is-fullheight is-light is-bold has-background content-section"
+    >
+      <div class="hero-head">
+        <nav class="bd-navbar navbar is-fixed-top is-transparent connect">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="index.html#home">
+              <img
+                src="images/logo-removebg-preview-short.png"
+                width="64"
+                height="56"
+                loading="lazy"
+                alt="…"
+              />
+            </a>
+            <a
+              role="button"
+              class="navbar-burger"
+              aria-label="menu"
+              aria-expanded="false"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="header">
+            <div class="progress-container">
+              <div class="progress-bar" id="myBar"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a href="index.html#home" class="navbar-item is-active menu"> Home </a>
+                <a href="index.html#about" class="navbar-item is-active menu"> About </a>
+                <a href="index.html#blog" class="navbar-item is-active menu"> Blog </a>
+                <a href="latest-posts.html" class="navbar-item is-active menu">
+                  Latest Posts
+                </a>
+                <a href="index.html#photos" class="navbar-item is-active menu">
+                  Photos
+                </a>
+                <a href="index.html#connect" class="navbar-item is-active menu">
+                  Connect
+                </a>
+                <a class="navbar-item fullscreen no-underline">
+                  <div class="toggler-container">
+                    <p>🌞</p>
+                    <div class="toggler">
+                      <div class="circle"></div>
+                    </div>
+                    <p>🌑</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hero-body has-background">
+        <div class="container">
+          <div class="section">
+            <h1 class="title has-text-centered is-1">Latest Blog Posts</h1>
+            <h2 class="subtitle has-text-centered is-3">
+              My recent writings across all platforms
+            </h2>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Discover my latest thoughts, tutorials, and insights from
+              <strong>VMacWrites</strong>,
+              <strong>Medium</strong>,
+              <strong>Dev.to</strong>,
+              <strong>Substack</strong>, and
+              <strong>Hackernoon</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {{POSTS_CONTENT}}
+
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="is-size-7 has-text-grey">
+            <i class="fas fa-clock"></i>
+            Last updated: <span id="last-updated">Loading...</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a class="no-underline float" href="https://vidyasagarmsc-github-io.translate.goog/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en-US&_x_tr_pto=wapp" target="_blank">
+      <i class="fa-solid fa-language my-float no-underline"></i>
+      </a>
+
+    <!-- Section Navigator -->
+    <nav class="section-nav">
+      <div class="nav-dots">
+          <div class="nav-dot" data-label="Home" data-section="index.html#home"></div>
+          <div class="nav-dot" data-label="About" data-section="index.html#about"></div>
+          <div class="nav-dot" data-label="Blog" data-section="index.html#blog"></div>
+          <div class="nav-dot active" data-label="Latest Posts" data-section="latest-posts"></div>
+          <div class="nav-dot" data-label="Photos" data-section="index.html#photos"></div>
+          <div class="nav-dot" data-label="Connect" data-section="index.html#connect"></div>
+      </div>
+    </nav>
+
+    <script>
+      // Load last updated time from cache
+      fetch('cache/latest_posts_cache.json')
+        .then(response => response.json())
+        .then(data => {
+          if (data.last_updated) {
+            const date = new Date(data.last_updated);
+            document.getElementById('last-updated').textContent =
+              date.toLocaleDateString() + ' at ' + date.toLocaleTimeString();
+          }
+        })
+        .catch(error => {
+          console.log('Cache file not available');
+        });
+
+        // Mobile menu functionality
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.querySelector('.navbar-menu');
+
+        if (burger && menu) {
+          burger.addEventListener('click', function() {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+          });
+        }
+
+        // Section navigation functionality
+        const navDots = document.querySelectorAll('.nav-dot');
+        navDots.forEach(dot => {
+          dot.addEventListener('click', function() {
+            const section = this.getAttribute('data-section');
+            if (section === 'latest-posts') {
+              // Stay on current page
+              return;
+            } else if (section.startsWith('index.html#')) {
+              // Navigate to main page with section
+              window.location.href = section;
+            } else {
+              // Fallback: navigate to main page with section
+              window.location.href = 'index.html#' + section;
+            }
+          });
+
+          // Add hover effect
+          dot.style.cursor = 'pointer';
+        });
+
+        // Handle navigation clicks
+        const navLinks = document.querySelectorAll('.navbar-item[href]');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === 'latest-posts.html') {
+              // Stay on current page - do nothing
+              e.preventDefault();
+              return;
+            } else if (href.startsWith('index.html#') || href.startsWith('#')) {
+              // Navigate to main page with section
+              e.preventDefault();
+              if (href.startsWith('#')) {
+                window.location.href = 'index.html' + href;
+              } else {
+                window.location.href = href;
+              }
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
