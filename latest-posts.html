@@ -91,13 +91,28 @@
       .content p {
         margin-bottom: 1rem;
       }
-      .section-nav .nav-dot {
-        cursor: pointer !important;
-        transition: all 0.3s ease !important;
+      .navbar-menu.is-active {
+        display: block !important;
       }
-      .section-nav .nav-dot:hover {
-        transform: scale(1.2) !important;
-        opacity: 0.8 !important;
+      @media screen and (max-width: 768px) {
+        .navbar-menu {
+          display: none;
+        }
+        .navbar-menu.is-active {
+          display: block !important;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: white;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          z-index: 1000;
+        }
+      }
+      @media screen and (min-width: 769px) {
+        .navbar-menu {
+          display: flex !important;
+        }
       }
     </style>
   </head>
@@ -137,16 +152,16 @@
           <div class="container">
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a href="index.html#home" class="navbar-item menu"> Home </a>
-                <a href="index.html#about" class="navbar-item menu"> About </a>
-                <a href="index.html#blog" class="navbar-item menu"> Blog </a>
+                <a href="index.html#home" class="navbar-item is-active menu"> Home </a>
+                <a href="index.html#about" class="navbar-item is-active menu"> About </a>
+                <a href="index.html#blog" class="navbar-item is-active menu"> Blog </a>
                 <a href="latest-posts.html" class="navbar-item is-active menu">
                   Latest Posts
                 </a>
-                <a href="index.html#photos" class="navbar-item menu">
+                <a href="index.html#photos" class="navbar-item is-active menu">
                   Photos
                 </a>
-                <a href="index.html#connect" class="navbar-item menu">
+                <a href="index.html#connect" class="navbar-item is-active menu">
                   Connect
                 </a>
                 <a class="navbar-item fullscreen no-underline">
@@ -171,6 +186,14 @@
             <h2 class="subtitle has-text-centered is-3">
               My recent writings across all platforms
             </h2>
+            <p class="has-text-centered is-size-6 has-text-grey">
+              Discover my latest thoughts, tutorials, and insights from
+              <strong>VMacWrites</strong>,
+              <strong>Medium</strong>,
+              <strong>Dev.to</strong>,
+              <strong>Substack</strong>, and
+              <strong>Hackernoon</strong>.
+            </p>
           </div>
         </div>
       </div>
@@ -183,7 +206,6 @@
                 <button class="button is-light filter-btn" data-filter="Dev.to">Dev.to</button>
                 <button class="button is-light filter-btn" data-filter="Hackernoon">Hackernoon</button>
                 <button class="button is-light filter-btn" data-filter="Medium">Medium</button>
-                <button class="button is-light filter-btn" data-filter="Substack">Substack</button>
                 <button class="button is-light filter-btn" data-filter="VMacWrites">VMacWrites</button>
             </div>
         </div>
@@ -285,30 +307,6 @@
                 </div>
             </div>
         </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 26, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/post-quantum-cryptography-the-next" target="_blank" class="has-text-dark">
-                                Post-Quantum Cryptography: The Next Frontier in Cybersecurity
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Don’t wait for quantum computers to arrive. Start your post-quantum journey today.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
             <div class="card is-info">
                 <div class="card-content">
@@ -376,30 +374,6 @@
                         </h4>
                         <p class="subtitle is-6 has-text-grey">
                             Podman is an open-source container engine that enables users to create, manage, and run OCI containers and pods across Linux, macOS, and Windows. Unlike Docker, Podman is daemonless, running container...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">March 17, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/understanding-transcendental-numbers" target="_blank" class="has-text-dark">
-                                Understanding Transcendental Numbers: Their Role in Mathematics, AI, and Quantum Computing
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Transcendental numbers are a class of real or complex numbers that are not algebraic.
                         </p>
                     </div>
                 </div>
@@ -506,30 +480,6 @@ S3...
 
 SymPy — Mathematics Python Library
 SymPy aims to become a full-featured computer algebra system (CAS) while keeping the code simple, ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 04, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/an-introduction-to-sympy-a-python" target="_blank" class="has-text-dark">
-                                An Introduction to SymPy: A Python Library for Symbolic Mathematics
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            SymPy is an open-source Python library for symbolic mathematics.
                         </p>
                     </div>
                 </div>
@@ -652,54 +602,6 @@ Created by Wes McKinney in 2008, it provides data structures and functions for w
                         </h4>
                         <p class="subtitle is-6 has-text-grey">
                             
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 07, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/model-context-protocol-overview" target="_blank" class="has-text-dark">
-                                Model Context Protocol Overview
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Anthropic has introduced the Model Context Protocol (MCP), an open-source standard designed to simplify and standardize connections between AI models and external data sources.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 07, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/nvidia-mig-with-gpu-optimization" target="_blank" class="has-text-dark">
-                                Nvidia MIG with GPU Optimization in Kubernetes
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Multi-Instance GPU (MIG) is a technology that allows partitioning of a single GPU into multiple smaller, isolated GPU instances. This feature enables better GPU utilization, especially for workloads t
                         </p>
                     </div>
                 </div>
@@ -894,30 +796,6 @@ to get caught up in the day-to...
                         </h4>
                         <p class="subtitle is-6 has-text-grey">
                             
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Substack">
-            <div class="card is-danger">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-danger">Substack</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">June 12, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.substack.com/p/generate-your-next-headshot" target="_blank" class="has-text-dark">
-                                Generate Your Next Headshot
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Free Professional Photoshoot with AI
                         </p>
                     </div>
                 </div>
@@ -1235,7 +1113,7 @@ to get caught up in the day-to...
           <div class="nav-dot" data-label="Home" data-section="index.html#home"></div>
           <div class="nav-dot" data-label="About" data-section="index.html#about"></div>
           <div class="nav-dot" data-label="Blog" data-section="index.html#blog"></div>
-          <div class="nav-dot active" data-label="Latest Posts" data-section="latest-posts.html"></div>
+          <div class="nav-dot active" data-label="Latest Posts" data-section="latest-posts"></div>
           <div class="nav-dot" data-label="Photos" data-section="index.html#photos"></div>
           <div class="nav-dot" data-label="Connect" data-section="index.html#connect"></div>
       </div>
@@ -1256,45 +1134,23 @@ to get caught up in the day-to...
           console.log('Cache file not available');
         });
 
-      // Override the default smooth scrolling behavior for navigation links
-      document.addEventListener('DOMContentLoaded', function() {
-        // Override the default jQuery smooth scrolling for navigation links
-        $('a[href^="index.html#"]').on('click', function(event) {
-          event.preventDefault();
-          const href = this.getAttribute('href');
-          window.location.href = href;
-        });
+        // Mobile menu functionality
+        const burger = document.querySelector('.navbar-burger');
+        const menu = document.querySelector('.navbar-menu');
 
-        // Mobile menu functionality - run immediately to avoid DOMContentLoaded issues
-        (function() {
-          function initMobileNav() {
-            const burger = document.querySelector('.navbar-burger');
-            const menu = document.querySelector('.navbar-menu');
-
-            if (burger && menu) {
-              burger.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-              });
-            }
-          }
-
-          // Try to run immediately
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initMobileNav);
-          } else {
-            initMobileNav();
-          }
-        })();
+        if (burger && menu) {
+          burger.addEventListener('click', function() {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+          });
+        }
 
         // Section navigation functionality
         const navDots = document.querySelectorAll('.nav-dot');
         navDots.forEach(dot => {
           dot.addEventListener('click', function() {
             const section = this.getAttribute('data-section');
-            if (section === 'latest-posts.html') {
+            if (section === 'latest-posts') {
               // Stay on current page
               return;
             } else if (section.startsWith('index.html#')) {
@@ -1309,7 +1165,27 @@ to get caught up in the day-to...
           // Add hover effect
           dot.style.cursor = 'pointer';
         });
-      });
+
+        // Handle navigation clicks
+        const navLinks = document.querySelectorAll('.navbar-item[href]');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === 'latest-posts.html') {
+              // Stay on current page - do nothing
+              e.preventDefault();
+              return;
+            } else if (href.startsWith('index.html#') || href.startsWith('#')) {
+              // Navigate to main page with section
+              e.preventDefault();
+              if (href.startsWith('#')) {
+                window.location.href = 'index.html' + href;
+              } else {
+                window.location.href = href;
+              }
+            }
+          });
+        });
     </script>
   </body>
 </html>
