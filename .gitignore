@@ -2,7 +2,6 @@ css/fonts/*
 css/style-test.css
 .DS_Store
 .trunk/trunk.yaml
-css/style.css
 .trunk/configs/.isort.cfg
 .trunk/configs/.markdownlint.yaml
 .trunk/configs/.yamllint.yaml
