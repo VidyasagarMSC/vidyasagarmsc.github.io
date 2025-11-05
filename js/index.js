@@ -98,6 +98,9 @@ function myFunction() {
     //$("#blog").removeClass("has-background-white-bis");
     $("#blog").toggleClass("is-dark");
     $("#photos").toggleClass("is-black");
+    $("#connect").toggleClass("is-black");
+    // Latest Posts page dark mode toggle
+    $("#latest-posts").toggleClass("is-dark").toggleClass("is-light");
     $("article").toggleClass("has-background-dark");
     $(".card-content").toggleClass("text-color-invert");
     $(".content").children("h4").toggleClass("text-color-invert");
@@ -115,6 +118,8 @@ function toggleTheme() {
   //$("#blog").removeClass("has-background-white-bis");
   $("#blog").toggleClass("is-dark");
   $("#photos").toggleClass("is-black");
+  // Latest Posts page dark mode toggle
+  $("#latest-posts").toggleClass("is-dark").toggleClass("is-light");
   $("article").toggleClass("has-background-dark");
   $(".card-content").toggleClass("text-color-invert");
   $(".content").children("h4").toggleClass("text-color-invert");

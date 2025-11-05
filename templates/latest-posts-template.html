@@ -153,6 +153,51 @@
         visibility: visible !important;
         opacity: 1 !important;
       }
+      /* Dark mode overrides scoped to Latest Posts */
+      #latest-posts.is-dark {
+        background-color: #0b1d2a !important;
+      }
+      #latest-posts.is-dark .hero-body,
+      #latest-posts.is-dark .hero-body .container,
+      #latest-posts.is-dark .title,
+      #latest-posts.is-dark .subtitle,
+      #latest-posts.is-dark p,
+      #latest-posts.is-dark .has-text-grey {
+        color: #f5f5f5 !important;
+      }
+      #latest-posts.is-dark .has-text-dark {
+        color: #e5e7eb !important;
+      }
+      #latest-posts.is-dark a:not(.button) {
+        color: #93c5fd !important;
+      }
+      #latest-posts.is-dark a:not(.button):hover {
+        color: #bfdbfe !important;
+        box-shadow: inset 0 -8px 0 0 rgba(191, 219, 254, 0.35) !important;
+      }
+      #latest-posts.is-dark .button.is-light {
+        background-color: #26323f !important;
+        color: #f5f5f5 !important;
+        border-color: #364452 !important;
+      }
+      #latest-posts.is-dark .button.is-light:hover {
+        background-color: #364452 !important;
+      }
+      #latest-posts.is-dark .card {
+        background-color: #1f2937 !important;
+        color: #f5f5f5 !important;
+        border: 1px solid #26323f !important;
+      }
+      #latest-posts.is-dark .card-content,
+      #latest-posts.is-dark .media-content p {
+        color: #f5f5f5 !important;
+      }
+      /* Mobile navbar dropdown */
+      @media screen and (max-width: 768px) {
+        #latest-posts.is-dark .navbar-menu.is-active {
+          background-color: #1f2937 !important;
+        }
+      }
     </style>
   </head>
   <body>
