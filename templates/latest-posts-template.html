@@ -114,6 +114,45 @@
           display: flex !important;
         }
       }
+      @media screen and (max-width: 768px) {
+        .section {
+          padding: 1.5rem 1rem;
+        }
+        .buttons.is-centered {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .hero-body {
+          padding: 3rem 1.5rem !important;
+        }
+        .title.is-1 {
+          font-size: 2rem !important;
+        }
+        .subtitle.is-3 {
+          font-size: 1.5rem !important;
+        }
+      }
+      .columns.is-multiline {
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+        margin-top: -0.75rem;
+      }
+      .column {
+        padding: 0.75rem;
+      }
+      .hero-body {
+        display: flex;
+        align-items: center;
+        min-height: auto;
+      }
+      #latest-posts.hero.is-fullheight {
+        min-height: auto;
+      }
+      #latest-posts .hero-body .title {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
     </style>
   </head>
   <body>
@@ -180,21 +219,19 @@
       </div>
 
       <div class="hero-body has-background">
-        <div class="container">
-          <div class="section">
-            <h1 class="title has-text-centered is-1">Latest Blog Posts</h1>
-            <h2 class="subtitle has-text-centered is-3">
-              My recent writings across all platforms
-            </h2>
-            <p class="has-text-centered is-size-6 has-text-grey">
-              Discover my latest thoughts, tutorials, and insights from
-              <strong>VMacWrites</strong>,
-              <strong>Medium</strong>,
-              <strong>Dev.to</strong>,
-              <strong>Substack</strong>, and
-              <strong>Hackernoon</strong>.
-            </p>
-          </div>
+        <div class="container has-text-centered">
+          <h1 class="title is-1">Latest Blog Posts</h1>
+          <h2 class="subtitle is-3">
+            My recent writings across all platforms
+          </h2>
+          <p class="is-size-6 has-text-grey">
+            Discover my latest thoughts, tutorials, and insights from
+            <strong>VMacWrites</strong>,
+            <strong>Medium</strong>,
+            <strong>Dev.to</strong>,
+            <strong>Substack</strong>, and
+            <strong>Hackernoon</strong>.
+          </p>
         </div>
       </div>
 

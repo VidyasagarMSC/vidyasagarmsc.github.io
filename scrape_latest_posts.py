@@ -30,10 +30,12 @@ BLOG_FEEDS = {
         "color": "is-info"
     },
     "DZone": {
-        "url": "https://dzone.com/pages/feeds",
+        "url": "https://dzone.com/users/2567192/vidyasagarmsc.rss",
+        "fallback_url": "https://dzone.com/authors/vidyasagarmsc",
         "website_name": "DZone",
         "author": "vidyasagarmsc",
-        "color": "is-success"
+        "color": "is-success",
+        "scrape_html": True
     },
     "Dev.to": {
         "url": "https://dev.to/feed/vidyasagarmsc",
@@ -64,7 +66,10 @@ def safe_request(url: str, timeout: int = 10) -> Optional[Dict]:
     """Safe RSS feed request with error handling"""
     try:
         logger.info(f"Fetching RSS feed from: {url}")
-        response = requests.get(url, timeout=timeout)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+        response = requests.get(url, timeout=timeout, headers=headers)
         response.raise_for_status()
 
         # Parse XML
@@ -120,6 +125,94 @@ def clean_html(text: str) -> str:
         return ""
     soup = BeautifulSoup(text, "lxml")
     return soup.get_text().strip()
+
+
+def scrape_dzone_html(url: str) -> Optional[Dict]:
+    """Scrape DZone author page HTML when RSS feed is not available"""
+    try:
+        logger.info(f"Scraping DZone HTML from: {url}")
+        
+        # Use session for better connection handling
+        session = requests.Session()
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Cache-Control': 'max-age=0',
+        }
+        
+        # Add a small delay to be polite
+        time.sleep(1)
+        
+        response = session.get(url, timeout=15, headers=headers, allow_redirects=True)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.content, 'lxml')
+        
+        # Create feed-like structure
+        feed_dict = {
+            'feed': {'title': 'DZone', 'link': url, 'description': ''},
+            'entries': []
+        }
+        
+        # Find article cards on DZone author page
+        articles = soup.find_all('article', class_='article-card')
+        
+        if not articles:
+            # Try alternative selectors
+            articles = soup.find_all('div', class_='article')
+        
+        for article in articles[:10]:  # Get latest 10
+            try:
+                entry = {}
+                
+                # Extract title and link
+                title_elem = article.find('h2') or article.find('h3') or article.find('a', class_='article-title')
+                if title_elem:
+                    link_elem = title_elem.find('a') if title_elem.name != 'a' else title_elem
+                    if link_elem:
+                        entry['title'] = link_elem.get_text().strip()
+                        entry['link'] = link_elem.get('href', '')
+                        if entry['link'] and not entry['link'].startswith('http'):
+                            entry['link'] = 'https://dzone.com' + entry['link']
+                
+                # Extract summary/description
+                desc_elem = article.find('p', class_='summary') or article.find('div', class_='description')
+                if desc_elem:
+                    entry['summary'] = desc_elem.get_text().strip()
+                else:
+                    entry['summary'] = ''
+                
+                # Extract date
+                date_elem = article.find('time') or article.find(class_='date')
+                if date_elem:
+                    entry['published'] = date_elem.get('datetime') or date_elem.get_text().strip()
+                else:
+                    entry['published'] = ''
+                
+                # Only add if we have at least a title and link
+                if entry.get('title') and entry.get('link'):
+                    entry['description'] = entry['summary']
+                    entry['guid'] = entry['link']
+                    feed_dict['entries'].append(entry)
+                    
+            except Exception as e:
+                logger.error(f"Error parsing DZone article: {str(e)}")
+                continue
+        
+        logger.info(f"Found {len(feed_dict['entries'])} articles on DZone HTML page")
+        return feed_dict if feed_dict['entries'] else None
+        
+    except Exception as e:
+        logger.error(f"Failed to scrape DZone HTML: {str(e)}")
+        return None
 
 
 def format_date(date_str: str) -> str:
@@ -266,6 +359,11 @@ def scrape_all_feeds() -> List[Dict]:
         logger.info(f"Scraping feed: {name}")
         feed = safe_request(feed_info['url'])
 
+        # Try HTML scraping fallback for DZone if RSS fails
+        if not feed and feed_info.get('scrape_html') and feed_info.get('fallback_url'):
+            logger.info(f"RSS failed for {name}, trying HTML scraping")
+            feed = scrape_dzone_html(feed_info['fallback_url'])
+
         if feed:
             posts = extract_post_data(feed, feed_info)
             all_posts.extend(posts)
@@ -308,24 +406,27 @@ def generate_latest_posts_html(posts: List[Dict]) -> str:
     websites.sort()
 
     filter_html = '''
-    <div class="container">
+      <div class="container">
         <div class="section">
-            <div class="buttons is-centered">
-                <button class="button is-primary filter-btn" data-filter="all">All Posts</button>'''
+          <div class="buttons is-centered">
+            <button class="button is-primary filter-btn" data-filter="all">All Posts</button>'''
 
     for website in websites:
         filter_html += f'''
-                <button class="button is-light filter-btn" data-filter="{website}">{website}</button>'''
+            <button class="button is-light filter-btn" data-filter="{website}">{website}</button>'''
 
     filter_html += '''
-            </div>
+          </div>
         </div>
-    </div>'''
+      </div>'''
 
     html_parts.append(filter_html)
 
     # Generate posts grid
-    posts_html = '<div class="container"><div class="columns is-multiline">'
+    posts_html = '''
+      <div class="section">
+        <div class="container">
+          <div class="columns is-multiline is-centered">'''
 
     for post in posts:
         card_html = f'''
@@ -355,7 +456,10 @@ def generate_latest_posts_html(posts: List[Dict]) -> str:
         </div>'''
         posts_html += card_html
 
-    posts_html += '</div></div>'
+    posts_html += '''
+          </div>
+        </div>
+      </div>'''
     html_parts.append(posts_html)
 
     # Add JavaScript for filtering
