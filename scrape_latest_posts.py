@@ -528,8 +528,15 @@ def main():
             if os.path.exists(template_path):
                 with open(template_path, 'r', encoding='utf-8') as template_f:
                     template = template_f.read()
-                # Replace placeholder with generated content
+                # Get current timestamp for last updated
+                current_time = datetime.now().strftime('%B %d, %Y at %I:%M %p')
+                
+                # Replace placeholders with generated content and timestamp
                 final_html = template.replace('{{POSTS_CONTENT}}', html_content)
+                final_html = final_html.replace(
+                    '{{LAST_UPDATED}}',
+                    current_time
+                )
             else:
                 # Create basic HTML structure if template doesn't exist
                 final_html = f'''<!DOCTYPE html>

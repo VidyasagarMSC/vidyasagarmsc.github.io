@@ -132,6 +132,11 @@ def scrape_blog_stats():
                 stats["wordpress_followers"] = text_parts[1]
     except Exception as e:
         logger.error(f"WordPress scraping failed: {str(e)}")
+    
+    # Add current timestamp
+    from datetime import datetime
+    stats['last_updated'] = datetime.now().strftime('%B %d, %Y at %I:%M %p')
+    
 
     return stats
 
