@@ -367,6 +367,10 @@ body.is-black .icon i {
   color: #1da1f2 !important;
   -webkit-text-fill-color: #1da1f2 !important;
 }
+.level .threads i:hover {
+  color: #000 !important;
+  -webkit-text-fill-color: #000!important;
+}
 .level .linkedin i:hover { 
   color: #0077b5 !important;
   -webkit-text-fill-color: #0077b5 !important;
@@ -458,6 +462,11 @@ span.mastodon:hover {
 span.spotify:hover {
   cursor: pointer;
   color: #1DB954;
+}
+
+span.threads:hover {
+  cursor: pointer;
+  color: #000;
 }
 
 .icon {
