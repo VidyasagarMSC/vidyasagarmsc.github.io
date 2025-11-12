@@ -415,6 +415,15 @@ def generate_latest_posts_html(posts: List[Dict]) -> str:
         filter_html += f'''
             <button class="button is-light filter-btn" data-filter="{website}">{website}</button>'''
 
+    # Add DZone button
+    filter_html += '''
+            <a href="https://dzone.com/authors/vidyasagarmsc" target="_blank" class="button is-info">
+              <span class="icon">
+                <i class="fas fa-external-link-alt"></i>
+              </span>
+              <span>DZone</span>
+            </a>'''
+
     filter_html += '''
           </div>
         </div>
