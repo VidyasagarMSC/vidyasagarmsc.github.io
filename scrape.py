@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 # Constants
 TODAY = date.today().strftime("%B %d, %Y")
 BLOG_DEFAULTS = {
-    "dzone_views": "530K+",
-    "medium_followers": "653",
+    "dzone_views": "550K+",
+    "medium_followers": "657",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
 }
@@ -25,11 +25,11 @@ BLOG_DEFAULTS = {
 SOCIAL_DEFAULTS = {
     "twitter_followers": "1.3K",
     "linkedin_followers": "3K",
-    "github_followers": "90",
+    "github_followers": "93",
     "instagram_followers": "370+",
     "youtube_subscribers": "71",
     "facebook_friends": "1.1K",
-    "stackoverflow_reach": "143K+",
+    "stackoverflow_reach": "147K+",
     "mastodon_followers": "8",
 }
 
