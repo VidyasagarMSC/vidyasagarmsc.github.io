@@ -17,27 +17,49 @@ logger = logging.getLogger(__name__)
 TODAY = date.today().strftime("%B %d, %Y")
 BLOG_DEFAULTS = {
     "dzone_views": "550K+",
-    "medium_followers": "657",
+    "medium_followers": "700+",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
 }
 
 SOCIAL_DEFAULTS = {
     "twitter_followers": "1.3K",
-    "linkedin_followers": "3K",
-    "github_followers": "93",
+    "linkedin_followers": "3K+",
+    "github_followers": "100+",
     "instagram_followers": "370+",
-    "youtube_subscribers": "71",
+    "youtube_subscribers": "75",
     "facebook_friends": "1.1K",
-    "stackoverflow_reach": "147K+",
+    "stackoverflow_reach": "150K+",
     "mastodon_followers": "8",
 }
 
 
-def safe_request(url, timeout=10):
-    """Safe wrapper around requests.get with error handling"""
+
+def safe_json_request(url, timeout=10):
+    """Safe wrapper around requests.get for JSON APIs"""
     try:
-        response = get(url, timeout=timeout)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+        response = get(url, timeout=timeout, headers=headers)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        logger.error(f"JSON request failed for {url}: {str(e)}")
+        return None
+
+def safe_request(url, timeout=10):
+    """Safe wrapper around requests.get with error handling and browser headers"""
+    try:
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+        }
+        response = get(url, timeout=timeout, headers=headers)
         response.raise_for_status()
         return response
     except RequestException as e:
@@ -79,8 +101,9 @@ def scrape_data(tag, url, attributes, default=None):
 def scrape_blog_stats():
     """Scrape blog statistics with fallback to defaults"""
     stats = BLOG_DEFAULTS.copy()
+    
+    # DZone scraping
     try:
-        # DZone scraping - original approach
         dzone_data = scrape_data(
             "div",
             "https://dzone.com/authors/vidyasagarmsc",
@@ -91,33 +114,41 @@ def scrape_blog_stats():
         if dzone_data:
             # Find all td elements within the first profile-content-right div
             td_elements = dzone_data[0].find_all("td", recursive=True)
-
             if len(td_elements) > 3:
                 # The 4th td element contains the views count
                 stats["dzone_views"] = td_elements[3].text.strip()
-
+                logger.info(f"Scraped DZone views: {stats['dzone_views']}")
     except Exception as e:
         logger.error(f"DZone scraping failed: {str(e)}")
 
-    # Rest of the function remains the same...
+    # Medium scraping
     try:
-        # Medium scraping
-        medium_data = scrape_data(
-            "span",
-            "https://vidyasagarmsc.medium.com",
-            {"class": "pw-follower-count"},
-            default=[],
-        )
-
-        if medium_data:
-            child_a_tag = medium_data[0].find("a", recursive=False)
-            if child_a_tag and child_a_tag.contents:
-                stats["medium_followers"] = child_a_tag.contents[0].split()[0]
+        # Medium is tricky, try catching the followers count from metadata if direct scraping fails
+        response = safe_request("https://medium.com/@VidyasagarMSC")
+        if response:
+            soup = parse_html(response.text)
+            # Try meta tag first
+            # Meta description often contains "read writing from X. Y followers."
+            meta = soup.find("meta", {"name": "description"})
+            if meta and "followers" in meta["content"]:
+                import re
+                match = re.search(r'([\d.,K]+) Followers', meta["content"], re.IGNORECASE)
+                if match:
+                    stats["medium_followers"] = match.group(1)
+                    logger.info(f"Scraped Medium followers (meta): {stats['medium_followers']}")
+            else:
+                 # Fallback to scraping
+                 elements = soup.find_all("span", class_="pw-follower-count")
+                 if elements:
+                     child_a = elements[0].find("a")
+                     if child_a:
+                         stats["medium_followers"] = child_a.text.split()[0]
+                         logger.info(f"Scraped Medium followers (html): {stats['medium_followers']}")
     except Exception as e:
         logger.error(f"Medium scraping failed: {str(e)}")
 
+    # WordPress scraping
     try:
-        # WordPress scraping
         wordpress_data = scrape_data(
             "div",
             "https://vmacwrites.wordpress.com/",
@@ -126,17 +157,16 @@ def scrape_blog_stats():
         )
 
         if wordpress_data:
-            # Original: wordpress_followers[-1].text.split(" ")[1]
             text_parts = wordpress_data[-1].text.split()
             if len(text_parts) > 1:
                 stats["wordpress_followers"] = text_parts[1]
+                logger.info(f"Scraped WordPress followers: {stats['wordpress_followers']}")
     except Exception as e:
         logger.error(f"WordPress scraping failed: {str(e)}")
     
     # Add current timestamp
     from datetime import datetime
     stats['last_updated'] = datetime.now().strftime('%B %d, %Y at %I:%M %p')
-    
 
     return stats
 
@@ -145,22 +175,26 @@ def scrape_social_stats():
     """Scrape social media statistics with fallback to defaults"""
     stats = SOCIAL_DEFAULTS.copy()
 
+    # GitHub API
     try:
-        # GitHub scraping
-        github_data = scrape_data(
-            "span",
-            "https://github.com/VidyasagarMSC?tab=followers",
-            {"class": "text-bold color-fg-default"},
-            default=[],
-        )
-
-        if github_data:
-            stats["github_followers"] = github_data[0].text
+        github_data = safe_json_request("https://api.github.com/users/VidyasagarMSC")
+        if github_data and 'followers' in github_data:
+            stats["github_followers"] = str(github_data['followers'])
+            logger.info(f"Fetched GitHub followers: {stats['github_followers']}")
     except Exception as e:
-        logger.error(f"GitHub scraping failed: {str(e)}")
+        logger.error(f"GitHub API failed: {str(e)}")
 
-    # Add other social scraping functions here following the same pattern
-    # ...
+    # Dev.to API
+    try:
+        # Dev.to API doesn't expose followers directly in the public user object without auth
+        # But we can try to parse it from the profile page with our improved headers
+        response = safe_request("https://dev.to/vidyasagarmsc")
+        if response:
+             # Look for "Followers" text often in sidebars
+             # This is fragile so we might stick to default if it fails
+             pass
+    except Exception as e:
+        logger.error(f"Dev.to scraping failed: {str(e)}")
 
     return stats
 

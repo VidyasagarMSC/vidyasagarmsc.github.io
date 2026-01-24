@@ -4,7 +4,7 @@ import os
 import time
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
-from xml.etree import ElementTree as ET
+import feedparser
 
 import requests
 from bs4 import BeautifulSoup
@@ -59,61 +59,48 @@ BLOG_FEEDS = {
 
 # Cache configuration
 CACHE_FILE = "cache/latest_posts_cache.json"
-CACHE_DURATION_HOURS = 24
+CACHE_DURATION_HOURS = 1  # Reduced to 1 hour to keep stats usage fresher
 
 
 def safe_request(url: str, timeout: int = 10) -> Optional[Dict]:
-    """Safe RSS feed request with error handling"""
+    """Safe RSS feed request using feedparser"""
     try:
         logger.info(f"Fetching RSS feed from: {url}")
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        
+        # Use feedparser which handles most of the heavy lifting including encoding and parsing
+        feed = feedparser.parse(url)
+        
+        if feed.bozo:
+             logger.warning(f"Feedparser reported a bozo error for {url}: {feed.bozo_exception}")
+             # We might still have entries even if there's an error, so we continue checking
+
+        if not feed.entries and feed.status >= 400:
+             logger.error(f"Failed to fetch feed {url}, status: {feed.status}")
+             return None
+
+        # Convert to our standardized dict structure
+        feed_dict = {
+            'feed': {
+                'title': feed.feed.get('title', ''),
+                'link': feed.feed.get('link', ''),
+                'description': feed.feed.get('description', '')
+            },
+            'entries': []
         }
-        response = requests.get(url, timeout=timeout, headers=headers)
-        response.raise_for_status()
 
-        # Parse XML
-        try:
-            root = ET.fromstring(response.content)
+        for item in feed.entries:
+            entry = {}
+            entry['title'] = item.get('title', '')
+            entry['link'] = item.get('link', '')
+            entry['description'] = item.get('description', '')
+            entry['summary'] = item.get('summary', '') or entry['description']
+            entry['published'] = item.get('published', '') or item.get('updated', '')
+            entry['guid'] = item.get('guid', '')
+            
+            feed_dict['entries'].append(entry)
 
-            # Convert to feedparser-like structure for compatibility
-            feed_dict = {
-                'feed': {'title': '', 'link': '', 'description': ''},
-                'entries': []
-            }
+        return feed_dict
 
-            # Extract feed info
-            channel = root.find('.//channel')
-            if channel is not None:
-                feed_dict['feed']['title'] = channel.findtext('title', '')
-                feed_dict['feed']['link'] = channel.findtext('link', '')
-                feed_dict['feed']['description'] = channel.findtext('description', '')
-
-            # Extract entries
-            for item in root.findall('.//item'):
-                entry = {}
-                entry['title'] = item.findtext('title', '')
-                entry['link'] = item.findtext('link', '')
-                entry['description'] = item.findtext('description', '')
-                entry['summary'] = item.findtext('summary', '') or entry['description']
-                entry['published'] = item.findtext('pubDate', '')
-                entry['guid'] = item.findtext('guid', '')
-
-                # Handle different date formats
-                if not entry['published']:
-                    entry['published'] = item.findtext('dc:date', '')  # Dublin Core
-
-                feed_dict['entries'].append(entry)
-
-            return feed_dict
-
-        except ET.ParseError as e:
-            logger.error(f"XML parsing failed for {url}: {str(e)}")
-            return None
-
-    except requests.RequestException as e:
-        logger.error(f"Request failed for {url}: {str(e)}")
-        return None
     except Exception as e:
         logger.error(f"Feed parsing failed for {url}: {str(e)}")
         return None
@@ -123,9 +110,11 @@ def clean_html(text: str) -> str:
     """Remove HTML tags and clean up text"""
     if not text:
         return ""
-    soup = BeautifulSoup(text, "lxml")
-    return soup.get_text().strip()
-
+    try:
+        soup = BeautifulSoup(text, "lxml")
+        return soup.get_text().strip()
+    except Exception:
+        return text
 
 def scrape_dzone_html(url: str) -> Optional[Dict]:
     """Scrape DZone author page HTML when RSS feed is not available"""
@@ -135,7 +124,7 @@ def scrape_dzone_html(url: str) -> Optional[Dict]:
         # Use session for better connection handling
         session = requests.Session()
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.5',
             'Accept-Encoding': 'gzip, deflate, br',
@@ -531,10 +520,14 @@ def main():
 
     # Write to file
     try:
-        with open('latest-posts.html', 'w', encoding='utf-8') as f:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        template_path = os.path.join(base_dir, 'templates', 'latest-posts-template.html')
+        output_path = os.path.join(base_dir, 'latest-posts.html')
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
             # Read the template
-            template_path = 'templates/latest-posts-template.html'
             if os.path.exists(template_path):
+                logger.info(f"Using template from: {template_path}")
                 with open(template_path, 'r', encoding='utf-8') as template_f:
                     template = template_f.read()
                 # Get current timestamp for last updated
@@ -547,6 +540,7 @@ def main():
                     current_time
                 )
             else:
+                logger.warning(f"Template not found at {template_path}, using fallback")
                 # Create basic HTML structure if template doesn't exist
                 final_html = f'''<!DOCTYPE html>
 <html>
