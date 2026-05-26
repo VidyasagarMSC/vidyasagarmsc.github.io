@@ -18,7 +18,7 @@ npm ci
 
 echo "🕸️  Running scraper..."
 if [ -f requirements.txt ]; then
-  pip install -q -r requirements.txt
+  pip3 install -q -r requirements.txt 2>/dev/null || pip install -q -r requirements.txt
 fi
 python scrape.py
 
