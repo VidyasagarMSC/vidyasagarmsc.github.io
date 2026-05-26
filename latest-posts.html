@@ -1,1357 +1,376 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-30026605-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Latest technical articles and blog posts by Vidyasagar Machupalli — covering AI, Cloud, Quantum Computing, Cybersecurity, and Enterprise Architecture across DZone, Medium, Dev.to, Hackernoon, Substack, and VMacWrites." />
+  <meta name="keywords" content="Vidyasagar Machupalli, technical articles, latest blog posts, AI articles, cloud computing, quantum computing, cybersecurity, enterprise architecture, DZone MVB, Hackernoon Top Writer, programming tutorials" />
+  <meta name="author" content="Vidyasagar Machupalli" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vidyasagarmsc.github.io/latest-posts.html" />
 
-      gtag("config", "UA-30026605-1");
-    </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vidyasagarmsc.github.io/latest-posts.html" />
+  <meta property="og:title" content="Latest Technical Articles — Vidyasagar Machupalli | AI, Cloud, Quantum & Enterprise Tech" />
+  <meta property="og:description" content="Browse the latest articles by Vidyasagar Machupalli. 100+ publications across DZone, Medium, Dev.to, Hackernoon, Substack — read by 500K+ developers worldwide." />
+  <meta property="og:image" content="https://vidyasagarmsc.github.io/images/logo-removebg-preview-short.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Vidyasagar Machupalli" />
+  <meta property="og:locale" content="en_US" />
 
-    <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="Latest blog posts from all my websites - Vidyasagar Machupalli"
-    />
-    <meta name="keywords" content="blog, latest posts, articles, technical writing" />
-    <meta name="author" content="Vidyasagar Machupalli" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latest Blog Posts - Vidyasagar Machupalli</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
-    />
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne&family=Jura:wght@300;400;500;600;700&family=Quicksand:wght@700&family=Montserrat&family=Dosis:wght@400;800&family=Prompt&family=Arvo&family=Rubik&family=Maitree&display=swap"
-      rel="stylesheet"
-    />
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="js/index.js" type="text/javascript"></script>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <style>
-      .post-card {
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-      }
-      .post-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .filter-btn {
-        margin: 0.25rem;
-      }
-      .card {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .card-content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .content {
-        flex-grow: 1;
-      }
-      .nav-dot {
-        cursor: pointer !important;
-        transition: all 0.3s ease;
-      }
-      .nav-dot:hover {
-        transform: scale(1.2);
-        opacity: 0.8;
-      }
-      .nav-dot.active {
-        background-color: #3273dc !important;
-        transform: scale(1.1);
-      }
-      .content h4 {
-        margin-bottom: 0.5rem;
-      }
-      .content p {
-        margin-bottom: 1rem;
-      }
-      .navbar-menu.is-active {
-        display: block !important;
-      }
-      @media screen and (max-width: 768px) {
-        .navbar-menu {
-          display: none;
-        }
-        .navbar-menu.is-active {
-          display: block !important;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          background-color: white;
-          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-          z-index: 1000;
-        }
-      }
-      @media screen and (min-width: 769px) {
-        .navbar-menu {
-          display: flex !important;
-        }
-      }
-      @media screen and (max-width: 768px) {
-        .section {
-          padding: 1.5rem 1rem;
-        }
-        .buttons.is-centered {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .hero-body {
-          padding: 3rem 1.5rem !important;
-        }
-        .title.is-1 {
-          font-size: 2rem !important;
-        }
-        .subtitle.is-3 {
-          font-size: 1.5rem !important;
-        }
-      }
-      .columns.is-multiline {
-        margin-left: -0.75rem;
-        margin-right: -0.75rem;
-        margin-top: -0.75rem;
-      }
-      .column {
-        padding: 0.75rem;
-      }
-      .hero-body {
-        display: flex;
-        align-items: center;
-        min-height: auto;
-      }
-      #latest-posts.hero.is-fullheight {
-        min-height: auto;
-      }
-      #latest-posts .hero-body .title {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      /* Dark mode overrides scoped to Latest Posts */
-      #latest-posts.is-dark {
-        background-color: #0b1d2a !important;
-      }
-      #latest-posts.is-dark .hero-body,
-      #latest-posts.is-dark .hero-body .container,
-      #latest-posts.is-dark .title,
-      #latest-posts.is-dark .subtitle,
-      #latest-posts.is-dark p,
-      #latest-posts.is-dark .has-text-grey {
-        color: #f5f5f5 !important;
-      }
-      #latest-posts.is-dark .has-text-dark {
-        color: #e5e7eb !important;
-      }
-      #latest-posts.is-dark a:not(.button) {
-        color: #93c5fd !important;
-      }
-      #latest-posts.is-dark a:not(.button):hover {
-        color: #bfdbfe !important;
-        box-shadow: inset 0 -8px 0 0 rgba(191, 219, 254, 0.35) !important;
-      }
-      #latest-posts.is-dark .button.is-light {
-        background-color: #26323f !important;
-        color: #f5f5f5 !important;
-        border-color: #364452 !important;
-      }
-      #latest-posts.is-dark .button.is-light:hover {
-        background-color: #364452 !important;
-      }
-      #latest-posts.is-dark .card {
-        background-color: #1f2937 !important;
-        color: #f5f5f5 !important;
-        border: 1px solid #26323f !important;
-      }
-      #latest-posts.is-dark .card-content,
-      #latest-posts.is-dark .media-content p {
-        color: #f5f5f5 !important;
-      }
-      /* Mobile navbar dropdown */
-      @media screen and (max-width: 768px) {
-        #latest-posts.is-dark .navbar-menu.is-active {
-          background-color: #1f2937 !important;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <section
-      id="latest-posts"
-      class="hero is-fullheight is-light is-bold has-background content-section"
-    >
-      <div class="hero-head">
-        <nav class="bd-navbar navbar is-fixed-top is-transparent connect">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="index.html#home">
-              <img
-                src="images/logo-removebg-preview-short.png"
-                width="64"
-                height="56"
-                loading="lazy"
-                alt="…"
-              />
-            </a>
-            <a
-              role="button"
-              class="navbar-burger"
-              aria-label="menu"
-              aria-expanded="false"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-          <div class="header">
-            <div class="progress-container">
-              <div class="progress-bar" id="myBar"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div id="navbarMenuHeroA" class="navbar-menu">
-              <div class="navbar-end">
-                <a href="index.html#home" class="navbar-item is-active menu"> Home </a>
-                <a href="index.html#about" class="navbar-item is-active menu"> About </a>
-                <a href="index.html#blog" class="navbar-item is-active menu"> Blog </a>
-                <a href="latest-posts.html" class="navbar-item is-active menu">
-                  Latest Posts
-                </a>
-                <a href="index.html#photos" class="navbar-item is-active menu">
-                  Photos
-                </a>
-                <a href="index.html#connect" class="navbar-item is-active menu">
-                  Connect
-                </a>
-                <a class="navbar-item fullscreen no-underline">
-                  <div class="toggler-container">
-                    <p>🌞</p>
-                    <div class="toggler">
-                      <div class="circle"></div>
-                    </div>
-                    <p>🌑</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vidyasagarmsc.github.io/latest-posts.html" />
+  <meta name="twitter:title" content="Latest Technical Articles — Vidyasagar Machupalli" />
+  <meta name="twitter:description" content="100+ articles on AI, Cloud, Quantum, and Enterprise Architecture — read by 500K+ developers worldwide." />
+  <meta name="twitter:image" content="https://vidyasagarmsc.github.io/images/logo-removebg-preview-short.png" />
+  <meta name="twitter:site" content="@vidyasagarmsc" />
+  <meta name="twitter:creator" content="@vidyasagarmsc" />
 
-      <div class="hero-body has-background">
-        <div class="container has-text-centered">
-          <h1 class="title is-1">Latest Blog Posts</h1>
-          <h2 class="subtitle is-3">
-            My recent writings across all platforms
-          </h2>
-          <p class="is-size-6 has-text-grey">
-            Discover my latest thoughts, tutorials, and insights from
-            <strong>VMacWrites</strong>,
-            <strong>Medium</strong>,
-            <strong>Dev.to</strong>,
-            <strong>Substack</strong>, and
-            <strong>Hackernoon</strong>.
-          </p>
-        </div>
-      </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Vidyasagar Machupalli — Latest Technical Articles","url":"https://vidyasagarmsc.github.io/latest-posts.html","description":"Browse the latest technical articles by Vidyasagar Machupalli across DZone, Medium, Dev.to, Hackernoon, Substack, and VMacWrites.","author":{"@type":"Person","name":"Vidyasagar Machupalli"}}</script>
 
-      
-      <div class="container">
-        <div class="section">
-          <div class="buttons is-centered">
-            <button class="button is-primary filter-btn" data-filter="all">All Posts</button>
-            <button class="button is-light filter-btn" data-filter="Dev.to">Dev.to</button>
-            <button class="button is-light filter-btn" data-filter="Hackernoon">Hackernoon</button>
-            <button class="button is-light filter-btn" data-filter="Medium">Medium</button>
-            <button class="button is-light filter-btn" data-filter="VMacWrites">VMacWrites</button>
-            <a href="https://dzone.com/authors/vidyasagarmsc" target="_blank" class="button is-info">
-              <span class="icon">
-                <i class="fas fa-external-link-alt"></i>
-              </span>
-              <span>DZone</span>
-            </a>
-          </div>
-        </div>
-      </div>
+  <title>Latest Technical Articles — Vidyasagar Machupalli | AI, Cloud, Quantum & Enterprise Architecture</title>
 
-      <div class="section">
-        <div class="container">
-          <div class="columns is-multiline is-centered">
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">March 06, 2026</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                The Ultimate Terminal Stack in 2026: A Cross-Platform Guide for macOS, Linux, and Windows
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            With the release of Macbook Neo, I thought this would be a perfect time to talk about my new terminal setup on macOS and how similar setup can be achieved on Linux and Windows Operating systems.I love...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 12, 2026</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems?source=rss" target="_blank" class="has-text-dark">
-                                Database Evolution: From Traditional RDBMS to AI-Native and Quantum-Ready Systems
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            The database landscape is going through the biggest shift since the NoSQL movement of the 2010s. Two forces are reshaping everything: artificial intelligence and quantum computing. AI workloads demand...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 19, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/quantum-security-governance-building-a-framework-for-the-post-quantum-world?source=rss" target="_blank" class="has-text-dark">
-                                Quantum Security Governance: Building a Framework for the Post-Quantum World
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Quantum security is about creating a structured approach to managing cryptographic risk in an environment where the threat landscape is evolving faster than our ability to respond. Unlike post-quantum...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 18, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2025/11/19/reflecting-on-my-2025-journey-a-year-of-innovation-learning-and-technical-excellence/" target="_blank" class="has-text-dark">
-                                Reflecting on My 2025 Journey: A Year of Innovation, Learning, and Technical Excellence
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Last updated: 18th December 2025 As I reflect on 2025, I’m filled with immense gratitude and excitement for what has been one of the most productive years in my technical writing journey. This year ha...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 04, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/beyond-data-the-rising-need-for-ai-security?source=rss" target="_blank" class="has-text-dark">
-                                Beyond Data: The Rising Need for AI Security
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Data Security has long been the cornerstone of enterprise cybersecurity strategies. But as artificial intelligence becomes deeply embedded in business operations, a new discipline emerges: AI Security...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 03, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/finding-todays-changed-files-a-quick-python-script-for-file-uploads-13b7" target="_blank" class="has-text-dark">
-                                Finding Today's Changed Files: A Quick Python Script for File Uploads
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            My friend recently asked me for help with a common problem: they needed to upload files to a remote server, but didn't want to upload everything—just the files that had changed today. Manually checkin...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">October 06, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/understanding-hsts-the-backbone-of-modern-web-security?source=rss" target="_blank" class="has-text-dark">
-                                Understanding HSTS: The Backbone of Modern Web Security
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            HSTS is a web security policy mechanism that helps protect websites against protocol downgrade attacks and cookie hijacking. Introduced in 2012 as RFC 6797, HSTS has become a critical component of mod...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">August 08, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/resolving-ibm-secrets-manager-dns-resolution-errors-in-terraform-and-pulumi-iac-631a90d47b7c?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Resolving Secrets Manager DNS Resolution Errors in Terraform and Pulumi IaC
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            To understand Pulumi and its components, refer to this introductionI love Terraform and as a curious explorer, I started looking for an alternative when Terraform introduced HCL2. An IaC alternative w...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">August 08, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/resolving-secrets-manager-dns-resolution-errors-in-terraform-and-pulumi-iac-29hj" target="_blank" class="has-text-dark">
-                                Resolving Secrets Manager DNS Resolution Errors in Terraform and Pulumi IaC
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            I love Terraform and as a curious explorer, I started looking for an alternative when Terraform introduced HCL2. An IaC alternative where I can use the programming language of my choice for declarativ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">June 13, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows?source=rss" target="_blank" class="has-text-dark">
-                                Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            SSL certificates are stored in various file formats, each with its own structure and purpose. PEM (Privacy Enhanced Mail) is the most common format for SSL certificates. DER (Distinguished Encoding Ru...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 12, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                The Essential Role of Process Monitoring Scripts in Linux Environments
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In today’s complex computing environments, keeping tabs on running processes isn’t just good practice — it’s absolutely critical. Whether you’re managing a fleet of Linux servers, maintaining developm...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 12, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/the-essential-role-of-process-monitoring-scripts-in-linux-environments-2pe5" target="_blank" class="has-text-dark">
-                                The Essential Role of Process Monitoring Scripts in Linux Environments
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In today’s complex computing environments, keeping tabs on running processes isn’t just good practice — it’s absolutely critical. Whether you’re managing a fleet of Linux servers, maintaining developm...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 04, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg" target="_blank" class="has-text-dark">
-                                Podman: Detailed Overview, Advantages, Disadvantages, and Setup
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Podman is an open-source container engine that enables users to create, manage, and run OCI containers and pods across Linux, macOS, and Windows. Unlike Docker, Podman is daemonless, running container...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">March 05, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/s3cmd-cli-for-object-storage-87a02e4b300b?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                S3cmd: CLI for Object Storage
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In the recent times, I am exploring and playing with Top Tools for Object Storage and Data Management. In this journey, one of the tools that I was introduced to was s3cmd.What is s3cmd?S3cmd is a pow...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">March 05, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/s3cmd-cli-for-object-storage-2j02" target="_blank" class="has-text-dark">
-                                S3cmd: CLI for Object Storage
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In the recent times, I am exploring and playing with Top Tools for Object Storage and Data Management. In this journey, one of the tools that I was introduced to was s3cmd.
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%236366f1'>VM</text></svg>" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#6366f1" />
 
-  
-  
-  What is s3cmd?
-
-S3...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 06, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/an-introduction-to-sympy-a-python-library-for-symbolic-mathematics-ad13e70d5591?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                An Introduction to SymPy: A Python Library for Symbolic Mathematics
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            SymPy is an open-source Python library for symbolic mathematics.SymPy — Mathematics Python LibrarySymPy aims to become a full-featured computer algebra system (CAS) while keeping the code simple, exte...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 06, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/an-introduction-to-sympy-a-python-library-for-symbolic-mathematics-4gig" target="_blank" class="has-text-dark">
-                                An Introduction to SymPy: A Python Library for Symbolic Mathematics
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            SymPy is an open-source Python library for symbolic mathematics.
-
-
-SymPy — Mathematics Python Library
-SymPy aims to become a full-featured computer algebra system (CAS) while keeping the code simple, ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 01, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/pandas-conversion-using-loc-and-iloc-d89d16010b49?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Pandas: Conversion using loc and iloc
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Pandas is a powerful Python library used for data manipulation and analysis.Created by Wes McKinney in 2008, it provides data structures and functions for working with structured data efficiently. Pan...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">January 01, 2025</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/pandas-conversion-using-loc-and-iloc-594b" target="_blank" class="has-text-dark">
-                                Pandas: Conversion using loc and iloc
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Pandas is a powerful Python library used for data manipulation and analysis.
-
-Created by Wes McKinney in 2008, it provides data structures and functions for working with structured data efficiently. P...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 08, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2024/12/08/reflecting-on-my-2024-journey-achievements-and-growth/" target="_blank" class="has-text-dark">
-                                Reflecting on My 2024 Journey: Achievements and Growth
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In 2024, I celebrated significant professional achievements, including prestigious certifications and awards while engaging deeply in community initiatives. My passion for technology spurred contribut...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 08, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/reflecting-on-my-2024-journey-achievements-and-growth-1joj" target="_blank" class="has-text-dark">
-                                Reflecting on My 2024 Journey: Achievements and Growth
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            As I think on 2024, I’m overwhelmed with gratitude and excitement for the incredible journey I’ve experienced. This year has been a remarkable chapter in my professional and personal growth. I have ac...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 07, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/nvidia-mig-with-gpu-optimization-in-kubernetes-09a321b78993?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Nvidia MIG with GPU Optimization in Kubernetes
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Multi-Instance GPU (MIG) is a technology that allows partitioning of a single GPU into multiple smaller, isolated GPU instances. This feature enables better GPU utilization, especially for workloads t...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 01, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/model-context-protocol-overview-5a15a57e69c4?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Model Context Protocol Overview
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Anthropic has introduced the Model Context Protocol (MCP), an open-source standard designed to simplify and standardize connections between AI models and external data sources. This protocol aims to s...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 01, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/nurturing-the-developer-within-a-journey-of-growth-and-2n9o" target="_blank" class="has-text-dark">
-                                Nurturing the Developer Within: A Journey of Growth and Community
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In the ever-evolving landscape of technology, keeping the developer inside you alive
-is not just a choice—it's a necessity. As we navigate through our careers, it's easy
-to get caught up in the day-to...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Dev.to">
-            <div class="card is-warning">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-warning">Dev.to</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 20, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://dev.to/vidyasagarmsc/icecream-a-sweet-alternative-to-print-debugging-in-python-1lhg" target="_blank" class="has-text-dark">
-                                IceCream: A Sweet Alternative to Print Debugging in Python
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Tired of cluttering your code with print statements for debugging? Enter IceCream, a Python library that makes debugging effortless and more readable. Let's explore how IceCream can sweeten your debug...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 18, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://medium.com/vmacwrites/chain-of-trust-decoding-ssl-certificate-security-architecture-2bde46655d37?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Chain of Trust: Decoding SSL Certificate Security Architecture
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            This article is part of a 3-part article series covering beginners to advanced SSL security architecture. Please refer to the further reading section in the last to check the follow-up articles.The ch...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Medium">
-            <div class="card is-info">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-info">Medium</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">August 07, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vidyasagarmsc.medium.com/understanding-linux-permissions-fe11c77371ad?source=rss-12bd87a23883------2" target="_blank" class="has-text-dark">
-                                Understanding Linux Permissions
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Linux file permissions are a cornerstone of system security and access control. They dictate who can read, write, or execute files and directories on a Linux system. Mastering these permissions is ess...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">July 23, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/shingling-in-the-generative-ai-era?source=rss" target="_blank" class="has-text-dark">
-                                Shingling in the Generative AI Era
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In the Generative AI era, there is a need for techniques from detecting plagiarism (intentional or unintentional) to content duplication. By using techniques like shingling, generative AI can uncover ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 24, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/how-to-deploy-rapids-on-gpu-enabled-private-cloud?source=rss" target="_blank" class="has-text-dark">
-                                How to Deploy RAPIDs on GPU-Enabled Private Cloud
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Learn how to set up a GPU-enabled virtual server instance (VSI) on a Virtual Private Cloud (VPC) and deploy RAPIDS using IBM Schematics. By leveraging RAPids, an open-source suite of data science libr...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="Hackernoon">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">Hackernoon</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">May 23, 2024</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://hackernoon.com/design-and-deploy-a-completely-private-and-secured-networking-architecture-on-cloud-using-automation?source=rss" target="_blank" class="has-text-dark">
-                                Design and Deploy a Completely Private and Secured Networking Architecture on Cloud Using Automation
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In today's cloud world, security has taken precedence over resiliency and high availability. With the introduction of Virtual Private Cloud, network security has become even more critical. In this art...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">December 16, 2023</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2023/12/16/2023-a-year-in-retrospective/" target="_blank" class="has-text-dark">
-                                2023: A year in retrospective
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            I enjoy interacting with people and sharing my thoughts through my blogs. This year, it’s no different. I learnt new technologies. I explored interesting tools. I had a lot of conversations with colle...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">July 01, 2023</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2023/07/01/ansible-code-snippets-for-automation/" target="_blank" class="has-text-dark">
-                                Ansible code snippets for automation
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            I have been learning and writing Ansible for Cloud automation. Created this code repository to share my Ansible automation learnings as snippets. As I explore and learn Ansible, I will be adding the s...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 09, 2020</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2020/11/09/adjust-the-speaking-rate/" target="_blank" class="has-text-dark">
-                                Adjust the speaking rate
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Stackoverflow is an ocean for learning and exploring. How? Try answering a question and you will understand 🙂  A few weeks ago, I saw this question on StackOverflow –  How to adjust the speaking rate ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">April 09, 2020</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2020/04/09/container-to-container-communication-with-bridge-network/" target="_blank" class="has-text-dark">
-                                Container to container communication with bridge network
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In this post, you will learn how to establish container to container communication by creating a bridge network. The back story Currently, I am working on a sample code that includes a frontend (web) ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">April 05, 2019</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2019/04/05/icr-io-unauthorized-authentication-required/" target="_blank" class="has-text-dark">
-                                Container registry unauthorized: authentication required
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            IBM Cloud container registry(ICR) imagepull fails on IBM Cloud Kubernetes(IKS) cluster with Unauthorized: authentication required error. Here’s what you did You have pushed an image to IBM Cloud conta...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">February 06, 2019</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2019/02/06/istio-on-windows-10/" target="_blank" class="has-text-dark">
-                                Istio on Windows 10
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            In this post, you will learn how to setup Istioctl on Windows 10 to run Istio service mesh commands on your command prompt(CMD). Before jumping into the setup steps, let’s recap What is Istio? Cloud p...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">November 05, 2018</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2018/11/05/create-a-presigned-url-to-download-an-object-in-python-3-x/" target="_blank" class="has-text-dark">
-                                Create a presigned URL to download an object in Python 3.x
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            Presigned URLs in Cloud Object Storage create a temporary link that can be used to share an object publicly for direct download. In one of my serverless(IBM Cloud Functions) proof of concepts, I had a...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column is-one-third-desktop is-half-tablet is-full-mobile post-card" data-website="VMacWrites">
-            <div class="card is-primary">
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <span class="tag is-primary">VMacWrites</span>
-                        </div>
-                        <div class="media-right">
-                            <span class="has-text-grey is-size-7">October 09, 2018</span>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="title is-5">
-                            <a href="https://vmacwrites.wordpress.com/2018/10/09/install-knative-with-istio-on-ibm-cloud/" target="_blank" class="has-text-dark">
-                                Install Knative with Istio on IBM Cloud
-                            </a>
-                        </h4>
-                        <p class="subtitle is-6 has-text-grey">
-                            This post provides you step-by-step instructions to install Knative with Istio on IBM Cloud Kubernetes Service(IKS), build and push your image to IBM Cloud Container Registry and deploy the app. Befor...
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-          </div>
-        </div>
-      </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const postCards = document.querySelectorAll('.post-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('is-primary'));
-                    this.classList.add('is-primary');
-
-                    // Filter posts
-                    postCards.forEach(card => {
-                        const website = card.getAttribute('data-website');
-                        if (filter === 'all' || website === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-
-      <div class="hero-foot">
-        <div class="container has-text-centered">
-          <p class="is-size-7 has-text-grey">
-            <i class="fas fa-clock"></i>
-            Last updated: April 11, 2026 at 01:59 AM
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <a class="no-underline float" href="https://vidyasagarmsc-github-io.translate.goog/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=en-US&_x_tr_pto=wapp" target="_blank">
-      <i class="fa-solid fa-language my-float no-underline"></i>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"From MkDocs 1.6 to Zensical — Why I Made the Move","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2026-05-08","publisher":"Medium","url":"https://medium.com/vmacwrites/from-mkdocs-1-6-to-zensical-heres-why-i-finally-made-the-move-53b273b49cdd","description":"A warning message in my terminal completely changed how I think about documentation."},{"@type":"BlogPosting","headline":"Open-Source LLM Tools Worth Your Time","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2026-04-28","publisher":"DZone","url":"https://dzone.com/authors/vidyasagarmsc","description":"Building with LLMs in 2026 means more than picking a model and calling an API."},{"@type":"BlogPosting","headline":"MCP vs Skills vs Agents With Scripts","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2026-03-26","publisher":"DZone","url":"https://dzone.com/authors/vidyasagarmsc","description":"Learn about when to use MCP, skills, and agents with scripts."},{"@type":"BlogPosting","headline":"The Ultimate Terminal Stack in 2026","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2026-03-06","publisher":"Medium","url":"https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc","description":"A cross-platform guide for macOS, Linux, and Windows terminal setup."},{"@type":"BlogPosting","headline":"Database Evolution: From RDBMS to AI-Native and Quantum-Ready Systems","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2026-01-12","publisher":"Hackernoon","url":"https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems","description":"The database landscape is going through the biggest shift since the NoSQL movement."},{"@type":"BlogPosting","headline":"Quantum Security Governance","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2025-12-19","publisher":"Hackernoon","url":"https://hackernoon.com/quantum-security-governance-building-a-framework-for-the-post-quantum-world","description":"Building a framework for the post-quantum world."},{"@type":"BlogPosting","headline":"Beyond Data: The Rising Need for AI Security","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2025-11-04","publisher":"Hackernoon","url":"https://hackernoon.com/beyond-data-the-rising-need-for-ai-security","description":"AI Security emerges as a new discipline beyond traditional data security."},{"@type":"BlogPosting","headline":"Understanding HSTS: The Backbone of Modern Web Security","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2025-10-06","publisher":"Hackernoon","url":"https://hackernoon.com/understanding-hsts-the-backbone-of-modern-web-security","description":"HSTS is a web security policy mechanism that helps protect against protocol downgrade attacks."},{"@type":"BlogPosting","headline":"Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows","author":{"@type":"Person","name":"Vidyasagar Machupalli"},"datePublished":"2025-06-13","publisher":"Hackernoon","url":"https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows","description":"Advanced SSL certificate troubleshooting on Windows environments."}]}</script>
+  <script type="module" crossorigin src="/assets/main-BI5efRNz.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Bx8uDllP.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="/assets/logo-removebg-preview-short-dXd7OzSp.png" alt="Vidyasagar Machupalli" />
+        <span class="navbar-brand-text">Vidyasagar</span>
       </a>
-
-    <!-- Section Navigator -->
-    <nav class="section-nav">
-      <div class="nav-dots">
-          <div class="nav-dot" data-label="Home" data-section="index.html#home"></div>
-          <div class="nav-dot" data-label="About" data-section="index.html#about"></div>
-          <div class="nav-dot" data-label="Blog" data-section="index.html#blog"></div>
-          <div class="nav-dot active" data-label="Latest Posts" data-section="latest-posts"></div>
-          <div class="nav-dot" data-label="Photos" data-section="index.html#photos"></div>
-          <div class="nav-dot" data-label="Connect" data-section="index.html#connect"></div>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="index.html#about" class="navbar-link">About</a>
+        <a href="index.html#writing" class="navbar-link">Blog</a>
+        <a href="research.html" class="navbar-link">Research</a>
+        <a href="latest-posts.html" class="navbar-link active">Latest Posts</a>
+        <a href="index.html#gallery" class="navbar-link">Gallery</a>
+        <a href="index.html#connect" class="navbar-link">Connect</a>
       </div>
-    </nav>
+      <div class="navbar-actions">
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
 
-    <script>
-      // Load last updated time from cache
-      fetch('cache/latest_posts_cache.json')
-        .then(response => response.json())
-        .then(data => {
-          if (data.last_updated) {
-            const date = new Date(data.last_updated);
-            document.getElementById('last-updated').textContent =
-              date.toLocaleDateString() + ' at ' + date.toLocaleTimeString();
-          }
-        })
-        .catch(error => {
-          console.log('Cache file not available');
-        });
+  <div style="min-height:100vh;padding-top:var(--nav-height);">
+    <div class="page-header">
+      <a href="index.html#writing" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+      <h1>Latest Blog Posts</h1>
+      <p class="page-subtitle">Discover my latest thoughts, tutorials, and insights from <strong>VMacWrites</strong>, <strong>Medium</strong>, <strong>Dev.to</strong>, <strong>Substack</strong>, and <strong>Hackernoon</strong>.</p>
+    </div>
 
-        // Mobile menu functionality
-        const burger = document.querySelector('.navbar-burger');
-        const menu = document.querySelector('.navbar-menu');
+    <div class="container">
+      <div class="platform-filters fade-in">
+        <button class="filter-btn active" data-filter="all"><i class="fas fa-globe"></i> All Posts</button>
+        <button class="filter-btn" data-filter="Medium"><i class="fab fa-medium"></i> Medium</button>
+        <button class="filter-btn" data-filter="Dev.to"><i class="fab fa-dev"></i> Dev.to</button>
+        <button class="filter-btn" data-filter="Hackernoon"><i class="fab fa-hacker-news"></i> Hackernoon</button>
+        <button class="filter-btn" data-filter="VMacWrites"><i class="fab fa-wordpress"></i> VMacWrites</button>
+        <button class="filter-btn" data-filter="DZone" style="border-color:#e34c26;color:#e34c26;"><i class="fas fa-code"></i> DZone</button>
+      </div>
 
-        if (burger && menu) {
-          burger.addEventListener('click', function() {
-            burger.classList.toggle('is-active');
-            menu.classList.toggle('is-active');
-          });
-        }
+      <div class="latest-posts-grid fade-in">
+        <!-- Medium - May 2026 -->
+        <a href="https://medium.com/vmacwrites/from-mkdocs-1-6-to-zensical-heres-why-i-finally-made-the-move-53b273b49cdd" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">May 08, 2026</span>
+          </div>
+          <h4>From MkDocs 1.6 to Zensical — Why I Made the Move</h4>
+          <p class="lpc-desc">A warning message in my terminal completely changed how I think about documentation.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 1.2K</span></div>
+        </a>
 
-        // Section navigation functionality
-        const navDots = document.querySelectorAll('.nav-dot');
-        navDots.forEach(dot => {
-          dot.addEventListener('click', function() {
-            const section = this.getAttribute('data-section');
-            if (section === 'latest-posts') {
-              // Stay on current page
-              return;
-            } else if (section.startsWith('index.html#')) {
-              // Navigate to main page with section
-              window.location.href = section;
-            } else {
-              // Fallback: navigate to main page with section
-              window.location.href = 'index.html#' + section;
-            }
-          });
+        <!-- DZone - Apr 2026 -->
+        <a href="https://dzone.com/authors/vidyasagarmsc" target="_blank" class="latest-post-card" data-platform="DZone">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#e34c26;">DZ</div>
+              <span class="lpc-platform-name">DZone</span>
+            </div>
+            <span class="lpc-date">Apr 28, 2026</span>
+          </div>
+          <h4>Open-Source LLM Tools Worth Your Time</h4>
+          <p class="lpc-desc">Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 2.8K</span></div>
+        </a>
 
-          // Add hover effect
-          dot.style.cursor = 'pointer';
-        });
+        <!-- DZone - Mar 2026 -->
+        <a href="https://dzone.com/authors/vidyasagarmsc" target="_blank" class="latest-post-card" data-platform="DZone">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#e34c26;">DZ</div>
+              <span class="lpc-platform-name">DZone</span>
+            </div>
+            <span class="lpc-date">Mar 26, 2026</span>
+          </div>
+          <h4>MCP vs Skills vs Agents With Scripts: Which One Should You Pick?</h4>
+          <p class="lpc-desc">Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 3.3K</span></div>
+        </a>
 
-        // Handle navigation clicks
-        const navLinks = document.querySelectorAll('.navbar-item[href]');
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === 'latest-posts.html') {
-              // Stay on current page - do nothing
-              e.preventDefault();
-              return;
-            } else if (href.startsWith('index.html#') || href.startsWith('#')) {
-              // Navigate to main page with section
-              e.preventDefault();
-              if (href.startsWith('#')) {
-                window.location.href = 'index.html' + href;
-              } else {
-                window.location.href = href;
-              }
-            }
-          });
-        });
-    </script>
-  </body>
+        <!-- Medium - Mar 2026 -->
+        <a href="https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Mar 06, 2026</span>
+          </div>
+          <h4>The Ultimate Terminal Stack in 2026: A Cross-Platform Guide</h4>
+          <p class="lpc-desc">With the release of Macbook Neo, I thought this would be a perfect time to talk about my new terminal setup on macOS.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 3.5K</span><span><i class="fas fa-heart"></i> 120</span></div>
+        </a>
+
+        <!-- Hackernoon - Jan 2026 -->
+        <a href="https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems" target="_blank" class="latest-post-card" data-platform="Hackernoon">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#00ff7f,#00cc66);color:#000;">HN</div>
+              <span class="lpc-platform-name">Hackernoon</span>
+            </div>
+            <span class="lpc-date">Jan 12, 2026</span>
+          </div>
+          <h4>Database Evolution: From Traditional RDBMS to AI-Native and Quantum-Ready Systems</h4>
+          <p class="lpc-desc">The database landscape is going through the biggest shift since the NoSQL movement of the 2010s.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 4.2K</span><span><i class="fas fa-heart"></i> 78</span></div>
+        </a>
+
+        <!-- Hackernoon - Dec 2025 -->
+        <a href="https://hackernoon.com/quantum-security-governance-building-a-framework-for-the-post-quantum-world" target="_blank" class="latest-post-card" data-platform="Hackernoon">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#00ff7f,#00cc66);color:#000;">HN</div>
+              <span class="lpc-platform-name">Hackernoon</span>
+            </div>
+            <span class="lpc-date">Dec 19, 2025</span>
+          </div>
+          <h4>Quantum Security Governance: Building a Framework for the Post-Quantum World</h4>
+          <p class="lpc-desc">Quantum security is about creating a structured approach to managing cryptographic risk.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 3.8K</span><span><i class="fas fa-heart"></i> 65</span></div>
+        </a>
+
+        <!-- VMacWrites - Nov 2025 -->
+        <a href="https://vmacwrites.wordpress.com/2025/11/19/reflecting-on-my-2025-journey-a-year-of-innovation-learning-and-technical-excellence/" target="_blank" class="latest-post-card" data-platform="VMacWrites">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#21759b,#1e6a8a);">W</div>
+              <span class="lpc-platform-name">VMacWrites</span>
+            </div>
+            <span class="lpc-date">Nov 18, 2025</span>
+          </div>
+          <h4>Reflecting on My 2025 Journey: A Year of Innovation, Learning, and Technical Excellence</h4>
+          <p class="lpc-desc">As I reflect on 2025, I'm filled with immense gratitude for what has been one of the most productive years.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 1.1K</span><span><i class="fas fa-heart"></i> 42</span></div>
+        </a>
+
+        <!-- Hackernoon - Nov 2025 -->
+        <a href="https://hackernoon.com/beyond-data-the-rising-need-for-ai-security" target="_blank" class="latest-post-card" data-platform="Hackernoon">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#00ff7f,#00cc66);color:#000;">HN</div>
+              <span class="lpc-platform-name">Hackernoon</span>
+            </div>
+            <span class="lpc-date">Nov 04, 2025</span>
+          </div>
+          <h4>Beyond Data: The Rising Need for AI Security</h4>
+          <p class="lpc-desc">Data Security has long been the cornerstone of enterprise cybersecurity. But now a new discipline emerges: AI Security.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 5.6K</span><span><i class="fas fa-heart"></i> 95</span></div>
+        </a>
+
+        <!-- Dev.to - Nov 2025 -->
+        <a href="https://dev.to/vidyasagarmsc/finding-todays-changed-files-a-quick-python-script-for-file-uploads-13b7" target="_blank" class="latest-post-card" data-platform="Dev.to">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#0a0a0a;"><i class="fab fa-dev" style="font-size:0.9rem;"></i></div>
+              <span class="lpc-platform-name">Dev.to</span>
+            </div>
+            <span class="lpc-date">Nov 03, 2025</span>
+          </div>
+          <h4>Finding Today's Changed Files: A Quick Python Script for File Uploads</h4>
+          <p class="lpc-desc">My friend recently asked me for help with a common problem: they needed to upload files to a remote server.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 850</span><span><i class="fas fa-heart"></i> 32</span></div>
+        </a>
+
+        <!-- Hackernoon - Oct 2025 -->
+        <a href="https://hackernoon.com/understanding-hsts-the-backbone-of-modern-web-security" target="_blank" class="latest-post-card" data-platform="Hackernoon">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#00ff7f,#00cc66);color:#000;">HN</div>
+              <span class="lpc-platform-name">Hackernoon</span>
+            </div>
+            <span class="lpc-date">Oct 06, 2025</span>
+          </div>
+          <h4>Understanding HSTS: The Backbone of Modern Web Security</h4>
+          <p class="lpc-desc">HSTS is a web security policy mechanism that helps protect websites against protocol downgrade attacks.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 4.1K</span><span><i class="fas fa-heart"></i> 72</span></div>
+        </a>
+
+        <!-- Medium - Aug 2025 -->
+        <a href="https://medium.com/vmacwrites/resolving-ibm-secrets-manager-dns-resolution-errors-in-terraform-and-pulumi-iac-631a90d47b7c" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Aug 08, 2025</span>
+          </div>
+          <h4>Resolving Secrets Manager DNS Resolution Errors in Terraform and Pulumi IaC</h4>
+          <p class="lpc-desc">I love Terraform and started looking for an alternative when Terraform introduced HCL2.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 1.8K</span><span><i class="fas fa-heart"></i> 28</span></div>
+        </a>
+
+        <!-- Hackernoon - Jun 2025 -->
+        <a href="https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows" target="_blank" class="latest-post-card" data-platform="Hackernoon">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#00ff7f,#00cc66);color:#000;">HN</div>
+              <span class="lpc-platform-name">Hackernoon</span>
+            </div>
+            <span class="lpc-date">Jun 13, 2025</span>
+          </div>
+          <h4>Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows</h4>
+          <p class="lpc-desc">SSL certificates are stored in various file formats, each with its own structure and purpose.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 5.2K</span><span><i class="fas fa-heart"></i> 89</span></div>
+        </a>
+
+        <!-- Medium - May 2025 -->
+        <a href="https://medium.com/vmacwrites/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">May 12, 2025</span>
+          </div>
+          <h4>The Essential Role of Process Monitoring Scripts in Linux Environments</h4>
+          <p class="lpc-desc">In today's complex computing environments, keeping tabs on running processes is absolutely critical.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 2.3K</span><span><i class="fas fa-heart"></i> 45</span></div>
+        </a>
+
+        <!-- Dev.to - May 2025 -->
+        <a href="https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg" target="_blank" class="latest-post-card" data-platform="Dev.to">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#0a0a0a;"><i class="fab fa-dev" style="font-size:0.9rem;"></i></div>
+              <span class="lpc-platform-name">Dev.to</span>
+            </div>
+            <span class="lpc-date">May 04, 2025</span>
+          </div>
+          <h4>Podman: Detailed Overview, Advantages, Disadvantages, and Setup</h4>
+          <p class="lpc-desc">Podman is an open-source container engine that enables users to create, manage, and run OCI containers.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 1.5K</span><span><i class="fas fa-heart"></i> 38</span></div>
+        </a>
+
+        <!-- Medium - Mar 2025 -->
+        <a href="https://medium.com/vmacwrites/s3cmd-cli-for-object-storage-87a02e4b300b" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Mar 05, 2025</span>
+          </div>
+          <h4>S3cmd: CLI for Object Storage</h4>
+          <p class="lpc-desc">Exploring and playing with Top Tools for Object Storage and Data Management.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 1.9K</span><span><i class="fas fa-heart"></i> 32</span></div>
+        </a>
+
+        <!-- Medium - Jan 2025 -->
+        <a href="https://medium.com/vmacwrites/an-introduction-to-sympy-a-python-library-for-symbolic-mathematics-ad13e70d5591" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Jan 06, 2025</span>
+          </div>
+          <h4>An Introduction to SymPy: A Python Library for Symbolic Mathematics</h4>
+          <p class="lpc-desc">SymPy is an open-source Python library for symbolic mathematics.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 2.8K</span><span><i class="fas fa-heart"></i> 56</span></div>
+        </a>
+
+        <!-- VMacWrites - Dec 2024 -->
+        <a href="https://vmacwrites.wordpress.com/2024/12/08/reflecting-on-my-2024-journey-achievements-and-growth/" target="_blank" class="latest-post-card" data-platform="VMacWrites">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:linear-gradient(135deg,#21759b,#1e6a8a);">W</div>
+              <span class="lpc-platform-name">VMacWrites</span>
+            </div>
+            <span class="lpc-date">Dec 08, 2024</span>
+          </div>
+          <h4>Reflecting on My 2024 Journey: Achievements and Growth</h4>
+          <p class="lpc-desc">Celebrated significant professional achievements, certifications, and awards while engaging deeply in community initiatives.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 980</span><span><i class="fas fa-heart"></i> 35</span></div>
+        </a>
+
+        <!-- Medium - Dec 2024 -->
+        <a href="https://medium.com/vmacwrites/nvidia-mig-with-gpu-optimization-in-kubernetes-09a321b78993" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Dec 07, 2024</span>
+          </div>
+          <h4>Nvidia MIG with GPU Optimization in Kubernetes</h4>
+          <p class="lpc-desc">Multi-Instance GPU (MIG) is a technology that allows partitioning a single GPU into multiple smaller instances.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 3.1K</span><span><i class="fas fa-heart"></i> 62</span></div>
+        </a>
+
+        <!-- Medium - Dec 2024 -->
+        <a href="https://medium.com/vmacwrites/model-context-protocol-overview-5a15a57e69c4" target="_blank" class="latest-post-card" data-platform="Medium">
+          <div class="lpc-header">
+            <div class="lpc-platform">
+              <div class="lpc-platform-icon" style="background:#000;">M</div>
+              <span class="lpc-platform-name">Medium</span>
+            </div>
+            <span class="lpc-date">Dec 01, 2024</span>
+          </div>
+          <h4>Model Context Protocol Overview</h4>
+          <p class="lpc-desc">Anthropic introduced the Model Context Protocol (MCP), an open-source standard for AI connections.</p>
+          <div class="lpc-stats"><span><i class="fas fa-eye"></i> 4.5K</span><span><i class="fas fa-heart"></i> 88</span></div>
+        </a>
+      </div>
+
+      <!-- Last Updated -->
+      <div class="last-updated">
+        <i class="fas fa-clock"></i> Last updated: May 16, 2026 at 02:38 AM
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><img src="/assets/logo-removebg-preview-short-dXd7OzSp.png" alt="" width="32" height="32" /><span>Vidyasagar Machupalli</span></div>
+        <div class="footer-links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="https://github.com/VidyasagarMSC/vidyasagarmsc.github.io" target="_blank" rel="noopener">Source</a></div>
+        <div class="footer-copy">&copy; 2026 Designed &amp; Built by Vidyasagar</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
