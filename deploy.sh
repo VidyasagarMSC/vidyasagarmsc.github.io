@@ -20,7 +20,7 @@ echo "🕸️  Running scraper..."
 if [ -f requirements.txt ]; then
   pip3 install -q -r requirements.txt 2>/dev/null || pip install -q -r requirements.txt
 fi
-python scrape.py
+python3 scrape.py || python scrape.py
 
 echo "🏗️  Building site..."
 npm run build
