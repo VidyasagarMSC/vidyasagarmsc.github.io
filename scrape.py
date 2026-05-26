@@ -1,8 +1,8 @@
+import json
 import logging
 import os
 import re
-import subprocess
-from datetime import date
+from datetime import date, datetime
 
 from bs4 import BeautifulSoup, FeatureNotFound
 from requests import RequestException, get
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # Constants
 TODAY = date.today().strftime("%B %d, %Y")
 BLOG_DEFAULTS = {
-    "dzone_views": "550K+",
+    "dzone_views": "600K+",
     "medium_followers": "700+",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
@@ -32,6 +32,8 @@ SOCIAL_DEFAULTS = {
     "stackoverflow_reach": "150K+",
     "mastodon_followers": "8",
 }
+
+STATS_FILE = "public/data/stats.json"
 
 
 
@@ -199,44 +201,16 @@ def scrape_social_stats():
     return stats
 
 
-def render_template(template, replacements):
-    """Robust template rendering with regex-based replacement"""
+def write_stats_json(stats):
+    """Write scraped stats to a JSON file consumed by the frontend JS."""
     try:
-        # Use regex to find all {{ placeholder }} patterns
-        pattern = re.compile(r"\{\{\s*([a-zA-Z0-9_]+)\s*\}\}")
-
-        # Replace each match with the corresponding value from replacements
-        def replace_match(match):
-            key = match.group(1).strip()
-            return str(replacements.get(key, f"{{{{ {key} }}}}"))
-
-        return pattern.sub(replace_match, template)
-    except Exception as e:
-        logger.error(f"Template rendering failed: {str(e)}")
-        return template
-
-
-def write_template(input_path, output_path, replacements):
-    """Safe template writing with error handling"""
-    try:
-        # Read template
-        with open(input_path, "r", encoding="utf-8") as input_file:
-            template = input_file.read()
-
-        # Render template with replacements
-        rendered = render_template(template, replacements)
-
-        # Write output
-        if os.path.exists(output_path):
-            os.remove(output_path)
-
-        with open(output_path, "w", encoding="utf-8") as output_file:
-            output_file.write(rendered)
-
-        logger.info(f"Successfully generated {output_path}")
+        os.makedirs(os.path.dirname(STATS_FILE), exist_ok=True)
+        with open(STATS_FILE, "w", encoding="utf-8") as f:
+            json.dump(stats, f, indent=2)
+        logger.info(f"Stats written to {STATS_FILE}")
         return True
     except Exception as e:
-        logger.error(f"Template processing failed: {str(e)}")
+        logger.error(f"Failed to write stats JSON: {str(e)}")
         return False
 
 
@@ -248,35 +222,14 @@ def main():
     blog_stats = scrape_blog_stats()
     social_stats = scrape_social_stats()
 
-    # Write templates
-    blog_success = write_template(
-        "templates/blog_template.html", "blog.html", blog_stats
-    )
-    social_success = write_template(
-        "templates/footer_template.html", "footer.html", social_stats
-    )
+    # Merge all stats
+    all_stats = {**blog_stats, **social_stats, "last_updated": datetime.now().strftime('%B %d, %Y at %I:%M %p')}
 
-    # Generate latest posts page
-    try:
-        logger.info("Generating latest posts page")
-        result = subprocess.run(
-            ["python3", "scrape_latest_posts.py"],
-            capture_output=True,
-            text=True,
-            cwd=os.getcwd()
-        )
-        if result.returncode == 0:
-            logger.info("Latest posts page generated successfully")
-            latest_posts_success = True
-        else:
-            logger.error(f"Latest posts scraping failed: {result.stderr}")
-            latest_posts_success = False
-    except Exception as e:
-        logger.error(f"Error running latest posts scraper: {str(e)}")
-        latest_posts_success = False
+    # Write JSON consumed by frontend JS
+    write_stats_json(all_stats)
 
     logger.info("Scraping process completed")
-    return blog_success and social_success and latest_posts_success
+    return True
 
 
 if __name__ == "__main__":

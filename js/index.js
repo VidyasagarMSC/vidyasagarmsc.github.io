@@ -1,166 +1,232 @@
-$(document).ready(function () {
-  // When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
+$(function() {
 
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-  var app = document.getElementById('app');
-      var typewriter = new Typewriter(app, {
-        loop: true,
-        delay: 100
-      });
+  // ============================================
+  // Scroll Progress Bar
+  // ============================================
+  var $win = $(window);
+  var $progBar = $('#progressBar');
 
-      typewriter
-        .pauseFor(1000)
-        .typeString('SARATH CHANDRA VIDYA SAGAR MACHUPALLI')
-        .pauseFor(1500)
-        .deleteAll()
-        .typeString('<strong>VIDYASAGAR</strong> MACHUPALLI')
-        .pauseFor(1500)
-        .deleteAll()
-        .typeString('<strong>VIDYASAGAR <span style="color: #27ae60;">M S C</span></strong>')
-        .pauseFor(1500)
-        .start();
-}
-  $("#content").load("about.html");
-  $("#blog #content").load("blog.html");
-  $("#photos #content").load("photos.html");
-  $("#connect #content").load("footer.html");
-  /* Animations */
+  $win.on('scroll', function() {
+    var scrollTop = $(document).scrollTop();
+    var docHeight = $(document).height() - $win.height();
+    $progBar.width((scrollTop / docHeight) * 100 + '%');
+  });
 
-  // Function which adds the 'animated' class to any '.animatable' in view
-  var doAnimations = function () {
-    // Calc current offset and get all animatables
-    var offset = $(window).scrollTop() + $(window).height(),
-      $animatables = $(".animatable");
+  // ============================================
+  // AJAX Content Loading
+  // ============================================
+  var sections = [
+    { target: '#aboutContent',   source: 'about.html' },
+    { target: '#blogContent',    source: 'blog.html' },
+    { target: '#photosContent',  source: 'photos.html' },
+    { target: '#connectContent', source: 'footer.html' }
+  ];
 
-    // Unbind scroll handler if we have no animatables
-    if ($animatables.length == 0) {
-      $(window).off("scroll", doAnimations);
+  $.each(sections, function(_, s) {
+    var $t = $(s.target);
+    if (!$t.length) return;
+    $t.load(s.source + ' #content', function(resp, status, xhr) {
+      if (status === 'error') {
+        $t.html('<p style="text-align:center;padding:20px;color:var(--text-muted);">Content loading...</p>');
+        return;
+      }
+      setTimeout(initFadeIn, 150);
+      if (s.target === '#photosContent') initGallery();
+    });
+  });
+
+  initBlogFilters();
+
+  // ============================================
+  // Nav Dots & Scroll Spy
+  // ============================================
+  var $navDots  = $('.nav-dot');
+  var $sections = $('section[id]');
+
+  $navDots.on('click', function() {
+    var id = $(this).data('section');
+    if (id === 'research.html') { window.location.href = id; return; }
+    $('#' + id).length && $('html, body').animate({ scrollTop: $('#' + id).offset().top }, 600);
+    $('#navbarMenu, #mobileToggle').removeClass('active');
+  });
+
+  function setActiveDot(id) {
+    $navDots.removeClass('active').filter('[data-section="' + id + '"]').addClass('active');
+  }
+
+  $win.on('scroll', function() {
+    var cur = '';
+    $sections.each(function() {
+      var t = $(this).offset().top;
+      var h = $(this).outerHeight();
+      if ($win.scrollTop() >= t - h / 3) cur = $(this).attr('id');
+    });
+    setActiveDot(cur);
+  });
+
+  // ============================================
+  // Navbar Mobile Toggle
+  // ============================================
+  var $menu  = $('#navbarMenu');
+  var $tog   = $('#mobileToggle');
+
+  $tog.on('click', function() {
+    $menu.add($tog).toggleClass('active');
+  });
+
+  $menu.on('click', '.navbar-item', function() {
+    $menu.add($tog).removeClass('active');
+  });
+
+  // ============================================
+  // Theme Toggle
+  // ============================================
+  var $body = $('body');
+  var $tt   = $('#themeToggle');
+
+  function setTheme(dark) {
+    $body.toggleClass('dark-mode', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    $tt.html(dark
+      ? '<span class="icon"><i class="fas fa-sun"></i></span><span>Light</span>'
+      : '<span class="icon"><i class="fas fa-moon"></i></span><span>Dark</span>');
+  }
+
+  if ($tt.length) {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) setTheme(true);
+    $tt.on('click', function() { setTheme(!$body.hasClass('dark-mode')); });
+  }
+
+  // ============================================
+  // Fade-In Observer
+  // ============================================
+  function initFadeIn() {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    $('.fade-in:not(.visible)').each(function() { io.observe(this); });
+  }
+  setTimeout(initFadeIn, 300);
+
+  // ============================================
+  // Hero Canvas (Particle Effect)
+  // ============================================
+  function initHeroCanvas() {
+    var c = $('#heroCanvas')[0];
+    if (!c) return;
+    var ctx = c.getContext('2d');
+    var pts = [], mx = 0, my = 0;
+
+    function resize() {
+      c.width = c.parentElement.offsetWidth;
+      c.height = c.parentElement.offsetHeight;
+    }
+    resize();
+    $(window).on('resize', resize);
+
+    $(c).on('mousemove', function(e) {
+      var o = c.getBoundingClientRect();
+      mx = e.clientX - o.left; my = e.clientY - o.top;
+    });
+
+    for (var i = 0; i < Math.min(80, Math.floor(c.width / 15)); i++) {
+      pts.push({ x: Math.random() * c.width, y: Math.random() * c.height,
+                 vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8,
+                 s: Math.random() * 2 + 1, a: Math.random() * 0.5 + 0.2 });
     }
 
-    // Check all animatables and animate them if necessary
-    $animatables.each(function (i) {
-      var $animatable = $(this);
-      if ($animatable.offset().top + $animatable.height() - 20 < offset) {
-        $animatable.removeClass("animatable").addClass("animated");
-      }
-    });
-  };
+    function anim() {
+      ctx.clearRect(0, 0, c.width, c.height);
+      var clr = $body.hasClass('dark-mode') ? 'rgba(255,255,255,' : 'rgba(79,70,229,';
 
-  // Hook doAnimations on scroll, and trigger a scroll
-  $(window).on("scroll", doAnimations);
-  $(window).trigger("scroll");
+      pts.forEach(function(p) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > c.width)  p.vx *= -1;
+        if (p.y < 0 || p.y > c.height) p.vy *= -1;
 
-  //});
-  // Add smooth scrolling to all links
-  $("a").on("click", function (event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $("html, body").animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        800,
-        function () {
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
+        var dx = mx - p.x, dy = my - p.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
+          ctx.strokeStyle = clr + (0.06 * (1 - d / 120)) + ')';
+          ctx.lineWidth = 0.5;
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mx, my); ctx.stroke();
         }
-      );
-    } // End if
-  });
 
-  // Check for click events on the navbar burger icon
-  // Note: Mobile navigation is handled by vanilla JavaScript in HTML files
-  // $(".navbar-burger").click(function () {
-  //   // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-  //   $(".navbar-burger").toggleClass("is-active");
-  //   $(".navbar-menu").toggleClass("is-active");
-  // });
-
-  $(".toggler").on("click", () => {
-    $(".fullscreen").toggleClass("light");
-    $("#home").toggleClass("is-dark");
-    //$("#home").addClass("is-dark");
-    $("#about").toggleClass("is-black");
-    //$("#about").addClass("is-black");
-    //$("#blog").removeClass("has-background-white-bis");
-    $("#blog").toggleClass("is-dark");
-    $("#photos").toggleClass("is-black");
-    $("#connect").toggleClass("is-black");
-    // Latest Posts page dark mode toggle
-    $("#latest-posts").toggleClass("is-dark").toggleClass("is-light");
-    $("article").toggleClass("has-background-dark");
-    $(".card-content").toggleClass("text-color-invert");
-    $(".content").children("h4").toggleClass("text-color-invert");
-    $(".card").toggleClass("has-background-dark");
-    $(".tag").toggleClass("is-dark");
-  });
-});
-
-// function to toggle between light and dark theme
-function toggleTheme() {
-  $("#home").toggleClass("is-dark");
-  //$("#home").addClass("is-dark");
-  $("#about").toggleClass("is-black");
-  //$("#about").addClass("is-black");
-  //$("#blog").removeClass("has-background-white-bis");
-  $("#blog").toggleClass("is-dark");
-  $("#photos").toggleClass("is-black");
-  // Latest Posts page dark mode toggle
-  $("#latest-posts").toggleClass("is-dark").toggleClass("is-light");
-  $("article").toggleClass("has-background-dark");
-  $(".card-content").toggleClass("text-color-invert");
-  $(".content").children("h4").toggleClass("text-color-invert");
-  $(".card").toggleClass("has-background-dark");
-  $(".tag").toggleClass("is-dark");
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const dots = document.querySelectorAll('.nav-dot');
-  const sections = document.querySelectorAll('.content-section');
-  // Click navigation
-  dots.forEach(dot => {
-      dot.addEventListener('click', function() {
-          const targetId = this.getAttribute('data-section');
-          const targetSection = document.getElementById(targetId);
-          targetSection.scrollIntoView({
-              behavior: 'smooth'
-          });
-          updateActiveDot(targetId);
+        ctx.fillStyle = clr + p.a + ')';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2); ctx.fill();
       });
-  });
-  // Scroll detection
-  window.addEventListener('scroll', function() {
-      let current = '';
-      sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-              current = section.getAttribute('id');
+
+      pts.forEach(function(p1, i) {
+        for (var j = i + 1; j < pts.length; j++) {
+          var p2 = pts[j];
+          var dx = p1.x - p2.x, dy = p1.y - p2.y, d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 150) {
+            ctx.strokeStyle = clr + (0.08 * (1 - d / 150)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
           }
+        }
       });
-      updateActiveDot(current);
-  });
-  // Update active dot
-  function updateActiveDot(sectionId) {
-      dots.forEach(dot => {
-          if (dot.getAttribute('data-section') === sectionId) {
-              dot.classList.add('active');
-          } else {
-              dot.classList.remove('active');
-          }
-      });
+      requestAnimationFrame(anim);
+    }
+    anim();
   }
+  initHeroCanvas();
+
+  // ============================================
+  // Gallery Lightbox
+  // ============================================
+  function initGallery() {
+    var $items = $('.gallery-item img');
+    var $lb    = $('#lightbox');
+    if (!$lb.length || !$items.length) return;
+
+    var $img = $('#lightboxImg');
+    var $cls = $('#lightboxClose');
+    var $prv = $('#lightboxPrev');
+    var $nxt = $('#lightboxNext');
+    var idx  = 0;
+    var srcs = $items.map(function() { return this.src; }).get();
+
+    function open(i) { idx = i; $img.attr('src', srcs[idx]); $lb.addClass('active'); $('body').css('overflow', 'hidden'); }
+    function close() { $lb.removeClass('active'); $('body').css('overflow', ''); }
+    function prev() { idx = (idx - 1 + srcs.length) % srcs.length; $img.attr('src', srcs[idx]); }
+    function next() { idx = (idx + 1) % srcs.length; $img.attr('src', srcs[idx]); }
+
+    $items.css('cursor', 'pointer').each(function(i) { $(this).on('click', function() { open(i); }); });
+    $cls.on('click', close);
+    $prv.on('click', prev);
+    $nxt.on('click', next);
+    $lb.on('click', function(e) { if (e.target === this) close(); });
+    $(document).on('keydown', function(e) {
+      if (!$lb.hasClass('active')) return;
+      if (e.key === 'Escape')      close();
+      if (e.key === 'ArrowLeft')   prev();
+      if (e.key === 'ArrowRight')  next();
+    });
+  }
+
+  // ============================================
+  // Blog Filters (latest-posts.html)
+  // ============================================
+  function initBlogFilters() {
+    var $btns  = $('.filter-btn');
+    var $cards = $('.blog-card');
+    if (!$btns.length || !$cards.length) return;
+
+    $btns.on('click', function() {
+      var f = $(this).data('filter');
+      $btns.removeClass('active');
+      $(this).addClass('active');
+
+      $cards.each(function() {
+        $(this).toggle(f === 'all' || ($(this).attr('data-platform') || '').indexOf(f) !== -1);
+      });
+    });
+  }
+
+  // ============================================
+  // Console
+  // ============================================
+  console.log('%c Vidyasagar Machupalli ', 'background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);color:#fff;padding:10px 20px;border-radius:5px;font-size:14px;font-weight:bold;');
 });

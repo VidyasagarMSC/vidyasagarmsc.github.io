@@ -1,3 +1,6 @@
+node_modules/
+dist/
+
 css/fonts/*
 css/style-test.css
 .DS_Store
@@ -10,3 +13,8 @@ css/style-test.css
 test.*
 LATEST_POSTS_README.md
 cache/latest_posts_cache.json
+
+__pycache__/
+*.pyc
+.env
+.venv/
