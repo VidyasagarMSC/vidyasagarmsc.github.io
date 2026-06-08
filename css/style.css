@@ -305,8 +305,6 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand img {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
 .navbar-brand-text {
