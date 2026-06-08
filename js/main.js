@@ -48,22 +48,41 @@ function initNavbar() {
   const navbar = document.getElementById('navbar');
   const toggle = document.getElementById('mobileToggle');
   const links = document.getElementById('navbarLinks');
+  const overlay = document.getElementById('navbarOverlay');
 
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
   if (toggle && links) {
+    function openMenu() {
+      toggle.classList.add('active');
+      links.classList.add('open');
+      if (overlay) overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      toggle.classList.remove('active');
+      links.classList.remove('open');
+      if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      links.classList.toggle('open');
+      if (links.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
+    if (overlay) {
+      overlay.addEventListener('click', closeMenu);
+    }
+
     links.querySelectorAll('.navbar-link').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        links.classList.remove('open');
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 }
@@ -162,7 +181,7 @@ function initHeroCanvas() {
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const color = isDark ? 'rgba(255,255,255,' : 'rgba(99,102,241,';
+    const color = isDark ? 'rgba(255,255,255,' : 'rgba(249,115,22,';
 
     particles.forEach(p => {
       p.x += p.vx;
@@ -265,21 +284,15 @@ function initLightbox() {
 // ============================================
 function initBlogFilters() {
   const filterBtns = document.querySelectorAll('.platform-filters .filter-btn');
-  const cards = document.querySelectorAll('.latest-post-card');
-  if (!filterBtns.length || !cards.length) return;
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.platform === filter) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      document.querySelectorAll('.latest-post-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'flex' : 'none';
       });
     });
   });
@@ -311,8 +324,8 @@ function loadStats() {
 // CONSOLE EASTER EGG
 // ============================================
 function consoleGreeting() {
-  console.log('%c Vidyasagar Machupalli ', 'background:linear-gradient(135deg,#6366f1 0%,#a855f7 100%);color:#fff;padding:10px 20px;border-radius:5px;font-size:14px;font-weight:bold;');
-  console.log('%c Technology Leader • Architect • Author ', 'color:#6366f1;font-size:12px;font-weight:500;');
+  console.log('%c Vidyasagar Machupalli ', 'background:linear-gradient(135deg,#f97316 0%,#ea580c 100%);color:#fff;padding:10px 20px;border-radius:5px;font-size:14px;font-weight:bold;');
+  console.log('%c Technology Leader • Architect • Author ', 'color:#f97316;font-size:12px;font-weight:500;');
 }
 
 // ============================================

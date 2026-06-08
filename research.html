@@ -51,15 +51,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%236366f1'>VM</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90' fill='%23f97316'>VM</text></svg>" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="theme-color" content="#6366f1" />
+  <meta name="theme-color" content="#f97316" />
 </head>
 <body>
   <nav class="navbar" id="navbar">
@@ -87,6 +87,7 @@
         </div>
       </div>
     </div>
+    <div class="navbar-overlay" id="navbarOverlay"></div>
   </nav>
 
   <div class="research-page">
@@ -128,8 +129,8 @@
         </div>
       </div>
       <div class="citation-stats">
-        <div class="citation-stat"><div class="stat-trend"><i class="fas fa-arrow-up"></i> +11 this year</div><div class="stat-icon"><i class="fas fa-quote-right"></i></div><div class="stat-number" data-target="33">0</div><div class="stat-label">Total Citations</div><div class="stat-sub">Google Scholar · All since 2021</div></div>
-        <div class="citation-stat"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">1</div><div class="stat-label">h-index</div><div class="stat-sub">Google Scholar</div></div>
+        <div class="citation-stat"><div class="stat-trend" id="citationTrend"><i class="fas fa-arrow-up"></i> <span id="trendValue">+11</span> this year</div><div class="stat-icon"><i class="fas fa-quote-right"></i></div><div class="stat-number" data-target="33" id="totalCitations">33</div><div class="stat-label">Total Citations</div><div class="stat-sub">Google Scholar · OpenAlex</div></div>
+        <div class="citation-stat"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number" id="hIndex">1</div><div class="stat-label">h-index</div><div class="stat-sub">OpenAlex · Google Scholar</div></div>
         <div class="citation-stat"><div class="stat-icon"><i class="fas fa-book"></i></div><div class="stat-number">100+</div><div class="stat-label">Technical Articles</div><div class="stat-sub">DZone, Medium, Dev.to, Substack, Hackernoon</div></div>
         <div class="citation-stat"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">500K+</div><div class="stat-label">Total Readership</div><div class="stat-sub">Across all publication platforms</div></div>
         <div class="citation-stat"><div class="stat-icon"><i class="fas fa-microphone"></i></div><div class="stat-number">15+</div><div class="stat-label">Speaking Engagements</div><div class="stat-sub">Conferences, Meetups, Webinars</div></div>
@@ -150,7 +151,7 @@
         <button class="filter-btn" data-filter-group="platform" data-filter="Dev.to"><i class="fab fa-dev"></i> Dev.to</button>
         <button class="filter-btn" data-filter-group="platform" data-filter="Hackernoon">HN</button>
         <button class="filter-btn" data-filter-group="platform" data-filter="Substack"><i class="fas fa-envelope"></i> Substack</button>
-        <button class="filter-btn" data-filter-group="platform" data-filter="VMacWrites"><i class="fas fa-wordpress"></i> VMacWrites</button>
+        <button class="filter-btn" data-filter-group="platform" data-filter="VMacWrites"><i class="fab fa-wordpress"></i> VMacWrites</button>
       </div>
 
       <div class="filter-controls fade-in">
@@ -208,7 +209,7 @@
             <div class="chart-bar-group"><div class="bar-value">+11</div><div class="bar bar-projected" style="height:80px;position:relative;"><span style="font-size:0.6rem;color:var(--text-dim);position:absolute;top:-16px;right:-16px;font-weight:600;">Projected</span></div><div class="bar-label">2026</div></div>
           </div>
           <div class="chart-legend">
-            <span><span class="legend-dot" style="background:linear-gradient(180deg,#6366f1,#a855f7);"></span> Actual Citations</span>
+            <span><span class="legend-dot" style="background:linear-gradient(180deg,#f97316,#ea580c);"></span> Actual Citations</span>
             <span><span class="legend-dot" style="background:linear-gradient(180deg,#f43f5e,#e11d48);"></span> Projected</span>
           </div>
         </div>
@@ -228,9 +229,9 @@
       <h2 class="section-title fade-in"><i class="fas fa-book-open"></i> Recommended Reading Paths</h2>
       <p class="section-subtitle fade-in">Curated reading tracks designed for researchers, architects, and developers exploring specific technical domains.</p>
       <div class="reading-paths fade-in">
-        <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#6366f1,#a855f7);"><i class="fas fa-brain"></i></div><h4>Artificial Intelligence</h4><p>LLM architecture, generative AI security, MCP protocols, machine learning pipelines, and AI governance for enterprise systems.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 25+ articles</span></div>
+        <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#f97316,#ea580c);"><i class="fas fa-brain"></i></div><h4>Artificial Intelligence</h4><p>LLM architecture, generative AI security, MCP protocols, machine learning pipelines, and AI governance for enterprise systems.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 25+ articles</span></div>
         <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#f43f5e,#e11d48);"><i class="fas fa-atom"></i></div><h4>Quantum Computing</h4><p>Post-quantum cryptography frameworks, quantum optimization, quantum security governance, and quantum-ready system design.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 12+ articles</span></div>
-        <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2);"><i class="fas fa-cloud"></i></div><h4>Cloud Architecture</h4><p>Multi-cloud strategy, Kubernetes orchestration, serverless computing, cloud security, and infrastructure-as-code at scale.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 20+ articles</span></div>
+        <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);"><i class="fas fa-cloud"></i></div><h4>Cloud Architecture</h4><p>Multi-cloud strategy, Kubernetes orchestration, serverless computing, cloud security, and infrastructure-as-code at scale.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 20+ articles</span></div>
         <div class="reading-path-card"><div class="rp-icon" style="background:linear-gradient(135deg,#10b981,#059669);"><i class="fas fa-shield-halved"></i></div><h4>Cybersecurity & Trust</h4><p>SSL/TLS architecture, AI security, zero-trust patterns, and post-quantum security frameworks.</p><span class="rp-count"><i class="fas fa-arrow-right"></i> 10+ articles</span></div>
       </div>
 

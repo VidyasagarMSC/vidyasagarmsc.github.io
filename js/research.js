@@ -3,8 +3,8 @@
 // ============================================
 const researchData = {
   articles: [
-    { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/authors/vidyasagarmsc", views: "2.8K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
-    { id: 2, title: "MCP vs Skills vs Agents With Scripts: Which One Should You Pick?", platform: "DZone", year: 2026, date: "Mar 26, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.3K", readingTime: "10 min", summary: "Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for." },
+    { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/open-source-llm-tools-worth-your-time", views: "3.6K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
+    { id: 2, title: "MCP vs Skills vs Agents With Scripts: Which One Should You Pick?", platform: "DZone", year: 2026, date: "Mar 26, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/articles/mcp-vs-skills-vs-agents-with-scripts", views: "3.7K", readingTime: "10 min", summary: "Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for." },
     { id: 3, title: "The Ultimate Terminal Stack in 2026", platform: "Medium", year: 2026, date: "Mar 06, 2026", topics: ["DevOps", "Tools"], url: "https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc", views: "3.5K", readingTime: "6 min", summary: "A cross-platform guide for macOS, Linux, and Windows terminal setup." },
     { id: 4, title: "From MkDocs 1.6 to Zensical — Why I Made the Move", platform: "Medium", year: 2026, date: "May 08, 2026", topics: ["DevOps", "Tools", "Documentation"], url: "https://medium.com/vmacwrites/from-mkdocs-1-6-to-zensical-heres-why-i-finally-made-the-move-53b273b49cdd", views: "1.2K", readingTime: "5 min", summary: "A warning message in my terminal completely changed how I think about documentation." },
     { id: 5, title: "Database Evolution: From RDBMS to AI-Native and Quantum-Ready Systems", platform: "Hackernoon", year: 2026, date: "Jan 12, 2026", topics: ["AI", "Quantum", "Architecture", "Cloud"], url: "https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems", views: "4.5K", readingTime: "12 min", summary: "Analysis of database evolution from traditional RDBMS to AI-native and quantum-ready systems." },
@@ -32,8 +32,8 @@ const researchData = {
     { id: 27, title: "Shingling in the Generative AI Era", platform: "Hackernoon", year: 2024, date: "Jul 23, 2024", topics: ["AI", "Data Science"], url: "https://hackernoon.com/shingling-in-the-generative-ai-era", views: "2.8K", readingTime: "6 min", summary: "Shingling techniques and applications in generative AI." },
     { id: 28, title: "How to Deploy RAPIDS on GPU-Enabled Private Cloud", platform: "Hackernoon", year: 2024, date: "May 24, 2024", topics: ["AI", "Cloud", "GPU"], url: "https://hackernoon.com/how-to-deploy-rapids-on-gpu-enabled-private-cloud", views: "3.1K", readingTime: "8 min", summary: "Deploying RAPIDS for GPU-accelerated data science on private cloud." },
     { id: 29, title: "Design Private & Secured Cloud Networking with Automation", platform: "Hackernoon", year: 2024, date: "May 23, 2024", topics: ["Cloud", "Security", "Architecture"], url: "https://hackernoon.com/design-and-deploy-a-completely-private-and-secured-networking-architecture-on-cloud-using-automation", views: "2.6K", readingTime: "10 min", summary: "Design and deploy private secured networking architecture on cloud." },
-    { id: 30, title: "Essential Math to Master AI and Quantum", platform: "DZone", year: 2024, date: "2024", topics: ["AI", "Quantum", "Mathematics"], url: "https://dzone.com/authors/vidyasagarmsc", views: "2.7K", readingTime: "10 min", summary: "Fundamental mathematics for artificial intelligence and quantum computing." },
-    { id: 31, title: "Securing the Generative AI Frontier", platform: "DZone", year: 2024, date: "2024", topics: ["AI", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "2.1K", readingTime: "8 min", summary: "Security challenges and best practices in generative AI." },
+    { id: 30, title: "Essential Math to Master AI and Quantum", platform: "DZone", year: 2024, date: "Apr 16, 2024", topics: ["AI", "Quantum", "Mathematics"], url: "https://dzone.com/articles/essential-math-to-master-ai-and-quantum", views: "5.2K", readingTime: "10 min", summary: "Fundamental mathematics for artificial intelligence and quantum computing." },
+    { id: 31, title: "Securing the Generative AI Frontier", platform: "DZone", year: 2024, date: "May 3, 2024", topics: ["AI", "Security"], url: "https://dzone.com/articles/securing-the-generative-ai-frontier", views: "3.7K", readingTime: "8 min", summary: "Specialized tools and frameworks for AI firewall and prompt inspection." },
     { id: 32, title: "Understanding Linux Permissions", platform: "Medium", year: 2024, date: "Aug 07, 2024", topics: ["Linux", "Security"], url: "https://vidyasagarmsc.medium.com/understanding-linux-permissions-fe11cc77371ad", views: "1.8K", readingTime: "5 min", summary: "Linux file permissions and access control explained." },
     { id: 33, title: "Ansible: No Python Interpreters Found for Host", platform: "Medium", year: 2024, date: "Jun 12, 2024", topics: ["DevOps", "Python", "Cloud"], url: "https://medium.com/vmacwrites/ansible-no-python-interpreters-found-for-host-4184fb5eda8b", views: "2.2K", readingTime: "4 min", summary: "Troubleshooting Ansible Python interpreter discovery issues." },
     { id: 34, title: "2023: A Year in Retrospective", platform: "VMacWrites", year: 2023, date: "Dec 16, 2023", topics: ["Developer Advocacy", "Career"], url: "https://vmacwrites.wordpress.com/2023/12/16/2023-a-year-in-retrospective/", views: "800", readingTime: "4 min", summary: "Reflecting on a year of learning, exploration, and community." },
@@ -47,10 +47,31 @@ const researchData = {
     { id: 42, title: "Adjust the Speaking Rate", platform: "VMacWrites", year: 2020, date: "Nov 09, 2020", topics: ["AI", "NLP"], url: "https://vmacwrites.wordpress.com/2020/11/09/adjust-the-speaking-rate/", views: "750", readingTime: "3 min", summary: "StackOverflow-inspired solution for adjusting text-to-speech rate." },
     { id: 43, title: "Windows 10 Development Recipes", platform: "Featured", year: 2015, date: "2015", topics: ["Architecture", "Windows", "Software Engineering"], url: "https://www.apress.com/gp/book/9781484207202", isBook: true, summary: "A comprehensive problem-solution reference for Windows 10 apps using HTML and JavaScript. Published by Apress (Springer).", citations: 1, isbn: "978-1-4842-0720-2" },
     { id: 44, title: "Who's Speaking?: Speaker Diarization with Watson", platform: "Featured", year: 2017, date: "May 2017", topics: ["AI", "NLP", "Cloud"], url: "https://medium.com/@VidyasagarMSC", summary: "Implementing speaker diarization using IBM Watson Speech-to-Text API.", citations: 3, isFeatured: true },
-    { id: 45, title: "Nvidia MIG with GPU Optimization in Kubernetes (Substack)", platform: "Substack", year: 2024, date: "Dec 07, 2024", topics: ["AI", "Kubernetes", "Cloud"], url: "https://vmacwrites.substack.com/p/nvidia-mig-with-gpu-optimization", views: "2.1K", readingTime: "8 min", summary: "Multi-Instance GPU partitioning for better GPU utilization." }
+    { id: 45, title: "Nvidia MIG with GPU Optimization in Kubernetes (Substack)", platform: "Substack", year: 2024, date: "Dec 07, 2024", topics: ["AI", "Kubernetes", "Cloud"], url: "https://vmacwrites.substack.com/p/nvidia-mig-with-gpu-optimization", views: "2.1K", readingTime: "8 min", summary: "Multi-Instance GPU partitioning for better GPU utilization." },
+    { id: 46, title: "Trust No Agent: How to Secure Autonomous Tools on Your Machine", platform: "DZone", year: 2026, date: "Feb 17, 2026", topics: ["AI", "Security"], url: "https://dzone.com/articles/trust-no-agent-how-to-secure-autonomous-tools-on-your-machine", views: "3.3K", readingTime: "8 min", summary: "Most developers run autonomous agents with zero isolation. Learn defense in depth to contain the blast radius." },
+    { id: 47, title: "ToolOrchestra vs Mixture of Experts: Routing Intelligence at Scale", platform: "DZone", year: 2026, date: "Jan 30, 2026", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/toolorchestra-vs-mixture-of-experts-routing-intelligence-at-scale", views: "1.8K", readingTime: "8 min", summary: "Explore ToolOrchestra, Mixture of Experts (MoE), and other AI patterns for routing intelligence at scale." },
+    { id: 48, title: "Developer Tools That Actually Matter in 2026", platform: "DZone", year: 2026, date: "Jan 6, 2026", topics: ["DevOps", "Tools"], url: "https://dzone.com/articles/developer-tools-that-actually-matter-in-2026", views: "7.7K", readingTime: "6 min", summary: "The developer tools making real differences today are the ones solving actual problems we face every day." },
+    { id: 49, title: "Infrastructure as Code: How Automation Evolved to Power AI Workloads", platform: "DZone", year: 2025, date: "Dec 18, 2025", topics: ["Cloud", "DevOps", "AI"], url: "https://dzone.com/articles/infrastructure-as-code-how-automation-evolved-to-power-ai-workloads", views: "1.7K", readingTime: "8 min", summary: "Learn how Infrastructure as Code progressed in 2025 and helped automation for provisioning AI infrastructure." },
+    { id: 50, title: "Architectural Understanding of CPUs, GPUs, and TPUs", platform: "DZone", year: 2025, date: "Dec 4, 2025", topics: ["Architecture", "AI"], url: "https://dzone.com/articles/architectural-understanding-of-cpus-gpus-and-tpus", views: "5.5K", readingTime: "10 min", summary: "Learn about CPUs, GPUs, and TPUs — definitions, use cases, architectural differences, and when to use each." },
+    { id: 51, title: "AI Infrastructure for Agents and LLMs: Options, Tools, and Optimization", platform: "DZone", year: 2025, date: "Sep 22, 2025", topics: ["AI", "Cloud", "Infrastructure"], url: "https://dzone.com/articles/ai-infrastructure-for-agents-and-llms", views: "4.6K", readingTime: "12 min", summary: "Explore infrastructure options and tools for deploying and optimizing AI agents and large language models." },
+    { id: 52, title: "Cloud Automation Excellence: Terraform, Ansible, and Nomad", platform: "DZone", year: 2025, date: "Sep 9, 2025", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/articles/cloud-automation-excellence-terraform-ansible-and-nomad", views: "5.3K", readingTime: "10 min", summary: "Enterprise cloud architecture demands sophisticated orchestration of infrastructure, configuration, and workload management." },
+    { id: 53, title: "Pulumi: Modern Infrastructure as Code With Real Programming Languages", platform: "DZone", year: 2025, date: "Aug 26, 2025", topics: ["Cloud", "DevOps", "IaC"], url: "https://dzone.com/articles/pulumi-modern-infrastructure-as-code", views: "3.4K", readingTime: "8 min", summary: "Pulumi lets developers create, deploy, and manage cloud resources using familiar programming languages." },
+    { id: 54, title: "DSPy Framework: A Comprehensive Technical Guide", platform: "DZone", year: 2025, date: "Aug 11, 2025", topics: ["AI", "Python"], url: "https://dzone.com/articles/dspy-framework-a-comprehensive-technical-guide", views: "4.9K", readingTime: "10 min", summary: "DSPy improves AI development by replacing prompt engineering with patterns. Explore DSPy's features for LM applications." },
+    { id: 55, title: "The Twelve-Factor Agents: Building Production-Ready LLM Applications", platform: "DZone", year: 2025, date: "Jul 17, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/the-twelve-factor-agents", views: "5.2K", readingTime: "10 min", summary: "The Twelve-Factor Agent architectural pattern for creating robust, scalable, and maintainable LLM applications." },
+    { id: 56, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", year: 2025, date: "Jun 13, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications", views: "6.6K", readingTime: "12 min", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive and act." },
+    { id: 57, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", year: 2025, date: "May 9, 2025", topics: ["AI", "DevOps", "Tools"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "6.9K", readingTime: "10 min", summary: "Explore the most impactful AI developer tools, highlighting features, installation steps, strengths, and limitations." },
+    { id: 58, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", year: 2025, date: "Apr 15, 2025", topics: ["Architecture", "Data", "Cloud"], url: "https://dzone.com/articles/emerging-data-architectures-the-future-of-data-management", views: "7.9K", readingTime: "10 min", summary: "Explore the latest advancements in data architecture, focusing on LakeDB and zero ETL architectures." },
+    { id: 59, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", year: 2025, date: "Mar 28, 2025", topics: ["DevOps", "Security"], url: "https://dzone.com/articles/ansible-security-and-testing-tools-for-automation", views: "8.7K", readingTime: "8 min", summary: "Essential collection of security and testing tools for Ansible automation to reduce security risk." },
+    { id: 60, title: "Observability and DevTool Platforms for AI Agents", platform: "DZone", year: 2025, date: "Feb 19, 2025", topics: ["AI", "Observability", "DevOps"], url: "https://dzone.com/articles/observability-and-devtool-platforms-for-ai-agents", views: "16K", readingTime: "8 min", summary: "Platforms that provide developers with tools to monitor, debug, and optimize AI agents." },
+    { id: 61, title: "Ansible Beyond Automation: Ecosystem and Tools", platform: "DZone", year: 2024, date: "Apr 4, 2024", topics: ["DevOps", "Automation"], url: "https://dzone.com/articles/ansible-beyond-automation", views: "12.9K", readingTime: "8 min", summary: "Discover the wide range of tools and ecosystems that Ansible offers beyond automation." },
+    { id: 62, title: "Understanding Prompt Injection and Other Risks of Generative AI", platform: "DZone", year: 2024, date: "Apr 2, 2024", topics: ["AI", "Security"], url: "https://dzone.com/articles/understanding-prompt-injection-and-other-risks-of-generative-ai", views: "8.8K", readingTime: "8 min", summary: "By prioritizing security, organizations can enhance trust, resilience, and reliability in AI environments." },
+    { id: 63, title: "Enhance IaC Security With Mend Scans", platform: "DZone", year: 2024, date: "Jul 5, 2024", topics: ["DevOps", "Security", "IaC"], url: "https://dzone.com/articles/enhance-iac-security-with-mend-scans", views: "12.9K", readingTime: "8 min", summary: "Learn to incorporate Mend into IaC workflows, improve infrastructure security, and ensure compliance." },
+    { id: 64, title: "Shingling for Similarity and Plagiarism Detection", platform: "DZone", year: 2024, date: "Jun 25, 2024", topics: ["AI", "Data Science"], url: "https://dzone.com/articles/shingling-for-similarity-and-plagiarism-detection", views: "6.9K", readingTime: "8 min", summary: "Introduction to shingling technique, Jaccard similarity, and advanced techniques for plagiarism detection." },
+    { id: 65, title: "Ansible Code Scanning and Quality Checks With SonarQube", platform: "DZone", year: 2024, date: "Jun 12, 2024", topics: ["DevOps", "Security"], url: "https://dzone.com/articles/ansible-code-scanning-and-quality-checks-with-sonarqube", views: "8.4K", readingTime: "8 min", summary: "Set up SonarQube plugin to analyze Ansible playbooks for security vulnerabilities and technical debt." },
+    { id: 66, title: "Automation, Ansible, AI: AI Tools in Your IDE", platform: "DZone", year: 2023, date: "Jun 27, 2023", topics: ["AI", "DevOps", "Automation"], url: "https://dzone.com/articles/automation-ansible-ai", views: "9.1K", readingTime: "6 min", summary: "Learn how Ansible brings AI tools to your IDE to make automation coding simpler and more efficient." }
   ],
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "431.9K", label: "Total pageviews · 75+ articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "602.1K", label: "Total pageviews · 100 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
@@ -102,11 +123,15 @@ function getPlatformStyle(platform) {
   return `background:${c.bg};color:${c.text}`;
 }
 
+function getPlatformIcon(platform) {
+  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star"})[platform] || "fas fa-star";
+}
+
 function renderPublicationCards(articles) {
   const grid = document.getElementById('publicationsGrid');
   if (!grid) return;
   grid.innerHTML = articles.map(a => {
-    const badge = `<span class="pub-platform-badge" style="${getPlatformStyle(a.platform)}"><i class="fas fa-${a.platform === 'DZone' ? 'code' : a.platform === 'Medium' ? 'medium' : a.platform === 'Dev.to' ? 'dev' : a.platform === 'Hackernoon' ? 'hacker-news' : a.platform === 'Substack' ? 'envelope' : a.platform === 'VMacWrites' ? 'wordpress' : 'star'}"></i> ${a.platform}</span>`;
+    const badge = `<span class="pub-platform-badge" style="${getPlatformStyle(a.platform)}"><i class="${getPlatformIcon(a.platform)}"></i> ${a.platform}</span>`;
     const yb = `<span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span>`;
     const meta = [];
     if (a.date) meta.push(`<span><i class="fas fa-calendar-alt"></i> ${a.date}</span>`);
@@ -227,26 +252,48 @@ function updatePublications() {
   if (pc) pc.textContent = `(${researchData.articles.length} total)`;
 }
 
-// Filter buttons
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const group = this.dataset.filterGroup;
-    const value = this.dataset.filter;
-    document.querySelectorAll(`.filter-btn[data-filter-group="${group}"]`).forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    if (group === 'platform') activePlatform = value;
-    if (group === 'topic') activeTopic = value;
-    updatePublications();
+// Filter buttons (research page only)
+if (document.getElementById('publicationsGrid')) {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const group = this.dataset.filterGroup;
+      const value = this.dataset.filter;
+      document.querySelectorAll(`.filter-btn[data-filter-group="${group}"]`).forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      if (group === 'platform') activePlatform = value;
+      if (group === 'topic') activeTopic = value;
+      updatePublications();
+    });
   });
-});
+}
 
 // ============================================
 // SEARCH
 // ============================================
-const searchInput = document.getElementById('researchSearch');
-const searchResults = document.getElementById('searchResults');
+let searchInput = null;
+let searchResults = null;
+
+function initSearch() {
+  searchInput = document.getElementById('researchSearch');
+  searchResults = document.getElementById('searchResults');
+  if (!searchInput || !searchResults) return;
+
+  searchInput.addEventListener('input', function() { performSearch(this.value); });
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+    }
+    if (e.key === 'Escape') {
+      searchInput.blur();
+      searchResults.classList.remove('open');
+    }
+  });
+}
 
 function performSearch(query) {
+  if (!searchResults) return;
   searchQuery = query;
   if (!query) {
     searchResults.classList.remove('open');
@@ -282,19 +329,6 @@ function performSearch(query) {
   updatePublications();
   renderTopicFilters(query);
 }
-
-searchInput.addEventListener('input', function() { performSearch(this.value); });
-
-document.addEventListener('keydown', function(e) {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-    e.preventDefault();
-    searchInput.focus();
-  }
-  if (e.key === 'Escape') {
-    searchInput.blur();
-    searchResults.classList.remove('open');
-  }
-});
 
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.search-container')) {
@@ -338,8 +372,8 @@ function drawKnowledgeGraph() {
   ctx.clearRect(0, 0, W, H);
 
   const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-  const nodeColor = isDark ? 'rgba(99,102,241,0.8)' : 'rgba(99,102,241,0.7)';
-  const edgeColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(99,102,241,0.12)';
+  const nodeColor = isDark ? 'rgba(249,115,22,0.8)' : 'rgba(249,115,22,0.7)';
+  const edgeColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(249,115,22,0.12)';
   const textColor = isDark ? 'rgba(255,255,255,0.8)' : '#4a4a6a';
   const labelBg = isDark ? 'rgba(12,12,29,0.8)' : 'rgba(255,255,255,0.85)';
 
@@ -374,20 +408,20 @@ function drawKnowledgeGraph() {
 
   // Center hub
   const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 40);
-  grad.addColorStop(0, isDark ? 'rgba(99,102,241,0.15)' : 'rgba(99,102,241,0.1)');
-  grad.addColorStop(1, 'rgba(99,102,241,0)');
+  grad.addColorStop(0, isDark ? 'rgba(249,115,22,0.15)' : 'rgba(249,115,22,0.1)');
+  grad.addColorStop(1, 'rgba(249,115,22,0)');
   ctx.fillStyle = grad;
   ctx.beginPath();
   ctx.arc(cx, cy, 40, 0, 2 * Math.PI);
   ctx.fill();
 
-  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(99,102,241,0.04)';
+  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(249,115,22,0.04)';
   ctx.beginPath();
   ctx.arc(cx, cy, 20, 0, 2 * Math.PI);
   ctx.fill();
 
-  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(99,102,241,0.5)';
-  ctx.font = 'bold 11px Poppins, sans-serif';
+  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(249,115,22,0.5)';
+  ctx.font = 'bold 11px CabinetGrotesk, Inter, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText('Research', cx, cy - 6);
@@ -396,17 +430,17 @@ function drawKnowledgeGraph() {
   // Draw nodes
   nodes.forEach(n => {
     const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.radius * 2);
-    glow.addColorStop(0, 'rgba(99,102,241,0.1)');
-    glow.addColorStop(1, 'rgba(99,102,241,0)');
+    glow.addColorStop(0, 'rgba(249,115,22,0.1)');
+    glow.addColorStop(1, 'rgba(249,115,22,0)');
     ctx.fillStyle = glow;
     ctx.beginPath();
     ctx.arc(n.x, n.y, n.radius * 2, 0, 2 * Math.PI);
     ctx.fill();
 
     const ngrad = ctx.createRadialGradient(n.x - 5, n.y - 5, 0, n.x, n.y, n.radius);
-    ngrad.addColorStop(0, 'rgba(99,102,241,0.6)');
-    ngrad.addColorStop(0.7, 'rgba(99,102,241,0.85)');
-    ngrad.addColorStop(1, 'rgba(168,85,247,0.8)');
+    ngrad.addColorStop(0, 'rgba(249,115,22,0.6)');
+    ngrad.addColorStop(0.7, 'rgba(249,115,22,0.85)');
+    ngrad.addColorStop(1, 'rgba(234,88,12,0.8)');
     ctx.fillStyle = ngrad;
     ctx.beginPath();
     ctx.arc(n.x, n.y, n.radius, 0, 2 * Math.PI);
@@ -417,7 +451,7 @@ function drawKnowledgeGraph() {
     ctx.stroke();
 
     ctx.fillStyle = textColor;
-    ctx.font = '600 11px Poppins, sans-serif';
+    ctx.font = '600 11px CabinetGrotesk, Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(n.count, n.x, n.y);
@@ -443,7 +477,7 @@ function drawKnowledgeGraph() {
   const legendEl = document.getElementById('kgLegend');
   if (legendEl) {
     legendEl.innerHTML = '';
-    const colors = ['#6366f1', '#a855f7', '#06b6d4', '#f43f5e', '#00ff7f', '#e11d48'];
+    const colors = ['#f97316', '#ea580c', '#f59e0b', '#f43f5e', '#10b981', '#e11d48'];
     topics.slice(0, 6).forEach((t, i) => {
       const item = document.createElement('span');
       item.className = 'kg-legend-item';
@@ -610,6 +644,40 @@ window.downloadCitation = function downloadCitation() {
 }
 
 // ============================================
+// CITATION STATS LOADER
+// ============================================
+async function fetchCitationStats() {
+  try {
+    const resp = await fetch('data/citations.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    updateCitationUI(data);
+  } catch {
+    // silent fallback — static HTML values remain
+  }
+}
+
+function updateCitationUI(data) {
+  const totalEl = document.getElementById('totalCitations');
+  const hEl = document.getElementById('hIndex');
+  const trendEl = document.getElementById('trendValue');
+  if (!data || !data.metrics) return;
+
+  if (totalEl) {
+    const displayVal = Math.max(1, data.metrics.total_citations);
+    totalEl.textContent = displayVal;
+    totalEl.dataset.target = displayVal;
+  }
+  if (hEl) {
+    hEl.textContent = data.metrics.h_index || 1;
+  }
+  if (trendEl) {
+    const thisYear = data.metrics.this_year_citations || 0;
+    trendEl.textContent = `+${thisYear}`;
+  }
+}
+
+// ============================================
 // FADE-IN OBSERVER FOR RESEARCH PAGE
 // ============================================
 function initResearchFadeIn() {
@@ -624,13 +692,15 @@ function initResearchFadeIn() {
 // ============================================
 // INIT
 // ============================================
-function init() {
+async function init() {
+  initSearch();
   renderFeaturedResearch();
   renderPlatformGrid();
   renderTopicExplorer();
   renderTrending();
   renderTopicFilters('');
   updatePublications();
+  await fetchCitationStats();
   animateCounters();
   drawKnowledgeGraph();
   initResearchFadeIn();
@@ -648,8 +718,47 @@ function init() {
   });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
+function initLatestPosts() {
+  const grid = document.getElementById('latestPostsGrid');
+  if (!grid) return;
+
+  const articles = [...researchData.articles]
+    .filter(a => !a.isBook && a.url && a.url !== '#')
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  grid.innerHTML = articles.map(a => {
+    const iconMap = { 'DZone': 'code', 'Medium': 'medium', 'Dev.to': 'dev', 'Hackernoon': 'hacker-news', 'Substack': 'envelope', 'VMacWrites': 'wordpress' };
+    const icon = iconMap[a.platform] || 'star';
+    const prefix = (a.platform === 'DZone' || a.platform === 'Substack') ? 'fas' : 'fab';
+    const pColors = { 'DZone': '#e34c26', 'Medium': '#000', 'Dev.to': '#0a0a0a', 'Hackernoon': '#00ff7f', 'Substack': '#ff671e', 'VMacWrites': '#21759b' };
+    const bg = pColors[a.platform] || '#666';
+    const iconHtml = a.platform === 'Hackernoon' ? 'HN' : a.platform === 'VMacWrites' ? 'W' : a.platform === 'DZone' ? 'DZ' : `<i class="${prefix} fa-${icon}" style="font-size:0.9rem;color:#fff;"></i>`;
+
+    return `<a href="${a.url}" target="_blank" class="latest-post-card" data-platform="${a.platform}">
+      <div class="lpc-header">
+        <div class="lpc-platform">
+          <div class="lpc-platform-icon" style="background:${bg};">${iconHtml}</div>
+          <span class="lpc-platform-name">${a.platform}</span>
+        </div>
+        <span class="lpc-date">${a.date}</span>
+      </div>
+      <h4>${a.title}</h4>
+      <p class="lpc-desc">${a.summary}</p>
+      <div class="lpc-stats">${a.views ? `<span><i class="fas fa-eye"></i> ${a.views}</span>` : ''}</div>
+    </a>`;
+  }).join('');
+}
+
+if (document.getElementById('publicationsGrid')) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+} else if (document.getElementById('latestPostsGrid')) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLatestPosts);
+  } else {
+    initLatestPosts();
+  }
 }
