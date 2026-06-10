@@ -3,28 +3,25 @@
 // ============================================
 const researchData = {
   articles: [
-    { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/open-source-llm-tools-worth-your-time", views: "3.6K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
-    { id: 2, title: "MCP vs Skills vs Agents With Scripts: Which One Should You Pick?", platform: "DZone", year: 2026, date: "Mar 26, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/articles/mcp-vs-skills-vs-agents-with-scripts", views: "3.7K", readingTime: "10 min", summary: "Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for." },
+    { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.6K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
+    { id: 2, title: "MCP vs Skills vs Agents With Scripts: Which One Should You Pick?", platform: "DZone", year: 2026, date: "Mar 26, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.7K", readingTime: "10 min", summary: "Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for." },
     { id: 3, title: "The Ultimate Terminal Stack in 2026", platform: "Medium", year: 2026, date: "Mar 06, 2026", topics: ["DevOps", "Tools"], url: "https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc", views: "3.5K", readingTime: "6 min", summary: "A cross-platform guide for macOS, Linux, and Windows terminal setup." },
     { id: 4, title: "From MkDocs 1.6 to Zensical — Why I Made the Move", platform: "Medium", year: 2026, date: "May 08, 2026", topics: ["DevOps", "Tools", "Documentation"], url: "https://medium.com/vmacwrites/from-mkdocs-1-6-to-zensical-heres-why-i-finally-made-the-move-53b273b49cdd", views: "1.2K", readingTime: "5 min", summary: "A warning message in my terminal completely changed how I think about documentation." },
     { id: 5, title: "Database Evolution: From RDBMS to AI-Native and Quantum-Ready Systems", platform: "Hackernoon", year: 2026, date: "Jan 12, 2026", topics: ["AI", "Quantum", "Architecture", "Cloud"], url: "https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems", views: "4.5K", readingTime: "12 min", summary: "Analysis of database evolution from traditional RDBMS to AI-native and quantum-ready systems." },
     { id: 6, title: "Quantum Security Governance: Framework for the Post-Quantum World", platform: "Hackernoon", year: 2025, date: "Dec 19, 2025", topics: ["Quantum", "Security", "Architecture"], url: "https://hackernoon.com/quantum-security-governance-building-a-framework-for-the-post-quantum-world", views: "3.8K", readingTime: "10 min", summary: "A framework for quantum security governance in preparation for post-quantum computing." },
-    { id: 7, title: "Understanding Quantum Optimization: A Beginner's Guide", platform: "Substack", year: 2025, date: "Nov 15, 2025", topics: ["Quantum", "AI"], url: "https://vmacwrites.substack.com/p/understanding-quantum-optimization", views: "1.2K", readingTime: "7 min", summary: "How quantum computers might solve the world's hardest problems." },
     { id: 8, title: "Beyond Data: The Rising Need for AI Security", platform: "Hackernoon", year: 2025, date: "Nov 04, 2025", topics: ["AI", "Security"], url: "https://hackernoon.com/beyond-data-the-rising-need-for-ai-security", views: "5.1K", readingTime: "8 min", summary: "Exploring the critical need for security in AI-driven data ecosystems." },
     { id: 9, title: "Finding Today's Changed Files: A Quick Python Script", platform: "Dev.to", year: 2025, date: "Nov 03, 2025", topics: ["Python", "DevOps", "Tools"], url: "https://dev.to/vidyasagarmsc/finding-todays-changed-files-a-quick-python-script-for-file-uploads-13b7", views: "850", readingTime: "4 min", summary: "Python script to find and upload only today's changed files." },
     { id: 10, title: "Understanding HSTS: The Backbone of Modern Web Security", platform: "Hackernoon", year: 2025, date: "Oct 06, 2025", topics: ["Security", "Architecture"], url: "https://hackernoon.com/understanding-hsts-the-backbone-of-modern-web-security", views: "2.3K", readingTime: "6 min", summary: "Deep dive into HTTP Strict Transport Security and web security architecture." },
     { id: 11, title: "Reflecting on My 2025 Journey", platform: "VMacWrites", year: 2025, date: "Nov 18, 2025", topics: ["Developer Advocacy", "Career"], url: "https://vmacwrites.wordpress.com/2025/11/19/reflecting-on-my-2025-journey-a-year-of-innovation-learning-and-technical-excellence/", views: "1.5K", readingTime: "5 min", summary: "Reflecting on a year of innovation, learning, and technical excellence." },
     { id: 12, title: "Resolving Secrets Manager DNS Errors in Terraform & Pulumi", platform: "Medium", year: 2025, date: "Aug 08, 2025", topics: ["Cloud", "DevOps", "Architecture"], url: "https://medium.com/vmacwrites/resolving-ibm-secrets-manager-dns-resolution-errors-in-terraform-and-pulumi-iac-631a90d47b7c", views: "1.8K", readingTime: "7 min", summary: "Resolving IBM Secrets Manager DNS resolution errors in IaC." },
     { id: 13, title: "Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows", platform: "Hackernoon", year: 2025, date: "Jun 13, 2025", topics: ["Security", "Windows"], url: "https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows", views: "5.2K", readingTime: "6 min", summary: "Advanced SSL certificate troubleshooting on Windows environments." },
-    { id: 14, title: "Post-Quantum Cryptography: The Next Frontier in Cybersecurity", platform: "Substack", year: 2025, date: "May 26, 2025", topics: ["Quantum", "Security", "Cryptography"], url: "https://vmacwrites.substack.com/p/post-quantum-cryptography-the-next", views: "2.1K", readingTime: "8 min", summary: "Don't wait for quantum computers. Start your post-quantum journey today." },
     { id: 15, title: "The Essential Role of Process Monitoring in Linux", platform: "Medium", year: 2025, date: "May 12, 2025", topics: ["Linux", "DevOps", "Observability"], url: "https://medium.com/vmacwrites/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924", views: "1.1K", readingTime: "5 min", summary: "Critical process monitoring scripts for Linux environments." },
     { id: 16, title: "Podman: Detailed Overview, Advantages, and Setup", platform: "Dev.to", year: 2025, date: "May 04, 2025", topics: ["Containers", "DevOps", "Open Source"], url: "https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg", views: "3.2K", readingTime: "8 min", summary: "Podman is a daemonless container engine for OCI containers and pods." },
-    { id: 17, title: "Understanding Transcendental Numbers: Math, AI & Quantum", platform: "Substack", year: 2025, date: "Mar 17, 2025", topics: ["AI", "Quantum", "Mathematics"], url: "https://vmacwrites.substack.com/p/understanding-transcendental-numbers", views: "650", readingTime: "6 min", summary: "Role of transcendental numbers in mathematics, AI, and quantum computing." },
     { id: 18, title: "S3cmd: CLI for Object Storage", platform: "Medium", year: 2025, date: "Mar 05, 2025", topics: ["Cloud", "DevOps", "Tools"], url: "https://medium.com/vmacwrites/s3cmd-cli-for-object-storage-87a02e4b300b", views: "900", readingTime: "4 min", summary: "Exploring S3cmd CLI for object storage management." },
     { id: 19, title: "An Introduction to SymPy: Symbolic Mathematics in Python", platform: "Medium", year: 2025, date: "Jan 06, 2025", topics: ["Python", "Mathematics", "AI"], url: "https://medium.com/vmacwrites/an-introduction-to-sympy-a-python-library-for-symbolic-mathematics-ad13e70d5591", views: "1.3K", readingTime: "5 min", summary: "SymPy is an open-source Python library for symbolic mathematics." },
     { id: 20, title: "Pandas: Conversion using loc and iloc", platform: "Medium", year: 2025, date: "Jan 01, 2025", topics: ["Python", "Data Science"], url: "https://medium.com/vmacwrites/pandas-conversion-using-loc-and-iloc-d89d16010b49", views: "1.6K", readingTime: "3 min", summary: "Understanding loc and iloc for data selection in Pandas." },
     { id: 21, title: "Nvidia MIG with GPU Optimization in Kubernetes", platform: "Medium", year: 2024, date: "Dec 07, 2024", topics: ["AI", "Kubernetes", "Cloud"], url: "https://medium.com/vmacwrites/nvidia-mig-with-gpu-optimization-in-kubernetes-09a321b78993", views: "2.5K", readingTime: "8 min", summary: "Multi-Instance GPU partitioning for Kubernetes workloads." },
-    { id: 22, title: "Model Context Protocol (MCP) Overview", platform: "Substack", year: 2024, date: "Dec 07, 2024", topics: ["AI", "Architecture", "Open Source"], url: "https://vmacwrites.substack.com/p/model-context-protocol-overview", views: "3.6K", readingTime: "5 min", summary: "Anthropic's MCP standard for AI-to-data-source connections." },
+    { id: 22, title: "Model Context Protocol (MCP) Overview", platform: "Medium", year: 2024, date: "Dec 01, 2024", topics: ["AI", "Architecture", "Open Source"], url: "https://medium.com/vmacwrites/model-context-protocol-overview-5a15a57e69c4", views: "3.6K", readingTime: "5 min", summary: "Anthropic's MCP standard for AI-to-data-source connections." },
     { id: 23, title: "Reflecting on My 2024 Journey", platform: "VMacWrites", year: 2024, date: "Dec 08, 2024", topics: ["Developer Advocacy", "Career"], url: "https://vmacwrites.wordpress.com/2024/12/08/reflecting-on-my-2024-journey-achievements-and-growth/", views: "1.2K", readingTime: "5 min", summary: "Celebrating achievements, certifications, and community impact in 2024." },
     { id: 24, title: "Nurturing the Developer Within", platform: "Dev.to", year: 2024, date: "Dec 01, 2024", topics: ["Developer Advocacy", "Career"], url: "https://dev.to/vidyasagarmsc/nurturing-the-developer-within-a-journey-of-growth-and-2n9o", views: "1.8K", readingTime: "4 min", summary: "Keeping the developer inside you alive in the evolving tech landscape." },
     { id: 25, title: "IceCream: Sweet Alternative to Print Debugging in Python", platform: "Dev.to", year: 2024, date: "Nov 20, 2024", topics: ["Python", "DevOps", "Tools"], url: "https://dev.to/vidyasagarmsc/icecream-a-sweet-alternative-to-print-debugging-in-python-1lhg", views: "2.1K", readingTime: "3 min", summary: "IceCream Python library makes debugging effortless." },
@@ -32,43 +29,41 @@ const researchData = {
     { id: 27, title: "Shingling in the Generative AI Era", platform: "Hackernoon", year: 2024, date: "Jul 23, 2024", topics: ["AI", "Data Science"], url: "https://hackernoon.com/shingling-in-the-generative-ai-era", views: "2.8K", readingTime: "6 min", summary: "Shingling techniques and applications in generative AI." },
     { id: 28, title: "How to Deploy RAPIDS on GPU-Enabled Private Cloud", platform: "Hackernoon", year: 2024, date: "May 24, 2024", topics: ["AI", "Cloud", "GPU"], url: "https://hackernoon.com/how-to-deploy-rapids-on-gpu-enabled-private-cloud", views: "3.1K", readingTime: "8 min", summary: "Deploying RAPIDS for GPU-accelerated data science on private cloud." },
     { id: 29, title: "Design Private & Secured Cloud Networking with Automation", platform: "Hackernoon", year: 2024, date: "May 23, 2024", topics: ["Cloud", "Security", "Architecture"], url: "https://hackernoon.com/design-and-deploy-a-completely-private-and-secured-networking-architecture-on-cloud-using-automation", views: "2.6K", readingTime: "10 min", summary: "Design and deploy private secured networking architecture on cloud." },
-    { id: 30, title: "Essential Math to Master AI and Quantum", platform: "DZone", year: 2024, date: "Apr 16, 2024", topics: ["AI", "Quantum", "Mathematics"], url: "https://dzone.com/articles/essential-math-to-master-ai-and-quantum", views: "5.2K", readingTime: "10 min", summary: "Fundamental mathematics for artificial intelligence and quantum computing." },
-    { id: 31, title: "Securing the Generative AI Frontier", platform: "DZone", year: 2024, date: "May 3, 2024", topics: ["AI", "Security"], url: "https://dzone.com/articles/securing-the-generative-ai-frontier", views: "3.7K", readingTime: "8 min", summary: "Specialized tools and frameworks for AI firewall and prompt inspection." },
-    { id: 32, title: "Understanding Linux Permissions", platform: "Medium", year: 2024, date: "Aug 07, 2024", topics: ["Linux", "Security"], url: "https://vidyasagarmsc.medium.com/understanding-linux-permissions-fe11cc77371ad", views: "1.8K", readingTime: "5 min", summary: "Linux file permissions and access control explained." },
-    { id: 33, title: "Ansible: No Python Interpreters Found for Host", platform: "Medium", year: 2024, date: "Jun 12, 2024", topics: ["DevOps", "Python", "Cloud"], url: "https://medium.com/vmacwrites/ansible-no-python-interpreters-found-for-host-4184fb5eda8b", views: "2.2K", readingTime: "4 min", summary: "Troubleshooting Ansible Python interpreter discovery issues." },
+    { id: 30, title: "Essential Math to Master AI and Quantum", platform: "DZone", year: 2024, date: "Apr 16, 2024", topics: ["AI", "Quantum", "Mathematics"], url: "https://dzone.com/authors/vidyasagarmsc", views: "5.2K", readingTime: "10 min", summary: "Fundamental mathematics for artificial intelligence and quantum computing." },
+    { id: 31, title: "Securing the Generative AI Frontier", platform: "DZone", year: 2024, date: "May 3, 2024", topics: ["AI", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.7K", readingTime: "8 min", summary: "Specialized tools and frameworks for AI firewall and prompt inspection." },
     { id: 34, title: "2023: A Year in Retrospective", platform: "VMacWrites", year: 2023, date: "Dec 16, 2023", topics: ["Developer Advocacy", "Career"], url: "https://vmacwrites.wordpress.com/2023/12/16/2023-a-year-in-retrospective/", views: "800", readingTime: "4 min", summary: "Reflecting on a year of learning, exploration, and community." },
     { id: 35, title: "Ansible Code Snippets for Automation", platform: "VMacWrites", year: 2023, date: "Jul 01, 2023", topics: ["DevOps", "Cloud", "Automation"], url: "https://vmacwrites.wordpress.com/2023/07/01/ansible-code-snippets-for-automation/", views: "650", readingTime: "3 min", summary: "Ansible automation code snippets for Cloud provisioning." },
-    { id: 36, title: "Generate Your Next Headshot with AI", platform: "Substack", year: 2024, date: "Jun 12, 2024", topics: ["AI", "Tools"], url: "https://vmacwrites.substack.com/p/generate-your-next-headshot", views: "900", readingTime: "3 min", summary: "Free professional photoshoot with AI-generated headshots." },
     { id: 37, title: "Container to Container Communication with Bridge Network", platform: "VMacWrites", year: 2020, date: "Apr 09, 2020", topics: ["Containers", "Networking"], url: "https://vmacwrites.wordpress.com/2020/04/09/container-to-container-communication-with-bridge-network/", views: "1.1K", readingTime: "5 min", summary: "Establish container-to-container communication via bridge network." },
     { id: 38, title: "Container Registry Unauthorized: Authentication Required", platform: "VMacWrites", year: 2019, date: "Apr 05, 2019", topics: ["Containers", "Cloud"], url: "https://vmacwrites.wordpress.com/2019/04/05/icr-io-unauthorized-authentication-required/", views: "950", readingTime: "4 min", summary: "Troubleshooting ICR authentication errors on IKS." },
     { id: 39, title: "Istio on Windows 10", platform: "VMacWrites", year: 2019, date: "Feb 06, 2019", topics: ["Containers", "Service Mesh", "DevOps"], url: "https://vmacwrites.wordpress.com/2019/02/06/istio-on-windows-10/", views: "2.5K", readingTime: "6 min", summary: "Setting up Istio service mesh on Windows 10." },
     { id: 40, title: "Create a Presigned URL in Python 3.x", platform: "VMacWrites", year: 2018, date: "Nov 05, 2018", topics: ["Python", "Cloud"], url: "https://vmacwrites.wordpress.com/2018/11/05/create-a-presigned-url-to-download-an-object-in-python-3-x/", views: "1.3K", readingTime: "4 min", summary: "Presigned URLs for temporary object storage access." },
     { id: 41, title: "Install Knative with Istio on IBM Cloud", platform: "VMacWrites", year: 2018, date: "Oct 09, 2018", topics: ["Containers", "Cloud", "Serverless"], url: "https://vmacwrites.wordpress.com/2018/10/09/install-knative-with-istio-on-ibm-cloud/", views: "1.6K", readingTime: "8 min", summary: "Step-by-step Knative installation with Istio on IKS." },
     { id: 42, title: "Adjust the Speaking Rate", platform: "VMacWrites", year: 2020, date: "Nov 09, 2020", topics: ["AI", "NLP"], url: "https://vmacwrites.wordpress.com/2020/11/09/adjust-the-speaking-rate/", views: "750", readingTime: "3 min", summary: "StackOverflow-inspired solution for adjusting text-to-speech rate." },
-    { id: 43, title: "Windows 10 Development Recipes", platform: "Featured", year: 2015, date: "2015", topics: ["Architecture", "Windows", "Software Engineering"], url: "https://www.apress.com/gp/book/9781484207202", isBook: true, summary: "A comprehensive problem-solution reference for Windows 10 apps using HTML and JavaScript. Published by Apress (Springer).", citations: 1, isbn: "978-1-4842-0720-2" },
+    { id: 43, title: "Windows 10 Development Recipes", platform: "Featured", year: 2015, date: "2015", topics: ["Architecture", "Windows", "Software Engineering"], url: "https://www.apress.com/gp/book/9781484207202", isBook: true, summary: "A comprehensive problem-solution reference for Windows 10 apps using HTML and JavaScript.", citations: 1, isbn: "978-1-4842-0720-2" },
     { id: 44, title: "Who's Speaking?: Speaker Diarization with Watson", platform: "Featured", year: 2017, date: "May 2017", topics: ["AI", "NLP", "Cloud"], url: "https://medium.com/@VidyasagarMSC", summary: "Implementing speaker diarization using IBM Watson Speech-to-Text API.", citations: 3, isFeatured: true },
-    { id: 45, title: "Nvidia MIG with GPU Optimization in Kubernetes (Substack)", platform: "Substack", year: 2024, date: "Dec 07, 2024", topics: ["AI", "Kubernetes", "Cloud"], url: "https://vmacwrites.substack.com/p/nvidia-mig-with-gpu-optimization", views: "2.1K", readingTime: "8 min", summary: "Multi-Instance GPU partitioning for better GPU utilization." },
-    { id: 46, title: "Trust No Agent: How to Secure Autonomous Tools on Your Machine", platform: "DZone", year: 2026, date: "Feb 17, 2026", topics: ["AI", "Security"], url: "https://dzone.com/articles/trust-no-agent-how-to-secure-autonomous-tools-on-your-machine", views: "3.3K", readingTime: "8 min", summary: "Most developers run autonomous agents with zero isolation. Learn defense in depth to contain the blast radius." },
-    { id: 47, title: "ToolOrchestra vs Mixture of Experts: Routing Intelligence at Scale", platform: "DZone", year: 2026, date: "Jan 30, 2026", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/toolorchestra-vs-mixture-of-experts-routing-intelligence-at-scale", views: "1.8K", readingTime: "8 min", summary: "Explore ToolOrchestra, Mixture of Experts (MoE), and other AI patterns for routing intelligence at scale." },
-    { id: 48, title: "Developer Tools That Actually Matter in 2026", platform: "DZone", year: 2026, date: "Jan 6, 2026", topics: ["DevOps", "Tools"], url: "https://dzone.com/articles/developer-tools-that-actually-matter-in-2026", views: "7.7K", readingTime: "6 min", summary: "The developer tools making real differences today are the ones solving actual problems we face every day." },
-    { id: 49, title: "Infrastructure as Code: How Automation Evolved to Power AI Workloads", platform: "DZone", year: 2025, date: "Dec 18, 2025", topics: ["Cloud", "DevOps", "AI"], url: "https://dzone.com/articles/infrastructure-as-code-how-automation-evolved-to-power-ai-workloads", views: "1.7K", readingTime: "8 min", summary: "Learn how Infrastructure as Code progressed in 2025 and helped automation for provisioning AI infrastructure." },
-    { id: 50, title: "Architectural Understanding of CPUs, GPUs, and TPUs", platform: "DZone", year: 2025, date: "Dec 4, 2025", topics: ["Architecture", "AI"], url: "https://dzone.com/articles/architectural-understanding-of-cpus-gpus-and-tpus", views: "5.5K", readingTime: "10 min", summary: "Learn about CPUs, GPUs, and TPUs — definitions, use cases, architectural differences, and when to use each." },
-    { id: 51, title: "AI Infrastructure for Agents and LLMs: Options, Tools, and Optimization", platform: "DZone", year: 2025, date: "Sep 22, 2025", topics: ["AI", "Cloud", "Infrastructure"], url: "https://dzone.com/articles/ai-infrastructure-for-agents-and-llms", views: "4.6K", readingTime: "12 min", summary: "Explore infrastructure options and tools for deploying and optimizing AI agents and large language models." },
-    { id: 52, title: "Cloud Automation Excellence: Terraform, Ansible, and Nomad", platform: "DZone", year: 2025, date: "Sep 9, 2025", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/articles/cloud-automation-excellence-terraform-ansible-and-nomad", views: "5.3K", readingTime: "10 min", summary: "Enterprise cloud architecture demands sophisticated orchestration of infrastructure, configuration, and workload management." },
-    { id: 53, title: "Pulumi: Modern Infrastructure as Code With Real Programming Languages", platform: "DZone", year: 2025, date: "Aug 26, 2025", topics: ["Cloud", "DevOps", "IaC"], url: "https://dzone.com/articles/pulumi-modern-infrastructure-as-code", views: "3.4K", readingTime: "8 min", summary: "Pulumi lets developers create, deploy, and manage cloud resources using familiar programming languages." },
-    { id: 54, title: "DSPy Framework: A Comprehensive Technical Guide", platform: "DZone", year: 2025, date: "Aug 11, 2025", topics: ["AI", "Python"], url: "https://dzone.com/articles/dspy-framework-a-comprehensive-technical-guide", views: "4.9K", readingTime: "10 min", summary: "DSPy improves AI development by replacing prompt engineering with patterns. Explore DSPy's features for LM applications." },
-    { id: 55, title: "The Twelve-Factor Agents: Building Production-Ready LLM Applications", platform: "DZone", year: 2025, date: "Jul 17, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/the-twelve-factor-agents", views: "5.2K", readingTime: "10 min", summary: "The Twelve-Factor Agent architectural pattern for creating robust, scalable, and maintainable LLM applications." },
-    { id: 56, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", year: 2025, date: "Jun 13, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications", views: "6.6K", readingTime: "12 min", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive and act." },
-    { id: 57, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", year: 2025, date: "May 9, 2025", topics: ["AI", "DevOps", "Tools"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "6.9K", readingTime: "10 min", summary: "Explore the most impactful AI developer tools, highlighting features, installation steps, strengths, and limitations." },
-    { id: 58, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", year: 2025, date: "Apr 15, 2025", topics: ["Architecture", "Data", "Cloud"], url: "https://dzone.com/articles/emerging-data-architectures-the-future-of-data-management", views: "7.9K", readingTime: "10 min", summary: "Explore the latest advancements in data architecture, focusing on LakeDB and zero ETL architectures." },
-    { id: 59, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", year: 2025, date: "Mar 28, 2025", topics: ["DevOps", "Security"], url: "https://dzone.com/articles/ansible-security-and-testing-tools-for-automation", views: "8.7K", readingTime: "8 min", summary: "Essential collection of security and testing tools for Ansible automation to reduce security risk." },
-    { id: 60, title: "Observability and DevTool Platforms for AI Agents", platform: "DZone", year: 2025, date: "Feb 19, 2025", topics: ["AI", "Observability", "DevOps"], url: "https://dzone.com/articles/observability-and-devtool-platforms-for-ai-agents", views: "16K", readingTime: "8 min", summary: "Platforms that provide developers with tools to monitor, debug, and optimize AI agents." },
-    { id: 61, title: "Ansible Beyond Automation: Ecosystem and Tools", platform: "DZone", year: 2024, date: "Apr 4, 2024", topics: ["DevOps", "Automation"], url: "https://dzone.com/articles/ansible-beyond-automation", views: "12.9K", readingTime: "8 min", summary: "Discover the wide range of tools and ecosystems that Ansible offers beyond automation." },
-    { id: 62, title: "Understanding Prompt Injection and Other Risks of Generative AI", platform: "DZone", year: 2024, date: "Apr 2, 2024", topics: ["AI", "Security"], url: "https://dzone.com/articles/understanding-prompt-injection-and-other-risks-of-generative-ai", views: "8.8K", readingTime: "8 min", summary: "By prioritizing security, organizations can enhance trust, resilience, and reliability in AI environments." },
-    { id: 63, title: "Enhance IaC Security With Mend Scans", platform: "DZone", year: 2024, date: "Jul 5, 2024", topics: ["DevOps", "Security", "IaC"], url: "https://dzone.com/articles/enhance-iac-security-with-mend-scans", views: "12.9K", readingTime: "8 min", summary: "Learn to incorporate Mend into IaC workflows, improve infrastructure security, and ensure compliance." },
-    { id: 64, title: "Shingling for Similarity and Plagiarism Detection", platform: "DZone", year: 2024, date: "Jun 25, 2024", topics: ["AI", "Data Science"], url: "https://dzone.com/articles/shingling-for-similarity-and-plagiarism-detection", views: "6.9K", readingTime: "8 min", summary: "Introduction to shingling technique, Jaccard similarity, and advanced techniques for plagiarism detection." },
-    { id: 65, title: "Ansible Code Scanning and Quality Checks With SonarQube", platform: "DZone", year: 2024, date: "Jun 12, 2024", topics: ["DevOps", "Security"], url: "https://dzone.com/articles/ansible-code-scanning-and-quality-checks-with-sonarqube", views: "8.4K", readingTime: "8 min", summary: "Set up SonarQube plugin to analyze Ansible playbooks for security vulnerabilities and technical debt." },
-    { id: 66, title: "Automation, Ansible, AI: AI Tools in Your IDE", platform: "DZone", year: 2023, date: "Jun 27, 2023", topics: ["AI", "DevOps", "Automation"], url: "https://dzone.com/articles/automation-ansible-ai", views: "9.1K", readingTime: "6 min", summary: "Learn how Ansible brings AI tools to your IDE to make automation coding simpler and more efficient." }
+    { id: 46, title: "Trust No Agent: How to Secure Autonomous Tools on Your Machine", platform: "DZone", year: 2026, date: "Feb 17, 2026", topics: ["AI", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.3K", readingTime: "8 min", summary: "Most developers run autonomous agents with zero isolation. Learn defense in depth to contain the blast radius." },
+    { id: 47, title: "ToolOrchestra vs Mixture of Experts: Routing Intelligence at Scale", platform: "DZone", year: 2026, date: "Jan 30, 2026", topics: ["AI", "Architecture"], url: "https://dzone.com/authors/vidyasagarmsc", views: "1.8K", readingTime: "8 min", summary: "Explore ToolOrchestra, Mixture of Experts (MoE), and other AI patterns for routing intelligence at scale." },
+    { id: 48, title: "Developer Tools That Actually Matter in 2026", platform: "DZone", year: 2026, date: "Jan 6, 2026", topics: ["DevOps", "Tools"], url: "https://dzone.com/authors/vidyasagarmsc", views: "7.7K", readingTime: "6 min", summary: "The developer tools making real differences today are the ones solving actual problems we face every day." },
+    { id: 49, title: "Infrastructure as Code: How Automation Evolved to Power AI Workloads", platform: "DZone", year: 2025, date: "Dec 18, 2025", topics: ["Cloud", "DevOps", "AI"], url: "https://dzone.com/authors/vidyasagarmsc", views: "1.7K", readingTime: "8 min", summary: "Learn how Infrastructure as Code progressed in 2025 and helped automation for provisioning AI infrastructure." },
+    { id: 50, title: "Architectural Understanding of CPUs, GPUs, and TPUs", platform: "DZone", year: 2025, date: "Dec 4, 2025", topics: ["Architecture", "AI"], url: "https://dzone.com/authors/vidyasagarmsc", views: "5.5K", readingTime: "10 min", summary: "Learn about CPUs, GPUs, and TPUs — definitions, use cases, architectural differences, and when to use each." },
+    { id: 51, title: "AI Infrastructure for Agents and LLMs: Options, Tools, and Optimization", platform: "DZone", year: 2025, date: "Sep 22, 2025", topics: ["AI", "Cloud", "Infrastructure"], url: "https://dzone.com/authors/vidyasagarmsc", views: "4.6K", readingTime: "12 min", summary: "Explore infrastructure options and tools for deploying and optimizing AI agents and large language models." },
+    { id: 52, title: "Cloud Automation Excellence: Terraform, Ansible, and Nomad", platform: "DZone", year: 2025, date: "Sep 9, 2025", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/authors/vidyasagarmsc", views: "5.3K", readingTime: "10 min", summary: "Enterprise cloud architecture demands sophisticated orchestration of infrastructure, configuration, and workload management." },
+    { id: 53, title: "Pulumi: Modern Infrastructure as Code With Real Programming Languages", platform: "DZone", year: 2025, date: "Aug 26, 2025", topics: ["Cloud", "DevOps", "IaC"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.4K", readingTime: "8 min", summary: "Pulumi lets developers create, deploy, and manage cloud resources using familiar programming languages." },
+    { id: 54, title: "DSPy Framework: A Comprehensive Technical Guide", platform: "DZone", year: 2025, date: "Aug 11, 2025", topics: ["AI", "Python"], url: "https://dzone.com/authors/vidyasagarmsc", views: "4.9K", readingTime: "10 min", summary: "DSPy improves AI development by replacing prompt engineering with patterns. Explore DSPy's features for LM applications." },
+    { id: 55, title: "The Twelve-Factor Agents: Building Production-Ready LLM Applications", platform: "DZone", year: 2025, date: "Jul 17, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/authors/vidyasagarmsc", views: "5.2K", readingTime: "10 min", summary: "The Twelve-Factor Agent architectural pattern for creating robust, scalable, and maintainable LLM applications." },
+    { id: 56, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", year: 2025, date: "Jun 13, 2025", topics: ["AI", "Architecture"], url: "https://dzone.com/authors/vidyasagarmsc", views: "6.6K", readingTime: "12 min", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive and act." },
+    { id: 57, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", year: 2025, date: "May 9, 2025", topics: ["AI", "DevOps", "Tools"], url: "https://dzone.com/authors/vidyasagarmsc", views: "6.9K", readingTime: "10 min", summary: "Explore the most impactful AI developer tools, highlighting features, installation steps, strengths, and limitations." },
+    { id: 58, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", year: 2025, date: "Apr 15, 2025", topics: ["Architecture", "Data", "Cloud"], url: "https://dzone.com/authors/vidyasagarmsc", views: "7.9K", readingTime: "10 min", summary: "Explore the latest advancements in data architecture, focusing on LakeDB and zero ETL architectures." },
+    { id: 59, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", year: 2025, date: "Mar 28, 2025", topics: ["DevOps", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "8.7K", readingTime: "8 min", summary: "Essential collection of security and testing tools for Ansible automation to reduce security risk." },
+    { id: 60, title: "Observability and DevTool Platforms for AI Agents", platform: "DZone", year: 2025, date: "Feb 19, 2025", topics: ["AI", "Observability", "DevOps"], url: "https://dzone.com/authors/vidyasagarmsc", views: "16K", readingTime: "8 min", summary: "Platforms that provide developers with tools to monitor, debug, and optimize AI agents." },
+    { id: 61, title: "Ansible Beyond Automation: Ecosystem and Tools", platform: "DZone", year: 2024, date: "Apr 4, 2024", topics: ["DevOps", "Automation"], url: "https://dzone.com/authors/vidyasagarmsc", views: "12.9K", readingTime: "8 min", summary: "Discover the wide range of tools and ecosystems that Ansible offers beyond automation." },
+    { id: 62, title: "Understanding Prompt Injection and Other Risks of Generative AI", platform: "DZone", year: 2024, date: "Apr 2, 2024", topics: ["AI", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "8.8K", readingTime: "8 min", summary: "By prioritizing security, organizations can enhance trust, resilience, and reliability in AI environments." },
+    { id: 63, title: "Enhance IaC Security With Mend Scans", platform: "DZone", year: 2024, date: "Jul 5, 2024", topics: ["DevOps", "Security", "IaC"], url: "https://dzone.com/authors/vidyasagarmsc", views: "12.9K", readingTime: "8 min", summary: "Learn to incorporate Mend into IaC workflows, improve infrastructure security, and ensure compliance." },
+    { id: 64, title: "Shingling for Similarity and Plagiarism Detection", platform: "DZone", year: 2024, date: "Jun 25, 2024", topics: ["AI", "Data Science"], url: "https://dzone.com/authors/vidyasagarmsc", views: "6.9K", readingTime: "8 min", summary: "Introduction to shingling technique, Jaccard similarity, and advanced techniques for plagiarism detection." },
+    { id: 65, title: "Ansible Code Scanning and Quality Checks With SonarQube", platform: "DZone", year: 2024, date: "Jun 12, 2024", topics: ["DevOps", "Security"], url: "https://dzone.com/authors/vidyasagarmsc", views: "8.4K", readingTime: "8 min", summary: "Set up SonarQube plugin to analyze Ansible playbooks for security vulnerabilities and technical debt." },
+    { id: 66, title: "Automation, Ansible, AI: AI Tools in Your IDE", platform: "DZone", year: 2023, date: "Jun 27, 2023", topics: ["AI", "DevOps", "Automation"], url: "https://dzone.com/authors/vidyasagarmsc", views: "9.1K", readingTime: "6 min", summary: "Learn how Ansible brings AI tools to your IDE to make automation coding simpler and more efficient." },
+    { id: 67, title: "From Prompts to Harnesses: How AI Engineering Has Grown Up", platform: "Hackernoon", year: 2026, date: "May 5, 2026", topics: ["AI", "Architecture"], url: "https://hackernoon.com/from-prompts-to-harnesses-how-ai-engineering-has-grown-up", views: "2.8K", readingTime: "8 min", summary: "How AI engineering has evolved from simple prompt engineering to sophisticated agent harnesses and orchestration frameworks." },
+    { id: 68, title: "How I Fixed Windows Installation - BitLocker, a Write-Protected USB, and the IRST Rabbit Hole", platform: "Hackernoon", year: 2026, date: "Apr 29, 2026", topics: ["Windows", "Security", "DevOps"], url: "https://hackernoon.com/how-i-fixed-windows-installation-bitlocker-a-write-protected-usb-and-the-irst-rabbit-hole", views: "3.2K", readingTime: "10 min", summary: "A troubleshooting journey through Windows installation issues involving BitLocker, write-protected USB drives, and IRST driver problems." }
   ],
   platforms: [
     { name: "DZone", icon: "DZ", color: "#e34c26", stat: "602.1K", label: "Total pageviews · 100 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
@@ -165,11 +160,11 @@ function renderFeaturedResearch() {
     const tt = a.isBook ? '<span class="pub-tag-type"><i class="fas fa-book"></i> Book</span>' : '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
     const tags = a.topics.map(t => `<span class="pub-tag-topic">${t}</span>`).join('');
     const authors = a.isBook ? '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong>, A. V. Senthil Kumar, Lohith Goudagere Nagaraj</div>' : '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
-    return `<div class="pub-card" style="border-left:4px solid var(--primary);">
-      <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--primary);color:white;">${a.isBook ? 'Apress / Springer' : 'Cited Publication'}</span></div>
+    return `<div class="pub-card" style="border-left:4px solid var(--orange);">
+      <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.isBook ? 'Book' : 'Cited Publication'}</span></div>
       <h4>${a.title}</h4>
       ${authors}
-      <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.isBook ? 'Apress (Springer Science+Business Media)' : 'Medium / VMacWrites'}</span>${a.isbn ? `<span><i class="fas fa-hashtag"></i> ISBN: ${a.isbn}</span>` : ''}${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
+      <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.isBook ? 'Apress' : 'Medium / VMacWrites'}</span>${a.isbn ? `<span><i class="fas fa-hashtag"></i> ISBN: ${a.isbn}</span>` : ''}${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
       <div class="pub-abstract">${a.summary}</div>
       <div class="pub-tags">${ct} ${tt} ${tags}</div>
       <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
@@ -318,7 +313,7 @@ function performSearch(query) {
       return `<div class="search-result-item" onclick="window.open('${r.url || '#'}','_blank')">
         <div class="sr-icon" style="background:${c.bg};${c.text === '#000' ? 'color:#000;' : ''}">${icon}</div>
         <div class="sr-info">
-          <div class="sr-title">${r.title.replace(new RegExp(q, 'gi'), m => '<strong style="color:var(--primary-light)">' + m + '</strong>')}</div>
+          <div class="sr-title">${r.title.replace(new RegExp(q, 'gi'), m => '<strong style="color:var(--orange-light)">' + m + '</strong>')}</div>
           <div class="sr-meta"><span>${r.platform}</span><span>${r.year}</span>${r.views ? `<span>${r.views} views</span>` : ''}</div>
         </div>
         <div class="sr-tags">${r.topics.slice(0, 3).map(t => `<span class="sr-tag">${t}</span>`).join('')}</div>
@@ -368,25 +363,32 @@ function drawKnowledgeGraph() {
   const canvas = document.getElementById('knowledgeGraph');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = rect.height;
   ctx.clearRect(0, 0, W, H);
 
   const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
   const nodeColor = isDark ? 'rgba(249,115,22,0.8)' : 'rgba(249,115,22,0.7)';
   const edgeColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(249,115,22,0.12)';
-  const textColor = isDark ? 'rgba(255,255,255,0.8)' : '#4a4a6a';
-  const labelBg = isDark ? 'rgba(12,12,29,0.8)' : 'rgba(255,255,255,0.85)';
+  const textColor = isDark ? 'rgba(255,255,255,0.85)' : 'rgba(60,60,80,0.9)';
+  const labelBg = isDark ? 'rgba(15,15,30,0.85)' : 'rgba(255,255,255,0.9)';
 
   const topics = researchData.topics.slice(0, 12);
   const angles = topics.map((_, i) => (2 * Math.PI * i) / topics.length - Math.PI / 2);
   const cx = W / 2, cy = H / 2;
-  const radius = Math.min(W, H) * 0.32;
+  const isCompact = W < 460;
+  const radius = Math.min(W, H) * (isCompact ? 0.28 : 0.32);
+  const baseNodeR = Math.max(14, Math.min(W, H) * 0.035);
   const nodes = topics.map((t, i) => ({
     x: cx + radius * Math.cos(angles[i]),
     y: cy + radius * Math.sin(angles[i]),
     label: t,
     count: researchData.articles.filter(a => a.topics.includes(t)).length,
-    radius: 28 + Math.min(researchData.articles.filter(a => a.topics.includes(t)).length * 1.5, 20)
+    radius: baseNodeR + Math.min(researchData.articles.filter(a => a.topics.includes(t)).length * 1.2, baseNodeR)
   }));
 
   // Draw edges
@@ -407,38 +409,43 @@ function drawKnowledgeGraph() {
   ctx.globalAlpha = 1;
 
   // Center hub
-  const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 40);
+  const hubR = Math.min(30, Math.min(W, H) * 0.06);
+  const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, hubR + 10);
   grad.addColorStop(0, isDark ? 'rgba(249,115,22,0.15)' : 'rgba(249,115,22,0.1)');
   grad.addColorStop(1, 'rgba(249,115,22,0)');
   ctx.fillStyle = grad;
   ctx.beginPath();
-  ctx.arc(cx, cy, 40, 0, 2 * Math.PI);
+  ctx.arc(cx, cy, hubR + 10, 0, 2 * Math.PI);
   ctx.fill();
 
   ctx.fillStyle = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(249,115,22,0.04)';
   ctx.beginPath();
-  ctx.arc(cx, cy, 20, 0, 2 * Math.PI);
+  ctx.arc(cx, cy, hubR * 0.5, 0, 2 * Math.PI);
   ctx.fill();
 
-  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(249,115,22,0.5)';
-  ctx.font = 'bold 11px CabinetGrotesk, Inter, sans-serif';
+  const centerFontSize = Math.max(9, Math.min(W, H) * 0.018);
+  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.35)' : 'rgba(249,115,22,0.6)';
+  ctx.font = `bold ${centerFontSize}px Inter, sans-serif`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText('Research', cx, cy - 6);
-  ctx.fillText('Domains', cx, cy + 10);
+  ctx.fillText('Research', cx, cy - centerFontSize * 0.5);
+  ctx.fillText('Domains', cx, cy + centerFontSize * 0.9);
 
   // Draw nodes
+  const labelFontSize = Math.max(8, Math.min(W, H) * 0.018);
+  const countFontSize = Math.max(9, Math.min(W, H) * 0.02);
   nodes.forEach(n => {
-    const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.radius * 2);
+    const glowR = n.radius * 2;
+    const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, glowR);
     glow.addColorStop(0, 'rgba(249,115,22,0.1)');
     glow.addColorStop(1, 'rgba(249,115,22,0)');
     ctx.fillStyle = glow;
     ctx.beginPath();
-    ctx.arc(n.x, n.y, n.radius * 2, 0, 2 * Math.PI);
+    ctx.arc(n.x, n.y, glowR, 0, 2 * Math.PI);
     ctx.fill();
 
-    const ngrad = ctx.createRadialGradient(n.x - 5, n.y - 5, 0, n.x, n.y, n.radius);
-    ngrad.addColorStop(0, 'rgba(249,115,22,0.6)');
+    const ngrad = ctx.createRadialGradient(n.x - 3, n.y - 3, 0, n.x, n.y, n.radius);
+    ngrad.addColorStop(0, 'rgba(249,115,22,0.5)');
     ngrad.addColorStop(0.7, 'rgba(249,115,22,0.85)');
     ngrad.addColorStop(1, 'rgba(234,88,12,0.8)');
     ctx.fillStyle = ngrad;
@@ -446,32 +453,43 @@ function drawKnowledgeGraph() {
     ctx.arc(n.x, n.y, n.radius, 0, 2 * Math.PI);
     ctx.fill();
 
-    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+    ctx.lineWidth = 1;
     ctx.stroke();
 
     ctx.fillStyle = textColor;
-    ctx.font = '600 11px CabinetGrotesk, Inter, sans-serif';
+    ctx.font = `600 ${countFontSize}px Inter, sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(n.count, n.x, n.y);
 
-    ctx.fillStyle = textColor;
-    ctx.font = '500 10px Poppins, sans-serif';
+    ctx.font = `500 ${labelFontSize}px Inter, sans-serif`;
     const tw = ctx.measureText(n.label).width;
+    const lw = tw + 12;
+    const lh = labelFontSize + 8;
+    const lx = n.x - lw / 2;
+    const ly = n.y + n.radius + 4;
+
     ctx.fillStyle = labelBg;
-    const lx = n.x - tw / 2 - 6;
-    const ly = n.y + n.radius + 6;
     ctx.beginPath();
-    if (ctx.roundRect) ctx.roundRect(lx, ly, tw + 12, 18, 9);
-    else ctx.rect(lx, ly, tw + 12, 18);
+    const r = 4;
+    ctx.moveTo(lx + r, ly);
+    ctx.lineTo(lx + lw - r, ly);
+    ctx.quadraticCurveTo(lx + lw, ly, lx + lw, ly + r);
+    ctx.lineTo(lx + lw, ly + lh - r);
+    ctx.quadraticCurveTo(lx + lw, ly + lh, lx + lw - r, ly + lh);
+    ctx.lineTo(lx + r, ly + lh);
+    ctx.quadraticCurveTo(lx, ly + lh, lx, ly + lh - r);
+    ctx.lineTo(lx, ly + r);
+    ctx.quadraticCurveTo(lx, ly, lx + r, ly);
+    ctx.closePath();
     ctx.fill();
 
     ctx.fillStyle = textColor;
-    ctx.font = '500 10px Poppins, sans-serif';
+    ctx.font = `500 ${labelFontSize}px Inter, sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(n.label, n.x, ly + 9);
+    ctx.fillText(n.label, n.x, ly + lh / 2);
   });
 
   const legendEl = document.getElementById('kgLegend');
@@ -520,7 +538,7 @@ function getCitationFormats(articleId) {
   const authorList = coAuthors.join(', ');
   const year = a.year || a.date?.split(' ').pop() || 'n.d.';
   const title = a.title;
-  const publisher = a.isBook ? 'Apress (Springer Science+Business Media)' : (a.platform || 'Technical Article');
+  const publisher = a.isBook ? 'Apress' : (a.platform || 'Technical Article');
   const url = a.url && a.url !== '#' ? a.url : 'https://vidyasagarmsc.github.io';
   const accessed = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -712,10 +730,11 @@ async function init() {
   }
 
   // Re-draw on resize
-  window.addEventListener('resize', () => {
+  const resizeKG = () => {
     clearTimeout(window._kgResize);
     window._kgResize = setTimeout(drawKnowledgeGraph, 300);
-  });
+  };
+  window.addEventListener('resize', resizeKG);
 }
 
 function initLatestPosts() {
@@ -735,16 +754,9 @@ function initLatestPosts() {
     const iconHtml = a.platform === 'Hackernoon' ? 'HN' : a.platform === 'VMacWrites' ? 'W' : a.platform === 'DZone' ? 'DZ' : `<i class="${prefix} fa-${icon}" style="font-size:0.9rem;color:#fff;"></i>`;
 
     return `<a href="${a.url}" target="_blank" class="latest-post-card" data-platform="${a.platform}">
-      <div class="lpc-header">
-        <div class="lpc-platform">
-          <div class="lpc-platform-icon" style="background:${bg};">${iconHtml}</div>
-          <span class="lpc-platform-name">${a.platform}</span>
-        </div>
-        <span class="lpc-date">${a.date}</span>
-      </div>
-      <h4>${a.title}</h4>
-      <p class="lpc-desc">${a.summary}</p>
-      <div class="lpc-stats">${a.views ? `<span><i class="fas fa-eye"></i> ${a.views}</span>` : ''}</div>
+      <span class="lpc-date">${a.date}</span>
+      <span class="lpc-title">${a.title}</span>
+      <span class="lpc-platform-name">${a.platform}</span>
     </a>`;
   }).join('');
 }
