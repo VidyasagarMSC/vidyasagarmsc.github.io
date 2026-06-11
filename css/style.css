@@ -209,6 +209,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .navbar-overlay.open { visibility: visible; opacity: 1; }
 
 @media (max-width: 768px) {
+  .navbar { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .mobile-toggle { display: flex; }
   .navbar-links {
     position: fixed; top: 0; right: 0; bottom: 0; width: 260px;
