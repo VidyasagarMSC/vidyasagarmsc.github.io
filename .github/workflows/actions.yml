@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cache/ public/data/
+          git add public/data/
           git diff --cached --quiet || git commit -m "chore: update scraped data [skip ci]"
           git push
 
