@@ -1,0 +1,35 @@
+{
+  "metrics": {
+    "total_citations": 1,
+    "h_index": 1,
+    "i10_index": 0,
+    "works_count": 1,
+    "oa_cited_by_count": 0,
+    "counts_by_year": [
+      {
+        "year": 2015,
+        "works_count": 1,
+        "oa_works_count": 0,
+        "cited_by_count": 1
+      }
+    ],
+    "openalex_id": "https://openalex.org/A5059192917",
+    "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
+    "this_year_citations": 0,
+    "projected_year_citations": 1
+  },
+  "yearly_citations": {
+    "2015": 1
+  },
+  "works": [
+    {
+      "title": "Windows 10 Development Recipes: A Problem-Solution Approach in HTML and JavaScript",
+      "doi": null,
+      "citations": 1,
+      "year": 2015,
+      "source": "",
+      "openalex_url": "https://openalex.org/W2503816627"
+    }
+  ],
+  "last_updated": "Jun 27, 2026 at 02:48 AM"
+}
