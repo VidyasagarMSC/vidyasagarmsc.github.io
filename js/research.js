@@ -3,6 +3,8 @@
 // ============================================
 const researchData = {
   articles: [
+    { id: 69, title: "Code Review Core Practices", platform: "DZone", year: 2026, date: "Jun 29, 2026", topics: ["DevOps", "Architecture", "Security"], url: "https://dzone.com/refcardz/code-review-patterns-and-anti-patterns", summary: "Refcard #291 — Practical guidance for human, automated, and AI-assisted code review workflows. Covers how to prepare reviewable PRs, use automated checks, apply human judgment, and incorporate AI assistance." },
+    { id: 70, title: "No VIP? No Problem: Pacemaker-Based SAP HANA High Availability Using a Load Balancer Health Check", platform: "DZone", year: 2026, date: "Jun 25, 2026", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/articles/sap-hana-ha-pacemaker", views: "732", readingTime: "8 min", summary: "Many cloud platforms do not support floating virtual IPs, which breaks the standard RHEL Pacemaker setup for SAP HANA HA. Use a network load balancer." },
     { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.6K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
     { id: 2, title: "MCP vs Skills vs Agents With Scripts: Which One Should You Pick?", platform: "DZone", year: 2026, date: "Mar 26, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.7K", readingTime: "10 min", summary: "Learn about when to use MCP, skills, and agents with scripts. How they differ and what they're meant for." },
     { id: 3, title: "The Ultimate Terminal Stack in 2026", platform: "Medium", year: 2026, date: "Mar 06, 2026", topics: ["DevOps", "Tools"], url: "https://medium.com/vmacwrites/the-ultimate-terminal-stack-in-2026-a-cross-platform-guide-for-macos-linux-and-windows-c0d1f93cd9cc", views: "3.5K", readingTime: "6 min", summary: "A cross-platform guide for macOS, Linux, and Windows terminal setup." },
@@ -66,7 +68,7 @@ const researchData = {
     { id: 68, title: "How I Fixed Windows Installation - BitLocker, a Write-Protected USB, and the IRST Rabbit Hole", platform: "Hackernoon", year: 2026, date: "Apr 29, 2026", topics: ["Windows", "Security", "DevOps"], url: "https://hackernoon.com/how-i-fixed-windows-installation-bitlocker-a-write-protected-usb-and-the-irst-rabbit-hole", views: "3.2K", readingTime: "10 min", summary: "A troubleshooting journey through Windows installation issues involving BitLocker, write-protected USB drives, and IRST driver problems." }
   ],
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "602.1K", label: "Total pageviews · 100 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "609.3K", label: "Total pageviews · 101 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
