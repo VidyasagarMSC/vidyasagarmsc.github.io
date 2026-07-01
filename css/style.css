@@ -14,14 +14,14 @@
   --orange-light: #FF8A33;
   --orange-bg: rgba(255, 107, 0, 0.06);
 
-  --bg: #0A0A0A;
+  --bg: #0F0F0F;
   --bg-card: #1A1A1A;
   --border: #2A2A2A;
 
-  --text: #FFFFFF;
-  --text-secondary: #A3A3A3;
-  --text-dim: #555555;
-  --text-muted: #555555;
+  --text: #F0F0F0;
+  --text-secondary: #C0C0C0;
+  --text-dim: #888888;
+  --text-muted: #888888;
 
   /* === Font Families === */
   --font: 'CabinetGrotesk-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -30,11 +30,11 @@
   --font-mono: 'JetBrains Mono', 'Consolas', monospace;
 
   /* === Type Scale (major third) === */
-  --text-xs: 0.7rem;     /* 11.2px — captions, tags, shortcuts */
-  --text-sm: 0.78rem;    /* 12.5px — metadata, small labels */
-  --text-base: 0.88rem;  /* 14.1px — body, nav links */
-  --text-md: 0.95rem;    /* 15.2px — large body, card subheadings */
-  --text-lg: 1.1rem;     /* 17.6px — H5, CTA text */
+  --text-xs: 0.72rem;     /* 11.5px — captions, tags, shortcuts */
+  --text-sm: 0.82rem;     /* 13.1px — metadata, small labels */
+  --text-base: 0.93rem;   /* 14.9px — body, nav links */
+  --text-md: 1rem;        /* 16px — large body, card subheadings */
+  --text-lg: 1.1rem;      /* 17.6px — H5, CTA text */
   --text-xl: 1.3rem;     /* 20.8px — H4 */
   --text-2xl: 1.6rem;    /* 25.6px — H3 */
   --text-3xl: 2rem;      /* 32px — H2 */
@@ -52,7 +52,7 @@
   --lh-snug: 1.15;
   --lh-normal: 1.4;
   --lh-relaxed: 1.6;
-  --lh-loose: 1.8;
+  --lh-loose: 1.65;
 
   /* === Letter Spacing === */
   --ls-display: 0.04em;
@@ -106,7 +106,8 @@ body {
 a { color: inherit; text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .navbar-brand, .navbar-link, .back-link, .work-item, .writing-item, .latest-post-card,
 .cta-btn, .pub-link, .cite-btn, .filter-btn, .topic-filter-btn,
-.spotlight-nav a, .spotlight-social a, .contact-links a, .footer-links a,
+.spotlight-nav a, .spotlight-social a, .contact-links a, .contact-email,
+.section-links a, .footer-links a,
 .search-result-item, .platform-card, .reading-path-card, .topic-explorer-item { text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 button { font-family: var(--font); cursor: pointer; border: none; background: none; color: inherit; }
