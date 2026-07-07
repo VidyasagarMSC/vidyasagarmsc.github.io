@@ -3,6 +3,7 @@
 // ============================================
 const researchData = {
   articles: [
+    { id: 86, title: "Loop Engineering: The Layer After Prompt, Context, and Harness Engineering", platform: "DZone", year: 2026, date: "Jul 01, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/articles/loop-engineering-llms", views: "192", readingTime: "10 min", summary: "This article walks through all four layers side by side, with comparison tables for when to use each one and which agent architecture fits which job." },
     { id: 69, title: "Code Review Core Practices", platform: "DZone", year: 2026, date: "Jun 29, 2026", topics: ["DevOps", "Architecture", "Security"], url: "https://dzone.com/refcardz/code-review-patterns-and-anti-patterns", summary: "Refcard #291 — Practical guidance for human, automated, and AI-assisted code review workflows. Covers how to prepare reviewable PRs, use automated checks, apply human judgment, and incorporate AI assistance." },
     { id: 70, title: "No VIP? No Problem: Pacemaker-Based SAP HANA High Availability Using a Load Balancer Health Check", platform: "DZone", year: 2026, date: "Jun 25, 2026", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/articles/sap-hana-ha-pacemaker", views: "732", readingTime: "8 min", summary: "Many cloud platforms do not support floating virtual IPs, which breaks the standard RHEL Pacemaker setup for SAP HANA HA. Use a network load balancer." },
     { id: 1, title: "Open-Source LLM Tools Worth Your Time", platform: "DZone", year: 2026, date: "Apr 28, 2026", topics: ["AI", "Open Source"], url: "https://dzone.com/authors/vidyasagarmsc", views: "3.6K", readingTime: "8 min", summary: "Building with LLMs in 2026 means more than picking a model and calling an API. Covers the full open-source LLM tooling stack." },
@@ -83,7 +84,7 @@ const researchData = {
     { id: 74, title: "Generate Your Next Headshot", platform: "Substack", year: 2024, date: "Jun 12, 2024", topics: ["AI", "Tools"], url: "https://vmacwrites.substack.com/p/generate-your-next-headshot", views: "600", readingTime: "3 min", summary: "Free professional photoshoot with AI — generate your next headshot using AI tools." }
   ],
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "609.3K", label: "Total pageviews · 101 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "612.4K", label: "Total pageviews · 102 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
