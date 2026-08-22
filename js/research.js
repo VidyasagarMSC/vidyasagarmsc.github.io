@@ -3,6 +3,8 @@
 // ============================================
 const researchData = {
   articles: [
+    { id: 88, title: "Incident Management and the Rise of AI SRE Agents", platform: "DZone", year: 2026, date: "Aug 11, 2026", topics: ["AI", "DevOps", "SRE"], url: "https://dzone.com/articles/ai-sre-agents", views: "1.4K", readingTime: "12 min", summary: "A newer category, dedicated AI SRE agents, goes further: they actively query logs, metrics, and deploy history live during an incident." },
+    { id: 87, title: "Graph Engineering: The Layer After Loop Engineering", platform: "DZone", year: 2026, date: "Aug 14, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/articles/understanding-graph-engineering", views: "697", readingTime: "12 min", summary: "A single agent is just the smallest possible graph: one node with an edge back to itself. Most tasks should stay that simple." },
     { id: 86, title: "Loop Engineering: The Layer After Prompt, Context, and Harness Engineering", platform: "DZone", year: 2026, date: "Jul 01, 2026", topics: ["AI", "Architecture", "DevOps"], url: "https://dzone.com/articles/loop-engineering-llms", views: "192", readingTime: "10 min", summary: "This article walks through all four layers side by side, with comparison tables for when to use each one and which agent architecture fits which job." },
     { id: 69, title: "Code Review Core Practices", platform: "DZone", year: 2026, date: "Jun 29, 2026", topics: ["DevOps", "Architecture", "Security"], url: "https://dzone.com/refcardz/code-review-patterns-and-anti-patterns", summary: "Refcard #291 — Practical guidance for human, automated, and AI-assisted code review workflows. Covers how to prepare reviewable PRs, use automated checks, apply human judgment, and incorporate AI assistance." },
     { id: 70, title: "No VIP? No Problem: Pacemaker-Based SAP HANA High Availability Using a Load Balancer Health Check", platform: "DZone", year: 2026, date: "Jun 25, 2026", topics: ["Cloud", "DevOps", "Architecture"], url: "https://dzone.com/articles/sap-hana-ha-pacemaker", views: "732", readingTime: "8 min", summary: "Many cloud platforms do not support floating virtual IPs, which breaks the standard RHEL Pacemaker setup for SAP HANA HA. Use a network load balancer." },
@@ -84,14 +86,14 @@ const researchData = {
     { id: 74, title: "Generate Your Next Headshot", platform: "Substack", year: 2024, date: "Jun 12, 2024", topics: ["AI", "Tools"], url: "https://vmacwrites.substack.com/p/generate-your-next-headshot", views: "600", readingTime: "3 min", summary: "Free professional photoshoot with AI — generate your next headshot using AI tools." }
   ],
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "612.4K", label: "Total pageviews · 102 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "627.1K", label: "Total pageviews · 104 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
     { name: "Substack", icon: "S", color: "#ff671e", stat: "500+", label: "Subscribers", url: "https://vmacwrites.substack.com" },
     { name: "VMacWrites", icon: "W", color: "#21759b", stat: "350+", label: "Posts dating back to 2018", url: "https://vmacwrites.wordpress.com" },
     { name: "GitHub", icon: "<i class='fab fa-github'></i>", color: "#333", stat: "15+", label: "Public repositories", url: "https://github.com/VidyasagarMSC" },
-    { name: "Google Scholar", icon: "<i class='fas fa-graduation-cap'></i>", color: "#4285f4", stat: "33", label: "Citations", url: "https://scholar.google.com/citations?user=dbcWkvwAAAAJ" }
+    { name: "Google Scholar", icon: "<i class='fas fa-graduation-cap'></i>", color: "#4285f4", stat: "1", label: "Citation", url: "https://scholar.google.com/citations?user=dbcWkvwAAAAJ" }
   ],
   topics: [
     "AI", "Cloud", "Quantum", "Security", "Architecture", "DevOps", "Python", "Containers", "Kubernetes", "Observability", "Data Science", "Mathematics", "Open Source", "Developer Advocacy", "Enterprise Architecture"

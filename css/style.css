@@ -28,6 +28,7 @@
   --font-display: 'CabinetGrotesk-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-heading: 'CabinetGrotesk-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+  --font-logo: 'Anurati', 'CabinetGrotesk-Variable', sans-serif;
 
   /* === Type Scale (major third) === */
   --text-xs: 0.72rem;     /* 11.5px — captions, tags, shortcuts */
@@ -112,6 +113,49 @@ a { color: inherit; text-decoration: underline; text-decoration-color: var(--ora
 img { max-width: 100%; height: auto; display: block; }
 button { font-family: var(--font); cursor: pointer; border: none; background: none; color: inherit; }
 ::selection { background: var(--orange); color: #fff; }
+
+/* ============================================
+   LOGOGRAM / ARRIVAL-STYLE TYPE
+   ============================================ */
+.logogram {
+  font-family: var(--font-logo);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  user-select: none;
+}
+.navbar-logogram {
+  display: inline-block;
+  font-family: var(--font-logo);
+  font-size: var(--text-base);
+  letter-spacing: 0.1em;
+  color: var(--orange);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.spotlight-logogram {
+  display: inline-block;
+  font-family: var(--font-logo);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange-light);
+  opacity: 0.85;
+  margin-bottom: 16px;
+  user-select: none;
+}
+.footer-logogram {
+  display: inline-block;
+  font-family: var(--font-logo);
+  font-size: var(--text-base);
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logogram, .navbar-logogram, .spotlight-logogram, .footer-logogram { transition: none; }
+}
 
 /* ============================================
    CONTAINER & SECTIONS

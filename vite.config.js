@@ -1,4 +1,16 @@
 import { defineConfig } from 'vite'
+import { copyFileSync, mkdirSync } from 'node:fs'
+
+function copyJsToDist() {
+  return {
+    name: 'copy-js-to-dist',
+    closeBundle() {
+      mkdirSync('dist/js', { recursive: true })
+      copyFileSync('js/main.js', 'dist/js/main.js')
+      copyFileSync('js/research.js', 'dist/js/research.js')
+    },
+  }
+}
 
 export default defineConfig({
   root: '.',
@@ -13,6 +25,7 @@ export default defineConfig({
       },
     },
   },
+  plugins: [copyJsToDist()],
   server: {
     open: true,
   },
