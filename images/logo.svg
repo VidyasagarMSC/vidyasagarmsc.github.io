@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer hexagon -->
+  <polygon points="100,10 172,55 172,145 100,190 28,145 28,55"
+           fill="url(#bg)" stroke="#fff" stroke-width="3"/>
+  <!-- Inner hexagon (cutout) -->
+  <polygon points="100,28 158,64 158,136 100,172 42,136 42,64"
+           fill="#0c0c1d"/>
+  <!-- VM Monogram -->
+  <g fill="url(#bg)" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="80" letter-spacing="-6">
+    <text x="68" y="122" fill="url(#bg)">VM</text>
+  </g>
+  <!-- Accent dot -->
+  <circle cx="148" cy="48" r="4" fill="#f97316"/>
+  <circle cx="52" cy="48" r="4" fill="#f97316"/>
+</svg>
