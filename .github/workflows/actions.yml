@@ -29,29 +29,17 @@ jobs:
       - name: Run citation scraper (OpenAlex)
         run: python scrape_citations.py
 
+      - name: Run latest posts scraper
+        run: python scrape_latest_posts.py || echo "latest posts scrape optional"
+
       - name: Commit scraped data
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add public/data/
+          git add public/data/ || true
+          git add data/ || true
           git diff --cached --quiet || git commit -m "chore: update scraped data [skip ci]"
           git push
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install Node dependencies
-        run: npm ci
-
-      - name: Build site
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          force_orphan: true
+      # No Node.js build step - site is pure HTML/CSS/JS served from root
+      # GitHub Pages should be configured to serve from master/main branch root

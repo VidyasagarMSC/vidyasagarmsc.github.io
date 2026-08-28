@@ -140,6 +140,19 @@ function consoleGreeting() {
 }
 
 // ============================================
+// EXPERIENCE COUNTER
+// ============================================
+function updateExperienceCounter() {
+  const el = document.getElementById('expYears');
+  if (!el) return;
+  const start = new Date(2007, 6, 1);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  if (now.getMonth() < 6 || (now.getMonth() === 6 && now.getDate() < 1)) years--;
+  el.textContent = years;
+}
+
+// ============================================
 // INIT
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -149,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeIn();
   initBlogFilters();
   consoleGreeting();
+  updateExperienceCounter();
 
   const themeBtn = document.getElementById('themeToggle');
   if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
