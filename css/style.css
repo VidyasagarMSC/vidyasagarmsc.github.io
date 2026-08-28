@@ -409,28 +409,25 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 /* ============================================
    WORK
    ============================================ */
-.work-list { display: flex; flex-direction: column; }
+.work-list { display: flex; flex-direction: column; gap: 2px; }
 .work-item {
-  display: flex; gap: 16px; align-items: baseline;
-  padding: 14px 0; border-bottom: 1px solid var(--border);
-  transition: var(--transition);
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 16px 18px; border-radius: 8px; border: 1px solid var(--border);
+  transition: var(--transition); text-decoration: none;
 }
-.work-item:last-child { border-bottom: none; }
+.work-item:hover { border-color: var(--orange); background: var(--card-hover, rgba(249,115,22,0.04)); }
 .work-item:hover .work-item-title { color: var(--orange); }
 .work-item-label {
-  font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--text-dim);
-  white-space: nowrap; flex-shrink: 0; width: 120px; text-transform: uppercase;
-  letter-spacing: var(--ls-label);
+  font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--orange);
+  text-transform: uppercase; letter-spacing: var(--ls-label);
 }
 .work-item-title {
-  flex: 1; font-size: var(--text-base); color: var(--text-secondary); line-height: var(--lh-relaxed);
+  font-size: var(--text-base); color: var(--text-secondary); line-height: var(--lh-relaxed);
   transition: var(--transition);
-  overflow: hidden; text-overflow: ellipsis;
 }
 
 @media (max-width: 480px) {
-  .work-item { flex-direction: column; gap: 4px; }
-  .work-item-label { width: auto; }
+  .work-item { padding: 14px 14px; }
 }
 
 /* ============================================
@@ -451,7 +448,6 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .writing-title {
   flex: 1; font-size: var(--text-base); font-weight: var(--fw-medium);
   transition: var(--transition);
-  overflow: hidden; text-overflow: ellipsis;
 }
 .writing-platform-label {
   font-size: var(--text-xs); font-weight: var(--fw-semibold); color: var(--text-dim);
@@ -800,7 +796,6 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   .chart-bars { gap: 6px; min-height: 140px; }
   .chart-bar-group { max-width: 48px; }
   .page-meta { gap: 10px; font-size: var(--text-xs); }
-  .work-item-label { width: auto; }
   .exp-top { flex-direction: column; gap: 2px; }
   .reading-paths { grid-template-columns: 1fr; }
 }
