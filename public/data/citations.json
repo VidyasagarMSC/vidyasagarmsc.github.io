@@ -1,40 +1,35 @@
 {
   "metrics": {
-    "total_citations": 3,
+    "total_citations": 1,
     "h_index": 1,
     "i10_index": 0,
     "works_count": 1,
-    "scholar_cited_by": 3,
-    "scholar_cited_by_since_2021": 3,
-    "openalex_cited_by_count": 1,
+    "oa_cited_by_count": 0,
     "counts_by_year": [
-      { "year": 2017, "citations": 3 }
+      {
+        "year": 2015,
+        "works_count": 1,
+        "oa_works_count": 0,
+        "cited_by_count": 1
+      }
     ],
     "openalex_id": "https://openalex.org/A5059192917",
     "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
     "this_year_citations": 0,
-    "projected_year_citations": 3
+    "projected_year_citations": 1
   },
   "yearly_citations": {
-    "2017": 3
+    "2015": 1
   },
   "works": [
-    {
-      "title": "Who's speaking?: Speaker Diarization with Watson Speech-to-Text API",
-      "doi": null,
-      "citations": 3,
-      "year": 2017,
-      "source": "IBM Cloud Blog",
-      "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ"
-    },
     {
       "title": "Windows 10 Development Recipes: A Problem-Solution Approach in HTML and JavaScript",
       "doi": null,
       "citations": 1,
       "year": 2015,
-      "source": "OpenAlex",
+      "source": "",
       "openalex_url": "https://openalex.org/W2503816627"
     }
   ],
-  "last_updated": "Aug 28, 2026"
+  "last_updated": "Aug 29, 2026 at 05:28 AM"
 }
