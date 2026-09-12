@@ -1,22 +1,28 @@
 {
+<<<<<<< HEAD
   "dzone_views": "1M+",
   "dzone_articles": "107",
   "dzone_reputation": "7115",
   "medium_followers": "712",
+=======
+  "dzone_views": "612.4K+",
+  "medium_followers": "715",
+>>>>>>> refs/remotes/origin/master
   "wordpress_followers": "1.1K",
-  "last_updated": "Aug 28, 2026",
+  "last_updated": "Sep 12, 2026 at 02:58 AM",
   "twitter_followers": "1.3K",
   "linkedin_followers": "3K+",
-  "github_followers": "96",
+  "github_followers": "97",
   "instagram_followers": "370+",
   "youtube_subscribers": "75",
   "facebook_friends": "1.1K",
   "stackoverflow_reach": "150K+",
   "mastodon_followers": "8",
-  "scholar_citations": "3",
+  "scholar_citations": "1",
   "scholar_h_index": "1",
   "scholar_i10_index": "0",
   "scholar_works": "1",
-  "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
-  "total_articles": "200+"
+  "scholar_year_count": "0",
+  "scholar_projected": "1",
+  "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ"
 }
