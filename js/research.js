@@ -89,7 +89,7 @@ const researchData = {
   ],
   platforms: [
     { name: "DZone", icon: "DZ", color: "#e34c26", stat: "650.7K", label: "Total pageviews · 106 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
-    { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
+    { name: "Medium", icon: "M", color: "#000", stat: "717", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
     { name: "Substack", icon: "S", color: "#ff671e", stat: "500+", label: "Subscribers", url: "https://vmacwrites.substack.com" },
