@@ -535,14 +535,21 @@ window.drawKnowledgeGraph = drawKnowledgeGraph;
 // ============================================
 function animateCounters() {
   document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-    const target = parseInt(el.dataset.target);
-    const duration = 2000;
+    const target = parseInt(el.dataset.target, 10);
+    if (!Number.isFinite(target) || target <= 0) return;
+    // Respect reduced-motion — snap straight to the final value.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = target;
+      return;
+    }
+    const duration = 1200;
     const start = performance.now();
     function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target);
+      // Round (not floor) so the last frame lands exactly on the target,
+      // and clamp so a stale rAF timestamp can never render a negative.
+      el.textContent = Math.max(0, Math.min(target, Math.round(eased * target)));
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
@@ -688,7 +695,7 @@ window.downloadCitation = function downloadCitation() {
 // ============================================
 async function fetchCitationStats() {
   try {
-    const resp = await fetch('data/citations.json');
+    const resp = await fetch('public/data/citations.json', { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     updateCitationUI(data);
@@ -704,9 +711,9 @@ function updateCitationUI(data) {
   if (!data || !data.metrics) return;
 
   if (totalEl) {
-    const displayVal = Math.max(1, data.metrics.total_citations);
-    totalEl.textContent = displayVal;
-    totalEl.dataset.target = displayVal;
+    // Only set the target — animateCounters() owns the displayed value so it
+    // never flashes 0 between the fetch resolving and the rAF loop starting.
+    totalEl.dataset.target = Math.max(1, data.metrics.total_citations);
   }
   if (hEl) {
     hEl.textContent = data.metrics.h_index || 1;
