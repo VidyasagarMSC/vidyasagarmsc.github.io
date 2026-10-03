@@ -695,6 +695,13 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-size: 1.0625rem; font-weight: 500; letter-spacing: -.015em;
   line-height: 1.34; color: var(--ink); text-wrap: pretty;
 }
+/* Short abstract on the featured-post cards. Clamped so a long title and a
+   long summary cannot make one card tower over the rest of the grid. */
+.post-summary {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  overflow: hidden; margin-top: .625rem;
+  font-size: .8125rem; line-height: 1.6; color: var(--muted); text-wrap: pretty;
+}
 
 /* ---------- 16. CONTACT PLATE ---------- */
 .contact-plate {
@@ -1249,10 +1256,18 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
 }
 .lpc-title {
-  margin-bottom: auto; padding-bottom: 1rem;
+  margin-bottom: .5rem;
   font-family: var(--font-display); font-optical-sizing: auto;
   font-size: 1.0625rem; font-weight: 500; letter-spacing: -.014em;
   line-height: 1.34; color: var(--ink); text-wrap: pretty;
+}
+/* Short abstract so a card is scannable without opening the article.
+   margin-bottom:auto keeps the platform line pinned to the card foot. */
+.lpc-summary {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: auto; padding-bottom: 1rem;
+  font-size: .8125rem; line-height: 1.6; color: var(--muted); text-wrap: pretty;
 }
 .lpc-platform-name {
   font-family: var(--font-mono); font-size: .5625rem;

@@ -782,9 +782,10 @@ function initLatestPosts() {
     const bg = pColors[a.platform] || '#666';
     const iconHtml = a.platform === 'Hackernoon' ? 'HN' : a.platform === 'VMacWrites' ? 'W' : a.platform === 'DZone' ? 'DZ' : `<i class="${prefix} fa-${icon}" style="font-size:0.9rem;color:#fff;"></i>`;
 
-    return `<a href="${a.url}" target="_blank" class="latest-post-card" data-platform="${a.platform}">
+    return `<a href="${a.url}" target="_blank" rel="noopener" class="latest-post-card" data-platform="${a.platform}">
       <span class="lpc-date">${a.date}</span>
       <span class="lpc-title">${a.title}</span>
+      ${a.summary ? `<span class="lpc-summary">${a.summary}</span>` : ''}
       <span class="lpc-platform-name">${a.platform}</span>
     </a>`;
   }).join('');
