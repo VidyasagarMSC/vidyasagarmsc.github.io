@@ -88,7 +88,7 @@ const researchData = {
     { id: 74, title: "Generate Your Next Headshot", platform: "Substack", year: 2024, date: "Jun 12, 2024", topics: ["AI", "Tools"], url: "https://vmacwrites.substack.com/p/generate-your-next-headshot", views: "600", readingTime: "3 min", summary: "Free professional photoshoot with AI — generate your next headshot using AI tools." }
   ],
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "640.4K", label: "Total pageviews · 106 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "650.7K", label: "Total pageviews · 106 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "652", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45+ posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "Cybersecurity · 2025–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
