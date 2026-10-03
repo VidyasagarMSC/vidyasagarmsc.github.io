@@ -1,9 +1,14 @@
 /* ============================================================
-   EDITORIAL DESIGN SYSTEM
-   Archify-influenced: warm paper, ink, one international-orange.
-   Fonts are loaded via <link> in each page head (Fraunces /
-   Space Grotesk / JetBrains Mono) — no @font-face here so we
-   never shadow or 404 the CDN families.
+   EDITORIAL DESIGN SYSTEM — v2
+   Warm paper, ink, one international-orange, drawn from the
+   Archify editorial reference and the earlier Cabinet Grotesk
+   dark build.
+
+   The four web families are loaded via <link> in each page head
+   (Fraunces / Space Grotesk / Inter / JetBrains Mono) so nothing
+   here shadows or 404s the CDN. The only @font-face is Anurati,
+   which has no CDN equivalent and ships in fonts/ — it carries the
+   VM logogram and is the one brand asset worth self-hosting.
    ============================================================ */
 
 /* ---------- 1. TOKENS ---------- */
@@ -29,14 +34,20 @@
   --plate:        #0f1216;
   --on-plate:     #f7f9f9;
   --on-plate-mut: #9aa4aa;
+  /* Dark plates need their own accent: the light-theme --accent is stepped
+     deep for AA on warm paper and only reached 3.37:1 on --plate. #e2622c
+     clears 4.5:1 on both plate colours while still reading as the brand
+     orange, so kickers and tags inside a plate stop failing AA. */
+  --accent-on-plate: #e2622c;
 
-  /* Platform hues are tuned to clear 4.5:1 on every light surface, since the
-     small tag text sits directly on --paper-sunk as well as --paper. */
-  --cyan:     #0c6d86;  --cyan-fill:     rgba(12,109,134,.12);
-  --emerald:  #047857;  --emerald-fill:  rgba(4,120,87,.12);
-  --violet:   #6d28d9;  --violet-fill:   rgba(109,40,217,.11);
-  --amber:    #96590a;  --amber-fill:    rgba(150,89,10,.13);
-  --rose:     #be123c;  --rose-fill:     rgba(190,18,60,.10);
+  /* Venue tags. Only two hues are live: DZone and Medium. The tag paints its
+     own fill underneath the text, so the pair that matters is the hue against
+     that blend, not against plain paper — #047857 reached only 3.89:1 on
+     --paper-sunk; #046a4e clears 4.5:1 against all three light fills.
+     The cyan/violet/amber/rose ramps that used to sit here had no consumer and
+     were dropped: platform marks take their brand hex from js/research.js,
+     because a DZone tile should not shift hue between light and dark. */
+  --emerald:  #046a4e;  --emerald-fill:  rgba(4,106,78,.12);
   --orange:     #b83c0b; --orange-fill:    rgba(184,60,11,.12);
   --orange-light: #ea580c;
   /* legacy alias — js/research.js still resolves var(--primary) */
@@ -46,9 +57,39 @@
   --font-grot:    'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --font-logo:    'Anurati', var(--font-grot), sans-serif;
+
+  /* Modular type scale — a 1.25 major third off a 15px body, carried over
+     from the earlier build's scale discipline so heading levels stay in step
+     across all six pages. Sizes that must stay fluid (hero, section headings)
+     keep their clamp() and are not expressed here. */
+  --t-xs:   .6875rem;  /* 11   mono micro-labels      */
+  --t-sm:   .75rem;    /* 12   data labels, meta       */
+  --t-base: .875rem;   /* 14   buttons, dense UI       */
+  --t-ui:   .9375rem;  /* 15   body, nav               */
+  --t-md:   1.0625rem; /* 17   card headings, lede     */
+  --t-lg:   1.25rem;   /* 20   subheads                */
+  --t-xl:   1.5rem;    /* 24   h3                      */
+
+  /* Display sizes are a separate axis because they are clamps, not steps —
+     modelling them as a static ramp would just mean guessing at 32/44/60/80
+     when nothing actually renders at those sizes. */
+  --d-hero:     clamp(2.75rem, 7.2vw, 5.25rem);   /* h1, homepage   */
+  --d-page:     clamp(2.25rem, 5.2vw, 3.5rem);    /* h1, subpages   */
+  --d-section:  clamp(1.875rem, 3.6vw, 3rem);     /* h2, sections   */
+  --d-sub:      clamp(1.75rem, 3vw, 2.125rem);     /* h3, rail       */
+  --d-sub-wide: clamp(1.75rem, 4vw, 2.75rem);      /* h3, wide band  */
+  --d-card:     clamp(1.5rem, 2.6vw, 2.125rem);    /* card headline  */
+  --d-folio:    clamp(5rem, 11vw, 9.5rem);         /* ghost numeral  */
+  --d-folio-sm: clamp(4rem, 20vw, 6rem);           /*  ≤860 override */
+
+  --ls-tight: -.028em;  /* display sizes only */
+  --ls-snug:  -.012em;
+  --ls-wide:   .08em;   /* uppercase labels   */
 
   --r-sm: 10px; --r-md: 14px; --r-lg: 20px;
   --nav-h: 62px;
+  --drawer-w: 288px;   /* mobile nav slide-in width */
   --gap: 1.5rem;
   --wrap: 1180px;
   --wrap-narrow: 760px;
@@ -62,28 +103,27 @@
 
 /* ---------- 2. DARK THEME ---------- */
 html[data-theme="dark"] {
-  --paper:        #0d1014;
-  --paper-raised:#151a20;
-  --paper-sunk:   #101418;
-  --ink:          #f2f5f4;
-  --ink-soft:     #c3ccd1;
-  --muted:        #8d979d;
-  --dim:          #7d868c;
-  --line:         rgba(255,255,255,.09);
-  --line-hi:      rgba(255,255,255,.17);
+  /* Warm near-black rather than the blue-grey #0d1014 the inversion
+     produced — this is the earlier build's #0F0F0F character, warmed
+     slightly so the orange accent sits in it rather than on top. */
+  --paper:        #0f0e0d;
+  --paper-raised:#191715;
+  --paper-sunk:   #141210;
+  --ink:          #f4f1ee;
+  --ink-soft:     #cdc6c0;
+  --muted:        #9b938c;
+  --dim:          #8a817a;
+  --line:         rgba(255,244,236,.10);
+  --line-hi:      rgba(255,244,236,.19);
   --accent:       #ff7a3d;
   --accent-hi:    #ff9463;
-  --accent-soft:  rgba(255,122,61,.14);
-  --accent-fill:  rgba(255,122,61,.08);
-  --plate:        #07090c;
-  --on-plate:     #eef2f1;
-  --on-plate-mut: #8e979d;
+  --accent-soft:  rgba(255,122,61,.15);
+  --accent-fill:  rgba(255,122,61,.09);
+  --plate:        #080706;
+  --on-plate:     #f2efec;
+  --on-plate-mut: #9d958e;
+  --accent-on-plate: #ff7a3d;
 
-  --cyan:    #22b8cf;  --cyan-fill:    rgba(34,184,207,.15);
-  --emerald: #10b981;  --emerald-fill: rgba(16,185,129,.15);
-  --violet:  #a78bfa;  --violet-fill:  rgba(167,139,250,.15);
-  --amber:   #fbbf24;  --amber-fill:   rgba(251,191,36,.15);
-  --rose:    #fb7185;  --rose-fill:    rgba(251,113,133,.14);
   --orange:     #f97316; --orange-fill:    rgba(249,115,22,.15);
   --orange-light: #fb923c;
   --primary:    #f97316;
@@ -201,13 +241,22 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 
 /* ---------- 7. NAVIGATION ---------- */
+/* The frosted background lives on ::before, not on .nav itself. backdrop-filter
+   (like transform/filter/will-change) makes an element the containing block for
+   position:fixed descendants — with it on .nav, the mobile drawer resolved
+   `top:0;bottom:0` against the 63px nav box instead of the viewport, giving a
+   102px drawer with its links overflowing, and a 62px scrim. Moving the effect
+   to a pseudo-element keeps .nav a normal sticky box while looking identical. */
 .nav {
   position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease-out);
+}
+.nav::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
   background: color-mix(in srgb, var(--paper) 82%, transparent);
   -webkit-backdrop-filter: saturate(1.6) blur(14px);
           backdrop-filter: saturate(1.6) blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color .3s var(--ease-out), background-color .3s var(--ease-out);
 }
 .nav.is-stuck { border-bottom-color: var(--line); box-shadow: 0 1px 12px rgba(15,18,22,.04); }
 .nav-progress {
@@ -223,14 +272,25 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
 .brand { display: inline-flex; align-items: center; gap: .6rem; }
+/* The logogram: Anurati, self-hosted from fonts/. No CDN equivalent, and it
+   is the one piece of the earlier build worth carrying forward — a real
+   brand mark rather than italic display type standing in for one. */
+@font-face {
+  font-family: 'Anurati';
+  src: url('../fonts/Anurati-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
 .brand-mark {
   display: grid; place-items: center;
   width: 30px; height: 30px; border-radius: 8px;
-  font-family: var(--font-display); font-style: italic; font-size: .875rem; font-weight: 500;
+  font-family: var(--font-logo); font-size: .8125rem; font-weight: 400;
+  letter-spacing: .06em; line-height: 1;
   background: var(--accent); color: #fff;
+  padding-top: 2px; /* Anurati sits slightly high in its em box */
 }
 .brand-name {
-  font-family: var(--font-grot); font-size: .9375rem; font-weight: 600;
+  font-family: var(--font-grot); font-size: var(--t-ui); font-weight: 600;
   letter-spacing: -.015em; color: var(--ink);
 }
 .nav-links { display: flex; align-items: center; gap: .35rem; }
@@ -258,8 +318,23 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   transition: color .2s var(--ease-out), background-color .2s var(--ease-out);
 }
 .icon-btn:hover { color: var(--ink); background: var(--accent-soft); }
-.icon-btn i { font-size: .875rem; line-height: 1; }
+.icon-btn i { font-size: var(--t-base); line-height: 1; }
 .nav-burger { display: none; }
+
+/* Scrim behind the mobile drawer — carried over from the earlier build, where
+   the overlay was the one genuinely better idea than the dropdown that
+   replaced it. Without it the menu opens over content that still looks
+   tappable, and there is no visual signal that the page is inert. */
+.nav-scrim {
+  position: fixed; inset: 0; z-index: 99;
+  background: color-mix(in srgb, var(--ink) 42%, transparent);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .28s var(--ease-out), visibility .28s var(--ease-out);
+}
+.nav-scrim.is-open { opacity: 1; visibility: visible; }
+@media (min-width: 861px) { .nav-scrim { display: none; } }
 
 /* ---------- 8. SECTION CHROME ---------- */
 .section-label {
@@ -274,20 +349,20 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .section-heading {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: clamp(1.875rem, 3.6vw, 3rem);
-  font-weight: 400; letter-spacing: -.028em; line-height: 1.08;
+  font-size: var(--d-section);
+  font-weight: 400; letter-spacing: var(--ls-tight); line-height: 1.08;
   color: var(--ink); margin-bottom: 1.125rem;
   text-wrap: balance;
 }
 .section-heading em { font-style: italic; color: var(--accent); }
 .section-body {
-  font-size: .9375rem; color: var(--muted); line-height: 1.72;
+  font-size: var(--t-ui); color: var(--muted); line-height: 1.72;
   max-width: 58ch; text-wrap: pretty;
 }
 .section-head { margin-bottom: 2.75rem; }
 .section-head .section-label { justify-content: flex-start; }
 .section-count {
-  font-family: var(--font-mono); font-size: .75rem; font-weight: 500;
+  font-family: var(--font-mono); font-size: var(--t-sm); font-weight: 500;
   color: var(--accent); vertical-align: middle; margin-left: .5rem;
 }
 
@@ -298,7 +373,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   position: absolute; top: 2.5rem; right: clamp(1.125rem, 4vw, 2.5rem);
   z-index: 0; pointer-events: none; user-select: none;
   font-family: var(--font-display); font-style: italic; font-optical-sizing: auto;
-  font-size: clamp(5rem, 11vw, 9.5rem); line-height: 1;
+  font-size: var(--d-folio); line-height: 1;
   color: transparent; -webkit-text-stroke: 1px var(--line-hi);
   opacity: .55;
 }
@@ -308,7 +383,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .btn {
   display: inline-flex; align-items: center; gap: .5rem;
   min-height: 44px; padding: .65rem 1.25rem; border-radius: 9px;
-  font-family: var(--font-grot); font-size: .875rem; font-weight: 500;
+  font-family: var(--font-grot); font-size: var(--t-base); font-weight: 500;
   letter-spacing: -.005em;
   border: 1px solid transparent;
   transition: transform .2s var(--ease-out), background-color .2s var(--ease-out),
@@ -317,15 +392,22 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .btn:active { transform: translateY(1px); }
 .btn-primary { background: var(--ink); color: var(--paper); box-shadow: var(--shadow-sm); }
-.btn-primary:hover { background: var(--accent); box-shadow: var(--shadow-md); }
+/* Hover steps to --accent-hi rather than repeating --accent: it gives the
+   press state a visible depth cue, and it lifts the button's lowest-contrast
+   state (light 4.94 -> 6.70, dark 7.44 -> 8.88) since the label is --paper. */
+.btn-primary:hover { background: var(--accent-hi); box-shadow: var(--shadow-md); }
 .btn-ghost { border-color: var(--line-hi); color: var(--ink-soft); }
 .btn-ghost:hover { border-color: var(--ink); color: var(--ink); background: var(--accent-soft); }
 
 .mono-link {
   display: inline-flex; align-items: center; gap: .4rem;
-  font-family: var(--font-mono); font-size: .6875rem; font-weight: 500;
+  /* WCAG 2.2 SC 2.5.8 wants 24x24 minimum for a standalone target. The label
+     is 11px mono on a 1px underline and rendered 22px tall, so the hit area is
+     padded out to the floor rather than the type being enlarged. */
+  min-height: 24px; padding-block: .2rem .3rem;
+  font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 500;
   letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
-  border-bottom: 1px solid var(--line-hi); padding-bottom: .2rem;
+  border-bottom: 1px solid var(--line-hi);
   transition: color .2s var(--ease-out), border-color .2s var(--ease-out);
 }
 .mono-link:hover { color: var(--accent); border-color: var(--accent); }
@@ -359,7 +441,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .hero-title {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: clamp(2.75rem, 7.2vw, 5.25rem);
+  font-size: var(--d-hero);
   font-weight: 400; letter-spacing: -.035em; line-height: .98;
   color: var(--ink); margin-bottom: 1.25rem; text-wrap: balance;
 }
@@ -368,11 +450,11 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-style: italic; color: var(--accent); font-weight: 400; letter-spacing: -.02em;
 }
 .hero-role {
-  font-family: var(--font-grot); font-size: 1.0625rem; font-weight: 500;
-  letter-spacing: -.012em; color: var(--ink-soft); margin-bottom: .625rem;
+  font-family: var(--font-grot); font-size: var(--t-md); font-weight: 500;
+  letter-spacing: var(--ls-snug); color: var(--ink-soft); margin-bottom: .625rem;
 }
 .hero-cred {
-  font-family: var(--font-mono); font-size: .6875rem; line-height: 1.7;
+  font-family: var(--font-mono); font-size: var(--t-xs); line-height: 1.7;
   letter-spacing: .04em; color: var(--muted); margin-bottom: 1.5rem;
   max-width: 46ch;
 }
@@ -413,13 +495,14 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   color: var(--on-plate-mut); margin-bottom: .25rem;
 }
 .portrait-plate strong {
-  display: block; font-family: var(--font-grot); font-size: .875rem;
+  display: block; font-family: var(--font-grot); font-size: var(--t-base);
   font-weight: 600; color: var(--on-plate); letter-spacing: -.01em;
 }
 .portrait-badge {
   flex: none; display: grid; place-items: center;
   width: 38px; height: 38px; border-radius: 50%;
-  font-family: var(--font-display); font-style: italic; font-size: 1rem;
+  font-family: var(--font-logo); font-size: 1rem; font-weight: 400;
+  letter-spacing: .05em; line-height: 1; padding-top: 2px;
   background: var(--accent); color: #fff;
 }
 
@@ -437,7 +520,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .stat b {
   display: block; margin-bottom: .55rem;
   font-family: var(--font-display); font-style: italic; font-optical-sizing: auto;
-  font-size: clamp(1.75rem, 3vw, 2.125rem); font-weight: 400;
+  font-size: var(--d-sub); font-weight: 400;
   line-height: 1; letter-spacing: -.02em; color: var(--ink);
 }
 .stat b sup { font-size: .5em; font-style: normal; color: var(--accent); vertical-align: super; }
@@ -455,7 +538,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
-.about-copy p { font-size: .9375rem; line-height: 1.78; color: var(--muted); margin-bottom: 1.125rem; text-wrap: pretty; }
+.about-copy p { font-size: var(--t-ui); line-height: 1.78; color: var(--muted); margin-bottom: 1.125rem; text-wrap: pretty; }
 .about-copy p:last-child { margin-bottom: 0; }
 .about-copy strong { color: var(--ink); font-weight: 600; }
 
@@ -467,7 +550,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   box-shadow: var(--shadow-sm);
 }
 .chip-card h3, .stack-card h3 {
-  font-family: var(--font-grot); font-size: .6875rem; font-weight: 600;
+  font-family: var(--font-grot); font-size: var(--t-xs); font-weight: 600;
   letter-spacing: .14em; text-transform: uppercase;
   color: var(--dim); margin-bottom: 1rem;
 }
@@ -476,7 +559,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .35rem .65rem; border-radius: 999px;
   background: var(--accent-soft); border: 1px solid transparent;
-  font-size: .75rem; color: var(--ink-soft);
+  font-size: var(--t-sm); color: var(--ink-soft);
   transition: border-color .2s var(--ease-out), color .2s var(--ease-out);
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); }
@@ -507,7 +590,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   position: sticky; top: calc(var(--nav-h) + 2.5rem);
 }
 .exp-rail-inner h3 { margin-bottom: 1rem; }
-.exp-rail-inner p { font-size: .875rem; color: var(--muted); line-height: 1.72; }
+.exp-rail-inner p { font-size: var(--t-base); color: var(--muted); line-height: 1.72; }
 
 .exp-list { display: flex; flex-direction: column; gap: 1rem; }
 .exp-card {
@@ -538,8 +621,8 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   margin-bottom: .4rem;
 }
 .exp-role-name {
-  font-family: var(--font-grot); font-size: .9375rem; font-weight: 600;
-  letter-spacing: -.012em; color: var(--ink); flex: 1 1 14rem; line-height: 1.4;
+  font-family: var(--font-grot); font-size: var(--t-ui); font-weight: 600;
+  letter-spacing: var(--ls-snug); color: var(--ink); flex: 1 1 14rem; line-height: 1.4;
 }
 .exp-role-when {
   flex: none;
@@ -547,7 +630,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   letter-spacing: .09em; text-transform: uppercase; color: var(--dim);
 }
 .exp-role-desc {
-  font-size: .875rem; line-height: 1.72; color: var(--muted);
+  font-size: var(--t-base); line-height: 1.72; color: var(--muted);
   max-width: 62ch; text-wrap: pretty;
 }
 
@@ -567,16 +650,16 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .award:hover { background: var(--accent-fill); }
 .award-year {
   flex: none; width: 3.25rem; padding-top: .1rem;
-  font-family: var(--font-mono); font-size: .6875rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 600;
   letter-spacing: .06em; color: var(--accent);
 }
 .award-title {
-  font-size: .875rem; line-height: 1.5; color: var(--muted);
+  font-size: var(--t-base); line-height: 1.5; color: var(--muted);
   display: flex; flex-direction: column; gap: .15rem;
 }
 .award-title b {
-  font-family: var(--font-grot); font-size: .9375rem; font-weight: 600;
-  letter-spacing: -.012em; color: var(--ink); line-height: 1.35;
+  font-family: var(--font-grot); font-size: var(--t-ui); font-weight: 600;
+  letter-spacing: var(--ls-snug); color: var(--ink); line-height: 1.35;
 }
 
 /* ---------- 14. WORK ---------- */
@@ -631,7 +714,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   letter-spacing: .11em; text-transform: uppercase; color: var(--dim);
 }
 .work-arrow {
-  font-family: var(--font-grot); font-size: .875rem; letter-spacing: 0;
+  font-family: var(--font-grot); font-size: var(--t-base); letter-spacing: 0;
   color: var(--muted);
   transition: transform .28s var(--ease-out), color .28s var(--ease-out);
 }
@@ -644,7 +727,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .plate .plate-kicker {
   font-family: var(--font-mono); font-size: .5625rem; font-weight: 500;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+  letter-spacing: .16em; text-transform: uppercase; color: var(--accent-on-plate);
   margin-bottom: .75rem;
 }
 .plate .plate-title {
@@ -692,7 +775,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .venue-medium { background: var(--emerald-fill); color: var(--emerald); }
 .post h3 {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.0625rem; font-weight: 500; letter-spacing: -.015em;
+  font-size: var(--t-md); font-weight: 500; letter-spacing: -.015em;
   line-height: 1.34; color: var(--ink); text-wrap: pretty;
 }
 /* Short abstract on the featured-post cards. Clamped so a long title and a
@@ -720,15 +803,15 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .contact-h {
   position: relative;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 400;
-  letter-spacing: -.028em; line-height: 1.1;
+  font-size: var(--d-sub-wide); font-weight: 400;
+  letter-spacing: var(--ls-tight); line-height: 1.1;
   color: var(--on-plate); margin-bottom: 1rem; text-wrap: balance;
 }
 .contact-h em { font-style: italic; color: var(--accent); }
 .contact-sub {
   position: relative;
   max-width: 46ch; margin: 0 auto 2.25rem;
-  font-size: .9375rem; line-height: 1.72; color: var(--on-plate-mut);
+  font-size: var(--t-ui); line-height: 1.72; color: var(--on-plate-mut);
 }
 .contact-links {
   position: relative;
@@ -761,13 +844,16 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .footer-mark {
   display: grid; place-items: center;
   width: 38px; height: 38px; border-radius: 10px; flex: none;
-  font-family: var(--font-display); font-style: italic; font-size: 1rem;
+  font-family: var(--font-logo); font-size: 1rem; font-weight: 400;
+  letter-spacing: .05em; line-height: 1; padding-top: 2px;
   background: var(--ink); color: var(--paper);
 }
-.footer-meta { font-size: .8125rem; line-height: 1.55; color: var(--muted); }
+.footer-meta { font-size: var(--t-sm); line-height: 1.55; color: var(--muted); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
 .footer-links a {
-  font-family: var(--font-mono); font-size: .6875rem; font-weight: 500;
+  /* Same 24px floor as .mono-link — these measured 18px tall. */
+  display: inline-flex; align-items: center; min-height: 24px;
+  font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 500;
   letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
   transition: color .2s var(--ease-out);
 }
@@ -780,13 +866,13 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .page-head .section-label::before { display: none; }
 .page-title {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  font-size: var(--d-page);
   font-weight: 400; letter-spacing: -.032em; line-height: 1.05;
   color: var(--ink); margin-bottom: 1.125rem; text-wrap: balance;
 }
 .page-title em { font-style: italic; color: var(--accent); font-weight: 400; }
 .page-lede {
-  font-size: .9375rem; line-height: 1.74; color: var(--muted);
+  font-size: var(--t-ui); line-height: 1.74; color: var(--muted);
   max-width: 62ch; margin: 0 auto 1.875rem; text-wrap: pretty;
 }
 .page-lede strong { color: var(--ink); font-weight: 600; }
@@ -798,11 +884,11 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-family: var(--font-mono); font-size: .625rem; font-weight: 500;
   letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
 }
-.meta-pill i { font-size: .6875rem; color: var(--accent); }
+.meta-pill i { font-size: var(--t-xs); color: var(--accent); }
 
 .back-link {
   display: inline-flex; align-items: center; gap: .5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; min-height: 24px;   /* measured 17px — see .mono-link */
   font-family: var(--font-mono); font-size: .625rem; font-weight: 500;
   letter-spacing: .14em; text-transform: uppercase; color: var(--dim);
   transition: color .2s var(--ease-out);
@@ -826,7 +912,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   padding: 0 5rem 0 3rem;
   background: var(--paper-raised); color: var(--ink);
   border: 1px solid var(--line-hi); border-radius: var(--r-md);
-  font-size: .9375rem;
+  font-size: var(--t-ui);
   transition: border-color .2s var(--ease-out), box-shadow .2s var(--ease-out);
 }
 .search-box input::placeholder { color: var(--dim); }
@@ -862,7 +948,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .sr-info { min-width: 0; flex: 1; }
 .sr-title {
-  font-size: .875rem; font-weight: 500; color: var(--ink);
+  font-size: var(--t-base); font-weight: 500; color: var(--ink);
   line-height: 1.4; margin-bottom: .2rem;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
@@ -872,8 +958,8 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   padding: .18rem .45rem; border-radius: 4px; border: 1px solid var(--line);
   font-family: var(--font-mono); font-size: .5rem; color: var(--muted);
 }
-.search-empty { padding: 2.5rem 1.125rem; text-align: center; color: var(--muted); font-size: .875rem; }
-.search-empty i { display: block; margin-bottom: .75rem; font-size: 1.5rem; color: var(--dim); }
+.search-empty { padding: 2.5rem 1.125rem; text-align: center; color: var(--muted); font-size: var(--t-base); }
+.search-empty i { display: block; margin-bottom: .75rem; font-size: var(--t-xl); color: var(--dim); }
 
 /* ---------- 20. FILTER CHIPS ---------- */
 .filter-controls {
@@ -890,7 +976,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .filter-btn, .topic-filter-btn {
   padding: .4rem .8rem; border-radius: 999px;
   background: transparent; border: 1px solid var(--line);
-  font-size: .75rem; font-weight: 500; color: var(--muted);
+  font-size: var(--t-sm); font-weight: 500; color: var(--muted);
   transition: color .18s var(--ease-out), border-color .18s var(--ease-out),
               background-color .18s var(--ease-out);
 }
@@ -902,7 +988,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .tf-count { margin-left: .25rem; font-family: var(--font-mono); font-size: .625rem; opacity: .65; }
 .results-bar { margin: 1.5rem 0 1rem; }
 .results-count {
-  font-family: var(--font-mono); font-size: .6875rem;
+  font-family: var(--font-mono); font-size: var(--t-xs);
   letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
 }
 
@@ -925,7 +1011,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .stat-icon, .metrics-icon {
   display: grid; place-items: center;
   width: 38px; height: 38px; border-radius: 9px; margin-bottom: 1.125rem;
-  background: var(--accent-soft); color: var(--accent); font-size: .875rem;
+  background: var(--accent-soft); color: var(--accent); font-size: var(--t-base);
 }
 .stat-number, .metrics-value {
   margin-bottom: .5rem;
@@ -938,12 +1024,12 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-family: var(--font-grot); font-size: .8125rem; font-weight: 600;
   letter-spacing: -.01em; color: var(--ink-soft);
 }
-.stat-sub, .metrics-sub { font-size: .75rem; line-height: 1.5; color: var(--dim); }
+.stat-sub, .metrics-sub { font-size: var(--t-sm); line-height: 1.5; color: var(--dim); }
 .stat-trend {
   position: absolute; top: 1.25rem; right: 1.25rem;
   font-family: var(--font-mono); font-size: .625rem; color: var(--emerald);
 }
-.metrics-cta { margin-top: 1.75rem; font-size: .875rem; color: var(--muted); }
+.metrics-cta { margin-top: 1.75rem; font-size: var(--t-base); color: var(--muted); }
 .metrics-cta a { color: var(--accent); border-bottom: 1px solid var(--accent-soft); }
 .metrics-cta a:hover { border-bottom-color: var(--accent); }
 
@@ -974,10 +1060,10 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .pub-card h4 {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.0625rem; font-weight: 500; letter-spacing: -.014em;
+  font-size: var(--t-md); font-weight: 500; letter-spacing: -.014em;
   line-height: 1.34; color: var(--ink); margin-bottom: .5rem; text-wrap: pretty;
 }
-.pub-authors { font-size: .75rem; color: var(--muted); margin-bottom: .5rem; }
+.pub-authors { font-size: var(--t-sm); color: var(--muted); margin-bottom: .5rem; }
 .pub-authors strong { color: var(--ink-soft); font-weight: 500; }
 .pub-meta {
   display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: .625rem;
@@ -994,13 +1080,13 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   padding: .2rem .5rem; border-radius: 4px;
   background: var(--paper-sunk);
   font-family: var(--font-mono); font-size: .5rem;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--muted);
 }
 .pub-link, .cite-btn {
   display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
   min-height: 36px; padding: .45rem .8rem; border-radius: 7px;
   border: 1px solid var(--line-hi); background: transparent;
-  font-size: .75rem; font-weight: 500; color: var(--ink-soft);
+  font-size: var(--t-sm); font-weight: 500; color: var(--ink-soft);
   transition: color .18s var(--ease-out), border-color .18s var(--ease-out);
 }
 .pub-link:hover, .cite-btn:hover { border-color: var(--ink); color: var(--ink); }
@@ -1020,11 +1106,11 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .p-icon {
   flex: none; display: grid; place-items: center;
   width: 40px; height: 40px; border-radius: 9px;
-  font-family: var(--font-mono); font-size: .6875rem; font-weight: 700; color: #fff;
+  font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 700; color: #fff;
 }
 .p-body { min-width: 0; }
 .p-body h4 {
-  font-family: var(--font-grot); font-size: .875rem; font-weight: 600;
+  font-family: var(--font-grot); font-size: var(--t-base); font-weight: 600;
   color: var(--ink); margin-bottom: .2rem;
 }
 .p-stat {
@@ -1069,7 +1155,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .reading-path-card:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: var(--shadow-md); }
 .reading-path-card h4 {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.25rem; font-weight: 500; letter-spacing: -.016em;
+  font-size: var(--t-lg); font-weight: 500; letter-spacing: -.016em;
   color: var(--ink); margin-bottom: .625rem;
 }
 .reading-path-card p { font-size: .8125rem; line-height: 1.65; color: var(--muted); margin-bottom: 1rem; }
@@ -1105,7 +1191,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .ti-meta { display: flex; gap: .625rem; font-family: var(--font-mono); font-size: .5625rem; color: var(--dim); letter-spacing: .06em; }
 .ti-views {
   flex: none; display: flex; align-items: center; gap: .35rem;
-  font-family: var(--font-mono); font-size: .6875rem; color: var(--muted);
+  font-family: var(--font-mono); font-size: var(--t-xs); color: var(--muted);
 }
 
 /* ---------- 27. CHART ---------- */
@@ -1203,7 +1289,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .cite-title {
   margin-bottom: .375rem;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.25rem; font-weight: 500; letter-spacing: -.016em;
+  font-size: var(--t-lg); font-weight: 500; letter-spacing: -.016em;
   color: var(--ink); line-height: 1.3;
 }
 .cite-authors { font-size: .8125rem; color: var(--muted); margin-bottom: 1.25rem; }
@@ -1221,7 +1307,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   width: 100%; min-height: 150px; padding: .875rem 1rem; resize: vertical;
   background: var(--paper); color: var(--ink-soft);
   border: 1px solid var(--line-hi); border-radius: var(--r-sm);
-  font-family: var(--font-mono); font-size: .75rem; line-height: 1.7;
+  font-family: var(--font-mono); font-size: var(--t-sm); line-height: 1.7;
 }
 .citation-text:focus { outline: none; border-color: var(--accent); }
 .citation-actions { display: flex; gap: .5rem; margin-top: 1rem; }
@@ -1258,7 +1344,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .lpc-title {
   margin-bottom: .5rem;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.0625rem; font-weight: 500; letter-spacing: -.014em;
+  font-size: var(--t-md); font-weight: 500; letter-spacing: -.014em;
   line-height: 1.34; color: var(--ink); text-wrap: pretty;
 }
 /* Short abstract so a card is scannable without opening the article.
@@ -1293,11 +1379,11 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .about-card-body { padding: 1.625rem 1.5rem 1.75rem; }
 .about-card-body h2 {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.5rem; font-weight: 500; letter-spacing: -.02em;
+  font-size: var(--t-xl); font-weight: 500; letter-spacing: -.02em;
   color: var(--ink); margin-bottom: 1.125rem;
 }
 .about-card-body p {
-  font-size: .875rem; line-height: 1.75; color: var(--muted);
+  font-size: var(--t-base); line-height: 1.75; color: var(--muted);
   margin-bottom: .875rem; text-wrap: pretty;
 }
 .about-card-body p:last-child { margin-bottom: 0; }
@@ -1339,8 +1425,8 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-family: var(--font-mono); font-size: .625rem; font-weight: 700; color: #fff;
 }
 .venue-name {
-  font-family: var(--font-grot); font-size: .9375rem; font-weight: 600;
-  color: var(--ink); letter-spacing: -.012em;
+  font-family: var(--font-grot); font-size: var(--t-ui); font-weight: 600;
+  color: var(--ink); letter-spacing: var(--ls-snug);
 }
 .venue-badge {
   flex: none; margin-left: auto;
@@ -1350,7 +1436,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .venue-body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem; }
 .venue-body h3 {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: 1.0625rem; font-weight: 500; letter-spacing: -.014em;
+  font-size: var(--t-md); font-weight: 500; letter-spacing: -.014em;
   line-height: 1.3; color: var(--ink); margin-bottom: .5rem;
 }
 .venue-body p {
@@ -1386,19 +1472,19 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .scholar-cta h3 {
   position: relative;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: clamp(1.5rem, 2.6vw, 2.125rem); font-weight: 400;
+  font-size: var(--d-card); font-weight: 400;
   letter-spacing: -.024em; color: var(--on-plate); margin-bottom: .75rem;
 }
 .scholar-cta p {
   position: relative; max-width: 48ch; margin: 0 auto 1.75rem;
-  font-size: .875rem; line-height: 1.7; color: var(--on-plate-mut);
+  font-size: var(--t-base); line-height: 1.7; color: var(--on-plate-mut);
 }
 .cta-btn {
   position: relative;
   display: inline-flex; align-items: center; gap: .5rem;
   min-height: 44px; padding: .65rem 1.5rem; border-radius: 8px;
   background: var(--on-plate); color: var(--plate);
-  font-family: var(--font-grot); font-size: .875rem; font-weight: 600;
+  font-family: var(--font-grot); font-size: var(--t-base); font-weight: 600;
   transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
 }
 .cta-btn:hover { background: var(--accent); color: #fff; }
@@ -1432,22 +1518,57 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 
 @media (max-width: 860px) {
+  /* Slide-in drawer from the right, as in the earlier build, rather than a
+     full-width dropdown. A drawer keeps the page visible behind it, which
+     makes it obvious where you are and where you came back to. */
   .nav-links {
-    position: fixed; inset: var(--nav-h) 0 auto 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    padding: .75rem clamp(1.125rem, 4vw, 2.5rem) 1.25rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-8px); opacity: 0; pointer-events: none;
-    transition: opacity .22s var(--ease-out), transform .22s var(--ease-out);
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 101;
+    width: min(var(--drawer-w), 84vw);
+    flex-direction: column; align-items: stretch; gap: .125rem;
+    padding: calc(var(--nav-h) + 1rem) 1.25rem 1.5rem;
+    background: var(--paper-raised);
+    border-left: 1px solid var(--line-hi);
+    box-shadow: var(--shadow-lg);
+    overflow-y: auto; overscroll-behavior: contain;
+    /* The closed drawer is nudged 32px right and faded, NOT pushed a full
+       drawer-width off-screen. A transform past the viewport edge still counts
+       toward the scrollable area — that gave every mobile page a horizontal
+       scrollbar (scrollWidth 678 on a 390px viewport). 32px keeps the travel
+       inside the viewport at every width, since the drawer is at most 84vw and
+       84vw - 32px stays positive down to 200px. */
+    transform: translateX(32px); opacity: 0;
+    visibility: hidden; pointer-events: none;
+    transition: transform .3s var(--ease-out), opacity .22s var(--ease-out),
+                visibility .3s var(--ease-out);
   }
   .nav-links.open, .nav-links.active {
-    transform: none; opacity: 1; pointer-events: auto;
+    transform: none; opacity: 1;
+    visibility: visible; pointer-events: auto;
   }
-  .nav-link { padding: .7rem .25rem; font-size: .9375rem; }
-  .nav-link::after { left: 0; right: auto; width: 1.25rem; bottom: .35rem; }
-  .nav-burger { display: grid; }
+  /* Links get a full-width row and a hairline, so the drawer reads as a list
+     rather than floating text. The underline indicator from the desktop nav
+     becomes a left rail instead. */
+  .nav-link {
+    padding: .875rem .75rem; font-size: var(--t-base);
+    border-radius: 8px; border-bottom: 1px solid var(--line);
+  }
+  .nav-link:last-child { border-bottom: 0; }
+  .nav-link::after {
+    left: .75rem; right: auto; top: 50%; bottom: auto;
+    width: 2px; height: 1.1rem; border-radius: 2px;
+    transform: translateY(-50%) scaleY(0); transform-origin: center;
+  }
+  .nav-link:hover { background: var(--accent-fill); }
+  .nav-link:hover::after, .nav-link.is-active::after { transform: translateY(-50%) scaleY(1); }
+  .nav-link.is-active { background: var(--accent-fill); }
+  .nav-burger { display: grid; position: relative; z-index: 102; }
+  /* Touch targets: the desktop 34px buttons clear WCAG 2.5.8's 24px floor but
+     sit under the 44px that touch input actually wants, so grow them where a
+     finger is the pointing device. Still inside the 63px nav. */
+  .icon-btn { width: 44px; height: 44px; border-radius: 10px; }
+  /* Comfortable touch height for the standalone text links too. */
+  .mono-link, .back-link, .footer-links a { min-height: 44px; }
+  .icon-btn i { font-size: 1rem; }
 
   /* Two explicit columns for the auto-fill grids. Left to auto-fill they get a
      fixed px minimum, and when the container sits between that minimum and two
@@ -1481,7 +1602,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   /* .work-card.wide spans 2 tracks; with a single-column grid that would create
      an implicit second column and overflow, so drop it back to auto here. */
   .work-card.wide { grid-column: auto; }
-  .folio::after { font-size: clamp(4rem, 20vw, 6rem); top: 1.25rem; }
+  .folio::after { font-size: var(--d-folio-sm); top: 1.25rem; }
   .search-box input { padding-right: 1rem; }
   .search-shortcut { display: none; }
   .sr-tags { display: none; }

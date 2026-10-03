@@ -84,23 +84,44 @@
   /* ---------- Mobile nav ---------- */
   var burger = document.getElementById('navBurger');
   var links = document.getElementById('navLinks');
+  var scrim = document.getElementById('navScrim');
+
+  function setNav(open) {
+    if (!burger || !links) return;
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    var icon = burger.querySelector('i');
+    if (icon) icon.className = open ? 'fas fa-times' : 'fas fa-bars';
+    if (scrim) scrim.classList.toggle('is-open', open);
+    // Stop the page behind the drawer from scrolling with it. Restored
+    // verbatim on close so the scroll position is never lost.
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
 
   if (burger && links) {
     burger.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      var icon = burger.querySelector('i');
-      if (icon) icon.className = open ? 'fas fa-times' : 'fas fa-bars';
+      setNav(!links.classList.contains('open'));
     });
 
+    if (scrim) scrim.addEventListener('click', function () { setNav(false); });
+
     links.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        links.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        var icon = burger.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
+      if (e.target.closest('a')) setNav(false);
+    });
+
+    // Escape closes, matching the convention for any dismissible overlay.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('open')) {
+        setNav(false);
+        burger.focus();
       }
+    });
+
+    // Returning to desktop width while open would otherwise leave the page
+    // scroll-locked, since the burger is hidden and the drawer off-screen.
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860 && links.classList.contains('open')) setNav(false);
     });
   }
 
