@@ -146,32 +146,81 @@
   }
 
   /* ---------- Blog platform filters (latest-posts.html) ---------- */
+  // A row's data-platform lists every venue it ran on, joined by VENUE_SEP, and
+  // filtering is a membership test over that list — a cross-posted article stays
+  // one row, so testing equality on a single primary venue would hide it from
+  // the second.
+  //
+  // The separator is "|" and not a space because "DZone Legacy" contains one.
+  // Splitting on whitespace turned it into ["DZone","Legacy"], so that filter
+  // matched no rows at all while every other filter looked fine — a bug that
+  // only appears once a venue name has a space in it.
+  var VENUE_SEP = '|';
   var filterBtns = document.querySelectorAll('.platform-filters .filter-btn');
+  var rc = document.getElementById('resultCount');
+
+  // site.js and research.js are both deferred, and site.js comes first, so at
+  // parse time the index is still an empty div -- the rows only exist after
+  // initLatestPosts() has run. Anything that needs a row count has to ask for it
+  // when the index says it is ready, not once at startup.
+  function cardCount() {
+    return document.querySelectorAll('.latest-post-card').length;
+  }
+
   if (filterBtns.length) {
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var filter = btn.dataset.filter;
         filterBtns.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        // A row's data-platform is a space-separated list, because an article
-        // cross-posted to two venues is still one row — so this is a
-        // membership test, not an equality test.
+
         // `hidden` rather than an inline display value: the rows are CSS grid,
         // so writing style.display would overwrite the layout on every row.
         // It only hides at all because site.css backs [hidden] with
         // !important — .latest-post-card is display:grid and would otherwise
         // outrank the UA rule.
-        document.querySelectorAll('.latest-post-card').forEach(function (card) {
-          var venues = (card.dataset.platform || '').split(' ');
-          card.hidden = !(filter === 'all' || venues.indexOf(filter) !== -1);
+        // The selector must cover unlinked rows too: they are <div> elements
+        // carrying the same .latest-post-card class, so one query handles both.
+        var cards = document.querySelectorAll('.latest-post-card');
+        var shown = 0;
+        cards.forEach(function (card) {
+          var venues = (card.dataset.platform || '').split(VENUE_SEP);
+          var visible = filter === 'all' || venues.indexOf(filter) !== -1;
+          card.hidden = !visible;
+          if (visible) shown++;
         });
-        // The index is grouped by year, so a filter can empty a whole year
-        // group — hide the heading too, or it labels nothing.
+
+        // Two levels of heading now sit above a row — year inside era — so a
+        // filter has to walk outward and empty both, or a collapsed heading
+        // would label nothing. Doing it inner-first is what makes that safe.
         document.querySelectorAll('.year-group').forEach(function (group) {
           group.hidden = !group.querySelector('.latest-post-card:not([hidden])');
         });
+        document.querySelectorAll('.era-band').forEach(function (band) {
+          band.hidden = !band.querySelector('.latest-post-card:not([hidden])');
+        });
+
+        // The year rail is built from live row counts, so it has to be rebuilt
+        // after a filter or it keeps offering years that no longer have rows.
+        window.dispatchEvent(new CustomEvent('index:filtered'));
+
+        if (rc) rc.textContent = resultText(filter, shown, cards.length);
       });
     });
+
+    // Publish the unfiltered total once the index exists. Without this the
+    // readout sits empty until the reader clicks something, which reads as a
+    // broken control rather than as "nothing has been filtered yet".
+    window.addEventListener('index:rendered', function () {
+      var n = cardCount();
+      if (rc) rc.textContent = resultText('all', n, n);
+      window.dispatchEvent(new CustomEvent('index:filtered'));
+    });
+  }
+
+  function resultText(filter, shown, total) {
+    if (filter === 'all') return shown + (shown === 1 ? ' entry' : ' entries');
+    return shown + ' of ' + total + ' from ' + filter;
   }
 
   /* ---------- Live experience counter (from Jul 2007) ---------- */

@@ -56,6 +56,11 @@
      use as foreground, following the --accent-on-plate convention. */
   --emerald-ink: #046a4e;
   --orange-ink:  #993009;
+  /* Slate marks the 49 IBM Cloud guides DZone has unpublished. It is the only
+     hue here with no live-publication meaning, which is the point: a reader
+     should be able to tell at a glance which venue marks open something. */
+  --slate:       #55606a;  --slate-fill:  rgba(85,96,106,.13);
+  --slate-ink:   #454f58;
   /* legacy alias — js/research.js still resolves var(--primary) */
   --primary:    #b83c0b;
 
@@ -138,6 +143,8 @@ html[data-theme="dark"] {
   --emerald-fill: rgba(47,163,122,.16);
   --emerald-ink:  #2fa37a;
   --orange-ink:   #f97316;
+  --slate-fill: rgba(148,163,184,.18);
+  --slate-ink:  #b6c2cf;
   --primary:    #f97316;
 
   --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 3px 10px rgba(0,0,0,.3);
@@ -1096,6 +1103,17 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .pub-link:hover, .cite-btn:hover { border-color: var(--ink); color: var(--ink); }
 
+/* A card for one of the 49 legacy guides DZone removed. It is not a button and
+   does not pretend to be one — it replaces the "Read Publication" link so the
+   card's action row does not read as broken, and says why there is nothing to
+   click. */
+.pub-gone-note {
+  display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
+  min-height: 36px; padding: .45rem .8rem; border-radius: 7px;
+  border: 1px dashed var(--line-hi);
+  font-size: var(--t-sm); color: var(--dim);
+}
+
 /* ---------- 23. PLATFORM REACH ---------- */
 .platform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: var(--gap); }
 .platform-card {
@@ -1367,6 +1385,136 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 }
 .latest-post-card:last-child { border-bottom: 0; }
 .latest-post-card:hover { background: var(--accent-fill); }
+
+/* ---- Era bands ----
+   Years are grouped into three bands where the character of the work changes.
+   The band is the page's primary structure: it is what tells a reader looking
+   at 300 rows that the 2010s and the 2020s are not the same body of writing.
+   The button resets the UA appearance because it wraps display text and must not
+   carry a border or background of its own. */
+.era-band + .era-band { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.era-head {
+  display: flex; align-items: center; gap: 1rem; width: 100%;
+  margin: 0 0 1.25rem; padding: 0 0 .875rem;
+  border: 0; border-bottom: 2px solid var(--ink);
+  background: none; color: inherit; text-align: left; cursor: pointer;
+  font: inherit;
+}
+.era-head:hover .era-label { color: var(--accent); }
+.era-head:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.era-chevron {
+  flex: none; display: grid; place-items: center;
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  border: 1px solid var(--line-hi); color: var(--dim);
+  font-size: .625rem;
+  transition: transform .2s var(--ease-out), border-color .2s var(--ease-out);
+}
+.era-band.is-collapsed .era-chevron { transform: rotate(-90deg); }
+.era-text { display: block; min-width: 0; flex: 1; }
+.era-label {
+  display: block;
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-size: var(--t-lg); font-weight: 400; letter-spacing: -.018em;
+  line-height: 1.2; color: var(--ink);
+  transition: color .2s var(--ease-out);
+}
+.era-blurb {
+  display: block; margin-top: .1875rem;
+  font-size: var(--t-sm); line-height: 1.5; color: var(--muted);
+}
+/* The span is data, the count is chrome, so they get separate treatments and
+   wrap as a unit rather than as two loose words. */
+.era-meta {
+  flex: none; display: flex; align-items: baseline; gap: .75rem;
+  font-family: var(--font-mono); font-size: var(--t-xs);
+  letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+}
+.era-span { color: var(--ink); }
+.era-count { white-space: nowrap; }
+/* Collapsed, the band keeps its heading and drops its years. */
+.era-band.is-collapsed .era-body { display: none; }
+
+/* ---- Year rail ----
+   Seventeen year headings and 300+ rows leaves scrolling as the only way to
+   move between them. This is the fix: every year in one horizontal strip. It
+   scrolls itself horizontally on overflow, so the counts stay reachable at
+   320px without wrapping into a second row of chrome. */
+.year-rail {
+  display: flex; gap: .375rem; align-items: stretch;
+  margin: 0 0 1.5rem; padding: .375rem;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  border: 1px solid var(--line); border-radius: 6px;
+  background: var(--paper-raised);
+}
+.year-rail:empty { display: none; }
+.year-pip {
+  flex: none; display: flex; flex-direction: column; align-items: center; gap: .0625rem;
+  padding: .375rem .5625rem; border-radius: 4px;
+  text-decoration: none; color: var(--dim);
+  transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
+}
+.year-pip:hover { background: var(--accent-fill); color: var(--ink); }
+.year-pip:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.year-pip.is-active { background: var(--ink); color: var(--paper); }
+.year-pip-num {
+  font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 600;
+  letter-spacing: .06em; font-variant-numeric: tabular-nums;
+}
+.year-pip-n {
+  font-family: var(--font-mono); font-size: .5rem; letter-spacing: .1em;
+  opacity: .62; font-variant-numeric: tabular-nums;
+}
+
+/* ---- Density ----
+   Comfortable is the default and keeps the abstract. Compact drops it, which is
+   what makes the whole 300-row index scannable in one screen of titles when
+   someone is looking for one specific piece rather than browsing. */
+.density-toggle {
+  display: flex; gap: .375rem; align-items: center;
+  margin: 0 0 1.25rem;
+}
+.density-btn {
+  padding: .3125rem .75rem; border: 1px solid var(--line-hi); border-radius: 999px;
+  background: none; cursor: pointer;
+  font-family: var(--font-mono); font-size: .5625rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+  transition: border-color .2s var(--ease-out), color .2s var(--ease-out),
+              background-color .2s var(--ease-out);
+}
+.density-btn:hover { border-color: var(--ink); color: var(--ink); }
+.density-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.density-btn.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+html[data-index-density="compact"] .lpc-summary { display: none; }
+html[data-index-density="compact"] .latest-post-card { padding: .625rem .75rem .625rem .25rem; }
+html[data-index-density="compact"] .lpc-title { margin-bottom: 0; font-size: var(--t-sm); }
+html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5rem; }
+
+/* Rows whose article is no longer online. Kept in the index and visibly
+   distinct: dimmed, no hover fill, and no pointer cursor, so it never reads as
+   something that can be opened. `cursor: default` is the honest signal. */
+.latest-post-card.is-unlinked { cursor: default; }
+.latest-post-card.is-unlinked:hover { background: none; }
+.latest-post-card.is-unlinked .lpc-title { color: var(--muted); }
+.latest-post-card.is-unlinked .lpc-date { opacity: .8; }
+.lpc-gone {
+  grid-column: 3; justify-self: end; align-self: start;
+  display: inline-flex; align-items: center; gap: .3125rem;
+  font-family: var(--font-mono); font-size: .5rem; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--dim);
+  white-space: nowrap;
+}
+.lpc-platforms + .lpc-gone { margin-top: .25rem; }
+
+/* Result count sits at the end of the filter row. aria-live is on the element so
+   a screen reader hears the new total when a filter is applied. */
+.filter-result {
+  margin-left: auto; padding-left: 1rem;
+  font-family: var(--font-mono); font-size: var(--t-xs);
+  letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
+  white-space: nowrap;
+}
 .lpc-date {
   font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 500;
   letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
@@ -1413,6 +1561,16 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .lpc-platform-name[data-more] { opacity: .68; }
 .lpc-platform-name[data-venue="DZone"]  { background: var(--orange-fill);  color: var(--orange-ink); }
 .lpc-platform-name[data-venue="Medium"] { background: var(--emerald-fill); color: var(--emerald-ink); }
+/* The legacy guides get a neutral slate rather than DZone's orange. They were
+   published on DZone, so orange would read as "live and clickable", which is
+   precisely the wrong signal -- 40 of these 49 rows have nothing to open. The
+   selector also has to match the attribute in full: without the surrounding
+   quotes a multi-word value like "DZone Legacy" is not a valid identifier and
+   the rule would silently never match. */
+.lpc-platform-name[data-venue="DZone Legacy"] { background: var(--slate-fill); color: var(--slate-ink); }
+/* A row whose only venue is a legacy guide should not read as a row you can
+   open, so its venue pill is the one thing allowed to keep full contrast. */
+.lpc-gone-row .lpc-platform-name { opacity: 1; }
 
 /* ---------- 32. ABOUT PAGE ---------- */
 .about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); align-items: start; }
@@ -1642,6 +1800,20 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
     flex-direction: row; flex-wrap: wrap; justify-content: flex-end;
   }
   .year-num { font-size: var(--t-lg); }
+
+  /* The Offline badge is a third grid item once the venue rail has moved into
+     row 1, so it needs an explicit cell. Without one the grid auto-places it
+     into row 2 column 1, under the title. */
+  .lpc-gone {
+    grid-column: 1 / -1; grid-row: 3; justify-self: start; margin-top: .125rem;
+  }
+
+  /* Era heading stacks: the blurb and the meta line cannot share a row with a
+     display heading at this width without the label wrapping to two words per
+     line. */
+  .era-head { flex-wrap: wrap; row-gap: .5rem; }
+  .era-text { flex: 1 1 100%; order: 2; }
+  .era-meta { order: 3; margin-left: 2.5rem; }
 
   /* Two explicit columns for the auto-fill grids. Left to auto-fill they get a
      fixed px minimum, and when the container sits between that minimum and two

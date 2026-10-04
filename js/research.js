@@ -103,34 +103,48 @@ const researchData = {
     { id: 1097, title: "Schedule PostgreSQL Backups with IBM Cloud Code Engine", platform: "Medium", platforms: ["Medium"], year: 2022, date: "2022-03-31", topics: ["Containers", "Data Science", "Cloud"], url: "https://medium.com/vmacwrites/schedule-postgresql-backups-with-ibm-cloud-code-engine-74cd1f207cde", readingTime: "5 min", summary: "Learn how to build a container image from source code and use the image to schedule your PostgreSQL backups using IBM Cloud Code Engine." },
     { id: 1098, title: "Kubernetes Auditing: Which IAM User Deleted a Namespace?", platform: "DZone", platforms: ["DZone"], year: 2022, date: "2022-02-17", topics: ["Kubernetes", "Observability"], url: "https://dzone.com/articles/kubernetes-auditing-which-iam-user-deleted-a-names", views: "8.4K", summary: "Learn how to collect audit logs that are passed through the Kubernetes API server to IBM Log Analysis to check who initiated a request and when they did…" },
     { id: 1099, title: "Kubernetes Audit Logs: Who created or deleted a namespace?", platform: "Medium", platforms: ["Medium"], year: 2022, date: "2022-02-17", topics: ["Kubernetes", "Observability"], url: "https://medium.com/vmacwrites/kubernetes-audit-logs-who-created-or-deleted-a-namespace-7d55c20d2730", readingTime: "3 min", summary: "Learn how to set up log forwarding and collect audit logs that are passed through the Kubernetes API server to IBM Log Analysis to check…" },
+    { id: 1301, title: "Stream Landing Kafka Data to Object Storage using Terraform", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-12-09", topics: ["Cloud", "DevOps"], url: "https://web.archive.org/web/20220528172139/https://dzone.com/articles/stream-landing-kafka-data-to-object-storage-using", views: "8,014", likes: 3, legacy: true, removedFromDZone: true, archived: true, summary: "Learn how to archive your Event Streams Kafka data to Object Storage using SQL Query. This process, called stream landing, can be set up using the Terraform" },
     { id: 1100, title: "Stream Landing Kafka Data to Object Storage using Terraform", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-12-07", topics: ["DevOps", "Data Science"], url: "https://medium.com/vmacwrites/stream-landing-kafka-data-to-object-storage-using-terraform-f127e62fc637", readingTime: "3 min", summary: "Learn how to archive your Event Streams Kafka data to Object Storage using SQL Query. This process, called stream landing, can be set up…" },
+    { id: 1302, title: "Deploy RAPIDs on GPU-Enabled Virtual Servers on a Virtual Private Cloud", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-10-03", topics: ["Cloud", "DevOps", "Data Science"], views: "4,515", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "Learn how to set up a GPU-enabled virtual server instance (VSI) on a Virtual Private Cloud (VPC) and deploy RAPIDS using IBM Schematics" },
     { id: 1101, title: "Deploy RAPIDs on GPU-Enabled Virtual Servers on a Virtual Private Cloud", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-09-30", topics: ["Cloud"], url: "https://medium.com/vmacwrites/deploy-rapids-on-gpu-enabled-virtual-servers-on-a-virtual-private-cloud-baf73baad2ae", readingTime: "5 min", summary: "Learn how to set up a GPU-enabled virtual server instance (VSI) on a Virtual Private Cloud (VPC) and deploy RAPIDS using IBM Schematics." },
+    { id: 1303, title: "Configure Slack to receive notifications about your Tekton Pipeline", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-08-23", topics: ["Containers", "DevOps"], url: "https://web.archive.org/web/20211024224618/https://dzone.com/articles/configure-slack-to-receive-notifications-about-you", views: "6,142", likes: 3, legacy: true, removedFromDZone: true, archived: true, summary: "Learn how to configure a DevOps delivery pipeline and integrate Slack into your toolchain to receive notifications whenever there are any updates to the Tekton pipeline" },
     { id: 1102, title: "Configure Slack to receive notifications about your Tekton Pipeline", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-08-20", topics: ["Developer Advocacy"], url: "https://medium.com/vmacwrites/configure-slack-to-receive-notifications-about-your-tekton-pipeline-f9a1631065fb", readingTime: "4 min", summary: "Learn how to configure Slack to receive notifications about your Tekton Pipeline." },
+    { id: 1304, title: "VPC Auto Scaling and Dedicated Hosts with Terraform", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-07-16", topics: ["Cloud", "DevOps"], url: "https://web.archive.org/web/20210805013141/https://dzone.com/articles/vpc-auto-scaling-and-dedicated-hosts-with-terrafor", views: "3,954", likes: 3, legacy: true, removedFromDZone: true, archived: true, summary: "Learn how to configure and scale isolated workloads in shared and dedicated environments on Virtual Private Cloud" },
     { id: 1103, title: "VPC Auto Scaling and Dedicated Hosts with Terraform", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-07-15", topics: ["DevOps", "Cloud"], url: "https://medium.com/vmacwrites/vpc-auto-scaling-and-dedicated-hosts-with-terraform-b90aae1b49f7", readingTime: "4 min", summary: "Learn how to configure and scale isolated workloads in shared and dedicated environments on Virtual Private Cloud." },
     { id: 1104, title: "Terraform unsensitive", platform: "Dev.to", platforms: ["Dev.to"], year: 2021, date: "2021-05-19", topics: ["DevOps", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/terraform-unsensitive-3gjp", readingTime: "1 min", summary: "For every sensitive=true in Terraform, there is a nonsensitive function... variable \"password\" {..." },
+    { id: 1305, title: "Multizone Kubernetes and VPC Load Balancer Setup", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-05-03", topics: ["Kubernetes", "Containers", "Cloud"], views: "7,496", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Securely expose your Kubernetes app by setting up a Load Balancer for VPC in a different zone." },
     { id: 1105, title: "How to update Spyder in Anaconda to 5.x?", platform: "Dev.to", platforms: ["Dev.to"], year: 2021, date: "2021-04-28", topics: ["Python", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/how-to-update-spyder-in-anaconda-to-5-x-4hoc", readingTime: "3 min", summary: "Spyder is one of my favorite IDE(Integrated Development Environment) for Python programming and visua..." },
     { id: 1106, title: "Multizone Kubernetes and VPC Load Balancer Setup", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-04-27", topics: ["Kubernetes"], url: "https://medium.com/vmacwrites/multizone-kubernetes-and-vpc-load-balancer-setup-9664b3c9ea5d", readingTime: "4 min", summary: "Securely expose your Kubernetes app by setting up a Load Balancer for VPC in a different zone." },
     { id: 1107, title: "Tools to Visualize your Terraform plan", platform: "DZone", platforms: ["DZone", "Medium", "Dev.to"], year: 2021, date: "2021-04-22", topics: ["DevOps", "Open Source"], url: "https://dzone.com/articles/tools-to-visualize-your-terraform-plan", also: {"Medium": "https://medium.com/vmacwrites/tools-to-visualize-your-terraform-plan-d421c6255f9f", "Dev.to": "https://dev.to/vidyasagarmsc/tools-to-visualize-your-terraform-plan-5g3"}, views: "8.4K", readingTime: "2 min", summary: "It all started with this code sample with Terraform scripts For starters, Terraform is open-source software, developed by HashiCorp, that enables…" },
     { id: 1108, title: "Run and Scale an Apache Spark Application on Kubernetes", platform: "DZone", platforms: ["DZone"], year: 2021, date: "2021-03-15", topics: ["Kubernetes", "Containers", "Data Science"], url: "https://dzone.com/articles/run-and-scale-an-apache-spark-application-on-kuber", views: "9.6K", summary: "Learn how to set up Apache Spark on IBM Cloud Kubernetes Service by pushing the Spark container images to IBM Cloud Container Registry...." },
     { id: 1109, title: "Update multiple lines in a YAML file with kubectl", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2021, date: "2021-03-02", topics: ["Kubernetes"], url: "https://medium.com/vmacwrites/update-multiple-lines-in-a-yaml-file-with-kubectl-932ef81d9b41", also: {"Dev.to": "https://dev.to/vidyasagarmsc/update-multiple-lines-in-a-yaml-file-49fb"}, readingTime: "1 min", summary: "Whenever I need to update a YAML file, the first thing that comes to mind is to either use sed or awk or perl etc., But there's an…" },
+    { id: 1306, title: "Image Classification with Code Engine and TensorFlow", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2021, date: "2021-02-16", topics: ["Cloud", "DevOps", "Data Science"], views: "7,445", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "Learn about IBM CloudTM Code Engine by deploying an image classification application with pre-defined MobileNet TensorFlow.js model" },
     { id: 1110, title: "Image Classification with IBM Cloud Code Engine and TensorFlow", platform: "Medium", platforms: ["Medium"], year: 2021, date: "2021-01-28", topics: ["AI", "Cloud", "Mathematics"], url: "https://medium.com/vmacwrites/image-classification-with-ibm-cloud-code-engine-and-tensorflow-564fc6182592", readingTime: "2 min", summary: "Learn about IBM Cloud™ Code Engine by deploying an image classification application with pre-defined MobileNet TensorFlow.js model." },
+    { id: 1307, title: "Adjust speaking rate(SSML) via cURL POST", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2020, date: "2020-12-14", topics: ["AI"], views: "3,260", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Speaking rate is often expressed in words per minute (wpm). SSML is an XML-based markup language that provides annotations of text for speech-synthesis applications." },
+    { id: 1308, title: "Delete a Non-Empty COS Bucket Using Terraform", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2020, date: "2020-11-23", topics: ["Cloud", "DevOps"], url: "https://web.archive.org/web/20210128032609/https://dzone.com/articles/delete-a-non-empty-cos-bucket-using-terraform", views: "6,903", likes: 3, legacy: true, removedFromDZone: true, archived: true, summary: "Remove a Cloud Object Storage (COS) bucket that is not empty. Use a Terraform script to recursively delete all the objects of a Cloud Object Storage (COS) bucket using MinIO client." },
     { id: 1111, title: "Delete a bucket that is not empty", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2020, date: "2020-11-12", topics: ["DevOps", "Cloud"], url: "https://medium.com/vmacwrites/delete-a-bucket-that-is-not-empty-55368eec7e21", also: {"Dev.to": "https://dev.to/vidyasagarmsc/delete-a-bucket-that-is-not-empty-1a6b"}, readingTime: "2 min", summary: "Remove a non-empty Cloud Object Storage (COS) bucket. The terraform script to recursively delete all the objects of a Cloud Object Storage…" },
     { id: 1112, title: "Adjust the speaking rate", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2020, date: "2020-11-09", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2020/11/09/adjust-the-speaking-rate/", summary: "Stackoverflow is an ocean for learning and exploring. How? Try answering a question and you will understand 🙂 A few weeks ago, I saw this question on…" },
     { id: 1113, title: "Adjust speaking rate(SSML) via cURL POST", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-11-09", topics: ["Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/adjust-speaking-rate-ssml-via-curl-poe", readingTime: "2 min", summary: "Stackoverflow is an ocean for learning and exploring. How? Try answering a question and you will unde..." },
+    { id: 1309, title: "Deploy and Auto Scale Isolated Workloads Across Multiple Zones", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2020, date: "2020-10-27", topics: ["Cloud", "DevOps", "Security"], views: "4,683", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Provision and autoscale VSI on VPC using Terraform scripts and explore autoscale scenarios like SSL termination and end-to-end encryption." },
     { id: 1114, title: "Auto-scale instance on VPC using Terraform", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2020, date: "2020-10-21", topics: ["Security", "DevOps"], url: "https://medium.com/vmacwrites/auto-scale-instance-on-vpc-using-terraform-fb708f9f1e4", also: {"Dev.to": "https://dev.to/vidyasagarmsc/auto-scale-instance-on-vpc-using-terraform-404f"}, readingTime: "4 min", summary: "Learn how to provision and auto scale VSI on VPC using Terraform scripts and explore auto scale scenarios like SSL termination (offloading)…" },
     { id: 1115, title: "Minikube: Exiting due to RSRC_INSUFFICIENT_REQ_MEMORY ⛔", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-10-15", topics: ["Kubernetes", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/minikube-exiting-due-to-rsrcinsufficientreqmemory-1lp5", readingTime: "1 min", summary: "After many months, I tried starting Minikube(minikube start) on my machine to see the error in the ti..." },
     { id: 1116, title: "Deploy an image recognition app without provisioning a Kubernetes cluster", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-09-30", topics: ["Cloud", "Kubernetes", "DevOps"], url: "https://dev.to/vidyasagarmsc/deploy-an-image-recognition-app-without-provisioning-a-kubernetes-cluster-1a3n", readingTime: "3 min", summary: "Learn to deploy a public frontend and a private backend app, bind Cloud services to the..." },
+    { id: 1310, title: "Create Multiple Instances in a VPC Using Terraform", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2020, date: "2020-08-25", topics: ["Cloud", "DevOps"], url: "https://web.archive.org/web/20201121083542/https://dzone.com/articles/create-multiple-instances-in-a-vpc-using-terraform", views: "8,074", likes: 5, legacy: true, removedFromDZone: true, archived: true, summary: "Learn how to provision multiple virtual server instances (VSIs) in a Virtual Private Cloud (VPC) using Terraform scripts with IBM Cloud Schematics." },
     { id: 1117, title: "Adding business hours to your chatbot", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-08-14", topics: ["AI", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/adding-business-hours-to-your-chatbot-2f0p", readingTime: "1 min", summary: "Stackoverflow is the best place to find use cases along with numerous questions. One such question th..." },
     { id: 1118, title: "AND in grep", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-08-07", topics: ["Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/and-in-grep-178p", readingTime: "2 min", summary: "While working on a shell or drafting scripts, two things I love the most is grep and awk. Let's start..." },
     { id: 1119, title: "Create Multiple Instances in a VPC Using Terraform", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-08-06", topics: ["Cloud", "DevOps"], url: "https://dev.to/vidyasagarmsc/create-multiple-instances-in-a-vpc-using-terraform-1ojf", readingTime: "4 min", summary: "Learn how to provision multiple virtual server instances (VSIs) in a Virtual Private Cloud..." },
     { id: 1120, title: "Spread love with Python", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-08-05", topics: ["Python", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/spread-love-with-python-3hg1", readingTime: "1 min", summary: "Past week, I was busy coding in Python for one of our demos (which turned into a blog post later). At..." },
+    { id: 1311, title: "Extend VPC Instances with Cloud Functions, Activity Tracker with LogDNA, and Schematics", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2020, date: "2020-08-04", topics: ["Cloud", "DevOps", "Observability"], url: "https://web.archive.org/web/20230607082018/https://dzone.com/articles/extend-vpc-instances-with-cloud-functions-activity", views: "4,801", likes: 3, legacy: true, removedFromDZone: true, archived: true, summary: "This post shows how to automatically assign a floating IP to a newly created VSI by monitoring Activity Tracker events and using Cloud Functions to interact with the VPC API." },
     { id: 1121, title: "Extend VPC Resources with Cloud Functions, Activity Tracker with LogDNA, and Schematics", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-07-31", topics: ["DevOps", "Python", "Cloud"], url: "https://dev.to/vidyasagarmsc/extend-vpc-resources-with-cloud-functions-activity-tracker-with-logdna-and-schematics-2m6a", readingTime: "6 min", summary: "This post shows how to automatically assign a floating IP to a newly created VSI by..." },
     { id: 1122, title: "Service Mesh on Red Hat OpenShift", platform: "Dev.to", platforms: ["Dev.to"], year: 2020, date: "2020-06-02", topics: ["Kubernetes", "Architecture", "Cloud"], url: "https://dev.to/vidyasagarmsc/service-mesh-on-red-hat-openshift-1h4", readingTime: "2 min", summary: "How to install Red Hat OpenShift Service Mesh alongside microservices in a Red Hat OpenShift..." },
     { id: 1123, title: "Container to container communication with bridge network", platform: "Dev.to", platforms: ["Dev.to", "VMacWrites"], year: 2020, date: "2020-04-09", topics: ["Containers"], url: "https://dev.to/vidyasagarmsc/container-to-container-communication-with-bridge-network-49k2", also: {"VMacWrites": "https://vmacwrites.wordpress.com/2020/04/09/container-to-container-communication-with-bridge-network/"}, readingTime: "2 min", summary: "In this post, you will learn how to establish container to container communication by creating a..." },
+    { id: 1312, title: "Build and Push a Container Image from Source Code With S2I", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2019, date: "2019-11-15", topics: ["Containers", "DevOps", "Cloud"], views: "9,505", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "Use S2I to create a container image from your source code." },
     { id: 1124, title: "Alternate Ways to Create an OpenShift Project", platform: "Dev.to", platforms: ["Dev.to"], year: 2019, date: "2019-10-25", topics: ["Kubernetes", "DevOps", "Cloud"], url: "https://dev.to/vidyasagarmsc/alternate-ways-to-create-an-openshift-project-3np9", readingTime: "4 min", summary: "This post explains two of the ways to create an OpenShift project-inside the Jenkinsfile a..." },
     { id: 1125, title: "Build a Container Image from Source-Code using S2I and Push It to a PrivateRegistry", platform: "Dev.to", platforms: ["Dev.to"], year: 2019, date: "2019-09-12", topics: ["Containers"], url: "https://dev.to/vidyasagarmsc/build-a-container-image-from-source-code-using-s2i-and-push-it-to-a-privateregistry-250m", readingTime: "3 min", summary: "Build a Container Image from Source-Code using S2I and Push It to a Private Registry..." },
     { id: 1126, title: "Container registry unauthorized: authentication required", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2019, date: "2019-04-05", topics: ["Cloud", "Kubernetes", "Open Source"], url: "https://vmacwrites.wordpress.com/2019/04/05/icr-io-unauthorized-authentication-required/", summary: "IBM Cloud container registry(ICR) imagepull fails on IBM Cloud Kubernetes(IKS) cluster with Unauthorized: authentication required error. Here's what you…" },
     { id: 1127, title: "Istio on Windows 10", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2019, date: "2019-02-06", topics: ["Cloud", "Open Source", "AI"], url: "https://vmacwrites.wordpress.com/2019/02/06/istio-on-windows-10/", summary: "In this post, you will learn how to setup Istioctl on Windows 10 to run Istio service mesh commands on your command prompt(CMD). Before jumping into the…" },
+    { id: 1313, title: "Knative Log Analysis With LogDNA on IBM Cloud", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2019, date: "2019-01-31", topics: ["Kubernetes", "Containers", "Observability"], url: "https://web.archive.org/web/20230204014318/https://dzone.com/articles/knative-log-analysis-with-logdna-on-ibm-cloud", views: "8,302", likes: 5, legacy: true, removedFromDZone: true, archived: true, summary: "Check out how you can track the activity going on within your cluster using IBM Log Analysis and Knative." },
+    { id: 1314, title: "Knative Monitoring with Sysdig on IBM Cloud", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2019, date: "2019-01-30", topics: ["Kubernetes", "Containers", "Observability"], views: "9,194", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Now that you have deployed your application to the IBM Cloud, learn how to monitor it with dashboards using Sysdig." },
     { id: 1128, title: "Knative Monitoring with Sysdig on IBM Cloud", platform: "Dev.to", platforms: ["Dev.to"], year: 2019, date: "2019-01-09", topics: ["Cloud", "Observability"], url: "https://dev.to/vidyasagarmsc/knative-monitoring-with-sysdig-on-ibm-cloud-5245", readingTime: "5 min", summary: "After learning on how to deploy an app to Knative on IBM Cloud and how to do Knative log analysis..." },
     { id: 1129, title: "Knative Log analysis with LogDNA on IBM Cloud", platform: "Dev.to", platforms: ["Dev.to"], year: 2019, date: "2019-01-07", topics: ["Kubernetes", "Cloud"], url: "https://dev.to/vidyasagarmsc/knative-log-analysis-with-logdna-on-ibm-cloud-34ag", readingTime: "5 min", summary: "In this post, you will learn how to use the IBM Log Analysis with LogDNA service to configure cluster..." },
     { id: 1130, title: "Knative Monitoring, Logging, and Tracing Explained", platform: "DZone", platforms: ["DZone"], year: 2018, date: "2018-11-15", topics: ["Observability"], url: "https://dzone.com/articles/knative-monitoring-with-grafana-zipkin-weavescope", views: "11.3K", summary: "Learn how to set up performance monitoring, logging, and tracing for telemetry with Knative." },
@@ -138,53 +152,88 @@ const researchData = {
     { id: 1132, title: "Build a Container Image Inside a K8s Cluster", platform: "DZone", platforms: ["DZone"], year: 2018, date: "2018-10-30", topics: ["Kubernetes", "Containers"], url: "https://dzone.com/articles/build-a-container-image-inside-a-k8s-cluster", views: "13.5K", summary: "Take a look at how you can build a container image inside Kubernetes without using the Docker daemon through Google's Kaniko." },
     { id: 1133, title: "Knative monitoring with Grafana, Zipkin, Weavescope & other plugins..", platform: "Dev.to", platforms: ["Dev.to"], year: 2018, date: "2018-10-09", topics: ["Kubernetes", "Cloud", "Observability"], url: "https://dev.to/vidyasagarmsc/knative-monitoring-with-grafana-zipkin-weavescope--other-plugins-4g9o", readingTime: "5 min", summary: "In this post, you will see the telemetry side of Knative and Istio for a nodejs app named..." },
     { id: 1134, title: "Install Knative with Istio on IBM Cloud", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-10-09", topics: ["Cloud", "Open Source", "Kubernetes"], url: "https://vmacwrites.wordpress.com/2018/10/09/install-knative-with-istio-on-ibm-cloud/", summary: "This post provides you step-by-step instructions to install Knative with Istio on IBM Cloud Kubernetes Service(IKS), build and push your image to IBM…" },
+    { id: 1315, title: "Install Knative With Istio on an IKS Cluster and Deploy on IBM Cloud", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-10-09", topics: ["Kubernetes", "Containers", "Cloud"], views: "6,484", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "Learn how Knative extends Kubernetes and how to set up an app with Knative and Istio, then deploy on IBM Cloud." },
     { id: 1135, title: "Build a container image inside a K8s cluster and push it to IBM Cloud Container Registry", platform: "Dev.to", platforms: ["Dev.to"], year: 2018, date: "2018-10-08", topics: ["Cloud", "Kubernetes", "Containers"], url: "https://dev.to/vidyasagarmsc/build-a-container-image-inside-a-k8s-cluster-and-push-it-to-ibm-cloud-container-registry-448n", readingTime: "4 min", summary: "Build a container image inside a Kubernetes cluster and push it to IBM Cloud Container..." },
     { id: 1136, title: "Install Knative with Istio on IBM Cloud: the hard way", platform: "Dev.to", platforms: ["Dev.to"], year: 2018, date: "2018-10-04", topics: ["Cloud", "Kubernetes"], url: "https://dev.to/vidyasagarmsc/install-knative-with-istio-on-ibm-cloud-2fd9", readingTime: "4 min", summary: "In this tutorial, learn how easy it is to install Knative with Istio on IBM Cloud Kubernetes..." },
+    { id: 1316, title: "Obtain and Visualize Uniform Metrics, Logs, and Traces Across Microservices Using Istio", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-07-03", topics: ["Kubernetes", "Containers", "Observability"], views: "3,457", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Learn how to set up Istio on your Kubernetes cluster and use add-ons like Grafana to collect, query, and visualize metrics and logs." },
     { id: 1137, title: "Obtain and visualise uniform metrics, logs, traces across microservices using Istio", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-06-28", topics: ["Cloud", "Open Source", "Kubernetes"], url: "https://vmacwrites.wordpress.com/2018/06/28/obtain-and-visualise-uniform-metrics-logs-traces-across-microservices-using-istio/", summary: "In this blog post, you will learn how to setup Istio on your Kubernetes cluster using Helm or Kubernetes-YAML and you will be using add-ons like Jaeger…" },
     { id: 1138, title: "Deploy an app to Kubernetes using a Helm chart", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-06-01", topics: ["Cloud", "Open Source", "Kubernetes"], url: "https://vmacwrites.wordpress.com/2018/06/01/deploy-an-app-to-kubernetes-using-a-helm-chart/", summary: "This blog post walks you through how to scaffold a web application, run it locally in a container, and then deploy it to a Kubernetes cluster created with…" },
+    { id: 1317, title: "Deploy a Scalable Web Application to Kubernetes Using Helm", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-06-01", topics: ["Kubernetes", "Containers", "DevOps"], views: "4,839", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Learn how to build a web app in a container then deploy it to a Kubernetes cluster created with IBM Cloud Kubernetes Service using Helm." },
     { id: 1139, title: "Deploy a scalable web app to Kubernetes using Helm", platform: "Dev.to", platforms: ["Dev.to"], year: 2018, date: "2018-05-31", topics: ["Containers", "Kubernetes", "Developer Advocacy"], url: "https://dev.to/vidyasagarmsc/deploy-a-scalable-web-app-to-kubernetes-using-helm-1gf6", readingTime: "6 min", summary: "This blog post walks you through how to scaffold a web application, run it locally in a container,..." },
     { id: 1140, title: "What's in IBM Cloud for Developers", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-05-26", topics: ["Cloud"], url: "https://vmacwrites.wordpress.com/2018/05/26/whats-in-ibm-cloud-for-developers/", summary: "In this post, you will learn what's in store for developers and how they can leverage 170+ unique services on IBM Cloud platform. Cloud computing, often…" },
     { id: 1141, title: "Awesome-AI: The guide to master artificial intelligence", platform: "Dev.to", platforms: ["Dev.to", "VMacWrites"], year: 2018, date: "2018-05-13", topics: ["AI"], url: "https://dev.to/vidyasagarmsc/awesome-ai-the-guide-to-master-artificial-intelligence-35k3", also: {"VMacWrites": "https://vmacwrites.wordpress.com/2018/07/18/awesome-ai-the-guide-to-master-artificial-intelligence/"}, readingTime: "4 min", summary: "A curated list of articles, books, MOOCs, infographics and many more covering Artificial Int..." },
     { id: 1142, title: "Build and Interact With This Chatbot Through Voice and Audio", platform: "DZone", platforms: ["DZone"], year: 2018, date: "2018-04-27", topics: ["Developer Advocacy"], url: "https://dzone.com/articles/build-and-interact-with-this-chatbot-through-voice", views: "8.8K", summary: "This tutorial walks you through the process of defining intents and entities and building a dialog flow for your chatbot to respond to customer queries." },
+    { id: 1318, title: "Build a Voice-Enabled Android Chatbot", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-04-26", topics: ["AI", "Developer Advocacy"], views: "6,620", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "Walk through the process of defining intents and entities and building a dialog flow for your chatbot to respond to customer queries." },
+    { id: 1319, title: "The Journey of a Machine Learning Model From Building to Retraining", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-03-13", topics: ["Data Science", "AI"], url: "https://web.archive.org/web/20221212010126/https://dzone.com/articles/the-journey-of-a-machine-learning-model-from-build", views: "4,109", likes: 5, legacy: true, removedFromDZone: true, archived: true, summary: "Learn about building a predictive ML model, deploying it as an API to be used in applications, testing the model, and retraining the model with feedback data." },
     { id: 1143, title: "Build,deploy, and retrain a machine learning model using iris dataset", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-03-12", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2018/03/12/build-deploy-test-and-retrain-a-predictive-machine-learning-model/", summary: "This post is an excerpt from our solution tutorial that walks you through the process of building a predictive machine learning model, deploying it as an…" },
+    { id: 1320, title: "Anomaly Detection in Mobile Sensor Data Using ML", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-02-22", topics: ["Data Science", "AI", "Developer Advocacy"], url: "https://web.archive.org/web/20221225193338/https://dzone.com/articles/anomaly-detection-in-mobile-sensor-data-using-ml", views: "9,666", likes: 7, legacy: true, removedFromDZone: true, archived: true, summary: "This fascinating look at anomaly detection uses IoT sensors to generate data and machine learning to find unusual patterns in that data." },
     { id: 1144, title: "Detect Anomalies in mobile sensor data using Machine Learning", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-02-16", topics: ["Cloud", "AI", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2018/02/16/detect-anomalies-in-mobile-sensor-data-using-machine%e2%80%8b-learning/", summary: "This blog post is an excerpt from our solution tutorial – “Gather, visualize, and analyze IoT data“. The tutorial walks you through setting up an IoT…" },
     { id: 1145, title: "Infrastructure as code with Terraform on Windows", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-02-01", topics: ["Cloud", "Open Source", "DevOps"], url: "https://vmacwrites.wordpress.com/2018/02/01/infrastructure-as-code-with-terraform-on-windows/", summary: "This blog post is a quick guide on how to setup Terraform and IBM Cloud Provider on Windows operating system. First of all, What is Terraform? Terraform…" },
     { id: 1146, title: "Quickly scaffold an iOS-Swift or Android app with Push and Analytics", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-01-10", topics: ["Cloud", "Open Source", "Observability"], url: "https://vmacwrites.wordpress.com/2018/01/10/quickly-scaffold-an-ios-swift-or-android-app-with-push-and-analytics/", summary: "As mobile app developers, few of the many priorities in our bucket are engaging the users through Push Notifications and monitor the app usage through…" },
     { id: 1147, title: "For faster Swift Serverless actions", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2018, date: "2018-01-10", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2018/01/10/for-a-faster-swift-serverless-actions/", summary: "While coding and drafting “Mobile app with a Serverless Backend”, We came up with an idea to use Swift on the server-side for the iOS app (it’s an…" },
+    { id: 1321, title: "Performant Serverless Swift Actions", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2018, date: "2018-01-08", topics: ["Containers", "DevOps", "Developer Advocacy"], views: "3,995", likes: 7, legacy: true, removedFromDZone: true, archived: false, summary: "This tutorial goes through the steps of setting up the server side of an iOS mobile app with Swift, including the code and commands for the project." },
     { id: 1148, title: "My High Sierra Story", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-11-28", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/11/28/my-high-sierra-story/", summary: "Disclaimer: This post is just to help macOS users who are facing installation failures or stuck while installing/upgrading to High Sierra. On a high note…" },
+    { id: 1322, title: "Personifying Chatbots: A Guide to Realistic Conversation", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-11-05", topics: ["AI"], views: "5,233", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "If you want your chatbot to pass the Turing Test, it needs to be personified and personalized. Luckily, that's not *too* difficult to do!" },
     { id: 1149, title: "Enhance your chatbot conversation", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-11-02", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2017/11/02/enhance-your-chatbot-conversation/", summary: "Imagine, you are in a conversation with a chatbot and you feel that the human angle is completely missing because the bot starts it's dialog with a usual…" },
     { id: 1150, title: "Generate a Mobile Foundation adapter from the OpenAPI specification", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-10-04", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/10/04/generate-a-mobile-foundation-adapter-from-the-openapi-specification/", summary: "By reading the title, if you are wondering how to model an OpenAPI Specification, Read our previous blog post – Modelling OpenAPI – Swagger 2.0…" },
     { id: 1151, title: "An AI Powered modern Portfolio Manager", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-10-04", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/10/04/ai-powered-modern-portfolio-manager-explained/", summary: "Finance Trade is a Node.js application that uses IBM Financial services and Watson services. The application is a modern portfolio manager that provides…" },
     { id: 1152, title: "OpenAPI (Swagger 2.0) YAML Generation Using API Connect", platform: "DZone", platforms: ["DZone", "VMacWrites"], year: 2017, date: "2017-08-24", topics: ["Data Science", "Cloud"], url: "https://dzone.com/articles/openapi-swagger-20-yaml-generation-using-api-conne", also: {"VMacWrites": "https://vmacwrites.wordpress.com/2017/08/24/openapi-swagger-2-0-yaml-generation-using-api-connect/"}, views: "15.7K", summary: "Learn how to model and generate an OpenAPI specification using API Connect on IBM Cloud, and publish an API that talks to a NoSQL database." },
+    { id: 1323, title: "DeveloperConnect: From Containers to Serverless", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-07-13", topics: ["Kubernetes", "Containers", "DevOps"], views: "2,577", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Fresh from DeveloperConnect, here are a few presentations to help you get started with Bluemix, Kubernetes, and OpenWhisk." },
     { id: 1153, title: "DeveloperConnect: from containers to Serverless computing", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-07-01", topics: ["Cloud", "Containers"], url: "https://vmacwrites.wordpress.com/2017/07/01/developerconnect-containers-serverless-computing/", summary: "From Mumbai to Hyderbad to Bangalore From Container Orchestration to Serverless Computing From IBM Container service to IBM Bluemix Openwhisk From…" },
+    { id: 1324, title: "Kubernetes From IBM Bluemix Container Service", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-06-21", topics: ["Kubernetes", "Containers", "DevOps"], views: "4,403", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Learn to set up clusters using Kubernetes on IBM Bluemix, expose services, and manage the logs with the following steps." },
     { id: 1154, title: "Getting started with Kubernetes on IBM Cloud : The CLI Way", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-06-01", topics: ["Cloud", "Kubernetes", "Containers"], url: "https://vmacwrites.wordpress.com/2017/06/01/kubernetes-on-ibm-bluemix/", summary: "This blog post helps you in getting started with Kubernetes on IBM Cloud via CLI. After a post on how to get started with Docker Containers on IBM Cloud…" },
+    { id: 1325, title: "Who's Speaking? Speaker Recognition With Watson Speech-to-Text API", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-05-20", topics: ["AI"], views: "8,889", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "Learn how to take advantage of IBM Watson’s speaker diarization feature, which distinguishes between speakers in real time." },
     { id: 1155, title: "Who's speaking? : Speaker Recognition with Watson Speech-to-Text API", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-05-18", topics: ["Cloud", "AI", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/05/18/whos-speaking-speaker-diarization-with-watson-speech-to-text-api/", summary: "Watson’s Cognitive Speech To Text API has been enhanced to support real-time speaker diarization; distinguishing between speakers in a conversation." },
+    { id: 1326, title: "Taking a Patterns-First Approach With Bluemix [Presentation]", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-05-09", topics: ["Cloud", "Developer Advocacy"], views: "2,518", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "The Bluemix Developer Console allows devs to pick their purpose first, then start off straight away with the right tools and service integrations." },
     { id: 1156, title: "Generate boilerplate code with IBM Cloud Developer Console", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-05-05", topics: ["Cloud", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/05/05/patterns-first-with-bluemix-developer-console/", summary: "This post introduces you to Bluemix Developer Console; Patterns-first approach. Also, a quick and short intro to cloud native.This was presented at Great…" },
     { id: 1157, title: "Who's Speaking?: Speaker Diarization with Watson", platform: "Featured", platforms: ["Featured"], year: 2017, date: "2017-05", topics: ["AI", "NLP", "Cloud"], url: "https://medium.com/@VidyasagarMSC", summary: "Implementing speaker diarization using IBM Watson Speech-to-Text API.", isFeatured: true, citations: 3 },
+    { id: 1327, title: "Watson Service Chaining With OpenWhisk (Part 3 of 3)", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-04-24", topics: ["Containers", "DevOps", "AI"], views: "3,324", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Now that you've begun chaining Watson services as an OpenWhisk sequence, it's time to expose them to the Internet as a RESTful endpoint." },
+    { id: 1328, title: "Getting Containerized via the Bluemix CLI", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-04-23", topics: ["Kubernetes", "Containers", "DevOps"], views: "5,241", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Bluemix recently upped its Kubernetes support, but they haven't forgotten about Docker. If you like CLIs, you'll want to check out IBM Containers." },
     { id: 1158, title: "Watson Service Chaining via OpenWhisk Sequence : Part 3 of 3", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-04-19", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/04/19/watson-service-chaining-via-openwhisk-sequence-part-3-3/", summary: "By now (after reading Part 1 and Part 2 in this series), you should be aware of what OpenWhisk is and leverage OpenWhisk Sequence to chain Watson…" },
+    { id: 1329, title: "Watson Service Chaining With OpenWhisk (Part 2 of 3)", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-04-19", topics: ["Containers", "DevOps", "AI"], views: "2,863", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Let's get down to business. By this point, you know how serverless works and its benefits, so let's create some Watson Services and chain them together using OpenWhisk." },
+    { id: 1330, title: "Watson Service Chaining With OpenWhisk (Part 1 of 3)", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-04-17", topics: ["Containers", "DevOps", "AI"], views: "4,353", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "OpenWhisk can merge the power of Watson with the simple beauty of serverless computing. As we delve into Watson services, we'll cover the building blocks here." },
+    { id: 1331, title: "Need of Context in a Chatbot Conversation", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-04-17", topics: ["AI"], views: "4,691", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Developers must keep in mind while building a chatbot that context is important to maintain the state of a conversation." },
     { id: 1159, title: "Watson Service Chaining via Cloud Functions Sequence : Part 2 of 3", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-04-14", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2017/04/14/watson-service-chaining-via-openwhisk-sequence-part-2-3/", summary: "In Part 1 of this series, you learnt the basics of Serverless computing and the building blocks behind Cloud Functions. In this post, you will create…" },
     { id: 1160, title: "Get CONTAINER-ized via IBM Cloud CLI", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-04-12", topics: ["Cloud", "Open Source", "Containers"], url: "https://vmacwrites.wordpress.com/2017/04/12/creating-a-docker-container-on-bluemix/", summary: "In this post, you will learn how to create and push a docker container to IBM Cloud via CLI. The post includes Steps to setup and use IBM Cloud CLI.…" },
     { id: 1161, title: "Watson Service Chaining via OpenWhisk Sequence : Part 1 of 3", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-04-06", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2017/04/06/watson-service-chaining-via-openwhisk-sequence-part-1-of-3/", summary: "This 3-part series of posts helps you understand the in-depth features of Serverless Computing via OpenWhisk. OpenWhisk offers an easy way to chain…" },
+    { id: 1332, title: "Adding Watson Speech-to-Text to Your Android App", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-03-30", topics: ["AI", "Data Science", "Developer Advocacy"], views: "4,173", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "In this post, you will learn how to create an Android application that can convert speech to text for further processing using Watson machine learning." },
     { id: 1162, title: "What can you Build using your Bluemix Cloud platform trial", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-03-27", topics: ["Cloud"], url: "https://vmacwrites.wordpress.com/2017/03/27/build-using-bluemix-trial/", summary: "This post helps you understand Bluemix Cloud platform and what you can develop using Bluemix trial account. If you are new to Bluemix and want to learn…" },
+    { id: 1333, title: "OpenWhisk: A FaaS Platform to Create and Run Event-Driven Apps that Scale on Demand", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-03-15", topics: ["Containers", "DevOps", "Developer Advocacy"], views: "3,596", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "OpenWhisk is a powerful tool for creating both web and mobil applications. Learn how to set it up and use OpenWhisk's CLI." },
+    { id: 1334, title: "Adding Watson Speech-to-Text to your Android App", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-03-07", topics: ["AI", "Developer Advocacy"], views: "10,183", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Integrating AI into mobile apps is becoming more popular. Learn how to use IBM's Waston to create speech-to-text capability in your app." },
     { id: 1163, title: "Adding Watson Speech-to-Text to your Android App", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-03-06", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/03/06/adding-watson-speech-to-text-to-your-android-app/", summary: "This post is about injecting Watson Speech-to-Text into an Android native app. Speech-to-Text is available as a service on IBM Cloud i.e.., Bluemix. You…" },
     { id: 1164, title: "OpenWhisk: A Serverless platform to create and run event-driven apps that scale on demand", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-03-02", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/03/02/go-serverless-with-openwhisk/", summary: "This blog post introduces you to Serverless computing, OpenWhisk (a serverless, open source cloud platform that executes functions in response to events…" },
+    { id: 1335, title: "Integrating Watson Text-to-Speech Into an Android Native App", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-02-23", topics: ["AI", "Developer Advocacy"], views: "6,420", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "Rather than reading a message, it's always good to hear it. Integrating Watson text-to-speech into your existing Android native app lets you do just that." },
     { id: 1165, title: "Integrating Watson Text to Speech into an Android Native App", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-02-22", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/02/22/integrating-watson-text-speech-android-native-app/", summary: "Listen to your text in the form of speech with Watson Text-to-Speech service on Bluemix, and add this to your Android Native app." },
     { id: 1166, title: "Dialog a tete-a-tete with a bot via Watson", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-02-21", topics: ["Cloud", "AI", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/02/21/dialog-tete-tete-bot-via-watson-fb-live-chat/", summary: "The main intention of this blog post is to share my first FB Live chat. It was for a technical conversation Dialog a tete-a-tete with a bot via Watson.…" },
     { id: 1167, title: "Need of Context in a chatbot conversation", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-01-23", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/01/23/context-to-maintain-the-state-of-a-chatbot-conversation/", summary: "This blog post introduces the Importance of Context to maintain the state of a Conversation while building a bot more specifically a chatbot. A…" },
+    { id: 1336, title: "Walking Through Bluemix [Videos]", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-01-15", topics: ["Cloud", "Developer Advocacy"], views: "3,935", likes: 2, legacy: true, removedFromDZone: true, archived: false, summary: "You can use IBM Bluemix's various cloud offerings to quickly build your apps. These videos explore how to get started with Bluemix while highlighting its ease of use." },
     { id: 1168, title: "From Idea to Application in minutes A Walkthrough", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-01-13", topics: ["Cloud", "Architecture"], url: "https://vmacwrites.wordpress.com/2017/01/13/a-walkthrough-of-bluemix-the-ibm-cloud/", summary: "Whether you are a developer with an enterprise or a startup or a student having an idea and want to quickly evaluate by prototyping, IBM Cloud is the way…" },
     { id: 1169, title: "A Voice-enabled ChatBot powered by IBM Watson in Mins", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-01-05", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/01/05/an-android-chatbot-powered-by-ibm-watson/", summary: "WatBot is a Voice-enabled Android Native ChatBot built using Watson Assistant, Speech-to-Text and Text-to-Speech Services on IBM Cloud (open standards…" },
+    { id: 1337, title: "A Feedback App in Minutes With Ionic and Cloudant", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-12-23", topics: ["Developer Advocacy"], views: "7,245", likes: 2, legacy: true, removedFromDZone: true, archived: false, summary: "Perfect for meetups and the like, you can create your own feedback app with the open source Ionic and the DBaaS Cloudant that works on iOS and Android." },
     { id: 1170, title: "A feedback app in minutes with Ionic and Cloudant", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-12-07", topics: ["Cloud", "Open Source", "Data Science"], url: "https://vmacwrites.wordpress.com/2016/12/07/a-feedback-mobile-app-in-minutes-with-ionic-and-cloudant/", summary: "An Ionic feedback app using Cloudant NoSQL service on IBM Bluemix. An easy to configure mobile app for receiving feedback at Meetups, Events etc., Ionic…" },
+    { id: 1338, title: "Watbot: An Android Chatbot Powered by IBM Watson", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-12-07", topics: ["AI", "Developer Advocacy"], views: "7,368", likes: 7, legacy: true, removedFromDZone: true, archived: false, summary: "Watson Conversation combines a number of cognitive techniques to help you build and train a bot – defining intents and entities and crafting dialog to simulate conversation." },
+    { id: 1339, title: "Rapidly Design, Build, Secure, and Publish an App Using Bluemix", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-12-05", topics: ["Security", "Developer Advocacy", "Cloud"], views: "6,288", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "This blog post gives you an intro to an Enhanced Bluemix Mobile Dashboard. It even has an awesome video to help you out!" },
     { id: 1171, title: "App from Design to Store in 15 Mins via Bluemix Mobile Dashboard", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-11-23", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2016/11/23/an-enhanced-bluemix-mobile-dashboard/", summary: "This blog post gives you an intro to an Enhanced Bluemix Mobile Dashboard. This is version 2.0 of my previous blog post on how to Quickly Design, Build…" },
     { id: 1172, title: "Swift 3.0 explained for C# Developers", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-10-01", topics: ["Open Source"], url: "https://vmacwrites.wordpress.com/2016/10/01/swift-language-for-csharp-developers/", summary: "Originally posted on February 02, 2016 | Modified to Swift 3.0 on October 01, 2016 Programming languages provide a way to communicate with a computer…" },
+    { id: 1340, title: "MobileFirst Cordova App Development Using Eclipse", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-09-15", topics: ["Developer Advocacy"], views: "4,162", likes: 7, legacy: true, removedFromDZone: true, archived: false, summary: "Check out Vidyasagar's tutorial information, slides, and presentation on MobileFirst Cordova app development using Eclipse." },
     { id: 1173, title: "MobileFirst Cordova app development using Eclipse", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-09-12", topics: ["Open Source"], url: "https://vmacwrites.wordpress.com/2016/09/12/mobilefirst-apps-using-eclipse/", summary: "Talking to developers is always a refreshing experience.Recently, I was fortunate enough to present and interact at Eclipse Summit 2016. The talk was on…" },
     { id: 1174, title: "Xamarin.iOS Binding for an Existing iOS Library with Objective Sharpie", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-09-01", topics: ["Open Source"], url: "https://vmacwrites.wordpress.com/2016/09/01/xamarin-ios-binding-for-an-existing-ios-library-with-objective-sharpie/", summary: "These days a new phase has crept into my developer life and I call it generating Xamarin.iOS binding for Objective-C libraries. After tasting success by…" },
+    { id: 1341, title: "Design, Build, and Secure an App in 12 Minutes Using Bluemix", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-08-28", topics: ["Security", "Developer Advocacy", "Cloud"], views: "5,733", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "This post guides you on how to Design, Build, Secure, and Deliver a mobile app using Mobile Dashboard on Bluemix." },
     { id: 1175, title: "Quickly Design, Build, Secure, and Deliver an app using Bluemix Mobile Services", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-08-22", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2016/08/22/quickly-design-build-secure-and-deliver-using-bluemix-mobile-services/", summary: "This blog post guides you on how to Design, Build, Secure Deliver a mobile app using Bluemix Mobile Services. As mobile app developers (Experienced or…" },
+    { id: 1342, title: "IBM Cloud Tools for Swift", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-08-18", topics: ["Developer Advocacy", "Cloud"], views: "6,653", likes: 4, legacy: true, removedFromDZone: true, archived: false, summary: "Swift as a programming language is now available on Linux and that means we as developers can use it on servers in data centers and in cloud. Check out some of these awesome IBM cloud tools that you should be using." },
+    { id: 1343, title: "Generate Xcode Project via Swift Package Manager", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-08-17", topics: ["Developer Advocacy"], views: "3,346", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Vidyasagar Machupalli didn't know how to generate an Xcode project via Swift package manager, so he figured it out and wrote a tutorial for you to learn too!" },
+    { id: 1344, title: "Xamarin.iOS Binding for an Existing iOS Objective-C Library with Objective Sharpie", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-08-08", topics: ["Developer Advocacy"], views: "4,881", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Vidyasagar Machupalli takes us step-by-step through generating a Xamarin.iOS binding for an existing iOS Objective-C library with Objective Sharpie." },
+    { id: 1345, title: "Generate Xcode Project via Swift Package Manager", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-07-15", topics: ["Developer Advocacy"], views: "3,890", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "Find out how to generate an Xcode project using the Swift Package Manager in this article." },
     { id: 1176, title: "Generate Xcode Project via Swift Package Manager", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-07-12", topics: ["Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2016/07/12/generating-xcode-project-using-swift-package-manager/", summary: "As part of my journey with Swift, I was watching this WWDC 2016 video Going Server-side with Swift Open Source and may be at 31:36 of the video my…" },
     { id: 1177, title: "Xamarin C# binding of a Cocoapods iOS SDK using Sharpie", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-06-30", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2016/06/30/xamarin-c-binding-of-a-cocoapods-ios-sdk-using-sharpie/", summary: "After my endeavor with Xamarin.Android Bindings and Xamarin Apps with IBM MobileFirst, I received an interesting requirement from my colleague Chethan. He…" },
+    { id: 1346, title: "IBM Cloud Tools for Swift", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-06-25", topics: ["Developer Advocacy", "Cloud"], views: "8,039", likes: 3, legacy: true, removedFromDZone: true, archived: false, summary: "With Swift now available on Linux, the doors have been opened to a brave new frontier of cloud computing." },
     { id: 1178, title: "IBM Cloud Tools for Swift", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-06-24", topics: ["Cloud", "Open Source"], url: "https://vmacwrites.wordpress.com/2016/06/24/ibm-cloud-tools-swift/", summary: "Swift as a programming language is now available on Linux and that means we as developers can use it on servers in data centers and in cloud. For…" },
     { id: 1179, title: "Securely Connect to Cloudant Service From Node.JS With IBM Bluemix", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-05-26", topics: ["Cloud", "Open Source", "Data Science"], url: "https://vmacwrites.wordpress.com/2016/05/26/connect-to-your-cloudant-service-from-nodejs-securely-using-ibm-bluemix/", summary: "IBM Cloudant is a NoSQL JSON document store that’s optimized for handling heavy workloads of concurrent reads and writes in the cloud; a workload that is…" },
     { id: 1180, title: "Swift on IBM Bluemix", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2016, date: "2016-04-24", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2016/04/24/swift-ibm-bluemix/", summary: "IBM brings Swift to the cloud IBM Bluemix. After my recent blog post Swift for C# Developers, I was fortunate to deliver a bunch of sessions including IBM…" },
+    { id: 1347, title: "The Swift Language Explained for C# Developers", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-03-02", topics: ["Developer Advocacy"], views: "5,351", likes: 7, legacy: true, removedFromDZone: true, archived: false, summary: "The Swift language significantly lowers the barrier to creating your own native iOS applications. Learn about its similarities to C# before you dive in." },
     { id: 1181, title: "Swift for C# Developers", platform: "DZone", platforms: ["DZone"], year: 2016, date: "2016-03-01", topics: ["Developer Advocacy"], url: "https://dzone.com/articles/swift-for-c-developers", views: "10.0K", summary: "Swift and C# are both high-level programming languages, with shared features, such as being compiled programming languages. Here's a look at Swift from…" },
+    { id: 1348, title: "Ionic Hybrid Mobile App Using MobileFirst Platform 7.1 CLI", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-01-08", topics: ["Developer Advocacy"], views: "5,864", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "Here's how to whip up an Ionic mobile app with the MobileFirst Platform, including setting up your Ionic CLI." },
+    { id: 1349, title: "Integrating Xamarin Apps With IBM MobileFirst Platform", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2016, date: "2016-01-02", topics: ["Developer Advocacy"], views: "5,085", likes: 5, legacy: true, removedFromDZone: true, archived: false, summary: "IBM MobileFirst can work quite well with Xamarin. Here's how to integrate the two, complete with an awesome video walkthrough." },
     { id: 1182, title: "Ionic Hybrid Mobile app using MobileFirst Platform 7.1 CLI", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-12-30", topics: ["Open Source"], url: "https://vmacwrites.wordpress.com/2015/12/30/ionic-hybrid-mobile-app-using-mobilefirst-platform-7-1-cli/", summary: "Mobile apps are everywhere and on everyone's learning list. As a web developer, You can leverage your HTML5, Javascript, CSS and other web development…" },
     { id: 1183, title: "Integrating Xamarin apps with IBM MobileFirst Platform", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-12-19", topics: ["Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2015/12/19/integrating-xamarin-apps-with-ibm-mobilefirst-platform/", summary: "This blog is all about integrating Xamarin apps with IBM MobileFirst Platform (MFP in short). If you observe the post title it talks about two important…" },
     { id: 1184, title: "Importing MobileFirst Platform Cordova project into Visual Studio 2015", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-10-02", topics: ["Open Source"], url: "https://vmacwrites.wordpress.com/2015/10/02/importing-mobilefirst-cordova-project-into-visual-studio-2015/", summary: "Exploring and Coding are part of every developer's life. While exploring you may come across many technologies, tools , libraries etc. Each technology has…" },
@@ -287,6 +336,11 @@ const platformColors = {
   "Hackernoon": { bg: "#00ff7f", text: "#000" },
   "Substack": { bg: "#ff671e", text: "#fff" },
   "VMacWrites": { bg: "#21759b", text: "#fff" },
+  // The 49 IBM Cloud guides (2016-2021) that DZone has since unpublished. They
+  // are a real venue rather than a DZone variant because only 9 of the 49 have
+  // any surviving copy at all, and those point at a Wayback snapshot rather
+  // than at dzone.com. Muted slate reads as "archive", not "live publication".
+  "DZone Legacy": { bg: "#6b7280", text: "#fff" },
   "GitHub": { bg: "#333", text: "#fff" },
   "Google Scholar": { bg: "#4285f4", text: "#fff" },
   "Featured": { bg: "var(--primary)", text: "#fff" }
@@ -319,7 +373,7 @@ function getPlatformStyle(platform) {
 }
 
 function getPlatformIcon(platform) {
-  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star"})[platform] || "fas fa-star";
+  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star","DZone Legacy":"fas fa-box-archive"})[platform] || "fas fa-star";
 }
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -337,7 +391,7 @@ function prettyDate(raw) {
   return s;
 }
 
-// The full bibliography is 261 items, and this grid is a filterable hub rather
+// The full bibliography is 310 items, and this grid is a filterable hub rather
 // than the reading surface — latest-posts.html carries the complete dated index.
 // Rendering all of them here produced a 6,000-node, 52,000px wall, so the grid
 // pages itself and filters still narrow it from the top.
@@ -366,8 +420,12 @@ function renderPublicationCards(articles) {
       <div class="pub-meta">${meta.join('')}</div>
       <div class="pub-abstract">${a.summary}</div>
       <div class="pub-tags">${tags}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
-        ${a.url && a.url !== '#' ? `<a href="${a.url}" target="_blank" class="pub-link">Read Publication <i class="fas fa-arrow-right"></i></a>` : ''}
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
+        ${a.url && a.url !== '#'
+          ? `<a href="${a.url}" target="_blank" rel="noopener" class="pub-link">${a.archived ? 'Read Archived Copy' : 'Read Publication'} <i class="fas fa-arrow-right"></i></a>`
+          : ''}
+        ${a.legacy && !(a.url && a.url !== '#')
+          ? '<span class="pub-gone-note"><i class="fas fa-box-archive"></i> Removed from DZone &mdash; no surviving copy</span>' : ''}
         <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
       </div>
     </div>`;
@@ -1007,16 +1065,57 @@ async function init() {
   window.addEventListener('resize', resizeKG);
 }
 
+// The bibliography is grouped into eras before years. Three bands, cut where the
+// corpus itself changes character rather than at round numbers:
+//   2010-2015  one venue (WordPress), 0% AI, 0% Kubernetes
+//   2016-2021  Cloud 41% and Kubernetes 14%, DZone arrives, 49 legacy guides
+//   2022-2026  AI 33%, HackerNoon and Substack arrive, six venues
+// Recency still reads first: eras run newest to oldest, newest at the top.
+// data-platform lists every venue a row ran on. "|" rather than a space because
+// "DZone Legacy" contains one; site.js splits on the same constant and filters
+// by membership, so a cross-posted article stays a single row.
+const VENUE_SEP = '|';
+
+const ERAS = [
+  { id: 'agentic', from: 2022, to: 2026, label: 'AI & Agentic Systems',
+    blurb: 'Model runtimes, agent architectures, and the infrastructure under them.' },
+  { id: 'cloud', from: 2016, to: 2021, label: 'Cloud & Kubernetes',
+    blurb: 'IBM Cloud and Bluemix platform work: Terraform, Kubernetes, Knative, Watson.' },
+  { id: 'foundations', from: 2010, to: 2015, label: 'Foundations',
+    blurb: 'C#, Unity, and Windows — a single blog, before the DZone years.' }
+];
+
+// A year that predates every band (should not happen, but an unknown year must
+// not silently vanish) lands in its own unlabelled band at the bottom.
+function eraForYear(year) {
+  const n = Number(year);
+  if (!Number.isFinite(n)) return null;
+  return ERAS.find(e => n >= e.from && n <= e.to) || null;
+}
+
 function initLatestPosts() {
   const grid = document.getElementById('latestPostsGrid');
   if (!grid) return;
 
+  // A row with no surviving copy still belongs in the index. DZone removed 49 of
+  // these guides, and only 9 have an archived copy, so the old `a.url` guard
+  // silently dropped all 49 -- which is how a real body of work went missing.
+  // Unlinked rows render as non-anchors carrying the same data-platform hook, so
+  // filtering and counting treat them exactly like every other row.
   const articles = [...researchData.articles]
-    .filter(a => !a.isBook && a.url && a.url !== '#')
+    .filter(a => !a.isBook && a.url !== '#')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  const indexCount = document.getElementById('indexCount');
+  const unlinked = articles.filter(a => !a.url).length;
+  if (indexCount) {
+    indexCount.textContent = unlinked
+      ? `${articles.length} entries · ${unlinked} no longer online`
+      : `${articles.length} entries`;
+  }
+
   // Group by year, newest first. Writing is listed as a dated index rather than
-  // a card grid, and with 260 entries spanning 2010–2026 the year headings are
+  // a card grid, and with 300+ entries spanning 2010–2026 the year headings are
   // what make the list navigable instead of just long.
   const byYear = new Map();
   articles.forEach(a => {
@@ -1066,29 +1165,195 @@ function initLatestPosts() {
     ).join('') + `</span>`;
   }
 
-  const rows = [...byYear.entries()]
-    .sort((x, y) => Number(y[0]) - Number(x[0]))
-    .map(([year, list]) => {
-      const items = list.map(a => {
-        // Short date in the rail; the machine-readable value goes in the
-        // <time datetime> so assistive tech and crawlers still get it exactly.
-        const { short, iso } = splitDate(a.date);
-        const all = (a.platforms && a.platforms.length) ? a.platforms : [a.platform];
-        return `<a href="${a.url}" target="_blank" rel="noopener" class="latest-post-card" data-platform="${all.join(' ')}">
-      <time class="lpc-date"${iso ? ` datetime="${iso}"` : ''}>${short}</time>
+  // One index row. 19 of the articles were cross-posted to more than one venue,
+  // so the rail stacks every venue and data-platform stays a VENUE_SEP-delimited
+  // list that the filters membership-test.
+  //
+  // A row with no url is a <div>, not an <a>: an anchor with no href is not a
+  // link, it is a focusable element that does nothing when activated. The
+  // `lpc-gone` flag and the badge are what tell a reader why.
+  function latestPostRow(a) {
+    const { short, iso } = splitDate(a.date);
+    const all = (a.platforms && a.platforms.length) ? a.platforms : [a.platform];
+    const venues = all.join(VENUE_SEP);
+    const inner =
+      `<time class="lpc-date"${iso ? ` datetime="${iso}"` : ''}>${short}</time>
       <span class="lpc-main"><span class="lpc-title">${a.title}</span>${a.summary ? `<span class="lpc-summary">${a.summary}</span>` : ''}</span>
-      ${platformRail(a)}
+      ${platformRail(a)}`;
+    const gone = a.legacy && !a.url
+      ? '<span class="lpc-gone" title="Removed from DZone with no archived copy"><i class="fas fa-box-archive"></i> Offline</span>'
+      : '';
+    if (!a.url) {
+      return `<div class="latest-post-card is-unlinked lpc-gone-row" data-platform="${venues}" data-unlinked="1">
+      ${inner}${gone}
+    </div>`;
+    }
+    return `<a href="${a.url}" target="_blank" rel="noopener" class="latest-post-card" data-platform="${venues}">
+      ${inner}
     </a>`;
-      }).join('');
-      const n = list.length;
-      return `<section class="year-group">
+  }
+
+  // Bands are built from byYear, so a year with no articles simply produces no
+  // section. Every year in the corpus falls inside a band, so `loose` stays
+  // empty; it exists so an unexpected year surfaces visibly instead of being
+  // dropped on the floor.
+  const years = [...byYear.entries()]
+    .sort((x, y) => Number(y[0]) - Number(x[0]));
+  const loose = [];
+  const bands = ERAS.map(era => ({ era, years: [] }));
+  years.forEach(([year, list]) => {
+    const era = eraForYear(year);
+    if (!era) { loose.push([year, list]); return; }
+    bands.find(b => b.era === era).years.push([year, list]);
+  });
+
+  const yearSection = ([year, list]) => {
+    const items = list.map(a => latestPostRow(a)).join('');
+    const n = list.length;
+    return `<section class="year-group" id="year-${year}" data-year="${year}">
       <h3 class="year-head"><span class="year-num">${year}</span><span class="year-rule"></span><span class="year-count">${n} article${n === 1 ? '' : 's'}</span></h3>
       ${items}
     </section>`;
-    }).join('');
+  };
+
+  const bandSection = ({ era, years: ys }) => {
+    const n = ys.reduce((t, [, l]) => t + l.length, 0);
+    const span = era.from === era.to ? String(era.from) : `${era.from}–${era.to}`;
+    return `<section class="era-band" id="era-${era.id}" data-era="${era.id}" data-era-body="era-body-${era.id}">
+      <button type="button" class="era-head" aria-expanded="true" aria-controls="era-body-${era.id}">
+        <span class="era-chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+        <span class="era-text">
+          <span class="era-label">${era.label}</span>
+          <span class="era-blurb">${era.blurb}</span>
+        </span>
+        <span class="era-meta"><span class="era-span">${span}</span><span class="era-count">${n} article${n === 1 ? '' : 's'}</span></span>
+      </button>
+      <div class="era-body" id="era-body-${era.id}">${ys.map(yearSection).join('')}</div>
+    </section>`;
+  };
 
   grid.className = 'article-index';
-  grid.innerHTML = rows;
+  grid.innerHTML = bands.filter(b => b.years.length).map(bandSection).join('')
+    + loose.map(yearSection).join('');
+  initEraToggles();
+  initYearRail();
+  initDensityToggle();
+
+  // Announce that the rows now exist. site.js runs before this one (both are
+  // deferred, in document order), so anything it needs a row count for has to
+  // wait for this signal rather than measuring an empty container.
+  window.dispatchEvent(new CustomEvent('index:rendered'));
+}
+
+// Each era collapses independently. The bands hold very different amounts --
+// 79 entries in the earliest, 143 in the middle -- so a reader looking for
+// something from 2012 should not have to scroll past 143 rows to get there.
+// Collapsed state is remembered per band, and the button carries aria-expanded
+// so the state is not visual-only.
+const ERA_KEY = 'vm-era-open';
+function initEraToggles() {
+  const saved = (() => { try { return JSON.parse(localStorage.getItem(ERA_KEY) || 'null'); } catch (e) { return null; } })();
+  const heads = document.querySelectorAll('.era-head');
+  if (!heads.length) return;
+
+  function apply(band, open, persist) {
+    const body = document.getElementById(band.dataset.eraBody);
+    const head = band.querySelector('.era-head');
+    if (!body || !head) return;
+    band.classList.toggle('is-collapsed', !open);
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (persist) {
+      let next = {};
+      try { next = JSON.parse(localStorage.getItem(ERA_KEY) || '{}'); } catch (e) { next = {}; }
+      next[band.dataset.era] = open;
+      try { localStorage.setItem(ERA_KEY, JSON.stringify(next)); } catch (e) {}
+    }
+  }
+
+  heads.forEach(head => {
+    const band = head.closest('.era-band');
+    const id = band.dataset.era;
+    apply(band, saved && saved[id] === false ? false : true, false);
+    head.addEventListener('click', function () {
+      apply(band, band.classList.contains('is-collapsed'), true);
+    });
+  });
+}
+
+// The year rail is a flat list of every year in the index, in one horizontal
+// strip. With 17 year headings and 300+ rows, scrolling was the only way to move
+// between them; the rail turns that into one click. It reflects the *current*
+// filter, so picking a platform narrows the rail too rather than leaving dead
+// year links behind.
+function initYearRail() {
+  const rail = document.getElementById('yearRail');
+  if (!rail) return;
+  const grid = document.getElementById('latestPostsGrid');
+  const links = new Map();
+
+  function build() {
+    links.clear();
+    const groups = Array.from(grid.querySelectorAll('.year-group'));
+    rail.innerHTML = groups.map(g => {
+      const year = g.dataset.year;
+      const live = g.querySelectorAll('.latest-post-card:not([hidden])').length;
+      return `<a href="#year-${year}" class="year-pip" data-year="${year}" data-live="${live}"><span class="year-pip-num">${year}</span><span class="year-pip-n">${live}</span></a>`;
+    }).join('');
+    groups.forEach(g => links.set(g.dataset.year, rail.querySelector(`.year-pip[data-year="${g.dataset.year}"]`)));
+    markActive(currentYear);
+  }
+
+  // Scrollspy: the year whose heading is nearest the top of the viewport wins.
+  let currentYear = null;
+  function markActive(year) {
+    if (currentYear === year) return;
+    currentYear = year;
+    links.forEach((el, y) => el && el.classList.toggle('is-active', y === year));
+    const el = links.get(year);
+    if (el && rail.scrollWidth > rail.clientWidth) {
+      // Keep the active pip in view without scrolling the page itself.
+      const target = el.offsetLeft - (rail.clientWidth / 2) + (el.offsetWidth / 2);
+      rail.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver(entries => {
+      const vis = entries.filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (vis.length) markActive(vis[0].target.dataset.year);
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    grid.querySelectorAll('.year-group').forEach(g => spy.observe(g));
+  }
+
+  build();
+  // site.js rewrites row visibility on filter change; the rail has to follow.
+  window.addEventListener('index:filtered', build);
+}
+
+// Comfortable shows the abstract on every row; Compact drops it and tightens the
+// row. With 300+ entries the default page is ~14,000px tall, and a reader
+// scanning for a specific title does not need two lines of prose per row to do
+// it. The choice is remembered, because re-picking it every visit is friction.
+const DENSITY_KEY = 'vm-index-density';
+function initDensityToggle() {
+  const btns = document.querySelectorAll('[data-density]');
+  if (!btns.length) return;
+  const saved = (() => { try { return localStorage.getItem(DENSITY_KEY); } catch (e) { return null; } })();
+  if (saved === 'compact' || saved === 'comfortable') setDensity(saved);
+  else setDensity('comfortable');
+
+  function setDensity(mode) {
+    document.documentElement.dataset.indexDensity = mode;
+    btns.forEach(b => {
+      const on = b.dataset.density === mode;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try { localStorage.setItem(DENSITY_KEY, mode); } catch (e) {}
+  }
+
+  btns.forEach(b => b.addEventListener('click', () => setDensity(b.dataset.density)));
 }
 
 if (document.getElementById('publicationsGrid')) {
