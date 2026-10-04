@@ -162,7 +162,7 @@ const researchData = {
     { id: 1148, title: "My High Sierra Story", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-11-28", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/11/28/my-high-sierra-story/", summary: "Disclaimer: This post is just to help macOS users who are facing installation failures or stuck while installing/upgrading to High Sierra. On a high note…" },
     { id: 1322, title: "Personifying Chatbots: A Guide to Realistic Conversation", platform: "DZone Legacy", platforms: ["DZone Legacy"], year: 2017, date: "2017-11-05", topics: ["AI"], views: "5,233", likes: 6, legacy: true, removedFromDZone: true, archived: false, summary: "If you want your chatbot to pass the Turing Test, it needs to be personified and personalized. Luckily, that's not *too* difficult to do!" },
     { id: 1149, title: "Enhance your chatbot conversation", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-11-02", topics: ["Cloud", "AI"], url: "https://vmacwrites.wordpress.com/2017/11/02/enhance-your-chatbot-conversation/", summary: "Imagine, you are in a conversation with a chatbot and you feel that the human angle is completely missing because the bot starts it's dialog with a usual…" },
-    { id: 1405, title: "This is how you personify and make your chatbot conversation stateful", platform: "Medium", platforms: ["Medium"], year: 2017, date: "2017-11-01", topics: ["Cloud", "AI"], url: "https://vidyasagarmsc.medium.com/this-is-how-you-personify-and-make-your-chatbot-conversation-stateful-77d32894fb4c", summary: "Imagine, you are in a conversation with a chatbot and you feel that the human angle is completely missing because the bot ... starts it’s..." },
+    { id: 1405, title: "This is how you personify and make your chatbot conversation stateful", platform: "Medium", platforms: ["Medium", "Chatbots Life"], year: 2017, date: "2017-11-01", topics: ["Cloud", "AI"], url: "https://vidyasagarmsc.medium.com/this-is-how-you-personify-and-make-your-chatbot-conversation-stateful-77d32894fb4c", alsoPublished: [{ venue: "Chatbots Life", date: "2017-11-01", url: "https://blog.chatbotslife.com/this-is-how-you-personify-and-make-your-chatbot-conversation-stateful-77d32894fb4c" }], summary: "Imagine, you are in a conversation with a chatbot and you feel that the human angle is completely missing because the bot ... starts it’s..." },
     { id: 1150, title: "Generate a Mobile Foundation adapter from the OpenAPI specification", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2017, date: "2017-10-04", topics: ["Cloud", "Open Source", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2017/10/04/generate-a-mobile-foundation-adapter-from-the-openapi-specification/", summary: "By reading the title, if you are wondering how to model an OpenAPI Specification, Read our previous blog post – Modelling OpenAPI – Swagger 2.0…" },
     { id: 1151, title: "An AI Powered modern Portfolio Manager", platform: "VMacWrites", platforms: ["VMacWrites", "Medium"], year: 2017, date: "2017-10-04", topics: ["Cloud", "AI", "Open Source"], url: "https://vmacwrites.wordpress.com/2017/10/04/ai-powered-modern-portfolio-manager-explained/", alsoPublished: [{ venue: "Medium", date: "2017-09-27", url: "https://vidyasagarmsc.medium.com/modern-portfolio-manager-explained-d43fe341133a" }], summary: "Finance Trade is a Node.js application that uses IBM Financial services and Watson services. The application is a modern portfolio manager that provides…" },
     { id: 1406, title: "When AI guides your Investment", platform: "Medium", platforms: ["Medium"], year: 2017, date: "2017-08-25", topics: ["Cloud"], url: "https://vidyasagarmsc.medium.com/when-ai-guides-your-investment-7ed0cad0592", summary: "“What would happen to my stock portfolio if the Dollar drops 5% against the Euro? or if the gold price goes up by 1.1%?” If you are ... a..." },
@@ -216,7 +216,6 @@ const researchData = {
     { id: 1190, title: "Level Up Ep.03 : 7 truths about indie game development", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-01-29", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2015/01/29/level-up-ep-03-7-truths-about-indie-game-development/", summary: "//channel9.msdn.com/Shows/Level-Up/Episode-3-Magma-Mobiles-Nicolas-Sorel-CEO-and-Founder/player Level Up is a show devoted to game development. Each show…" },
     { id: 1191, title: "Reboot : Come ONLINE", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-01-20", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2015/01/20/reboot-come-online/", summary: "Ok!!! Interesting Post Title.Can you answer few of my questions Sure What is this Reboot ? Ans : Let me answer your questions through images Cool!!! Where…" },
     { id: 1192, title: "Xbox : Project Spark A gameground", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2015, date: "2015-01-07", topics: ["Open Source", "Data Science"], url: "https://vmacwrites.wordpress.com/2015/01/07/xbox-project-spark-a-gameground/", summary: "To simply introduce, Project Spark is developed by team dakota and skybox labs.It is published by Microsoft Studios.It is a game maker Where Players…" },
-    { id: 1193, title: "Windows 10 Development Recipes", platform: "Featured", platforms: ["Featured"], year: 2015, date: "2015", topics: ["Architecture", "Windows", "Software Engineering"], url: "https://www.apress.com/gp/book/9781484207202", summary: "A comprehensive problem-solution reference for Windows 10 apps using HTML and JavaScript.", isBook: true, citations: 1, isbn: "978-1-4842-0720-2" },
     { id: 1194, title: "Gaming : Anti-Aliasing Techniques", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2014, date: "2014-12-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2014/12/27/gaming-anti-aliasing-techniques/", summary: "Recently,I was learning CocosSharp.It is a game engine which provides technology for making cross-platform games. As soon as you hit the first line of…" },
     { id: 1195, title: "GameHack Chat with Vidyasagar, Microsoft MVP (Gaming)", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2014, date: "2014-12-22", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2014/12/22/gamehack-chat-with-vidyasagar-microsoft-mvp-gaming/", summary: "Chit-Chat with Shrey from Gaming Central on Gaming in India at Game Hack Launch by Reliance Games in association with Intel , Gaming Central etc" },
     { id: 1196, title: "Talk : Best Practices in Game Development", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2014, date: "2014-12-21", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2014/12/21/talk-best-practices-in-game-development/", summary: "This December 14th, I was invited to present and talk on Best practices in Game Development at VideoGameFest by Dumadu Games. Here's the Invite mailed to…" },
@@ -285,6 +284,71 @@ const researchData = {
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
+  // Speaking engagements. Only engagements with a verifiable public source are
+  // listed, each linking to the page that records it. The site previously claimed
+  // a total with no per-item evidence; a short sourced list is worth more than a
+  // larger unsourced number, and the SlideShare deck set covers the slides.
+  //
+  // role is what was actually done. A panel is not a talk, and moderating a Q&A
+  // is not presenting a session -- collapsing those into "speaker" overstates the
+  // list. source is mandatory: every entry has one.
+  talks: [
+    {
+      date: '2021-03-12', year: 2021, kind: 'Webinar',
+      title: 'Chatbot Development for Enhancing Customer Experience',
+      venue: 'ACM Chennai \u00b7 IEEE CS Madras \u00b7 CSI Chennai, with DELNET',
+      role: 'Speaker, and moderator of the Q&A',
+      detail: 'Recorded and published by DELNET.',
+      url: 'https://www.youtube.com/watch?v=O2zkRZs-4sM',
+      source: 'https://delnet.in/prog_pages/2021.php'
+    },
+    {
+      date: '2021', year: 2021, kind: 'Virtual conference',
+      title: 'IBM Cloud Native Day',
+      venue: 'IBM Cloud \u00b7 IBM Community',
+      role: 'Speaker',
+      detail: 'Fifteen sessions on serverless, DevOps, Knative, containers and cloud native, with three keynotes and a cross-track panel.',
+      url: 'https://events.bemyapp.com/cloudnativeday',
+      source: 'https://events.bemyapp.com/cloudnativeday'
+    },
+    {
+      date: '2017-10-27', year: 2017, kind: 'Panel',
+      title: 'Panel Discussion on Serverless',
+      venue: 'Serverless Summit India, Park Plaza, Bangalore',
+      role: 'Panelist',
+      detail: 'India\u2019s first conference on serverless technologies. On the panel with John Willis and Sandeep Alur; moderated by Anand Gothe.',
+      url: 'https://inserverless.konfhub.com/',
+      source: 'https://inserverless.konfhub.com/'
+    },
+    {
+      date: '2017-09-02', year: 2017, kind: 'Talk',
+      title: 'Building a Cloud Foundry application on IBM Bluemix',
+      venue: 'Bangalore Cloud Foundry Day, SAP Labs India',
+      role: 'Speaker \u2014 the first external speaker at the event',
+      detail: 'Built a Cloud Foundry application from scratch and demoed a stock-portfolio analysis service consuming Bluemix platform services alongside IBM Watson AI services. 150+ attendees.',
+      url: 'https://www.cloudfoundry.org/blog/cloud-foundry-day-sap-labs-bangalore/',
+      source: 'https://www.cloudfoundry.org/blog/cloud-foundry-day-sap-labs-bangalore/'
+    },
+    {
+      date: '2017', year: 2017, kind: 'Talk',
+      title: 'Deliver cloud apps with ease',
+      venue: 'Eclipse Summit 2017',
+      role: 'Speaker \u2014 20 minutes, beginner',
+      detail: 'IBM Eclipse tools for Bluemix: content assist against hosted services, delivery through DevOps or the Orion web IDE, and deploying across cloud and on-premises. Presented with Srihari Kulkarni.',
+      url: 'https://confengine.com/conferences/eclipse-summit-2017/proposal/3898/deliver-cloud-apps-with-ease',
+      source: 'https://confengine.com/user/vidyasagar-msc'
+    },
+    {
+      date: '2016', year: 2016, kind: 'Talk',
+      title: 'Build, run and manage MobileFirst apps using Eclipse',
+      venue: 'Eclipse Summit 2016',
+      role: 'Speaker \u2014 45 minutes, beginner',
+      detail: 'MobileFirst Studio as an Eclipse plug-in for rich mobile web, native and hybrid apps, with an embedded MobileFirst Server.',
+      url: 'https://confengine.com/conferences/eclipse-summit-2016/proposal/2446/build-run-and-manage-mobilefirst-apps-using-eclipse',
+      source: 'https://confengine.com/user/vidyasagar-msc'
+    }
+  ],
+
   platforms: [
     { name: "DZone", icon: "DZ", color: "#e34c26", stat: "650.7K", label: "Total pageviews · 106 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "717", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
@@ -312,6 +376,11 @@ const platformColors = {
   // any surviving copy at all, and those point at a Wayback snapshot rather
   // than at dzone.com. Muted slate reads as "archive", not "live publication".
   "DZone Legacy": { bg: "#6b7280", text: "#fff" },
+  // Chatbots Life is a Medium publication, not a platform of its own: the same
+  // piece carries the Medium permalink as its primary and the publication copy
+  // as an alsoPublished record. It gets a colour so the venue is distinguishable
+  // where two names appear together.
+  "Chatbots Life": { bg: "#5b21b6", text: "#fff" },
   "GitHub": { bg: "#333", text: "#fff" },
   "Google Scholar": { bg: "#4285f4", text: "#fff" },
   "Featured": { bg: "var(--primary)", text: "#fff" }
@@ -360,6 +429,46 @@ function alsoPublishedLinks(a) {
   }).join('') + `</div>`;
 }
 
+// Speaking engagements, newest first. Each row links twice: to the session or
+// recording, and to the page that records it. The second link is the one that
+// makes the claim checkable, so it is labelled as the source rather than left as
+// an anonymous second arrow.
+function renderTalks() {
+  const box = document.getElementById('talksList');
+  if (!box) return;
+  const talks = [...(researchData.talks || [])]
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+  box.innerHTML = talks.map(t => {
+    const when = t.date.length === 10
+      ? new Date(t.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+      : String(t.year);
+    return `<li class="talk-item" data-kind="${t.kind}">
+      <div class="talk-rail">
+        <span class="talk-when">${when}</span>
+        <span class="talk-kind">${t.kind}</span>
+      </div>
+      <div class="talk-main">
+        <h4 class="talk-title"><a href="${t.url}" target="_blank" rel="noopener">${t.title}</a></h4>
+        <p class="talk-venue">${t.venue}</p>
+        <p class="talk-role">${t.role}</p>
+        ${t.detail ? `<p class="talk-detail">${t.detail}</p>` : ''}
+        <a class="talk-source" href="${t.source}" target="_blank" rel="noopener">Source <i class="fas fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </li>`;
+  }).join('');
+
+  const count = document.getElementById('talkCount');
+  if (count) {
+    const n = talks.length;
+    count.textContent = n + (n === 1 ? ' engagement' : ' engagements');
+  }
+  // The dashboard stat reads from the same array rather than carrying its own
+  // number. A second hardcoded figure here is how the two drifted apart before.
+  const stat = document.getElementById('speakingStat');
+  if (stat) stat.textContent = String(talks.length);
+}
+
 // ============================================
 // RENDER FUNCTIONS
 // ============================================
@@ -369,7 +478,7 @@ function getPlatformStyle(platform) {
 }
 
 function getPlatformIcon(platform) {
-  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star","DZone Legacy":"fas fa-box-archive"})[platform] || "fas fa-star";
+  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star","DZone Legacy":"fas fa-box-archive","Chatbots Life":"fas fa-robot"})[platform] || "fas fa-star";
 }
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -406,13 +515,10 @@ function renderPublicationCards(articles) {
     if (a.views) meta.push(`<span><i class="fas fa-eye"></i> ${a.views} views</span>`);
     if (a.readingTime) meta.push(`<span><i class="fas fa-clock"></i> ${a.readingTime}</span>`);
     if (a.citations) meta.push(`<span class="cite-badge"><i class="fas fa-quote-right"></i> ${a.citations} Citation${a.citations > 1 ? 's' : ''}</span>`);
-    if (a.isbn) meta.push(`<span><i class="fas fa-hashtag"></i> ISBN: ${a.isbn}</span>`);
     const tags = a.topics.map(t => `<span class="pub-tag-topic">${topicIcons[t] || ''} ${t}</span>`).join('');
-    const authors = a.isBook ? `<div class="pub-authors"><strong>Vidyasagar Machupalli</strong>, A. V. Senthil Kumar, Lohith Goudagere Nagaraj</div>` : '';
     return `<div class="pub-card" data-id="${a.id}">
       <div class="pub-top">${yb} ${badge}</div>
       <h4>${a.title}</h4>
-      ${authors}
       <div class="pub-meta">${meta.join('')}</div>
       <div class="pub-abstract">${a.summary}</div>
       <div class="pub-tags">${tags}</div>
@@ -454,17 +560,17 @@ function renderPublicationCards(articles) {
 function renderFeaturedResearch() {
   const container = document.getElementById('featuredResearch');
   if (!container) return;
-  const featured = researchData.articles.filter(a => a.isBook || a.isFeatured || a.citations);
+  const featured = researchData.articles.filter(a => a.isFeatured || a.citations);
   container.innerHTML = featured.map(a => {
     const ct = a.citations ? `<span class="pub-tag-topic"><i class="fas fa-quote-right"></i> ${a.citations} Citation${a.citations > 1 ? 's' : ''}</span>` : '';
-    const tt = a.isBook ? '<span class="pub-tag-type"><i class="fas fa-book"></i> Book</span>' : '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
+    const tt = '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
     const tags = a.topics.map(t => `<span class="pub-tag-topic">${t}</span>`).join('');
-    const authors = a.isBook ? '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong>, A. V. Senthil Kumar, Lohith Goudagere Nagaraj</div>' : '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
+    const authors = '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
     return `<div class="pub-card" style="border-left:4px solid var(--orange);">
-      <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.isBook ? 'Book' : 'Cited Publication'}</span></div>
+      <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.citations ? 'Cited Publication' : 'Featured'}</span></div>
       <h4>${a.title}</h4>
       ${authors}
-      <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.isBook ? 'Apress' : 'Medium / VMacWrites'}</span>${a.isbn ? `<span><i class="fas fa-hashtag"></i> ISBN: ${a.isbn}</span>` : ''}${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
+      <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.platform || 'Technical Article'}</span>${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
       <div class="pub-abstract">${a.summary}</div>
       <div class="pub-tags">${ct} ${tt} ${tags}</div>
       <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
@@ -627,7 +733,7 @@ function performSearch(query) {
   } else {
     searchResults.innerHTML = results.map(r => {
       const c = platformColors[r.platform] || { bg: "#666", text: "#fff" };
-      const icon = r.isBook ? '📚' : r.platform === 'DZone' ? 'D' : r.platform === 'Medium' ? 'M' : r.platform === 'Dev.to' ? '<i class="fab fa-dev"></i>' : r.platform === 'Hackernoon' ? 'HN' : r.platform === 'Substack' ? 'S' : r.platform === 'VMacWrites' ? 'W' : '📄';
+      const icon = r.platform === 'DZone' ? 'D' : r.platform === 'Medium' ? 'M' : r.platform === 'Dev.to' ? '<i class="fab fa-dev"></i>' : r.platform === 'Hackernoon' ? 'HN' : r.platform === 'Substack' ? 'S' : r.platform === 'VMacWrites' ? 'W' : '📄';
       return `<div class="search-result-item" onclick="window.open('${r.url || '#'}','_blank')">
         <div class="sr-icon" style="background:${c.bg};${c.text === '#000' ? 'color:#000;' : ''}">${icon}</div>
         <div class="sr-info">
@@ -859,11 +965,11 @@ function getCitationFormats(articleId) {
   const a = researchData.articles.find(x => x.id === articleId);
   if (!a) return {};
   const author = 'Vidyasagar Machupalli';
-  const coAuthors = a.isBook ? [author, 'A. V. Senthil Kumar', 'Lohith Goudagere Nagaraj'] : [author];
+  const coAuthors = [author];
   const authorList = coAuthors.join(', ');
   const year = a.year || a.date?.split(' ').pop() || 'n.d.';
   const title = a.title;
-  const publisher = a.isBook ? 'Apress' : (a.platform || 'Technical Article');
+  const publisher = a.platform || 'Technical Article';
   const url = a.url && a.url !== '#' ? a.url : 'https://vidyasagarmsc.github.io';
   const accessed = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -908,7 +1014,7 @@ window.openCitation = function(articleId) {
         </div>
         <div class="citation-modal-body">
           <div class="cite-title">${a.title}</div>
-          <div class="cite-authors">${a.isBook ? 'Vidyasagar Machupalli, A. V. Senthil Kumar, Lohith Goudagere Nagaraj' : 'Vidyasagar Machupalli'}</div>
+          <div class="cite-authors">Vidyasagar Machupalli</div>
           <div class="citation-format-tabs">
             ${formatNames.map(f => `<button class="citation-format-tab ${f === format ? 'active' : ''}" onclick="switchCitationFormat('${f}')">${formatLabels[f]}</button>`).join('')}
           </div>
@@ -1043,6 +1149,7 @@ async function init() {
   renderTrending();
   renderTopicFilters('');
   updatePublications();
+  renderTalks();
   await fetchCitationStats();
   animateCounters();
   drawKnowledgeGraph();
@@ -1100,7 +1207,7 @@ function initLatestPosts() {
   // Unlinked rows render as non-anchors carrying the same data-platform hook, so
   // filtering and counting treat them exactly like every other row.
   const articles = [...researchData.articles]
-    .filter(a => !a.isBook && a.url !== '#')
+    .filter(a => a.url !== '#')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const indexCount = document.getElementById('indexCount');

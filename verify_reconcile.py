@@ -25,7 +25,7 @@ from reconcile_medium import norm  # noqa: E402
 SITE = '/Users/leef/Documents/code/vidyasagarmsc.github.io/js/research.js'
 TMP = '/private/var/folders/1s/1193p4wn5t501p60l32t8qmh0000gn/T/opencode'
 VALID_VENUES = {'DZone', 'DZone Legacy', 'Medium', 'Dev.to', 'Hackernoon',
-                'Substack', 'VMacWrites', 'Featured'}
+                'Substack', 'VMacWrites', 'Featured', 'Chatbots Life'}
 
 SRC = open(SITE, encoding='utf-8').read().split('\n')
 START = next(i for i, l in enumerate(SRC) if re.match(r'^\s*articles:\s*\[\s*$', l))

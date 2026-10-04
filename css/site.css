@@ -61,6 +61,11 @@
      should be able to tell at a glance which venue marks open something. */
   --slate:       #55606a;  --slate-fill:  rgba(85,96,106,.13);
   --slate-ink:   #454f58;
+  /* Violet marks the Medium publications that carry a piece of this writing --
+     Chatbots Life today. A third hue alongside orange and emerald so a row
+     showing a publication plus a platform is readable at a glance. */
+  --violet-fill: rgba(124,58,237,.12);
+  --violet-ink:  #5b21b6;
   /* legacy alias — js/research.js still resolves var(--primary) */
   --primary:    #b83c0b;
 
@@ -145,6 +150,8 @@ html[data-theme="dark"] {
   --orange-ink:   #f97316;
   --slate-fill: rgba(148,163,184,.18);
   --slate-ink:  #b6c2cf;
+  --violet-fill: rgba(167,139,250,.18);
+  --violet-ink:  #c4b5fd;
   --primary:    #f97316;
 
   --shadow-sm: 0 1px 2px rgba(0,0,0,.4), 0 3px 10px rgba(0,0,0,.3);
@@ -1593,9 +1600,68 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
    quotes a multi-word value like "DZone Legacy" is not a valid identifier and
    the rule would silently never match. */
 .lpc-platform-name[data-venue="DZone Legacy"] { background: var(--slate-fill); color: var(--slate-ink); }
+.lpc-platform-name[data-venue="Chatbots Life"] { background: var(--violet-fill); color: var(--violet-ink); }
 /* A row whose only venue is a legacy guide should not read as a row you can
    open, so its venue pill is the one thing allowed to keep full contrast. */
 .lpc-gone-row .lpc-platform-name { opacity: 1; }
+
+/* ---- Talks & panels ----
+   A dated, sourced list rather than cards: every row is one engagement with a
+   fixed date in a fixed rail, so the list reads as a chronology and stays
+   scannable as it grows. The source link is styled as evidence, not as a
+   second call to action -- the title already goes to the session itself. */
+.talk-list { list-style: none; margin: 0; padding: 0; }
+.talk-item {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: .25rem 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+.talk-item:first-child { border-top: 0; padding-top: 0; }
+.talk-rail { display: flex; flex-direction: column; gap: .3125rem; }
+.talk-when {
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-size: var(--t-lg); letter-spacing: -.01em; color: var(--accent);
+  font-variant-numeric: lining-nums;
+}
+/* Kind is the one categorical fact per row, so it carries the only fill on the
+   card: a pill makes Talk / Panel / Webinar scannable down the rail. */
+.talk-kind {
+  align-self: flex-start;
+  padding: .1875rem .4375rem; border-radius: 3px;
+  border: 1px solid var(--line-hi);
+  font-family: var(--font-mono); font-size: .5rem; font-weight: 600;
+  letter-spacing: .11em; text-transform: uppercase; color: var(--muted);
+}
+.talk-item[data-kind="Panel"] .talk-kind { background: var(--accent-fill); color: var(--accent); border-color: transparent; }
+.talk-main { min-width: 0; }
+.talk-title {
+  margin: 0 0 .1875rem; font-family: var(--font-display); font-optical-sizing: auto;
+  font-size: var(--t-lg); font-weight: 400; letter-spacing: -.015em; line-height: 1.28;
+}
+.talk-title a { color: var(--ink); text-decoration: none; }
+.talk-title a:hover { color: var(--accent); }
+.talk-venue {
+  margin: 0 0 .125rem;
+  font-family: var(--font-mono); font-size: var(--t-xs);
+  letter-spacing: .06em; text-transform: uppercase; color: var(--dim);
+}
+.talk-role { margin: 0; font-size: var(--t-sm); font-weight: 600; color: var(--ink-soft); }
+.talk-detail {
+  margin: .4375rem 0 0; max-width: 62ch;
+  font-size: var(--t-sm); line-height: 1.6; color: var(--muted); text-wrap: pretty;
+}
+.talk-source {
+  display: inline-flex; align-items: center; gap: .3125rem;
+  margin-top: .5rem;
+  font-family: var(--font-mono); font-size: .5625rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--dim); text-decoration: none;
+  transition: color .2s var(--ease-out);
+}
+.talk-source:hover { color: var(--accent); }
+.talk-source i { font-size: .5rem; }
 
 /* ---------- 32. ABOUT PAGE ---------- */
 .about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); align-items: start; }
@@ -1839,6 +1905,13 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .era-head { flex-wrap: wrap; row-gap: .5rem; }
   .era-text { flex: 1 1 100%; order: 2; }
   .era-meta { order: 3; margin-left: 2.5rem; }
+
+  /* Talks: the fixed date rail has no room at this width, so it folds above
+     the title and the list becomes a single column of records. */
+  .talk-item { grid-template-columns: minmax(0, 1fr); gap: .5rem; padding: 1rem 0; }
+  .talk-rail { flex-direction: row; align-items: baseline; gap: .625rem; }
+  .talk-when { font-size: var(--t-md); }
+  .talk-detail { max-width: none; }
 
   /* Two explicit columns for the auto-fill grids. Left to auto-fill they get a
      fixed px minimum, and when the container sits between that minimum and two
