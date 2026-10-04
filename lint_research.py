@@ -39,6 +39,19 @@ for line in SRC[start + 1:end]:
         mm = re.search(field + r':\s*\[([^\]]*)\]', rec)
         return re.findall(STR, mm.group(1)) if mm else None
 
+    def also_pub(text):
+        """Extra publications folded into a row, as a list of dicts."""
+        mm = re.search(r'alsoPublished:\s*\[(.*)\]\s*[,}]', text)
+        if not mm:
+            return []
+        out = []
+        for entry in re.findall(r'\{[^{}]*\}', mm.group(1)):
+            d = (re.search(r'date:\s*"([^"]*)"', entry) or [None, None])[1]
+            v = (re.search(r'venue:\s*"([^"]*)"', entry) or [None, None])[1]
+            u = (re.search(r'url:\s*"([^"]*)"', entry) or [None, None])[1]
+            out.append({'venue': v, 'date': d, 'url': u})
+        return out
+
     articles.append({
         'line': SRC.index(line) + 1,
         'id': int(m.group(1)),
@@ -53,6 +66,7 @@ for line in SRC[start + 1:end]:
         'legacy': 'legacy: true' in rec,
         'archived': 'archived: true' in rec,
         'isBook': 'isBook' in rec,
+        'alsoPublished': also_pub(rec),
     })
 
 # The topic registry and venue colours must both cover everything in use.
@@ -116,12 +130,28 @@ for a in articles:
             note('%s: topic %r is not in researchData.topics, so no chip leads to it'
                  % (tag, t))
     if a['legacy']:
-        if a['url'] and 'web.archive.org' not in a['url']:
-            err('%s: legacy row points somewhere other than the archive: %s' % (tag, a['url']))
-        if a['url'] and not a['archived']:
-            err('%s: has a url but archived is false' % tag)
+        # A legacy row must never send a reader to DZone: those articles were
+        # taken down and the paths now answer 410. If a legacy row has a url it
+        # is either an archive copy, or a live copy on another venue -- which
+        # happens when the same piece is still published on Medium or Dev.to.
+        if a['url'] and 'dzone.com/articles/' in a['url'] and 'web.archive.org' not in a['url']:
+            err('%s: legacy row points at a live dzone.com URL that 410s: %s' % (tag, a['url']))
+        if a['url'] and a['archived'] and 'web.archive.org' not in a['url']:
+            err('%s: archived is true but the url is not an archive copy' % tag)
         if not a['url'] and a['archived']:
             err('%s: archived is true but there is no url' % tag)
+
+    # Every extra publication must name a venue the row actually lists, carry an
+    # ISO date, and not resolve to removed DZone content.
+    for extra in a['alsoPublished']:
+        etag = '%s alsoPublished %s' % (tag, extra['venue'] or '?')
+        if extra['venue'] not in a['platforms']:
+            err('%s: names a venue absent from platforms[]' % etag)
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', extra['date'] or ''):
+            err('%s: date %r is not ISO' % (etag, extra['date']))
+        if extra['url'] and 'dzone.com/articles/' in extra['url'] \
+                and 'web.archive.org' not in extra['url']:
+            err('%s: points at a live dzone.com URL that 410s' % etag)
 
 # Order must be strictly non-increasing by date.
 def key(d):
