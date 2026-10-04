@@ -1652,9 +1652,22 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   margin: .4375rem 0 0; max-width: 62ch;
   font-size: var(--t-sm); line-height: 1.6; color: var(--muted); text-wrap: pretty;
 }
+/* Footer of a row: how well the entry is attested, then the link that settles
+   it. The tier is a quiet outline rather than a fill, so it reads as metadata
+   and never competes with the accent used for the panel pill. */
+.talk-foot {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem;
+  margin: .625rem 0 0;
+}
+.talk-evidence {
+  padding: .125rem .375rem; border-radius: 2px;
+  border: 1px solid var(--line-hi);
+  font-family: var(--font-mono); font-size: .5rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
+}
+.talk-item[data-evidence="recording"] .talk-evidence { border-color: var(--accent-hi); color: var(--accent); }
 .talk-source {
   display: inline-flex; align-items: center; gap: .3125rem;
-  margin-top: .5rem;
   font-family: var(--font-mono); font-size: .5625rem; font-weight: 600;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--dim); text-decoration: none;

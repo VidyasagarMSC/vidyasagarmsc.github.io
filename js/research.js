@@ -284,68 +284,317 @@ const researchData = {
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
-  // Speaking engagements. Only engagements with a verifiable public source are
-  // listed, each linking to the page that records it. The site previously claimed
-  // a total with no per-item evidence; a short sourced list is worth more than a
-  // larger unsourced number, and the SlideShare deck set covers the slides.
+  // Speaking engagements, newest first.
   //
-  // role is what was actually done. A panel is not a talk, and moderating a Q&A
-  // is not presenting a session -- collapsing those into "speaker" overstates the
-  // list. source is mandatory: every entry has one.
+  // evidence records what actually backs each row, because the strength is not
+  // uniform and the page should not imply it is:
+  //   recording  an organiser or publisher page names him and the session
+  //   deck       a deck or recording exists naming the event
+  //   self       his own engagements list is the only record
+  //
+  // role is what he actually did. A panel is not a talk, moderating a Q&A is not
+  // presenting, and a track owner owns the track rather than giving one session.
+  // source is mandatory: every entry has a page a reader can open.
   talks: [
     {
       date: '2021-03-12', year: 2021, kind: 'Webinar',
       title: 'Chatbot Development for Enhancing Customer Experience',
-      venue: 'ACM Chennai \u00b7 IEEE CS Madras \u00b7 CSI Chennai, with DELNET',
+      venue: 'ACM Chennai · IEEE CS Madras · CSI Chennai, with DELNET',
       role: 'Speaker, and moderator of the Q&A',
       detail: 'Recorded and published by DELNET.',
       url: 'https://www.youtube.com/watch?v=O2zkRZs-4sM',
-      source: 'https://delnet.in/prog_pages/2021.php'
+      source: 'https://delnet.in/prog_pages/2021.php',
+      evidence: 'recording'
     },
     {
       date: '2021', year: 2021, kind: 'Virtual conference',
       title: 'IBM Cloud Native Day',
-      venue: 'IBM Cloud \u00b7 IBM Community',
+      venue: 'IBM Cloud · IBM Community',
       role: 'Speaker',
       detail: 'Fifteen sessions on serverless, DevOps, Knative, containers and cloud native, with three keynotes and a cross-track panel.',
       url: 'https://events.bemyapp.com/cloudnativeday',
-      source: 'https://events.bemyapp.com/cloudnativeday'
+      source: 'https://events.bemyapp.com/cloudnativeday',
+      evidence: 'recording'
+    },
+    {
+      date: '2018-09-22', year: 2018, kind: 'Talk',
+      title: 'Eclipse Day India 2018',
+      venue: 'IBM India, Embassy Golf Links, Bangalore',
+      role: 'Speaker',
+      detail: 'A joint meetup of the Eclipse, Java and Polyglot language communities. No public programme names the session, so the deck is the record.',
+      url: 'https://speakerdeck.com/vidyasagarmsc/eclipseday-2018',
+      source: 'https://wiki.eclipse.org/Eclipse_Day',
+      evidence: 'deck'
     },
     {
       date: '2017-10-27', year: 2017, kind: 'Panel',
       title: 'Panel Discussion on Serverless',
       venue: 'Serverless Summit India, Park Plaza, Bangalore',
       role: 'Panelist',
-      detail: 'India\u2019s first conference on serverless technologies. On the panel with John Willis and Sandeep Alur; moderated by Anand Gothe.',
+      detail: 'India’s first conference on serverless technologies. On the panel with John Willis and Sandeep Alur; moderated by Anand Gothe.',
       url: 'https://inserverless.konfhub.com/',
-      source: 'https://inserverless.konfhub.com/'
+      source: 'https://inserverless.konfhub.com/',
+      evidence: 'recording'
+    },
+    {
+      date: '2017-09-16', year: 2017, kind: 'Meetup',
+      title: 'BlueCoders: Master the art of data science · Watson Machine Learning',
+      venue: '91SpringBoard, JP Nagar, Bangalore',
+      role: 'Host and speaker — two sessions',
+      detail: 'One of the earliest BlueCoders meetups, at the group’s own venue partner. Opened the session, then took the Machine Learning slot.',
+      url: 'https://www.meetup.com/BlueCoders/events/243012293/',
+      source: 'https://www.meetup.com/BlueCoders/events/243012293/',
+      evidence: 'recording'
     },
     {
       date: '2017-09-02', year: 2017, kind: 'Talk',
-      title: 'Building a Cloud Foundry application on IBM Bluemix',
+      title: 'Stock portfolio analysis with Cloud Foundry and AI services',
       venue: 'Bangalore Cloud Foundry Day, SAP Labs India',
-      role: 'Speaker \u2014 the first external speaker at the event',
+      role: 'Speaker — the first external speaker at the event',
       detail: 'Built a Cloud Foundry application from scratch and demoed a stock-portfolio analysis service consuming Bluemix platform services alongside IBM Watson AI services. 150+ attendees.',
       url: 'https://www.cloudfoundry.org/blog/cloud-foundry-day-sap-labs-bangalore/',
-      source: 'https://www.cloudfoundry.org/blog/cloud-foundry-day-sap-labs-bangalore/'
+      source: 'https://www.cloudfoundry.org/blog/cloud-foundry-day-sap-labs-bangalore/',
+      evidence: 'recording'
     },
     {
-      date: '2017', year: 2017, kind: 'Talk',
+      date: '2017-07-29', year: 2017, kind: 'Talk',
       title: 'Deliver cloud apps with ease',
-      venue: 'Eclipse Summit 2017',
-      role: 'Speaker \u2014 20 minutes, beginner',
-      detail: 'IBM Eclipse tools for Bluemix: content assist against hosted services, delivery through DevOps or the Orion web IDE, and deploying across cloud and on-premises. Presented with Srihari Kulkarni.',
+      venue: 'Eclipse Summit 2017, Bengaluru',
+      role: 'Speaker — accepted talk, 20 minutes, beginner',
+      detail: 'IBM Eclipse tools for Bluemix: content assist against hosted services, delivery through DevOps or the Orion web IDE, and deploying across cloud and on-premises. Ran 03:15–03:35 in the Brahmaputra hall, with Srihari Kulkarni.',
       url: 'https://confengine.com/conferences/eclipse-summit-2017/proposal/3898/deliver-cloud-apps-with-ease',
-      source: 'https://confengine.com/user/vidyasagar-msc'
+      source: 'https://confengine.com/user/vidyasagar-msc',
+      evidence: 'recording'
     },
     {
-      date: '2016', year: 2016, kind: 'Talk',
+      date: '2017-07-22', year: 2017, kind: 'Meetup',
+      title: 'BlueCoders: Cognitive service chaining with Serverless Computing',
+      venue: '91SpringBoard, Koramangala, Bangalore',
+      role: 'Organiser and speaker — two sessions',
+      detail: 'Ran the Watson Cognitive services and OpenWhisk sessions, then handed the room to Norton Stanley for the service-chaining hands-on lab.',
+      url: 'https://www.meetup.com/BlueCoders/events/241194184/',
+      source: 'https://www.meetup.com/BlueCoders/events/241194184/',
+      evidence: 'recording'
+    },
+    {
+      date: '2017-06-28', year: 2017, kind: 'Track',
+      title: 'IBM DeveloperConnect Roadshow 2017 — Cloud track',
+      venue: 'Mumbai 28 Jun · Hyderabad 29 Jun · Bangalore 1 Jul 2017',
+      role: 'Track owner and speaker, at all three stops',
+      detail: 'Two talks and a hands-on lab: “Love Kubernetes? Now, manage your containers with it on IBM Bluemix Container Service”, “Look Ma, No Server! Go Serverless with IBM Bluemix OpenWhisk”, and event-driven and serverless computing with OpenWhisk.',
+      url: 'https://www.youtube.com/watch?v=d8yeifo0NYk',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'deck'
+    },
+    {
+      date: '2017-06-08', year: 2017, kind: 'Talk',
+      title: 'Rapidly build Cognitive applications with IBM Cloud',
+      venue: 'OSCon Hong Kong — virtual support',
+      role: 'Speaker, supporting the programme remotely',
+      detail: 'The demo behind the session walks through building cognitive applications with Watson Conversation services on IBM Cloud.',
+      url: 'https://www.youtube.com/watch?v=N7gEO-Q9rT4',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'deck'
+    },
+    {
+      date: '2017-05-26', year: 2017, kind: 'Talk',
+      title: 'Practitioner: How to Bluemix',
+      venue: 'IBM India Cloud Forum, Mumbai',
+      role: 'Speaker',
+      detail: 'A practitioner’s session on IBM Cloud, rather than a product pitch.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2017-05-13', year: 2017, kind: 'Panel',
+      title: 'Serverless Architecture: Why, What and How',
+      venue: 'Microsoft Office, Bangalore — the first Serverless meetup there',
+      role: 'Panelist',
+      detail: 'On how the community invents words like microservices, DevOps and serverless to bring attention and traction to known technologies. Written up afterwards by the organiser.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2017-04-25', year: 2017, kind: 'Talk',
+      title: 'Go Cloud Native with IBM Bluemix Developer Console',
+      venue: 'Great Indian Developer Summit (GIDS), IISc, Bangalore',
+      role: 'Speaker — two talks across the summit',
+      detail: 'Patterns-first approach: pick a building block and the services to wire into it, and the console generates a runnable starter project for a mobile app, web app, backend-for-frontend or microservice.',
+      url: 'https://speakerdeck.com/vidyasagarmsc/go-cloud-native-with-ibm-bluemix-developer-console-gids17',
+      source: 'https://vmacwrites.wordpress.com/2017/05/05/patterns-first-with-bluemix-developer-console/',
+      evidence: 'deck'
+    },
+    {
+      date: '2017-03-29', year: 2017, kind: 'Meetup',
+      title: 'BlueCoders: Cloud Native Patterns, from Mobile to Microservice',
+      venue: 'Bangalore',
+      role: 'Organiser and speaker',
+      detail: 'Moved the group’s programme from mobile towards cloud native patterns.',
+      url: 'https://www.meetup.com/BlueCoders/',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2017-03', year: 2017, kind: 'Meetup',
+      title: 'BlueCoders: Ionic, NodeJS and Backend for FrontEnd via the Bluemix generator',
+      venue: 'Bangalore',
+      role: 'Organiser and speaker',
+      detail: 'A hands-on path from an Ionic client to a generated NodeJS backend.',
+      url: 'https://www.meetup.com/BlueCoders/',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2017-03', year: 2017, kind: 'Talk',
+      title: 'Bring Watson to your telephone',
+      venue: 'IBM InterConnect 2017, Las Vegas',
+      role: 'Speaker — one talk and four hands-on labs',
+      detail: 'Introducing the IBM WebSphere Connect Voice Gateway for Watson: a cognitive voice service that joins call centres to Watson services and existing telephony. IBM folded InterConnect into IBM Think the following year.',
+      url: 'https://www.slideshare.net/slideshow/bring-ibm-watson-to-your-telephone/73540712',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'deck'
+    },
+    {
+      date: '2017-02-13', year: 2017, kind: 'Talk',
+      title: 'Digital Innovation',
+      venue: 'Regional Science Centre, Tirupati',
+      role: 'Speaker',
+      detail: 'An outreach session outside the main developer circuit.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2017-02-08', year: 2017, kind: 'Meetup',
+      title: 'BlueCoders: Introduction to OpenWhisk',
+      venue: 'Bangalore',
+      role: 'Organiser and speaker',
+      detail: 'An introduction to serverless computing on OpenWhisk, ahead of the group’s later service-chaining lab.',
+      url: 'https://www.meetup.com/BlueCoders/',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-12', year: 2016, kind: 'Workshop',
+      title: 'Swift@IBM full-day workshop',
+      venue: 'IBM India, Bangalore',
+      role: 'Workshop lead — Swift introduction and a hands-on Kitura lab',
+      detail: 'Ran for the SwiftBLR community at the IBM campus, on the back of the session published on the Swift@IBM developer blog.',
+      url: 'https://vmacwrites.wordpress.com/2016/12/22/swift-on-ibm-bluemix/',
+      source: 'https://vmacwrites.wordpress.com/2016/12/22/swift-on-ibm-bluemix/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-12', year: 2016, kind: 'Talk',
+      title: 'Idea to App in minutes with IBM Bluemix',
+      venue: 'Cloud Innovation Forum',
+      role: 'Speaker',
+      detail: 'The short path from an idea to a running application on IBM Cloud.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-10', year: 2016, kind: 'Talk',
+      title: 'Bringing Swift to Cloud',
+      venue: 'IBM Cloud Technical University 2016, Madrid, Spain',
+      role: 'Speaker — his first international presentation',
+      detail: 'Taking Swift from the client to the server side on IBM Cloud, with Kitura as the framework on the back end.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-09', year: 2016, kind: 'Talk',
+      title: 'Swiftly, Go Cloud',
+      venue: 'Mobile Developer Summit, Bangalore — organised by Saltmarch Media',
+      role: 'Speaker',
+      detail: 'The summit drew 1,000+ attendees to J.N. Tata Auditorium. A public recap names the international and keynote speakers; this session is recorded on his own engagement list and the deck is on SpeakerDeck.',
+      url: 'https://speakerdeck.com/vidyasagarmsc/swiftly-go-cloud-swift-at-ibm',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'deck'
+    },
+    {
+      date: '2016-08-26', year: 2016, kind: 'Talk',
       title: 'Build, run and manage MobileFirst apps using Eclipse',
-      venue: 'Eclipse Summit 2016',
-      role: 'Speaker \u2014 45 minutes, beginner',
-      detail: 'MobileFirst Studio as an Eclipse plug-in for rich mobile web, native and hybrid apps, with an embedded MobileFirst Server.',
+      venue: 'Eclipse Summit 2016, Bengaluru',
+      role: 'Speaker — accepted talk, 45 minutes, beginner',
+      detail: 'MobileFirst Studio as an Eclipse plug-in for rich mobile web, native and hybrid apps, with an embedded MobileFirst Server. Ran 05:15–06:00 in Sigma Hall 1.',
       url: 'https://confengine.com/conferences/eclipse-summit-2016/proposal/2446/build-run-and-manage-mobilefirst-apps-using-eclipse',
-      source: 'https://confengine.com/user/vidyasagar-msc'
+      source: 'https://confengine.com/user/vidyasagar-msc',
+      evidence: 'recording'
+    },
+    {
+      date: '2016-08', year: 2016, kind: 'Talk',
+      title: 'What’s in Bluemix Mobile Services for FinTech',
+      venue: 'IBM Engage',
+      role: 'Speaker',
+      detail: 'Mobile services applied to financial services workloads.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-07', year: 2016, kind: 'Workshop',
+      title: 'Hybrid vs Native app development',
+      venue: 'Mobile Workshop, MSRIT, Bangalore',
+      role: 'Workshop lead',
+      detail: 'A campus workshop weighing hybrid against native approaches.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2016-07', year: 2016, kind: 'Talk',
+      title: 'Bluemix Offerings for Swift Developers',
+      venue: 'AppFest 2016, by Mobile 10X',
+      role: 'Speaker',
+      detail: 'What IBM Cloud offered Swift developers at the time — the same ground covered in the Swift@IBM workshop a few months later.',
+      url: 'https://www.slideshare.net/vidyasagarMachupalli',
+      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      evidence: 'self'
+    },
+    {
+      date: '2015-02-14', year: 2015, kind: 'Talk',
+      title: 'Valentine with AngularJS',
+      venue: 'BDotNet, at Microsoft, Bangalore',
+      role: 'Speaker',
+      detail: 'A hands-on session on AngularJS and single-page applications, building the client in Brackets and then again in Visual Studio 2015, against a NodeJS server.',
+      url: 'https://vmacwrites.wordpress.com/2015/02/15/bdotnet-valentine-with-angularjs/',
+      source: 'https://vmacwrites.wordpress.com/2015/02/15/bdotnet-valentine-with-angularjs/',
+      evidence: 'self'
+    },
+    {
+      date: '2015-01', year: 2015, kind: 'Talk',
+      title: 'DocumentDB — NoSQL on cloud',
+      venue: 'Reboot 2015, Bangalore',
+      role: 'Speaker',
+      detail: 'DocumentDB on Azure, at one of the Bengaluru developer conferences that seeded the DevOps and cloud-native circuit.',
+      url: 'https://vmacwrites.wordpress.com/2015/01/31/reboot-documentdb-nosql-on-cloud/',
+      source: 'https://vmacwrites.wordpress.com/2015/01/31/reboot-documentdb-nosql-on-cloud/',
+      evidence: 'self'
+    },
+    {
+      date: '2014-12-17', year: 2014, kind: 'Talk',
+      title: 'Gaming session',
+      venue: 'TechEd India 2014',
+      role: 'Speaker',
+      detail: 'Closed the year with a gaming session, having started the gaming track at a Microsoft DevCamp the previous November. Awarded “The Most Active Individual in the Gaming Community” at the event.',
+      url: 'https://www.youtube.com/watch?v=wjfNeI9yI2w',
+      source: 'https://vmacwrites.wordpress.com/2014/12/18/never-ending-love-for-game-a-moment-to-cherish-2/',
+      evidence: 'self'
+    },
+    {
+      date: '2014-12-14', year: 2014, kind: 'Talk',
+      title: 'Best Practices in Game Development · Unity3D performance optimisation',
+      venue: 'VideoGameFest, Bengaluru, by Dumadu Games',
+      role: 'Speaker — two sessions in one evening',
+      detail: 'A Unity3D performance optimisation session first, then best practices in game development at 7pm the same day.',
+      url: 'https://vmacwrites.wordpress.com/2014/12/21/talk-best-practices-in-game-development/',
+      source: 'https://vmacwrites.wordpress.com/2014/12/21/talk-best-practices-in-game-development/',
+      evidence: 'self'
     }
   ],
 
@@ -433,6 +682,31 @@ function alsoPublishedLinks(a) {
 // recording, and to the page that records it. The second link is the one that
 // makes the claim checkable, so it is labelled as the source rather than left as
 // an anonymous second arrow.
+//
+// The evidence tier is shown because it is not uniform, and a flat list of 30
+// entries would read as 30 equally-attested facts. Some are named by the
+// organiser who ran the event; some rest on a deck or recording he still
+// publishes; some rest only on his own list.
+const EVIDENCE = {
+  recording: { label: 'Organiser record', note: 'named by the event organiser' },
+  deck: { label: 'Deck or recording', note: 'the deck or recording survives' },
+  self: { label: 'Self-reported', note: 'from his own engagement list' }
+};
+
+function talkDateLabel(t) {
+  // Three granularities, because the sources are that precise: a session with a
+  // slot time, an event with only a month, and a conference year.
+  if (t.date && /^\d{4}-\d{2}-\d{2}$/.test(t.date)) {
+    return new Date(t.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+  if (t.date && /^\d{4}-\d{2}$/.test(t.date)) {
+    const [y, m] = t.date.split('-');
+    return new Date(Date.UTC(Number(y), Number(m) - 1, 1))
+      .toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  }
+  return String(t.year);
+}
+
 function renderTalks() {
   const box = document.getElementById('talksList');
   if (!box) return;
@@ -440,12 +714,10 @@ function renderTalks() {
     .sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
   box.innerHTML = talks.map(t => {
-    const when = t.date.length === 10
-      ? new Date(t.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-      : String(t.year);
-    return `<li class="talk-item" data-kind="${t.kind}">
+    const ev = EVIDENCE[t.evidence] || EVIDENCE.self;
+    return `<li class="talk-item" data-kind="${t.kind}" data-evidence="${t.evidence}">
       <div class="talk-rail">
-        <span class="talk-when">${when}</span>
+        <span class="talk-when">${talkDateLabel(t)}</span>
         <span class="talk-kind">${t.kind}</span>
       </div>
       <div class="talk-main">
@@ -453,7 +725,10 @@ function renderTalks() {
         <p class="talk-venue">${t.venue}</p>
         <p class="talk-role">${t.role}</p>
         ${t.detail ? `<p class="talk-detail">${t.detail}</p>` : ''}
-        <a class="talk-source" href="${t.source}" target="_blank" rel="noopener">Source <i class="fas fa-arrow-up-right-from-square"></i></a>
+        <p class="talk-foot">
+          <span class="talk-evidence" title="${ev.note}">${ev.label}</span>
+          <a class="talk-source" href="${t.source}" target="_blank" rel="noopener">Source <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </p>
       </div>
     </li>`;
   }).join('');

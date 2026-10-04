@@ -193,6 +193,47 @@ print('index rows: %d   (openable: %d   archived-only: %d   no surviving copy: %
          sum(1 for a in articles if not a['isBook'] and a['archived']),
          sum(1 for a in articles if not a['isBook'] and not a['url'])))
 print()
+# ---------------------------------------------------------------- talks
+# The speaking engagements are the one place on the site where the site itself
+# asserts facts about a third party's event. A missing source link turns a
+# checkable claim into an assertion, so a source is mandatory rather than
+# optional, and the evidence tier has to be one the renderer knows how to label.
+
+talk_block = '\n'.join(SRC[SRC.index('  talks: ['):SRC.index('  platforms: [')]) if '  talks: [' in SRC else ''
+if talk_block:
+    entries = re.findall(r"\{\s*\n\s*date: '([^']+)',\s*year: (\d{4}),\s*kind: '([^']+)'(.*?)\n    \}", talk_block, re.S)
+    KNOWN_EVIDENCE = {'recording', 'deck', 'self'}
+
+    for d, y, kind, rest in entries:
+        label = '%s %s' % (d, kind)
+        if not re.match(r'^\d{4}(-\d{2}(-\d{2})?)?$', d):
+            err('talk %s: date must be YYYY, YYYY-MM or YYYY-MM-DD' % label)
+        if not d.startswith(y):
+            err('talk %s: date and year disagree' % label)
+        m = re.search(r"evidence: '([^']+)'", rest)
+        if not m:
+            err('talk %s: no evidence tier' % label)
+        elif m.group(1) not in KNOWN_EVIDENCE:
+            err("talk %s: evidence '%s' is not one of %s"
+                % (label, m.group(1), sorted(KNOWN_EVIDENCE)))
+        for field in ('title', 'venue', 'role', 'url', 'source'):
+            if not re.search(r"\b%s: '" % field, rest):
+                err('talk %s: missing %s' % (label, field))
+        # The renderer reads EVIDENCE[t.evidence]; an unlabelled tier silently
+        # falls back to "self", which would understate a well-sourced entry.
+
+    tiers = Counter(re.findall(r"evidence: '([^']+)'", talk_block))
+    kinds = Counter(k for _, _, k, _ in entries)
+    print('talks: %d   by evidence: %s'
+          % (len(entries), ', '.join('%s %d' % (k, v) for k, v in sorted(tiers.items()))))
+    print('        by kind: %s'
+          % ', '.join('%s %d' % (k, v) for k, v in sorted(kinds.items())))
+
+    if len(entries) != len(re.findall(r"evidence: '", talk_block)):
+        err('a talk entry is missing its evidence tier (parsed %d of %d)'
+            % (len(entries), len(re.findall(r"evidence: '", talk_block))))
+
+print()
 if warn:
     for w in warn:
         print('WARN  %s' % w)
