@@ -153,10 +153,17 @@
         var filter = btn.dataset.filter;
         filterBtns.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        // `hidden` rather than an inline display value: the rows are CSS grid
-        // now, so hard-coding 'flex' would override the layout on every row.
+        // A row's data-platform is a space-separated list, because an article
+        // cross-posted to two venues is still one row — so this is a
+        // membership test, not an equality test.
+        // `hidden` rather than an inline display value: the rows are CSS grid,
+        // so writing style.display would overwrite the layout on every row.
+        // It only hides at all because site.css backs [hidden] with
+        // !important — .latest-post-card is display:grid and would otherwise
+        // outrank the UA rule.
         document.querySelectorAll('.latest-post-card').forEach(function (card) {
-          card.hidden = !(filter === 'all' || card.dataset.platform === filter);
+          var venues = (card.dataset.platform || '').split(' ');
+          card.hidden = !(filter === 'all' || venues.indexOf(filter) !== -1);
         });
         // The index is grouped by year, so a filter can empty a whole year
         // group — hide the heading too, or it labels nothing.
