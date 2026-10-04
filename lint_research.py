@@ -194,10 +194,14 @@ print('index rows: %d   (openable: %d   archived-only: %d   no surviving copy: %
          sum(1 for a in articles if not a['isBook'] and not a['url'])))
 print()
 # ---------------------------------------------------------------- talks
-# The speaking engagements are the one place on the site where the site itself
-# asserts facts about a third party's event. A missing source link turns a
-# checkable claim into an assertion, so a source is mandatory rather than
-# optional, and the evidence tier has to be one the renderer knows how to label.
+# The speaking engagements are the one place on the site where the site asserts
+# facts about a third party's event. A missing source link turns a checkable
+# claim into an assertion, so a source is mandatory rather than optional.
+#
+# `evidence` is provenance, not presentation: it is not rendered. It records which
+# rows an organiser confirmed, which rest on a surviving deck, and which rest on
+# the author's own list, so a future edit knows what to re-verify. It still has to
+# be one of the known values -- a typo there would silently misfile the row.
 
 talk_block = '\n'.join(SRC[SRC.index('  talks: ['):SRC.index('  platforms: [')]) if '  talks: [' in SRC else ''
 if talk_block:
@@ -210,6 +214,8 @@ if talk_block:
             err('talk %s: date must be YYYY, YYYY-MM or YYYY-MM-DD' % label)
         if not d.startswith(y):
             err('talk %s: date and year disagree' % label)
+        # A typo in the tier would silently misfile the row rather than fail to render,
+        # since nothing on the page reads it.
         m = re.search(r"evidence: '([^']+)'", rest)
         if not m:
             err('talk %s: no evidence tier' % label)
@@ -219,8 +225,6 @@ if talk_block:
         for field in ('title', 'venue', 'role', 'url', 'source'):
             if not re.search(r"\b%s: '" % field, rest):
                 err('talk %s: missing %s' % (label, field))
-        # The renderer reads EVIDENCE[t.evidence]; an unlabelled tier silently
-        # falls back to "self", which would understate a well-sourced entry.
 
     tiers = Counter(re.findall(r"evidence: '([^']+)'", talk_block))
     kinds = Counter(k for _, _, k, _ in entries)

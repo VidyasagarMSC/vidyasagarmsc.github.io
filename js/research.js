@@ -286,15 +286,15 @@ const researchData = {
   ],
   // Speaking engagements, newest first.
   //
-  // evidence records what actually backs each row, because the strength is not
-  // uniform and the page should not imply it is:
-  //   recording  an organiser or publisher page names him and the session
+  // evidence is provenance, not presentation -- it is not rendered. It records
+  // what backs each row so a future edit knows what to re-verify:
+  //   recording  an organiser or publisher page names the session
   //   deck       a deck or recording exists naming the event
-  //   self       his own engagements list is the only record
+  //   self       the row rests on the author's own engagement list
   //
-  // role is what he actually did. A panel is not a talk, moderating a Q&A is not
-  // presenting, and a track owner owns the track rather than giving one session.
-  // source is mandatory: every entry has a page a reader can open.
+  // role is what was actually done. A panel is not a talk, moderating a Q&A is
+  // not presenting, and a track owner owns the track rather than giving one
+  // session. source is mandatory: every entry has a page a reader can open.
   talks: [
     {
       date: '2021-03-12', year: 2021, kind: 'Webinar',
@@ -500,7 +500,7 @@ const researchData = {
       date: '2016-10', year: 2016, kind: 'Talk',
       title: 'Bringing Swift to Cloud',
       venue: 'IBM Cloud Technical University 2016, Madrid, Spain',
-      role: 'Speaker — his first international presentation',
+      role: 'Speaker — my first international presentation',
       detail: 'Taking Swift from the client to the server side on IBM Cloud, with Kitura as the framework on the back end.',
       url: 'https://www.slideshare.net/vidyasagarMachupalli',
       source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
@@ -511,7 +511,7 @@ const researchData = {
       title: 'Swiftly, Go Cloud',
       venue: 'Mobile Developer Summit, Bangalore — organised by Saltmarch Media',
       role: 'Speaker',
-      detail: 'The summit drew 1,000+ attendees to J.N. Tata Auditorium. A public recap names the international and keynote speakers; this session is recorded on his own engagement list and the deck is on SpeakerDeck.',
+      detail: 'The summit drew 1,000+ attendees to J.N. Tata Auditorium, and the public recap names the international and keynote speakers. My session is listed in my own engagement notes, and the deck is on SpeakerDeck.',
       url: 'https://speakerdeck.com/vidyasagarmsc/swiftly-go-cloud-swift-at-ibm',
       source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
       evidence: 'deck'
@@ -678,21 +678,18 @@ function alsoPublishedLinks(a) {
   }).join('') + `</div>`;
 }
 
-// Speaking engagements, newest first. Each row links twice: to the session or
-// recording, and to the page that records it. The second link is the one that
-// makes the claim checkable, so it is labelled as the source rather than left as
-// an anonymous second arrow.
+// Speaking engagements, newest first, written in the author's own voice.
 //
-// The evidence tier is shown because it is not uniform, and a flat list of 30
-// entries would read as 30 equally-attested facts. Some are named by the
-// organiser who ran the event; some rest on a deck or recording he still
-// publishes; some rest only on his own list.
-const EVIDENCE = {
-  recording: { label: 'Organiser record', note: 'named by the event organiser' },
-  deck: { label: 'Deck or recording', note: 'the deck or recording survives' },
-  self: { label: 'Self-reported', note: 'from his own engagement list' }
-};
-
+// Each row links twice: to the session or recording, and to the page that records
+// it. The second link is the one that makes the claim checkable, so it is
+// labelled as the source rather than left as an anonymous second arrow.
+//
+// The evidence field on each entry is deliberately not rendered. It is an
+// internal record of provenance -- 'recording' where the organiser who ran the
+// event names the session, 'deck' where a deck or recording survives, 'self'
+// where the entry rests on the author's own list -- kept so a future edit knows
+// which rows to re-verify. It was on screen briefly and read as hedging; the
+// author asked for it to come off, which is a fair editorial call.
 function talkDateLabel(t) {
   // Three granularities, because the sources are that precise: a session with a
   // slot time, an event with only a month, and a conference year.
@@ -714,8 +711,7 @@ function renderTalks() {
     .sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
   box.innerHTML = talks.map(t => {
-    const ev = EVIDENCE[t.evidence] || EVIDENCE.self;
-    return `<li class="talk-item" data-kind="${t.kind}" data-evidence="${t.evidence}">
+    return `<li class="talk-item" data-kind="${t.kind}">
       <div class="talk-rail">
         <span class="talk-when">${talkDateLabel(t)}</span>
         <span class="talk-kind">${t.kind}</span>
@@ -726,7 +722,6 @@ function renderTalks() {
         <p class="talk-role">${t.role}</p>
         ${t.detail ? `<p class="talk-detail">${t.detail}</p>` : ''}
         <p class="talk-foot">
-          <span class="talk-evidence" title="${ev.note}">${ev.label}</span>
           <a class="talk-source" href="${t.source}" target="_blank" rel="noopener">Source <i class="fas fa-arrow-up-right-from-square"></i></a>
         </p>
       </div>
