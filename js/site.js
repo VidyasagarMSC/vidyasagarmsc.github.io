@@ -153,8 +153,15 @@
         var filter = btn.dataset.filter;
         filterBtns.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
+        // `hidden` rather than an inline display value: the rows are CSS grid
+        // now, so hard-coding 'flex' would override the layout on every row.
         document.querySelectorAll('.latest-post-card').forEach(function (card) {
-          card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'flex' : 'none';
+          card.hidden = !(filter === 'all' || card.dataset.platform === filter);
+        });
+        // The index is grouped by year, so a filter can empty a whole year
+        // group — hide the heading too, or it labels nothing.
+        document.querySelectorAll('.year-group').forEach(function (group) {
+          group.hidden = !group.querySelector('.latest-post-card:not([hidden])');
         });
       });
     });

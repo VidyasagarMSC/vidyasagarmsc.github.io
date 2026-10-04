@@ -774,21 +774,60 @@ function initLatestPosts() {
     .filter(a => !a.isBook && a.url && a.url !== '#')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  grid.innerHTML = articles.map(a => {
-    const iconMap = { 'DZone': 'code', 'Medium': 'medium', 'Dev.to': 'dev', 'Hackernoon': 'hacker-news', 'Substack': 'envelope', 'VMacWrites': 'wordpress' };
-    const icon = iconMap[a.platform] || 'star';
-    const prefix = (a.platform === 'DZone' || a.platform === 'Substack') ? 'fas' : 'fab';
-    const pColors = { 'DZone': '#e34c26', 'Medium': '#000', 'Dev.to': '#0a0a0a', 'Hackernoon': '#00ff7f', 'Substack': '#ff671e', 'VMacWrites': '#21759b' };
-    const bg = pColors[a.platform] || '#666';
-    const iconHtml = a.platform === 'Hackernoon' ? 'HN' : a.platform === 'VMacWrites' ? 'W' : a.platform === 'DZone' ? 'DZ' : `<i class="${prefix} fa-${icon}" style="font-size:0.9rem;color:#fff;"></i>`;
+  // Group by year, newest first. The earlier build listed writing as a dated
+  // index rather than a card grid, and with 82 entries spanning 2017–2026 the
+  // year headings are what make the list navigable instead of just long.
+  const byYear = new Map();
+  articles.forEach(a => {
+    const y = a.year || String(a.date || '').slice(0, 4) || '—';
+    if (!byYear.has(y)) byYear.set(y, []);
+    byYear.get(y).push(a);
+  });
 
-    return `<a href="${a.url}" target="_blank" rel="noopener" class="latest-post-card" data-platform="${a.platform}">
-      <span class="lpc-date">${a.date}</span>
-      <span class="lpc-title">${a.title}</span>
-      ${a.summary ? `<span class="lpc-summary">${a.summary}</span>` : ''}
+  // The stored dates are display strings, not ISO — "Sep 10, 2026", and the
+  // padding is inconsistent ("Mar 06, 2026" vs "Jan 6, 2026"). A few entries
+  // are only as precise as "May 2017" or a bare year. The year-group heading
+  // already carries the year, so the rail only needs month and day; anything we
+  // cannot parse falls back to the raw string rather than rendering blank.
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const pad = n => String(n).padStart(2, '0');
+  function splitDate(raw) {
+    const s = String(raw || '').trim();
+    const m = /^([A-Za-z]{3,9})\.?\s+(\d{1,2}),\s*(\d{4})$/.exec(s);
+    if (!m) return { short: s, iso: '' };
+    const mi = MONTHS.indexOf(m[1].slice(0, 3).replace('.', ''));
+    const title = m[1][0].toUpperCase() + m[1].slice(1).toLowerCase();
+    if (mi < 0) return { short: `${title} ${m[2]}, ${m[3]}`, iso: '' };
+    const day = Number(m[2]);
+    return {
+      short: `${MONTHS[mi]} ${day}`,
+      iso: `${m[3]}-${pad(mi + 1)}-${pad(day)}`,
+    };
+  }
+
+  const rows = [...byYear.entries()]
+    .sort((x, y) => Number(y[0]) - Number(x[0]))
+    .map(([year, list]) => {
+      const items = list.map(a => {
+        // Short date in the rail; the machine-readable value goes in the
+        // <time datetime> so assistive tech and crawlers still get it exactly.
+        const { short, iso } = splitDate(a.date);
+        return `<a href="${a.url}" target="_blank" rel="noopener" class="latest-post-card" data-platform="${a.platform}">
+      <time class="lpc-date"${iso ? ` datetime="${iso}"` : ''}>${short}</time>
+      <span class="lpc-main"><span class="lpc-title">${a.title}</span>${a.summary ? `<span class="lpc-summary">${a.summary}</span>` : ''}</span>
       <span class="lpc-platform-name">${a.platform}</span>
     </a>`;
-  }).join('');
+      }).join('');
+      const n = list.length;
+      return `<section class="year-group">
+      <h3 class="year-head"><span class="year-num">${year}</span><span class="year-rule"></span><span class="year-count">${n} article${n === 1 ? '' : 's'}</span></h3>
+      ${items}
+    </section>`;
+    }).join('');
+
+  grid.className = 'article-index';
+  grid.innerHTML = rows;
 }
 
 if (document.getElementById('publicationsGrid')) {
