@@ -1950,7 +1950,15 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .cite-copy-btn, .cite-download-btn { justify-content: center; width: 100%; }
   .role-row { flex-direction: column; gap: .25rem; }
   .role-when { min-width: 0; }
+  /* Stacking the role name above its date also turns the name's flex-basis into
+     a *height*: the desktop rule is `flex: 1 1 14rem`, sized so the name and the
+     date sit side by side. In a column container that basis became a 224px
+     minimum height, so every role name reserved a 14rem-tall box for one or two
+     lines of text -- roughly 200px of blank space per role, and about 1,400px
+     inside the IBM card alone, which is why the section read as a gap rather
+     than as content. `flex: none` hands the height back to the text. */
   .exp-role-top { flex-direction: column; gap: .2rem; }
+  .exp-role-name { flex: none; }
   .stack-row { flex-direction: column; gap: .15rem; }
   .stack-row span { text-align: left; }
   .footer-inner { flex-direction: column; text-align: center; }
