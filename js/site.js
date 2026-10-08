@@ -1,13 +1,67 @@
 /* ============================================
    SITE BEHAVIOUR
    Theme, reveal-on-scroll, scrollspy,
-   progress rail, mobile nav.
+   progress rail, mobile nav, and the
+   single source for every stated figure.
    ============================================ */
 (function () {
   'use strict';
 
   var root = document.documentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Stated figures: the single source ----------
+   *
+   * Everything below reads from SITE_STATS; nothing re-states a figure.
+   * ----------
+   *
+   * Every number the site asserts about the author used to be typed into the
+   * markup by hand, in seven places across five files. They drifted: the DZone
+   * article count reached 107 in six of them while the homepage still said 106,
+   * because a stale-figure check written against the phrasings rather than the
+   * numbers did not match "106</b><span>DZone articles". The fix is not a better
+   * check, it is not having seven copies.
+   *
+   * So: declare each figure once here, and let every page read it.
+   *
+   *   data-stat="key"      the element's whole text becomes the value
+   *   data-stat-in="key"   {{key}} inside the element's text is replaced, for
+   *                        figures that sit inside a sentence
+   *
+   * Each site still carries the value as its initial text, so the page reads
+   * correctly with JavaScript off and before this runs. Those fallbacks are
+   * verified against this object by lint_html.py, which is the check that would
+   * have caught the 106.
+   */
+  var SITE_STATS = {
+    dzoneArticles: '107',
+    dzoneViews: '652.4K',
+    dzoneReputation: '7,206',
+    mediumFollowers: '717',
+    totalArticles: '200+',
+    developersReached: '1M+'
+  };
+
+  // Exposed because js/research.js builds its platform cards from these figures
+  // and loads after this file. Keeping one object rather than letting the
+  // dataset restate them is the whole point.
+  window.SITE_STATS = SITE_STATS;
+
+  function applyStats() {
+    document.querySelectorAll('[data-stat]').forEach(function (el) {
+      var v = SITE_STATS[el.getAttribute('data-stat')];
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-stat-in]').forEach(function (el) {
+      var v = SITE_STATS[el.getAttribute('data-stat-in')];
+      if (v === undefined) return;
+      el.textContent = el.textContent.replace(/\{\{\s*([\w]+)\s*\}\}/g, function (m, key) {
+        return SITE_STATS[key] !== undefined ? SITE_STATS[key] : m;
+      });
+    });
+  }
+
+  applyStats();
 
   /* ---------- Theme ---------- */
   var themeBtn = document.getElementById('themeToggle');

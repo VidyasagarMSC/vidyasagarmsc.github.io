@@ -600,7 +600,7 @@ const researchData = {
   ],
 
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "652.4K", label: "Total pageviews · 107 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", url: "https://dzone.com/authors/vidyasagarmsc", stat: SITE_STATS.dzoneViews, label: "Total pageviews · " + SITE_STATS.dzoneArticles + " articles" },
     { name: "Medium", icon: "M", color: "#000", stat: "717", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45 posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "10 articles · 2024–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },

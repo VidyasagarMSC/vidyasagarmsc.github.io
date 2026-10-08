@@ -139,18 +139,9 @@ function consoleGreeting() {
   console.log('%c Technology Leader • Architect • Author ', 'color:#FF6B00;font-size:12px;font-weight:500;');
 }
 
-// ============================================
-// EXPERIENCE COUNTER
-// ============================================
-function updateExperienceCounter() {
-  const el = document.getElementById('expYears');
-  if (!el) return;
-  const start = new Date(2007, 6, 1);
-  const now = new Date();
-  let years = now.getFullYear() - start.getFullYear();
-  if (now.getMonth() < 6 || (now.getMonth() === 6 && now.getDate() < 1)) years--;
-  el.textContent = years;
-}
+// The experience counter lived here once as well as in site.js. This file
+// is not referenced by any page, so that copy could never have run and
+// only risked drifting from the live one. site.js owns it now.
 
 // ============================================
 // INIT
@@ -162,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFadeIn();
   initBlogFilters();
   consoleGreeting();
-  updateExperienceCounter();
 
   const themeBtn = document.getElementById('themeToggle');
   if (themeBtn) themeBtn.addEventListener('click', toggleTheme);

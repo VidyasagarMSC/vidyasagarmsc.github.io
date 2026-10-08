@@ -186,7 +186,29 @@ ctx.URLSearchParams = URLSearchParams;
 
 // ---------------------------------------------------------------- load
 
-const SRC = ['js/research.js', 'js/site.js'];
+// Load order must match the pages. Both are `defer`, so they execute in document
+// order: site.js first, then research.js. site.js is what publishes
+// window.SITE_STATS, and research.js reads it while building its platform cards,
+// so loading them the other way round makes this harness fail on code that is
+// correct in a browser. The order below is asserted against the markup rather
+// than assumed.
+const SRC = ['js/site.js', 'js/research.js'];
+
+(function assertLoadOrder() {
+  const fs2 = require('fs');
+  for (const page of ['research.html', 'latest-posts.html']) {
+    const html = fs2.readFileSync(path.join(ROOT, page), 'utf8');
+    const order = (html.match(/src="js\/([a-z]+)\.js/g) || [])
+      .map(s => 'js/' + s.match(/js\/([a-z]+)\.js/)[1] + '.js');
+    const relevant = order.filter(f => SRC.includes(f));
+    if (relevant.join(',') !== SRC.join(',')) {
+      console.log('  ! ' + page + ' loads ' + relevant.join(' then ') +
+                  ', but this harness loads ' + SRC.join(' then '));
+      console.log('    A failure below may be the harness, not the site.');
+      process.exitCode = 1;
+    }
+  }
+})();
 SRC.forEach(function (rel) {
   const file = path.join(ROOT, rel);
   vm.runInContext(fs.readFileSync(file, 'utf8'), ctx, { filename: file });
