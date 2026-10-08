@@ -3,6 +3,7 @@
 // ============================================
 const researchData = {
   articles: [
+    { id: 1408, title: "Classification Never Left. It Just Got a New Home in LLMs.", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-07", topics: ["AI"], url: "https://dzone.com/articles/classification-in-llms", summary: "Classification never left \u2014 it moved. Jev and Laya read the input once and return a typed decision: a choice, a score, or true and false, rather than generated text." },
     { id: 1000, title: "A Field Guide to AI Agent Frameworks", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-09-10", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/ai-agent-frameworks", views: "3.7K", summary: "This piece covers the managed AI teammate apps, the open-source runtimes you host yourself, and the developer frameworks you write code." },
     { id: 1001, title: "How AI Is Actually Changing SRE Tools, Part 2: ITOps, Chaos Engineering, and the Rest of the Job", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-08-20", topics: ["AI", "Observability"], url: "https://dzone.com/articles/ai-sre-itops-chaos", views: "2.3K", summary: "Across every category, AI is good at surfacing options and drafts; the SRE still owns the judgment call with real consequences." },
     { id: 1002, title: "Graph Engineering: The Layer After Loop Engineering", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-08-14", topics: ["AI"], url: "https://dzone.com/articles/understanding-graph-engineering", views: "2.6K", summary: "A single agent is just the smallest possible graph: one node with an edge back to itself. Most tasks should stay that simple." },
@@ -599,7 +600,7 @@ const researchData = {
   ],
 
   platforms: [
-    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "650.7K", label: "Total pageviews · 106 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
+    { name: "DZone", icon: "DZ", color: "#e34c26", stat: "652.4K", label: "Total pageviews · 107 articles", url: "https://dzone.com/authors/vidyasagarmsc" },
     { name: "Medium", icon: "M", color: "#000", stat: "717", label: "Followers", url: "https://medium.com/@VidyasagarMSC" },
     { name: "Dev.to", icon: "<i class='fab fa-dev'></i>", color: "#0a0a0a", stat: "60K+", label: "Total views · 45 posts", url: "https://dev.to/vidyasagarmsc" },
     { name: "Hackernoon", icon: "HN", color: "#00ff7f", stat: "Top Writer", label: "10 articles · 2024–2026", url: "https://hackernoon.com/u/vidyasagarmsc" },
