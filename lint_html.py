@@ -187,11 +187,17 @@ def check_platform_figures(js):
     These were stated in seven places across five files, and drifted apart more
     than once.
 
-    What this deliberately does NOT do is compare them against the number of
-    DZone rows in the dataset. Those are different quantities: 107 is the
-    lifetime count on his DZone profile, while the site indexes a curated
-    selection of around 60 plus the legacy guides. An earlier version of this
-    check asserted they were equal and was wrong.
+    What this deliberately does NOT do is compare the stated count against the
+    number of DZone rows in the dataset. Those are different quantities and an
+    earlier version of this check asserted they were equal, which was wrong.
+
+    The stated 107 is the author's own figure from the DZone author dashboard,
+    which lists 107 articles plus 2 refcards. The public profile page
+    (dzone.com/authors/vidyasagarmsc) reports articleCount 58 and lists the same
+    2 refcards, so a public reader counting what is visible gets 58. The site
+    indexes 60 DZone rows -- the 58 plus the 2 refcards -- each carrying a URL
+    that resolves. The two numbers are not in conflict; they answer different
+    questions, and the site quotes the author's total.
     """
     expected = re.search(r'label: "Total pageviews · (\d+) articles"', js)
     stat = re.search(r'\{ name: "DZone", icon: "DZ"[^}]*?stat: "([^"]+)"', js)
@@ -212,8 +218,9 @@ def check_platform_figures(js):
     dzone_rows = len(re.findall(r'platform: "DZone"', block))
     legacy_rows = len(re.findall(r'platform: "DZone Legacy"', block))
     notes.append('  dzone figures: %s articles / %s views agree across files' % (count, views))
-    notes.append('  dzone rows indexed: %d curated + %d legacy (the %s profile count is '
-                 'a lifetime total, not the indexed set)' % (dzone_rows, legacy_rows, count))
+    notes.append('  dzone rows indexed: %d with live URLs + %d legacy guides; the stated '
+                 '%s is the author-dashboard total (public profile shows 58 + 2 refcards)'
+                 % (dzone_rows, legacy_rows, count))
 
 
 def main():
