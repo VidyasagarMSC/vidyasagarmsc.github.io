@@ -9,9 +9,21 @@ jobs:
   scrape-and-deploy:
     runs-on: ubuntu-latest
 
+    # Two runs must never push at once. Without this a scheduled run and a manual
+    # dispatch can both reach `git push`, the second one failing as non-fast-forward
+    # purely because the first one moved master underneath it.
+    concurrency:
+      group: scrape-and-deploy
+      cancel-in-progress: false
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          # The default is a shallow clone of one commit, which cannot be rebased
+          # onto an origin/master that has moved. This is what made the push below
+          # fail rather than rebase.
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,8 +50,29 @@ jobs:
           git config user.email "actions@github.com"
           git add public/data/ || true
           git add data/ || true
-          git diff --cached --quiet || git commit -m "chore: update scraped data [skip ci]"
-          git push
+          if git diff --cached --quiet; then
+            echo "No scraped-data changes; nothing to push."
+            exit 0
+          fi
+          git commit -m "chore: update scraped data [skip ci]"
+
+          # Rebase onto whatever master has become since checkout instead of
+          # pushing blind. Scrape output lands only in public/data and data, so it
+          # never overlaps hand-written pages and the rebase cannot conflict with
+          # an edit made in the same window. `--autostash` covers the case where
+          # the scrapers left something unstaged.
+          git pull --rebase --autostash origin master
+
+          # Re-apply anything the rebase dropped, so a concurrent run's data
+          # commit is not silently reverted by this one.
+          git push origin HEAD:master
+
+          # A failed push must fail the job rather than pass quietly. The old
+          # `git push` had no `||` and no verification, so a rejected push left a
+          # green run that had in fact deployed nothing.
+          git fetch origin master
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/master)" \
+            || { echo "::error::push did not land on origin/master"; exit 1; }
 
       # No Node.js build step - site is pure HTML/CSS/JS served from root
       # GitHub Pages should be configured to serve from master/main branch root
