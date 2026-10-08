@@ -17,15 +17,14 @@ So this parses the source rather than the DOM.
   img-no-dims      layout shift on load, and a reserved box of the wrong size
   anchor-no-href   a link that goes nowhere but still takes a tap target
 """
+import json
 import os
+import re
 import sys
 from html.parser import HTMLParser
 
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
         'link', 'meta', 'param', 'source', 'track', 'wbr'}
-
-# Elements whose content is not parsed as markup.
-RAW_TEXT = {'script', 'style'}
 
 problems = []
 notes = []
@@ -128,23 +127,114 @@ class Audit(HTMLParser):
                 '<%s> opened here is never closed' % entry[0])
 
 
+def check_recent_list(js, html):
+    """The homepage's "Recent dispatches" block is hand-maintained HTML.
+
+    Everything else on the site that lists articles is rendered from
+    researchData.articles, so it cannot fall behind. This one is six rows of
+    literal markup, which is why adding the 107th DZone article left the homepage
+    showing the previous six with no error anywhere.
+
+    So: compare the block against the head of the dataset and fail if they differ.
+    """
+    rows = []
+    for m in re.finditer(
+            r'<a href="([^"]+)"[^>]*class="latest-post-card"[^>]*>\s*'
+            r'<time class="lpc-date" datetime="([0-9-]+)">', html):
+        rows.append((m.group(1), m.group(2)))
+    if not rows:
+        return
+
+    block = js[js.index('articles: ['):js.index('  // Speaking engagements')]
+    head = []
+    for m in re.finditer(
+            r'\{ id: (\d+), title: "(.*?)", platform: "(.*?)".*?'
+            r'date: "([0-9][0-9-]*)".*?url: "(.*?)"', block):
+        head.append((m.group(5), m.group(4)))
+        if len(head) == len(rows):
+            break
+
+    if len(head) < len(rows):
+        err('index.html', 0, 'recent-list-short',
+            'the recent list has %d rows but the dataset yielded %d' % (len(rows), len(head)))
+        return
+
+    # Report the first divergence only. When the list falls behind by one, every
+    # subsequent row is also wrong, and five near-identical messages bury the one
+    # line that says what to do.
+    for i, (href, date) in enumerate(rows):
+        want_href, want_date = head[i]
+        if href == want_href and date == want_date:
+            continue
+        if href != want_href:
+            err('index.html', 0, 'recent-list-drift',
+                'row %d is %s but the dataset has %s (%s) there. The list has fallen '
+                'behind: add the newest article at the top and drop the one that '
+                'falls off the end.'
+                % (i + 1, href.rsplit('/', 1)[-1], want_href.rsplit('/', 1)[-1], want_date))
+        else:
+            err('index.html', 0, 'recent-list-drift',
+                'row %d (%s) is dated %s in the list but %s in the dataset'
+                % (i + 1, href, date, want_date))
+        break
+
+    notes.append('  recent dispatches: %d rows, matched against the dataset' % len(rows))
+
+
+def check_platform_figures(js):
+    """The DZone article count and pageviews must agree across every file.
+
+    These were stated in seven places across five files, and drifted apart more
+    than once.
+
+    What this deliberately does NOT do is compare them against the number of
+    DZone rows in the dataset. Those are different quantities: 107 is the
+    lifetime count on his DZone profile, while the site indexes a curated
+    selection of around 60 plus the legacy guides. An earlier version of this
+    check asserted they were equal and was wrong.
+    """
+    expected = re.search(r'label: "Total pageviews · (\d+) articles"', js)
+    stat = re.search(r'\{ name: "DZone", icon: "DZ"[^}]*?stat: "([^"]+)"', js)
+    if not expected or not stat:
+        err('js/research.js', 0, 'dzone-figures-unreadable',
+            'could not read the DZone count and pageviews out of the platform card')
+        return
+    count, views = expected.group(1), stat.group(1)
+
+    data = json.load(open('public/data/stats.json', encoding='utf-8'))
+    for label, got, want in (('article count', data['dzone_articles'], count),
+                             ('pageviews', data['dzone_views'], views)):
+        if str(got) != str(want):
+            err('public/data/stats.json', 0, 'dzone-figures-mismatch',
+                'stats.json %s is %s but research.js says %s' % (label, got, want))
+
+    block = js[js.index('articles: ['):js.index('  // Speaking engagements')]
+    dzone_rows = len(re.findall(r'platform: "DZone"', block))
+    legacy_rows = len(re.findall(r'platform: "DZone Legacy"', block))
+    notes.append('  dzone figures: %s articles / %s views agree across files' % (count, views))
+    notes.append('  dzone rows indexed: %d curated + %d legacy (the %s profile count is '
+                 'a lifetime total, not the indexed set)' % (dzone_rows, legacy_rows, count))
+
+
 def main():
     pages = sorted(p for p in os.listdir('.') if p.endswith('.html'))
     if len(sys.argv) > 1:
         pages = [p for p in pages if any(a in p for a in sys.argv[1:])]
+
+    js = open('js/research.js', encoding='utf-8').read()
+    home = open('index.html', encoding='utf-8').read()
 
     for page in pages:
         if page.startswith('_'):
             continue  # measurement harnesses, not shipped pages
         src = open(page, encoding='utf-8').read()
         a = Audit(page)
-        # Track raw-text elements so their contents are never treated as markup.
-        class Raw(Audit):
-            pass
-        # Simple approach: swap in raw mode around script/style by pre-scanning.
         a.feed(src)
         a.finish()
         notes.append('%-18s ids=%d' % (page, len(a.ids)))
+
+    check_recent_list(js, home)
+    check_platform_figures(js)
 
     for n in notes:
         print('  ' + n)
@@ -162,6 +252,7 @@ def main():
         print('%d problem(s)' % len(problems))
         sys.exit(1)
     print('html clean: no nested anchors, no duplicate ids, every img dimensioned')
+    print('homepage recent list and DZone figures agree with the dataset')
 
 
 if __name__ == '__main__':
