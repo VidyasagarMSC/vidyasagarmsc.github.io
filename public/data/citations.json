@@ -1,35 +1,35 @@
 {
   "metrics": {
-    "total_citations": 3,
+    "total_citations": 1,
     "h_index": 1,
-    "i10_index": 1,
+    "i10_index": 0,
     "works_count": 1,
     "oa_cited_by_count": 0,
     "counts_by_year": [
       {
-        "year": 2017,
+        "year": 2015,
         "works_count": 1,
         "oa_works_count": 0,
-        "cited_by_count": 3
+        "cited_by_count": 1
       }
     ],
-    "openalex_id": null,
+    "openalex_id": "https://openalex.org/A5059192917",
     "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
     "this_year_citations": 0,
     "projected_year_citations": 1
   },
   "yearly_citations": {
-    "2017": 3
+    "2015": 1
   },
   "works": [
     {
-      "title": "Speaker Diarization with Watson Speech-to-Text API",
+      "title": "Windows 10 Development Recipes: A Problem-Solution Approach in HTML and JavaScript",
       "doi": null,
-      "citations": 3,
-      "year": 2017,
-      "source": "Research publication",
-      "openalex_url": null
+      "citations": 1,
+      "year": 2015,
+      "source": "International Linear Collider",
+      "openalex_url": "https://openalex.org/W2503816627"
     }
   ],
-  "last_updated": "Oct 03, 2026 at 03:38 AM"
+  "last_updated": "Oct 10, 2026 at 04:10 AM"
 }
