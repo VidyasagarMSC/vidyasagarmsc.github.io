@@ -264,21 +264,24 @@ def check_stat_fallbacks(site_js, pages_html):
 
 
 def check_platform_figures(js):
-    """Sanity-check the DZone count against the dataset and the public profile.
+    """Report the indexed DZone rows against the stated profile total.
 
-    The stated 107 is the author's own figure from the DZone author dashboard,
-    which lists 107 articles plus 2 refcards. The public profile page reports
-    articleCount 58 and lists the same 2 refcards, so a public reader counting
-    what is visible gets 58. The site indexes 60 DZone rows -- the 58 plus the
-    2 refcards -- each carrying a URL that resolves. The two numbers answer
-    different questions; the site quotes the author's total.
+    The stated count is the author's own figure from the DZone author dashboard.
+    The public profile reports a lower number -- it surfaces a subset, and both
+    move together as articles are published (it read 58 when the dashboard read
+    107, then 60 when the dashboard read 109). So the two are not in conflict and
+    must not be compared for equality; they answer different questions.
+
+    The site indexes the rows that carry a resolvable URL, which is fewer than
+    either total. This only reports the shape, so the difference stays visible.
     """
     block = js[js.index('articles: ['):js.index('  // Speaking engagements')]
     dzone_rows = len(re.findall(r'platform: "DZone"', block))
     legacy_rows = len(re.findall(r'platform: "DZone Legacy"', block))
-    notes.append('  dzone rows indexed: %d with live URLs + %d legacy guides (stated 107 is '
-                 'the author-dashboard total; the public profile shows 58 + 2 refcards)'
-                 % (dzone_rows, legacy_rows))
+    stated = re.search(r"dzoneArticles:\s*'(\d+)'", open('js/site.js', encoding='utf-8').read())
+    notes.append('  dzone rows indexed: %d with live URLs + %d legacy guides; stated total %s '
+                 '(public profile shows a subset -- do not compare the two)'
+                 % (dzone_rows, legacy_rows, stated.group(1) if stated else '?'))
 
 
 def main():

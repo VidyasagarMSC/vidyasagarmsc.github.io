@@ -34,9 +34,9 @@
    * have caught the 106.
    */
   var SITE_STATS = {
-    dzoneArticles: '107',
-    dzoneViews: '652.4K',
-    dzoneReputation: '7,206',
+    dzoneArticles: '109',
+    dzoneViews: '656.8K',
+    dzoneReputation: '7,348',
     mediumFollowers: '717',
     totalArticles: '200+',
     developersReached: '1M+'

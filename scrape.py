@@ -15,8 +15,19 @@ logger = logging.getLogger(__name__)
 
 # Constants
 TODAY = date.today().strftime("%B %d, %Y")
+# Every key stats.json is expected to hold must appear here. write_stats_json
+# merges over the existing file, but a key absent from this dict has no fallback
+# and no scraper, so a scrape failure would leave it stale rather than absent.
+#
+# dzone_articles is deliberately NOT scraped. DZone's public profile reports a
+# lower articleCount than the author dashboard -- it read 60 against 109 -- because
+# the public page surfaces a subset. Scraping it would overwrite the author's real
+# total with a subset every week. It is maintained by hand from the dashboard, and
+# js/site.js SITE_STATS is the figure the site renders.
 BLOG_DEFAULTS = {
-    "dzone_views": "650.7K",
+    "dzone_views": "656.8K",
+    "dzone_articles": "109",
+    "dzone_reputation": "7348",
     "medium_followers": "717",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
@@ -106,20 +117,49 @@ def scrape_blog_stats():
     
     # DZone scraping
     try:
-        dzone_data = scrape_data(
-            "div",
-            "https://dzone.com/authors/vidyasagarmsc",
-            {"class": "profile-content-right"},
-            default=[],
-        )
+        dzone_resp = safe_request("https://dzone.com/authors/vidyasagarmsc")
+        dzone_soup = parse_html(dzone_resp.text) if dzone_resp is not None else None
 
-        if dzone_data:
-            # Find all td elements within the first profile-content-right div
-            td_elements = dzone_data[0].find_all("td", recursive=True)
-            if len(td_elements) > 3:
-                # The 4th td element contains the views count
-                stats["dzone_views"] = td_elements[3].text.strip()
-                logger.info(f"Scraped DZone views: {stats['dzone_views']}")
+        # The profile renders its figures as a labelled block, e.g.
+        #   "Reputation: 7206 Pageviews: 652.6K Articles: 60 Comments: 7"
+        # Read reputation and views from that. The td-based selector this replaced
+        # matched nothing, so the code below it silently kept the hardcoded default
+        # and the figure never moved.
+        #
+        # Articles is read from that block for reporting only and never written:
+        # the public count is a subset of the author dashboard's total.
+        flat = re.sub(r"\s+", " ", dzone_soup.get_text(" ", strip=True)) if dzone_soup else ""
+
+        def field(label):
+            m = re.search(label + r":?\s*([\d.,]+[KMB]?)", flat, re.I)
+            return m.group(1) if m else None
+
+        views = field("Pageviews")
+        if views:
+            if views != stats["dzone_views"]:
+                logger.info(f"DZone views {stats['dzone_views']} -> {views}")
+            stats["dzone_views"] = views
+        else:
+            logger.warning(
+                "DZone pageviews not found on the profile page; keeping %s. "
+                "DZone returns 403 to plain requests, so this is expected when the "
+                "scrape is blocked and the figure will be stale until it is not."
+                % stats["dzone_views"]
+            )
+
+        rep = field("Reputation")
+        if rep:
+            if rep != stats["dzone_reputation"]:
+                logger.info(f"DZone reputation {stats['dzone_reputation']} -> {rep}")
+            stats["dzone_reputation"] = rep
+
+        public_articles = field("Articles")
+        if public_articles:
+            logger.info(
+                "DZone public article count reads %s; SITE_STATS quotes %s from the "
+                "author dashboard. Not written -- the public page shows a subset."
+                % (public_articles, stats["dzone_articles"])
+            )
     except Exception as e:
         logger.error(f"DZone scraping failed: {str(e)}")
 
@@ -202,12 +242,32 @@ def scrape_social_stats():
 
 
 def write_stats_json(stats):
-    """Write scraped stats to a JSON file consumed by the frontend JS."""
+    """Write scraped stats to a JSON file consumed by the frontend JS.
+
+    Merged over whatever is already in the file. Writing the scrape result
+    wholesale deleted every key no scraper produces: dzone_articles and
+    dzone_reputation were absent from BLOG_DEFAULTS, so every Saturday the job
+    removed them and reverted dzone_views to a hardcoded default. The site's
+    figures were rolled back weekly, which is how they stayed stale for so long
+    without anyone noticing -- the job reported success.
+    """
     try:
         os.makedirs(os.path.dirname(STATS_FILE), exist_ok=True)
+        existing = {}
+        if os.path.exists(STATS_FILE):
+            try:
+                with open(STATS_FILE, encoding="utf-8") as f:
+                    existing = json.load(f)
+            except (json.JSONDecodeError, OSError) as e:
+                logger.warning(f"Could not read existing {STATS_FILE}, overwriting: {e}")
+        merged = {**existing, **stats}
+        dropped = sorted(set(existing) - set(merged))
+        if dropped:
+            logger.warning(f"keys would be dropped, preserving them instead: {dropped}")
         with open(STATS_FILE, "w", encoding="utf-8") as f:
-            json.dump(stats, f, indent=2)
-        logger.info(f"Stats written to {STATS_FILE}")
+            json.dump(merged, f, indent=2)
+            f.write("\n")
+        logger.info(f"Stats written to {STATS_FILE} ({len(merged)} keys)")
         return True
     except Exception as e:
         logger.error(f"Failed to write stats JSON: {str(e)}")
