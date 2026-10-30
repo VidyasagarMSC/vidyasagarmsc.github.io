@@ -48,7 +48,20 @@ const researchData = {
     { id: 1039, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-06-13", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide", views: "7.4K", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive environments, process information, and execute…" },
     { id: 1040, title: "Post-Quantum Cryptography: The Next Frontier in Cybersecurity", platform: "Substack", platforms: ["Substack"], year: 2025, date: "2025-05-26", topics: ["Quantum", "Security", "Developer Advocacy"], url: "https://vmacwrites.substack.com/p/post-quantum-cryptography-the-next", summary: "Don’t wait for quantum computers to arrive. Start your post-quantum journey today." },
     { id: 1041, title: "The Essential Role of Process Monitoring Scripts in Linux Environments", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2025, date: "2025-05-12", topics: ["Observability"], url: "https://vidyasagarmsc.medium.com/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924", also: {"Dev.to": "https://dev.to/vidyasagarmsc/the-essential-role-of-process-monitoring-scripts-in-linux-environments-2pe5"}, readingTime: "4 min", summary: "In today’s complex computing environments, keeping tabs on running processes isn’t just good practice — it’s absolutely critical. Whether…" },
-    { id: 1042, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-05-09", topics: ["AI"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "7.9K", summary: "This guide explores the most impactful AI developer tools, highlighting their features, installation steps, strengths, and limitations." },
+    { id: 1042, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-05-09", topics: ["AI"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "1.8K", summary: "A complete guide to modern AI developer tools, covering the landscape of AI-assisted coding environments, code generation frameworks, and productivity plugins available to developers today.",
+  },
+  {
+    id: 1412,
+    title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
+    platform: "European Modern Studies Journal",
+    platforms: ["European Modern Studies Journal"],
+    year: 2025,
+    date: "2025-05-15",
+    topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"],
+    url: "https://doi.org/10.59573/emsj.9(5).2025.103",
+    summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
+  },
+  // Modified AI Developer Toolsws: "7.9K", summary: "This guide explores the most impactful AI developer tools, highlighting their features, installation steps, strengths, and limitations." },
     { id: 1043, title: "Podman: Detailed Overview, Advantages, Disadvantages, and Setup", platform: "Dev.to", platforms: ["Dev.to"], year: 2025, date: "2025-05-04", topics: ["Containers", "Developer Advocacy", "Open Source"], url: "https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg", readingTime: "3 min", summary: "Podman is an open-source container engine that enables users to create, manage, and run OCI..." },
     { id: 1044, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-04-15", topics: ["Data Science", "Architecture"], url: "https://dzone.com/articles/data-architectures-future-of-data-management", views: "8.2K", summary: "This article explores the latest advancements in data architecture, focusing on frameworks and newer paradigms such as LakeDB and zero ETL architectures." },
     { id: 1045, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-03-28", topics: ["Security", "DevOps"], url: "https://dzone.com/articles/ansible-security-and-testing-tools-for-automation", views: "9.1K", summary: "Essential collection of security and testing tools and framework for your Ansible automation. Reduce the security risk using the tools." },
@@ -288,7 +301,8 @@ const researchData = {
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
   // Journal references and cross-platform citations.
-  {
+  journalReferences: [
+    {
     id: 1411,
     title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs",
     platform: "LoroJournals",
@@ -300,6 +314,18 @@ const researchData = {
     summary: "Peer-reviewed journal article on cybersecurity in the AI era; references the DZone series on AI-augmented bug-fixing tools.",
     alsoPublished: [{ venue: "DZone", date: "2026-10-14", url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing" }],
   },
+  {
+    id: 1412,
+    title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
+    platform: "European Modern Studies Journal",
+    platforms: ["European Modern Studies Journal"],
+    year: 2025,
+    date: "2025-05-15",
+    topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"],
+    url: "https://doi.org/10.59573/emsj.9(5).2025.103",
+    summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
+  },
+  ],
   // Speaking engagements, newest first.
   //
   // evidence is provenance, not presentation -- it is not rendered. It records
