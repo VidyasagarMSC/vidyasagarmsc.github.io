@@ -337,6 +337,17 @@ const researchData = {
     url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
     summary: "Comprehensive guide to AI agent architectures, covering common patterns, real-world applications, and implementation considerations for building scalable agentic systems.",
   },
+  {
+    id: 1413,
+    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
+    platform: "DZone",
+    platforms: ["DZone"],
+    year: 2025,
+    date: "2025-06-13",
+    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
+    isFeatured: true,
+    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
+  },
   ],
   // Speaking engagements, newest first.
   //
