@@ -325,6 +325,17 @@ const researchData = {
     url: "https://doi.org/10.59573/emsj.9(5).2025.103",
     summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
   },
+  {
+    id: 1413,
+    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
+    platform: "DZone",
+    platforms: ["DZone"],
+    year: 2025,
+    date: "2025-06-13",
+    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
+    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
+    summary: "Comprehensive guide to AI agent architectures, covering common patterns, real-world applications, and implementation considerations for building scalable agentic systems.",
+  },
   ],
   // Speaking engagements, newest first.
   //
