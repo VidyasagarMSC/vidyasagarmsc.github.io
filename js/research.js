@@ -287,6 +287,19 @@ const researchData = {
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
+  // Journal references and cross-platform citations.
+  {
+    id: 1411,
+    title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs",
+    platform: "LoroJournals",
+    platforms: ["LoroJournals"],
+    year: 2026,
+    date: "2026-10-14",
+    topics: ["AI", "Security"],
+    url: "https://lorojournals.com/index.php/emsj/en/article/view/1676",
+    summary: "Peer-reviewed journal article on cybersecurity in the AI era; references the DZone series on AI-augmented bug-fixing tools.",
+    alsoPublished: [{ venue: "DZone", date: "2026-10-14", url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing" }],
+  },
   // Speaking engagements, newest first.
   //
   // evidence is provenance, not presentation -- it is not rendered. It records
