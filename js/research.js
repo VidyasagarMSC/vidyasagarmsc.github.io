@@ -4,6 +4,17 @@
 const researchData = {
   articles: [
     { id: 1410, title: "AI-Era Cybersecurity, Part 2: Building the System Context, Governance and Agent Identity", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-15", topics: ["AI", "Security"], url: "https://dzone.com/articles/ai-cybersecurity-system-context", summary: "Part 2 covers the missing context layer, treating AI agents as identities, the rulebooks that set priorities, and a 90-day plan." },
+  {
+    id: 1413,
+    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
+    platform: "DZone",
+    platforms: ["DZone"],
+    year: 2025,
+    date: "2025-06-13",
+    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
+    isFeatured: true,
+    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
+  },,
     { id: 1409, title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-14", topics: ["AI", "Security"], url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing", summary: "Part 1 maps Project Glasswing, OpenAI Daybreak, Project Lightwell, Big Sleep, and CodeMender onto the bug lifecycle so you know which gap each one fills." },
     { id: 1408, title: "Classification Never Left. It Just Got a New Home in LLMs.", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-07", topics: ["AI"], url: "https://dzone.com/articles/classification-in-llms", summary: "Classification never left \u2014 it moved. Jev and Laya read the input once and return a typed decision: a choice, a score, or true and false, rather than generated text." },
     { id: 1000, title: "A Field Guide to AI Agent Frameworks", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-09-10", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/ai-agent-frameworks", views: "3.7K", summary: "This piece covers the managed AI teammate apps, the open-source runtimes you host yourself, and the developer frameworks you write code." },
