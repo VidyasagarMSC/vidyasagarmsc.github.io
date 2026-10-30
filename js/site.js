@@ -35,8 +35,8 @@
    */
   var SITE_STATS = {
     dzoneArticles: '109',
-    dzoneViews: '656.8K',
-    dzoneReputation: '7,348',
+    dzoneViews: '662.1K',
+    dzoneReputation: '7,358',
     mediumFollowers: '717',
     totalArticles: '200+',
     developersReached: '1M+'
