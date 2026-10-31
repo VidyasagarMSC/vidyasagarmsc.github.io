@@ -10,16 +10,23 @@
         "year": 2015,
         "works_count": 1,
         "oa_works_count": 0,
+        "cited_by_count": 0
+      },
+      {
+        "year": 2017,
+        "works_count": 0,
+        "oa_works_count": 0,
         "cited_by_count": 1
       }
     ],
     "openalex_id": "https://openalex.org/A5059192917",
     "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
     "this_year_citations": 0,
-    "projected_year_citations": 1
+    "projected_year_citations": 0
   },
   "yearly_citations": {
-    "2015": 1
+    "2015": 0,
+    "2017": 1
   },
   "works": [
     {
@@ -31,5 +38,5 @@
       "openalex_url": "https://openalex.org/W2503816627"
     }
   ],
-  "last_updated": "Oct 24, 2026 at 03:08 AM"
+  "last_updated": "Oct 31, 2026 at 03:55 AM"
 }
