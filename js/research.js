@@ -14,7 +14,8 @@ const researchData = {
     topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
     isFeatured: true,
     url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
-  },,
+    summary: "Comprehensive guide to AI agent architectures, covering common patterns, real-world applications, and implementation considerations for building scalable agentic systems.",
+  },
     { id: 1409, title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-14", topics: ["AI", "Security"], url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing", summary: "Part 1 maps Project Glasswing, OpenAI Daybreak, Project Lightwell, Big Sleep, and CodeMender onto the bug lifecycle so you know which gap each one fills." },
     { id: 1408, title: "Classification Never Left. It Just Got a New Home in LLMs.", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-07", topics: ["AI"], url: "https://dzone.com/articles/classification-in-llms", summary: "Classification never left \u2014 it moved. Jev and Laya read the input once and return a typed decision: a choice, a score, or true and false, rather than generated text." },
     { id: 1000, title: "A Field Guide to AI Agent Frameworks", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-09-10", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/ai-agent-frameworks", views: "3.7K", summary: "This piece covers the managed AI teammate apps, the open-source runtimes you host yourself, and the developer frameworks you write code." },
@@ -335,29 +336,6 @@ const researchData = {
     topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"],
     url: "https://doi.org/10.59573/emsj.9(5).2025.103",
     summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
-  },
-  {
-    id: 1413,
-    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
-    platform: "DZone",
-    platforms: ["DZone"],
-    year: 2025,
-    date: "2025-06-13",
-    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
-    isFeatured: true,
-    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
-    summary: "Comprehensive guide to AI agent architectures, covering common patterns, real-world applications, and implementation considerations for building scalable agentic systems.",
-  },
-  {
-    id: 1413,
-    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
-    platform: "DZone",
-    platforms: ["DZone"],
-    year: 2025,
-    date: "2025-06-13",
-    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
-    isFeatured: true,
-    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
   },
   ],
   // Speaking engagements, newest first.
@@ -852,7 +830,7 @@ let pubVisible = PUB_PAGE;
 function renderPublicationCards(articles) {
   const grid = document.getElementById('publicationsGrid');
   if (!grid) return;
-  const shown = articles.slice(0, pubVisible);
+  const shown = (articles || []).slice(0, pubVisible).filter(a => a && typeof a === 'object');
   grid.innerHTML = shown.map(a => {
     const badge = `<span class="pub-platform-badge" style="${getPlatformStyle(a.platform)}"><i class="${getPlatformIcon(a.platform)}"></i> ${a.platform}</span>`;
     const yb = `<span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span>`;
@@ -953,7 +931,7 @@ function renderTopicExplorer() {
 function renderTrending() {
   const grid = document.getElementById('trendingGrid');
   if (!grid) return;
-  const sorted = [...researchData.articles].filter(a => a.views).sort((a, b) => {
+  const sorted = [...researchData.articles].filter(a => a && a.views).sort((a, b) => {
     const av = parseInt(a.views.replace(/[K+,]/g, '')) * (a.views.includes('K') ? 1000 : 1);
     const bv = parseInt(b.views.replace(/[K+,]/g, '')) * (b.views.includes('K') ? 1000 : 1);
     return bv - av;
@@ -1553,7 +1531,7 @@ function initLatestPosts() {
   // Unlinked rows render as non-anchors carrying the same data-platform hook, so
   // filtering and counting treat them exactly like every other row.
   const articles = [...researchData.articles]
-    .filter(a => a.url !== '#')
+    .filter(a => a && a.url !== '#')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const indexCount = document.getElementById('indexCount');
