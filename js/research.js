@@ -3,19 +3,7 @@
 // ============================================
 const researchData = {
   articles: [
-    { id: 1410, title: "AI-Era Cybersecurity, Part 2: Building the System Context, Governance and Agent Identity", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-15", topics: ["AI", "Security"], url: "https://dzone.com/articles/ai-cybersecurity-system-context", summary: "Part 2 covers the missing context layer, treating AI agents as identities, the rulebooks that set priorities, and a 90-day plan." },
-  {
-    id: 1413,
-    title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
-    platform: "DZone",
-    platforms: ["DZone"],
-    year: 2025,
-    date: "2025-06-13",
-    topics: ["AI", "Agent Architectures", "Patterns", "Implementation"],
-    isFeatured: true,
-    url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
-    summary: "Comprehensive guide to AI agent architectures, covering common patterns, real-world applications, and implementation considerations for building scalable agentic systems.",
-  },
+    { id: 1410, title: "AI-Era Cybersecurity, Part 2: Building the System Context, Governance and Agent Identity", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-15", topics: ["AI", "Security"], isFeatured: true, url: "https://dzone.com/articles/ai-cybersecurity-system-context", summary: "Part 2 covers the missing context layer, treating AI agents as identities, the rulebooks that set priorities, and a 90-day plan." },
     { id: 1409, title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-14", topics: ["AI", "Security"], url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing", summary: "Part 1 maps Project Glasswing, OpenAI Daybreak, Project Lightwell, Big Sleep, and CodeMender onto the bug lifecycle so you know which gap each one fills." },
     { id: 1408, title: "Classification Never Left. It Just Got a New Home in LLMs.", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-07", topics: ["AI"], url: "https://dzone.com/articles/classification-in-llms", summary: "Classification never left \u2014 it moved. Jev and Laya read the input once and return a typed decision: a choice, a score, or true and false, rather than generated text." },
     { id: 1000, title: "A Field Guide to AI Agent Frameworks", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-09-10", topics: ["AI", "Open Source"], url: "https://dzone.com/articles/ai-agent-frameworks", views: "3.7K", summary: "This piece covers the managed AI teammate apps, the open-source runtimes you host yourself, and the developer frameworks you write code." },
@@ -57,23 +45,14 @@ const researchData = {
     { id: 1036, title: "The Twelve-Factor Agents: Building Production-Ready LLM Applications", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-07-17", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/understanding-twelve-factor-agents", views: "6.4K", summary: "This article delves into the concept of the Twelve-Factor Agent, an architectural pattern designed to create robust, scalable, and maintainable…" },
     { id: 1037, title: "Advanced SSL Certificate Troubleshooting for Windows: Chain of Trust, Debugging, and Best Practices", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-07-15", topics: ["Security"], url: "https://dzone.com/articles/advanced-ssl-certificate-troubleshooting-windows", views: "4.1K", summary: "SSL/TLS certificates are foundational to secure communications on the internet. Windows environments present unique challenges that go beyond basics." },
     { id: 1038, title: "Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows", platform: "Hackernoon", platforms: ["Hackernoon"], year: 2025, date: "2025-06-13", topics: ["Security"], url: "https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows", readingTime: "7 min", summary: "SSL certificates are stored in various file formats, each with its own structure and purpose." },
-    { id: 1039, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-06-13", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide", views: "7.4K", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive environments, process information, and execute…" },
+    { id: 1039, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-06-13", topics: ["AI", "Architecture"], isFeatured: true, url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide", views: "7.4K", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive environments, process information, and execute…" },
     { id: 1040, title: "Post-Quantum Cryptography: The Next Frontier in Cybersecurity", platform: "Substack", platforms: ["Substack"], year: 2025, date: "2025-05-26", topics: ["Quantum", "Security", "Developer Advocacy"], url: "https://vmacwrites.substack.com/p/post-quantum-cryptography-the-next", summary: "Don’t wait for quantum computers to arrive. Start your post-quantum journey today." },
+    { id: 1412, title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns", platform: "European Modern Studies Journal", platforms: ["European Modern Studies Journal"], year: 2025, date: "2025-05-15", topics: ["AI", "Architecture", "Developer Advocacy"], isFeatured: true, url: "https://doi.org/10.59573/emsj.9(5).2025.103", summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns — how AI agents are transforming interactive development environments." },
     { id: 1041, title: "The Essential Role of Process Monitoring Scripts in Linux Environments", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2025, date: "2025-05-12", topics: ["Observability"], url: "https://vidyasagarmsc.medium.com/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924", also: {"Dev.to": "https://dev.to/vidyasagarmsc/the-essential-role-of-process-monitoring-scripts-in-linux-environments-2pe5"}, readingTime: "4 min", summary: "In today’s complex computing environments, keeping tabs on running processes isn’t just good practice — it’s absolutely critical. Whether…" },
     { id: 1042, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-05-09", topics: ["AI"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "1.8K", summary: "A complete guide to modern AI developer tools, covering the landscape of AI-assisted coding environments, code generation frameworks, and productivity plugins available to developers today.",
   },
-  {
-    id: 1412,
-    title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
-    platform: "European Modern Studies Journal",
-    platforms: ["European Modern Studies Journal"],
-    year: 2025,
-    date: "2025-05-15",
-    topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"],
-    url: "https://doi.org/10.59573/emsj.9(5).2025.103",
-    summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
-  },
-  // Modified AI Developer Toolsws: "7.9K", summary: "This guide explores the most impactful AI developer tools, highlighting their features, installation steps, strengths, and limitations." },
+  // 1412 above is the peer-reviewed journal article (DOI-registered); the rows
+  // below continue the 2025 archive in date order.
     { id: 1043, title: "Podman: Detailed Overview, Advantages, Disadvantages, and Setup", platform: "Dev.to", platforms: ["Dev.to"], year: 2025, date: "2025-05-04", topics: ["Containers", "Developer Advocacy", "Open Source"], url: "https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg", readingTime: "3 min", summary: "Podman is an open-source container engine that enables users to create, manage, and run OCI..." },
     { id: 1044, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-04-15", topics: ["Data Science", "Architecture"], url: "https://dzone.com/articles/data-architectures-future-of-data-management", views: "8.2K", summary: "This article explores the latest advancements in data architecture, focusing on frameworks and newer paradigms such as LakeDB and zero ETL architectures." },
     { id: 1045, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-03-28", topics: ["Security", "DevOps"], url: "https://dzone.com/articles/ansible-security-and-testing-tools-for-automation", views: "9.1K", summary: "Essential collection of security and testing tools and framework for your Ansible automation. Reduce the security risk using the tools." },
@@ -314,29 +293,8 @@ const researchData = {
   ],
   // Journal references and cross-platform citations.
   journalReferences: [
-    {
-    id: 1411,
-    title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs",
-    platform: "LoroJournals",
-    platforms: ["LoroJournals"],
-    year: 2026,
-    date: "2026-10-14",
-    topics: ["AI", "Security"],
-    url: "https://lorojournals.com/index.php/emsj/en/article/view/1676",
-    summary: "Peer-reviewed journal article on cybersecurity in the AI era; references the DZone series on AI-augmented bug-fixing tools.",
-    alsoPublished: [{ venue: "DZone", date: "2026-10-14", url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing" }],
-  },
-  {
-    id: 1412,
-    title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
-    platform: "European Modern Studies Journal",
-    platforms: ["European Modern Studies Journal"],
-    year: 2025,
-    date: "2025-05-15",
-    topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"],
-    url: "https://doi.org/10.59573/emsj.9(5).2025.103",
-    summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.",
-  },
+      { id: 1411, title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs", platform: "LoroJournals", platforms: ["LoroJournals"], year: 2026, date: "2026-10-14", topics: ["AI", "Security"], url: "https://lorojournals.com/index.php/emsj/en/article/view/1676", summary: "Peer-reviewed journal article on cybersecurity in the AI era; references the DZone series on AI-augmented bug-fixing tools.", alsoPublished: [{ venue: "DZone", date: "2026-10-14", url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing" }] },
+    { id: 1412, title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns", platform: "European Modern Studies Journal", platforms: ["European Modern Studies Journal"], year: 2025, date: "2025-05-15", topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"], url: "https://doi.org/10.59573/emsj.9(5).2025.103", summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.", },
   ],
   // Speaking engagements, newest first.
   //
@@ -663,7 +621,7 @@ const researchData = {
     { name: "Google Scholar", icon: "<i class='fas fa-graduation-cap'></i>", color: "#4285f4", stat: "1", label: "Citation", url: "https://scholar.google.com/citations?user=dbcWkvwAAAAJ" }
   ],
   topics: [
-    "AI", "Cloud", "Quantum", "Security", "Architecture", "DevOps", "Python", "Containers", "Kubernetes", "Observability", "Data Science", "Mathematics", "Open Source", "Developer Advocacy", "Enterprise Architecture"
+    "AI", "Cloud", "Quantum", "Security", "Architecture", "DevOps", "Python", "Containers", "Kubernetes", "Observability", "Data Science", "Mathematics", "Open Source", "NLP", "Developer Advocacy", "Enterprise Architecture"
   ]
 };
 
@@ -686,6 +644,10 @@ const platformColors = {
   "Chatbots Life": { bg: "#5b21b6", text: "#fff" },
   "GitHub": { bg: "#333", text: "#fff" },
   "Google Scholar": { bg: "#4285f4", text: "#fff" },
+  // Peer-reviewed journal venues. European Modern Studies Journal is the
+  // DOI-registered journal; LoroJournals runs its open-journals platform.
+  "European Modern Studies Journal": { bg: "#0f4c81", text: "#fff" },
+  "LoroJournals": { bg: "#0d9488", text: "#fff" },
   "Featured": { bg: "var(--primary)", text: "#fff" }
 };
 
@@ -702,6 +664,7 @@ const topicIcons = {
   "Observability": "<i class='fas fa-chart-line'></i>",
   "Data Science": "<i class='fas fa-database'></i>",
   "Mathematics": "<i class='fas fa-square-root-variable'></i>",
+  "NLP": "<i class='fas fa-language'></i>",
   "Open Source": "<i class='fab fa-osi'></i>",
   "Developer Advocacy": "<i class='fas fa-users'></i>",
   "Enterprise Architecture": "<i class='fas fa-building'></i>"
@@ -802,7 +765,7 @@ function getPlatformStyle(platform) {
 }
 
 function getPlatformIcon(platform) {
-  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star","DZone Legacy":"fas fa-box-archive","Chatbots Life":"fas fa-robot"})[platform] || "fas fa-star";
+  return ({"DZone":"fas fa-code","Medium":"fab fa-medium","Dev.to":"fab fa-dev","Hackernoon":"fab fa-hacker-news","Substack":"fas fa-envelope","VMacWrites":"fab fa-wordpress","Featured":"fas fa-star","DZone Legacy":"fas fa-box-archive","Chatbots Life":"fas fa-robot","European Modern Studies Journal":"fas fa-book-open","LoroJournals":"fas fa-newspaper"})[platform] || "fas fa-star";
 }
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -844,7 +807,7 @@ function renderPublicationCards(articles) {
       <div class="pub-top">${yb} ${badge}</div>
       <h4>${a.title}</h4>
       <div class="pub-meta">${meta.join('')}</div>
-      <div class="pub-abstract">${a.summary}</div>
+      ${a.summary ? `<div class="pub-abstract">${a.summary}</div>` : ''}
       <div class="pub-tags">${tags}</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
         ${a.url && a.url !== '#'
@@ -885,19 +848,28 @@ function renderFeaturedResearch() {
   const container = document.getElementById('featuredResearch');
   if (!container) return;
   const featured = researchData.articles.filter(a => a.isFeatured || a.citations);
+  // A featured card without a visible link strands the reader: the publications
+  // grid carries a Read Publication anchor and so must this grid.
   container.innerHTML = featured.map(a => {
     const ct = a.citations ? `<span class="pub-tag-topic"><i class="fas fa-quote-right"></i> ${a.citations} Citation${a.citations > 1 ? 's' : ''}</span>` : '';
-    const tt = '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
-    const tags = a.topics.map(t => `<span class="pub-tag-topic">${t}</span>`).join('');
+    const tt = /journal/i.test(a.platform || '')
+      ? '<span class="pub-tag-type"><i class="fas fa-book-open"></i> Peer-reviewed</span>'
+      : '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
+    const tags = (a.topics || []).map(t => `<span class="pub-tag-topic">${t}</span>`).join('');
     const authors = '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
+    const link = a.url && a.url !== '#'
+      ? `<a href="${a.url}" target="_blank" rel="noopener" class="pub-link">${a.archived ? 'Read Archived Copy' : 'Read Publication'} <i class="fas fa-arrow-right"></i></a>` : '';
     return `<div class="pub-card" style="border-left:4px solid var(--orange);">
       <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.citations ? 'Cited Publication' : 'Featured'}</span></div>
       <h4>${a.title}</h4>
       ${authors}
       <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.platform || 'Technical Article'}</span>${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
-      <div class="pub-abstract">${a.summary}</div>
+      <div class="pub-abstract">${a.summary || ''}</div>
       <div class="pub-tags">${ct} ${tt} ${tags}</div>
-      <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
+        ${link}
+        <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
+      </div>
     </div>`;
   }).join('');
 }
