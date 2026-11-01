@@ -112,7 +112,7 @@ function makeEl(id) {
 // Every container id the render functions ask for, pre-created so the templates
 // actually execute instead of hitting an early return.
 const IDS = [
-  'publicationsGrid', 'featuredResearch', 'platformGrid', 'topicExplorer',
+  'publicationsGrid', 'platformGrid', 'topicExplorer',
   'topicFilters', 'trendingGrid', 'knowledgeGraph', 'talksList', 'talkCount',
   'speakingStat', 'latestPostsGrid', 'yearRail', 'resultCount', 'indexCount',
   'pubCount', 'resultsCount', 'pubMore', 'searchResults', 'searchInput',
@@ -214,6 +214,21 @@ SRC.forEach(function (rel) {
   vm.runInContext(fs.readFileSync(file, 'utf8'), ctx, { filename: file });
 });
 
+// The citation feed is fetched at runtime in the browser, but this harness has
+// no real fetch. Load the committed file into the dataset before the renderers
+// run; otherwise renderJournalReferences() hides the section and the check
+// would pass by rendering nothing.
+const FEED_PATH = path.join(ROOT, 'public/data/citations-of-work.json');
+const feedRaw = JSON.parse(fs.readFileSync(FEED_PATH, 'utf8'));
+const feedRefs = Array.isArray(feedRaw) ? feedRaw : (feedRaw && feedRaw.references);
+const refsForCheck = Array.isArray(feedRefs) ? feedRefs : [];
+if (!refsForCheck.length) {
+  console.log('  ! public/data/citations-of-work.json has no references');
+  process.exitCode = 1;
+} else {
+  vm.runInContext('researchData.journalReferences = ' + JSON.stringify(refsForCheck), ctx);
+}
+
 // ---------------------------------------------------------------- exercise
 
 const problems = [];
@@ -241,7 +256,6 @@ const unlinked = Object.assign({}, article, { url: null, legacy: true, archived:
 
 const calls = [
   ['renderTalks', []],
-  ['renderFeaturedResearch', []],
   ['renderJournalReferences', []],
   ['renderPlatformGrid', []],
   ['renderTopicExplorer', []],
@@ -282,7 +296,6 @@ function scanOutput(label, html) {
   }
 }
 scanOutput('#talksList', byId.talksList.innerHTML);
-scanOutput('#featuredResearch', byId.featuredResearch.innerHTML);
 scanOutput('#journalReferences', byId.journalReferences.innerHTML);
 scanOutput('#platformGrid', byId.platformGrid.innerHTML);
 scanOutput('#publicationsGrid', byId.publicationsGrid.innerHTML);
@@ -292,23 +305,105 @@ notes.push('#talksList rendered ' + (byId.talksList.innerHTML.match(/talk-item/g
 notes.push('#latestPostsGrid rendered ' + (byId.latestPostsGrid.innerHTML.match(/latest-post-card/g) || []).length + ' rows');
 notes.push('#publicationsGrid rendered ' + (byId.publicationsGrid.innerHTML.match(/pub-card/g) || []).length + ' cards');
 
-// A journal-reference card carries another author's paper, so it must render
-// the attribution cue and the DOI. Silence here would let a later edit promote
+// A reference card carries another author's work, so it must render the
+// attribution cue and the DOI. Silence here would let a later edit promote
 // someone else's paper back into my library without a failure.
-const jrCount = (byId.journalReferences.innerHTML.match(/jr-card/g) || []).length;
+const jrHtml = byId.journalReferences.innerHTML;
+const jrCount = (jrHtml.match(/jr-card/g) || []).length;
 // Top-level `const` in the loaded scripts is a lexical binding, not a property
 // of the context object, so read the dataset back through the context.
 const jrExpected = vm.runInContext('researchData.journalReferences.length', ctx);
-notes.push('#journalReferences rendered ' + jrCount + ' journal-reference card(s)');
+notes.push('#journalReferences rendered ' + jrCount + ' reference card(s)');
 if (jrCount !== jrExpected) {
   problems.push('#journalReferences rendered ' + jrCount + ' cards for ' +
                 jrExpected + ' references');
 }
-if (jrCount && !/not my publication/.test(byId.journalReferences.innerHTML)) {
+if (jrCount && !/not my publication/.test(jrHtml)) {
   problems.push('#journalReferences is missing the "not my publication" attribution cue');
 }
-if (jrCount && !/doi\.org/.test(byId.journalReferences.innerHTML)) {
+if (jrCount && !/doi\.org/.test(jrHtml)) {
   problems.push('#journalReferences is missing the DOI link');
+}
+// Every card is another author's work, not mine. The chip is small, so a
+// missing one is easy to miss by eye but means the card lost its cue.
+const refOnly = (jrHtml.match(/class="jr-kind"/g) || []).length;
+if (refOnly !== jrCount) {
+  problems.push('#journalReferences rendered ' + refOnly + ' "Reference only" chips for ' +
+                jrCount + ' cards');
+}
+
+// The feed is the only source for these cards, so validate its shape here
+// rather than discovering a bad entry after it renders.
+const ALLOWED_KINDS = new Set(['journal', 'thesis', 'patent']);
+const seenRefIds = new Set();
+const articleUrls = new Set(vm.runInContext(
+  'researchData.articles.map(function (a) { return a && a.url; }).filter(Boolean)', ctx));
+const feedKinds = new Set();
+refsForCheck.forEach(function (r, i) {
+  const label = 'feed reference ' + (r && r.id ? r.id : '#' + i);
+  if (!r || typeof r !== 'object') {
+    problems.push(label + ' is not an object');
+    return;
+  }
+  if (!r.id) problems.push(label + ' has no id');
+  else if (seenRefIds.has(r.id)) problems.push(label + ' duplicates an id');
+  seenRefIds.add(r.id);
+  if (!ALLOWED_KINDS.has(r.kind)) {
+    problems.push(label + ' has kind ' + JSON.stringify(r.kind) +
+                  ' (expected journal, thesis or patent)');
+  }
+  feedKinds.add(r.kind);
+  if (!r.title) problems.push(label + ' has no title');
+  if (!String(r.authors || r.authorFull || '').trim()) problems.push(label + ' has no author');
+  if (!/^https:\/\//.test(String(r.url || ''))) problems.push(label + ' has no https url');
+  if (!Array.isArray(r.cites) || !r.cites.length) {
+    problems.push(label + ' has no cites[] entry');
+  } else {
+    r.cites.forEach(function (c) {
+      if (!c || !c.url) problems.push(label + ' has a cite with no url');
+      else if (!articleUrls.has(c.url)) {
+        problems.push(label + ' cites a url that is not in researchData.articles: ' + c.url);
+      }
+    });
+  }
+  if (r.kind === 'journal' && !r.journal) problems.push(label + ' (journal) has no journal');
+  if (r.kind === 'thesis' && !r.venue) problems.push(label + ' (thesis) has no venue');
+  if (r.kind === 'patent') {
+    if (!Array.isArray(r.documents) || !r.documents.length) {
+      problems.push(label + ' (patent) has no documents[]');
+    } else {
+      r.documents.forEach(function (d) {
+        if (!d || !d.number) problems.push(label + ' has a patent document with no number');
+        if (!d || !/^https:\/\//.test(String(d.url || ''))) {
+          problems.push(label + ' has a patent document with no https url');
+        }
+      });
+    }
+  }
+});
+
+// The renderer picks a label and an action from `kind`, so a kind that is
+// present in the feed but absent from the output is a silent mislabel.
+const KIND_LABELS = { journal: 'Journal article', thesis: 'Thesis', patent: 'Patent family' };
+feedKinds.forEach(function (kind) {
+  if (KIND_LABELS[kind] && !new RegExp(KIND_LABELS[kind]).test(jrHtml)) {
+    problems.push('#journalReferences has a ' + kind + ' reference but no "' +
+                  KIND_LABELS[kind] + '" label');
+  }
+});
+const patentDocs = refsForCheck
+  .filter(function (r) { return r && r.kind === 'patent'; })
+  .reduce(function (n, r) { return n + (r.documents ? r.documents.length : 0); }, 0);
+const docLists = jrHtml.match(/<ul class="jr-docs">[\s\S]*?<\/ul>/g) || [];
+const renderedDocs = docLists.reduce(function (n, block) {
+  return n + (block.match(/<li>/g) || []).length;
+}, 0);
+if (patentDocs && renderedDocs !== patentDocs) {
+  problems.push('#journalReferences rendered ' + renderedDocs + ' patent document(s) for ' +
+                patentDocs + ' in the feed');
+}
+if (feedKinds.has('patent') && !/patents\.google\.com/.test(jrHtml)) {
+  problems.push('#journalReferences is missing the patent link');
 }
 
 // Give any rejected promises a turn to surface.

@@ -41,6 +41,9 @@ jobs:
       - name: Run citation scraper (OpenAlex)
         run: python scrape_citations.py
 
+      - name: Run citation sync (OpenAlex + Crossref -> citations-of-work.json)
+        run: python sync_citations.py
+
       - name: Run latest posts scraper
         run: python scrape_latest_posts.py || echo "latest posts scrape optional"
 
@@ -54,7 +57,7 @@ jobs:
             echo "No scraped-data changes; nothing to push."
             exit 0
           fi
-          git commit -m "chore: update scraped data [skip ci]"
+          git commit -m "chore: update scraped data and citation feed [skip ci]"
 
           # Rebase onto whatever master has become since checkout instead of
           # pushing blind. Scrape output lands only in public/data and data, so it

@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/site.css?v=20261101b" />
+  <link rel="stylesheet" href="css/site.css?v=20261101c" />
   <noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e14a0e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23c2410c%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpolygon%20points%3D%2250%2C6%2085%2C28%2085%2C72%2050%2C94%2015%2C72%2015%2C28%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cpolygon%20points%3D%2250%2C17%2077%2C34%2077%2C66%2050%2C83%2023%2C66%2023%2C34%22%20fill%3D%22%2315181b%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2262%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-style%3D%22italic%22%20font-weight%3D%22600%22%20font-size%3D%2238%22%20fill%3D%22url%28%23g%29%22%3EVM%3C%2Ftext%3E%3C%2Fsvg%3E" />
@@ -100,7 +100,7 @@
           <strong>1M+</strong> researchers and developers worldwide.
         </p>
         <div class="meta-strip reveal d3">
-          <span class="meta-pill"><i class="fas fa-quote-right"></i> 3 Citations</span>
+          <span class="meta-pill"><i class="fas fa-quote-right"></i> <span data-stat="scholarCitations">3</span> Scholar citations</span>
           <span class="meta-pill"><i class="fas fa-pen"></i> 200+ Articles</span>
           <span class="meta-pill"><i class="fas fa-users"></i> 1M+ Readers</span>
           <span class="meta-pill"><i class="fas fa-globe"></i> 8 Platforms</span>
@@ -132,11 +132,11 @@
       </div>
       <div class="citation-stats">
         <div class="citation-stat reveal">
-          <div class="stat-trend" id="citationTrend"><i class="fas fa-arrow-up"></i> <span id="trendValue">0</span> this year</div>
+          <div class="stat-trend"><i class="fas fa-file-signature"></i> 3 patent documents</div>
           <div class="stat-icon"><i class="fas fa-quote-right"></i></div>
-          <div class="stat-number" data-target="3" id="totalCitations">3</div>
-          <div class="stat-label">Total Citations</div>
-          <div class="stat-sub">Google Scholar</div>
+          <div class="stat-number" data-target="3" data-stat="scholarCitations">3</div>
+          <div class="stat-label">Scholar Citations</div>
+          <div class="stat-sub">Google Scholar &middot; patent family</div>
         </div>
         <div class="citation-stat reveal d1">
           <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
@@ -215,31 +215,19 @@
 
   <div class="divider"></div>
 
-  <!-- ══════════ FEATURED ══════════ -->
-  <section class="folio" data-folio="03">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-label reveal">Highlight</div>
-        <h2 class="section-heading reveal d1">Featured <em>research</em></h2>
-        <p class="section-body reveal d2">The most-cited technical articles I have written across every platform. A peer-reviewed journal article that cites one of them is listed under <a href="#journal-references">journal references</a> below.</p>
-      </div>
-      <div class="publications-grid" id="featuredResearch"></div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ══════════ JOURNAL REFERENCES ══════════ -->
-  <!-- Deliberately separate from Featured research: each card is another
-       author's peer-reviewed paper that cites one of my articles. It is a
-       reference in the scholarly record, not a publication of mine, and the
-       section copy has to say so before a reader assumes otherwise. -->
+  <!-- ══════════ WORKS CITING MINE ══════════ -->
+  <!-- Deliberately separate from the publications library: each card is another
+       author's work that cites one of my articles -- a journal paper, a thesis
+       or a patent family. It is a reference in the scholarly record, not a
+       publication of mine, and the section copy has to say so before a reader
+       assumes otherwise. The cards are rendered from
+       public/data/citations-of-work.json, which sync_citations.py keeps current. -->
   <section class="folio" data-folio="03a" id="journal-references">
     <div class="container">
       <div class="section-head">
         <div class="section-label reveal">Cited by</div>
-        <h2 class="section-heading reveal d1">Journal articles <em>citing my work</em></h2>
-        <p class="section-body reveal d2">Peer-reviewed papers written by other researchers that reference my DZone articles. These are <strong>not my publications</strong> &mdash; the authorship, the DOI and the paper belong to them; what is mine is the cited article. Each entry links to both.</p>
+        <h2 class="section-heading reveal d1">Works <em>citing mine</em></h2>
+        <p class="section-body reveal d2">A peer-reviewed journal article, a master's thesis and a patent family, each written by other researchers, that reference my articles. These are <strong>not my publications</strong> &mdash; the authorship, the DOI and the patent belong to them; what is mine is the cited article. Google Scholar counts the three patent documents; the thesis and journal paper are listed here because Scholar does not index them. Each entry links to both.</p>
       </div>
       <div class="publications-grid" id="journalReferences"></div>
     </div>
@@ -272,8 +260,8 @@
       <div class="metrics-grid">
         <div class="metrics-card reveal">
           <div class="metrics-icon"><i class="fas fa-quote-right"></i></div>
-          <div class="metrics-value">3</div>
-          <div class="metrics-label">Total Citations</div>
+          <div class="metrics-value" data-stat="scholarCitations">3</div>
+          <div class="metrics-label">Scholar Citations</div>
           <div class="metrics-sub">Google Scholar</div>
         </div>
         <div class="metrics-card reveal d1">
@@ -307,14 +295,16 @@
       <div class="section-head">
         <div class="section-label reveal">Timeline</div>
         <h2 class="section-heading reveal d1">Citations over <em>time</em></h2>
-        <p class="section-body reveal d2">Citation impact from Google Scholar, with the most cited work being "Speaker Diarization with Watson Speech-to-Text API" (2017).</p>
+        <p class="section-body reveal d2">Google Scholar's three citations are the Veritext patent documents on the 2017 "Speaker Diarization with Watson" article. The 2023 thesis that cites the same article is not indexed by Scholar and appears under <a href="#journal-references">works citing mine</a>.</p>
       </div>
       <div class="chart-section reveal">
         <div class="chart-bars">
-          <div class="chart-bar-group"><div class="bar-value">3</div><div class="bar" style="height:132px;"></div><div class="bar-label">2017</div></div>
+          <div class="chart-bar-group"><div class="bar-value">1</div><div class="bar" style="height:44px;"></div><div class="bar-label">2021</div></div>
+          <div class="chart-bar-group"><div class="bar-value">1</div><div class="bar" style="height:44px;"></div><div class="bar-label">2022</div></div>
+          <div class="chart-bar-group"><div class="bar-value">1</div><div class="bar" style="height:44px;"></div><div class="bar-label">2025</div></div>
         </div>
         <div class="chart-legend">
-          <span><span class="legend-dot" style="background:linear-gradient(180deg,#ea580c,#c2410c);"></span> Google Scholar Citations</span>
+          <span><span class="legend-dot" style="background:linear-gradient(180deg,#ea580c,#c2410c);"></span> Google Scholar citations by citing-work year</span>
         </div>
       </div>
     </div>
@@ -452,7 +442,7 @@
         <p>Track my latest publications and citations on Google Scholar. Stay updated with new research in AI, cloud computing, and quantum technologies.</p>
         <a href="https://scholar.google.com/citations?user=dbcWkvwAAAAJ&amp;hl=en" target="_blank" rel="noopener" class="cta-btn">View Google Scholar profile</a>
       </div>
-      <p class="last-updated">Last updated: Sep 10, 2026 · Data sourced from Google Scholar, OpenAlex, DZone, Medium, Dev.to, Substack, Hackernoon</p>
+      <p class="last-updated">Last updated: Nov 1, 2026 · Data sourced from Google Scholar, OpenAlex, Crossref, DZone, Medium, Dev.to, Substack, Hackernoon</p>
     </div>
   </section>
 
@@ -479,7 +469,7 @@
 
 <div id="citationModalContainer"></div>
 
-<script defer src="js/site.js?v=20261101b"></script>
-<script defer src="js/research.js?v=20261101b"></script>
+<script defer src="js/site.js?v=20261101c"></script>
+<script defer src="js/research.js?v=20261101c"></script>
 </body>
 </html>

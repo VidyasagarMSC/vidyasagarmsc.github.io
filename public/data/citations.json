@@ -1,4 +1,5 @@
 {
+  "source": "openalex",
   "metrics": {
     "total_citations": 1,
     "h_index": 1,
@@ -21,6 +22,7 @@
     ],
     "openalex_id": "https://openalex.org/A5059192917",
     "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
+    "source": "openalex",
     "this_year_citations": 0,
     "projected_year_citations": 0
   },

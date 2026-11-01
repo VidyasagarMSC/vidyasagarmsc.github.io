@@ -23,6 +23,7 @@ python3 -m http.server 8000
 pip install -r requirements.txt
 python3 scrape.py
 python3 scrape_citations.py
+python3 sync_citations.py
 python3 scrape_latest_posts.py
 ```
 

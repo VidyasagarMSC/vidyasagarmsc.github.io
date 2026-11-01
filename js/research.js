@@ -288,33 +288,15 @@ const researchData = {
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
-  // Peer-reviewed journal articles BY OTHER AUTHORS that cite my work.
+  // Works BY OTHER AUTHORS that cite my work: journal articles, theses and
+  // patent families. The authoritative list is public/data/citations-of-work.json,
+  // loaded by loadCitationReferences() and kept current by sync_citations.py.
   //
-  // These are not my publications and must never be counted as such: they live
+  // They are not my publications and must never be counted as such: they live
   // outside `articles` so the library, the year rail and every article count
-  // reflect only what I wrote. Verified against Crossref metadata for the DOI.
-  journalReferences: [
-    {
-      id: 1412,
-      title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
-      authors: "Soni, N.",
-      authorFull: "Navin Soni",
-      journal: "European Modern Studies Journal",
-      year: 2025,
-      date: "2025-10-13",
-      volume: "9(5)",
-      pages: "1125\u20131135",
-      doi: "10.59573/emsj.9(5).2025.103",
-      url: "https://doi.org/10.59573/emsj.9(5).2025.103",
-      cites: [{
-        title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
-        venue: "DZone",
-        date: "2025-06-13",
-        url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
-      }],
-      note: "Crossref lists my DZone article as one of the 12 references in this paper. The paper itself is authored by Navin Soni.",
-    },
-  ],
+  // reflect only what I wrote. The feed is the single source because the weekly
+  // sync writes it; keeping a second copy here would drift.
+  journalReferences: [],
   // Speaking engagements, newest first.
   //
   // evidence is provenance, not presentation -- it is not rendered. It records
@@ -637,7 +619,7 @@ const researchData = {
     { name: "Substack", icon: "S", color: "#ff671e", stat: "500+", label: "Subscribers", url: "https://vmacwrites.substack.com" },
     { name: "VMacWrites", icon: "W", color: "#21759b", stat: "134", label: "Posts dating back to 2010", url: "https://vmacwrites.wordpress.com" },
     { name: "GitHub", icon: "<i class='fab fa-github'></i>", color: "#333", stat: "15+", label: "Public repositories", url: "https://github.com/VidyasagarMSC" },
-    { name: "Google Scholar", icon: "<i class='fas fa-graduation-cap'></i>", color: "#4285f4", stat: "1", label: "Citation", url: "https://scholar.google.com/citations?user=dbcWkvwAAAAJ" }
+    { name: "Google Scholar", icon: "<i class='fas fa-graduation-cap'></i>", color: "#4285f4", stat: SITE_STATS.scholarCitations, label: "Citations", url: "https://scholar.google.com/citations?user=dbcWkvwAAAAJ" }
   ],
   topics: [
     "AI", "Cloud", "Quantum", "Security", "Architecture", "DevOps", "Python", "Containers", "Kubernetes", "Observability", "Data Science", "Mathematics", "Open Source", "NLP", "Developer Advocacy", "Enterprise Architecture"
@@ -863,50 +845,48 @@ function renderPublicationCards(articles) {
   });
 }
 
-function renderFeaturedResearch() {
-  const container = document.getElementById('featuredResearch');
-  if (!container) return;
-  const featured = researchData.articles.filter(a => a.isFeatured || a.citations);
-  // Which of my articles are cited by a peer-reviewed paper? The cited card
-  // links across to the journal-reference card so the direction is unmistakable:
-  // the journal cites my article, not the other way round.
-  const citedUrls = new Set();
-  (researchData.journalReferences || []).forEach(r => {
-    (r.cites || []).forEach(c => { if (c.url) citedUrls.add(c.url); });
-  });
-  // A featured card without a visible link strands the reader: the publications
-  // grid carries a Read Publication anchor and so must this grid.
-  container.innerHTML = featured.map(a => {
-    const ct = a.citations ? `<span class="pub-tag-topic"><i class="fas fa-quote-right"></i> ${a.citations} Citation${a.citations > 1 ? 's' : ''}</span>` : '';
-    const tt = /journal/i.test(a.platform || '')
-      ? '<span class="pub-tag-type"><i class="fas fa-book-open"></i> Peer-reviewed</span>'
-      : '<span class="pub-tag-type"><i class="fas fa-pen"></i> Technical Article</span>';
-    const tags = (a.topics || []).map(t => `<span class="pub-tag-topic">${t}</span>`).join('');
-    const authors = '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
-    const link = a.url && a.url !== '#'
-      ? `<a href="${a.url}" target="_blank" rel="noopener" class="pub-link">${a.archived ? 'Read Archived Copy' : 'Read Publication'} <i class="fas fa-arrow-right"></i></a>` : '';
-    const citedBy = a.url && citedUrls.has(a.url)
-      ? '<a href="#journal-references" class="pub-citedby"><i class="fas fa-quote-right"></i> Cited by a peer-reviewed journal</a>' : '';
-    return `<div class="pub-card" style="border-left:4px solid var(--orange);">
-      <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.citations ? 'Cited Publication' : 'Featured'}</span></div>
-      <h4>${a.title}</h4>
-      ${authors}
-      <div class="pub-meta"><span><i class="fas fa-building"></i> ${a.platform || 'Technical Article'}</span>${a.citations ? `<span class="cite-badge"><i class="fas fa-quote-right"></i> Cited by ${a.citations}</span>` : ''}</div>
-      <div class="pub-abstract">${a.summary || ''}</div>
-      <div class="pub-tags">${ct} ${tt} ${tags}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
-        ${link}
-        ${citedBy}
-        <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
-      </div>
-    </div>`;
-  }).join('');
+const REFERENCE_KINDS = {
+  journal: {
+    label: 'Journal article',
+    icon: 'fas fa-book-open',
+    action: 'View journal article',
+    cites: 'This peer-reviewed article cites my work:',
+  },
+  thesis: {
+    label: 'Thesis',
+    icon: 'fas fa-graduation-cap',
+    action: 'Read the thesis',
+    cites: 'This thesis cites my work:',
+  },
+  patent: {
+    label: 'Patent family',
+    icon: 'fas fa-file-signature',
+    action: 'Open the family on Google Patents',
+    cites: 'This patent family cites my work:',
+  },
+};
+
+function referenceVenue(r) {
+  if (r.kind === 'thesis') {
+    return [r.venue, r.degree].filter(Boolean).join(' \u00b7 ');
+  }
+  if (r.kind === 'patent') {
+    const docs = r.documents || [];
+    const years = docs.map(d => d.year).filter(Boolean);
+    const span = years.length ? Math.min.apply(null, years) + '\u2013' + Math.max.apply(null, years) : '';
+    return [r.assignee || r.venue, docs.length ? docs.length + ' documents' : '', span]
+      .filter(Boolean).join(' \u00b7 ');
+  }
+  return [r.journal || r.venue,
+          r.volume ? 'vol. ' + r.volume : '',
+          r.pages ? 'pp. ' + r.pages : ''].filter(Boolean).join(' \u00b7 ');
 }
 
-// Journal articles that cite my work belong to their authors, so they get a
-// different card and an explicit "not my publication" line. The card's job is
-// provenance: who wrote it, where it was published, and which of my articles it
-// references -- with both links one click away.
+// Works that cite my work belong to their authors, so they get a different card
+// and an explicit "not my publication" line. The card's job is provenance: who
+// wrote it, where it was published, and which of my articles it references --
+// with both links one click away. `kind` is what keeps a thesis from being
+// labelled a journal article and a patent family from looking like a paper.
 function renderJournalReferences() {
   const container = document.getElementById('journalReferences');
   if (!container) return;
@@ -917,27 +897,32 @@ function renderJournalReferences() {
     return;
   }
   container.innerHTML = refs.map(r => {
+    const kind = REFERENCE_KINDS[r.kind] || REFERENCE_KINDS.journal;
     const cites = (r.cites || []).map(c => {
       const where = [c.venue, c.date ? prettyDate(c.date) : ''].filter(Boolean).join(' \u00b7 ');
       return `<li><a href="${c.url}" target="_blank" rel="noopener">${c.title}</a>${where ? ` <span class="jr-where">${where}</span>` : ''}</li>`;
     }).join('');
-    const meta = [r.volume ? `vol. ${r.volume}` : '', r.pages ? `pp. ${r.pages}` : ''].filter(Boolean).join(' \u00b7 ');
-    return `<div class="pub-card jr-card" data-id="${r.id}">
+    const docs = (r.documents || []).map(d =>
+      `<li><a href="${d.url}" target="_blank" rel="noopener">${d.number}</a>${d.year ? ` <span class="jr-where">${d.year}</span>` : ''}</li>`
+    ).join('');
+    return `<div class="pub-card jr-card" data-id="${r.id}" data-kind="${r.kind || 'journal'}">
       <div class="pub-top">
         <span class="pub-year-badge"><i class="fas fa-calendar"></i> ${r.year || ''}</span>
-        <span class="pub-platform-badge" style="${getPlatformStyle(r.journal)}"><i class="fas fa-quote-right"></i> Reference only</span>
+        <span class="pub-platform-badge" style="${getPlatformStyle(r.journal || r.venue || kind.label)}"><i class="${kind.icon}"></i> ${kind.label}</span>
+        <span class="jr-kind">Reference only</span>
       </div>
       <h4>${r.title}</h4>
       <div class="pub-authors"><strong>${r.authors || r.authorFull || 'Unknown author'}</strong><span class="jr-owner"> \u2014 not my publication</span></div>
       <div class="pub-meta">
-        <span><i class="fas fa-book-open"></i> ${r.journal}${meta ? ' \u00b7 ' + meta : ''}</span>
+        <span><i class="fas fa-building"></i> ${referenceVenue(r)}</span>
         ${r.doi ? `<span><i class="fas fa-link"></i> DOI ${r.doi}</span>` : ''}
       </div>
-      <p class="jr-cites-label">This peer-reviewed article cites my work:</p>
+      <p class="jr-cites-label">${kind.cites}</p>
       <ul class="jr-cites">${cites}</ul>
+      ${docs ? `<p class="jr-cites-label">Patent documents in this family:</p><ul class="jr-docs">${docs}</ul>` : ''}
       ${r.note ? `<p class="jr-note">${r.note}</p>` : ''}
       <div class="jr-actions">
-        <a href="${r.url}" target="_blank" rel="noopener" class="pub-link"><i class="fas fa-external-link-alt"></i> View journal article</a>
+        <a href="${r.url}" target="_blank" rel="noopener" class="pub-link"><i class="fas fa-external-link-alt"></i> ${kind.action}</a>
       </div>
     </div>`;
   }).join('');
@@ -1458,36 +1443,26 @@ window.downloadCitation = function downloadCitation() {
 }
 
 // ============================================
-// CITATION STATS LOADER
+// CITATION FEED LOADER
 // ============================================
-async function fetchCitationStats() {
+// public/data/citations-of-work.json is the single source for the works that
+// cite mine. It has to be in memory before renderJournalReferences() runs,
+// because that renderer reads researchData.journalReferences.
+// This deliberately does not read public/data/citations.json. That file is
+// OpenAlex, and every citation slot on the page is labelled Google Scholar;
+// writing OpenAlex totals into them relabelled a different dataset as Scholar.
+async function loadCitationReferences() {
   try {
-    const resp = await fetch('public/data/citations.json', { cache: 'no-cache' });
+    const resp = await fetch('public/data/citations-of-work.json', { cache: 'no-cache' });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
-    updateCitationUI(data);
+    const refs = Array.isArray(data) ? data : (data && data.references);
+    researchData.journalReferences = Array.isArray(refs) ? refs : [];
   } catch {
-    // silent fallback — static HTML values remain
-  }
-}
-
-function updateCitationUI(data) {
-  const totalEl = document.getElementById('totalCitations');
-  const hEl = document.getElementById('hIndex');
-  const trendEl = document.getElementById('trendValue');
-  if (!data || !data.metrics) return;
-
-  if (totalEl) {
-    // Only set the target — animateCounters() owns the displayed value so it
-    // never flashes 0 between the fetch resolving and the rAF loop starting.
-    totalEl.dataset.target = Math.max(1, data.metrics.total_citations);
-  }
-  if (hEl) {
-    hEl.textContent = data.metrics.h_index || 1;
-  }
-  if (trendEl) {
-    const thisYear = data.metrics.this_year_citations || 0;
-    trendEl.textContent = `+${thisYear}`;
+    // The feed is the only copy of these references. A failed read hides the
+    // section rather than rendering a half-list; the rest of the page is
+    // unaffected.
+    researchData.journalReferences = [];
   }
 }
 
@@ -1508,7 +1483,8 @@ function initResearchFadeIn() {
 // ============================================
 async function init() {
   initSearch();
-  renderFeaturedResearch();
+  // The citation section reads the feed, so it has to resolve first.
+  await loadCitationReferences();
   renderJournalReferences();
   renderPlatformGrid();
   renderTopicExplorer();
@@ -1516,7 +1492,6 @@ async function init() {
   renderTopicFilters('');
   updatePublications();
   renderTalks();
-  await fetchCitationStats();
   animateCounters();
   drawKnowledgeGraph();
   initResearchFadeIn();

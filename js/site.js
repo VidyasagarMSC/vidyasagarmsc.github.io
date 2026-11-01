@@ -39,7 +39,11 @@
     dzoneReputation: '7,358',
     mediumFollowers: '717',
     totalArticles: '200+',
-    developersReached: '1M+'
+    developersReached: '1M+',
+    // Scholar has no API and blocks scrapers, so this figure is hand-verified.
+    // It is the three Veritext patent documents, not the thesis or journal
+    // paper in public/data/citations-of-work.json.
+    scholarCitations: '3'
   };
 
   // Exposed because js/research.js builds its platform cards from these figures

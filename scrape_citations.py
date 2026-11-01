@@ -6,7 +6,9 @@ Fetches up-to-date citation metrics from OpenAlex (free, open API, no auth neede
 Merges results into public/data/stats.json alongside existing social stats.
 Also writes public/data/citations.json with detailed per-work citation data.
 
-OpenAlex covers Google Scholar, CrossRef, PubMed, ORCID, and more.
+OpenAlex aggregates CrossRef, PubMed, ORCID and more, but it is NOT Google
+Scholar. Every value this script writes is tagged `source: openalex`, and the
+stats keys are `openalex_*`; the Scholar-labelled figures are hand-verified.
 """
 
 import json
@@ -126,6 +128,9 @@ def fetch_citation_metrics(author):
         "counts_by_year": counts_by_year,
         "openalex_id": author.get("id", ""),
         "scholar_url": SCHOLAR_URL,
+        # OpenAlex is not Google Scholar. Anything that consumes these metrics
+        # has to see the source before it can label them correctly.
+        "source": "openalex",
     }
     print(f"  Total citations: {metrics['total_citations']}")
     print(f"  h-index: {metrics['h_index']}")
@@ -193,6 +198,7 @@ def main():
             ],
             "openalex_id": "",
             "scholar_url": SCHOLAR_URL,
+            "source": "openalex",
         }
         works_list = []
     else:
@@ -224,6 +230,7 @@ def main():
     metrics["projected_year_citations"] = projected
 
     citation_data = {
+        "source": "openalex",
         "metrics": metrics,
         "yearly_citations": yearly,
         "works": works_list,
@@ -234,15 +241,23 @@ def main():
     print(f"\n  Saving citation data...")
     save_citations(citation_data)
 
-    # Merge into stats.json
+    # Merge into stats.json.
+    #
+    # These keys are deliberately `openalex_*`, not `scholar_*`. The site
+    # labels its citation slots Google Scholar, and an earlier version of this
+    # script wrote OpenAlex totals into those keys. That silently relabelled a
+    # different dataset as Scholar (it reported 1 citation where Scholar says
+    # 3). Scholar has no API and blocks scrapers, so its figures stay
+    # hand-verified in js/site.js and stats.json.
     print(f"\n  Merging into stats.json...")
     stats = load_existing_stats()
-    stats["scholar_citations"] = str(metrics["total_citations"])
-    stats["scholar_h_index"] = str(metrics["h_index"])
-    stats["scholar_i10_index"] = str(metrics["i10_index"])
-    stats["scholar_works"] = str(metrics["works_count"])
-    stats["scholar_year_count"] = str(metrics["this_year_citations"])
-    stats["scholar_projected"] = str(metrics["projected_year_citations"])
+    stats["openalex_citations"] = str(metrics["total_citations"])
+    stats["openalex_h_index"] = str(metrics["h_index"])
+    stats["openalex_i10_index"] = str(metrics["i10_index"])
+    stats["openalex_works"] = str(metrics["works_count"])
+    stats["openalex_year_count"] = str(metrics["this_year_citations"])
+    stats["openalex_projected"] = str(metrics["projected_year_citations"])
+    stats["openalex_updated"] = citation_data["last_updated"]
     stats["scholar_url"] = SCHOLAR_URL
     stats["last_updated"] = citation_data["last_updated"]
     save_stats(stats)

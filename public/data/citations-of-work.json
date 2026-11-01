@@ -1,0 +1,105 @@
+{
+  "$comment": "Works by other authors that cite my articles. The site renders this file directly; sync_citations.py keeps it current. Entries marked curated are hand-verified and are never rewritten by the sync.",
+  "last_updated": "2026-11-01",
+  "references": [
+    {
+      "id": 1412,
+      "kind": "journal",
+      "title": "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
+      "authors": "Soni, N.",
+      "authorFull": "Navin Soni",
+      "journal": "European Modern Studies Journal",
+      "year": 2025,
+      "date": "2025-10-13",
+      "volume": "9(5)",
+      "pages": "1125\u20131135",
+      "doi": "10.59573/emsj.9(5).2025.103",
+      "url": "https://doi.org/10.59573/emsj.9(5).2025.103",
+      "cites": [
+        {
+          "title": "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
+          "venue": "DZone",
+          "date": "2025-06-13",
+          "url": "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide"
+        }
+      ],
+      "note": "Crossref lists my DZone article as one of the 12 references in this paper. The paper itself is authored by Navin Soni.",
+      "curated": true,
+      "verification": {
+        "source": "Crossref reference list",
+        "checked": "2026-11-01",
+        "detail": "DOI 10.59573/emsj.9(5).2025.103 names Vidyasagar (Sarath Chandra) Machupalli and the DZone title in its reference list."
+      }
+    },
+    {
+      "id": 1413,
+      "kind": "thesis",
+      "title": "Multimodal System for Audio Scene Source Counting and Analysis",
+      "authors": "Nigro, M.",
+      "authorFull": "Michael Nigro",
+      "venue": "Toronto Metropolitan University",
+      "degree": "MASc thesis",
+      "year": 2023,
+      "date": "2023-08-29",
+      "doi": "10.32920/24050751.v1",
+      "url": "https://doi.org/10.32920/24050751.v1",
+      "cites": [
+        {
+          "title": "Who's Speaking?: Speaker Diarization with Watson",
+          "venue": "Medium \u00b7 IBM Developer",
+          "date": "2017-05",
+          "url": "https://vidyasagarmsc.medium.com/track-whos-speaking-with-speaker-diarization-2e3eac2de2c3"
+        }
+      ],
+      "note": "Reference [77] of 96 on p. 37 of the deposited PDF. Google Scholar does not index this thesis, so it is not part of the three citations on my Scholar profile.",
+      "curated": true,
+      "verification": {
+        "source": "Deposited PDF, full-text search",
+        "checked": "2026-11-01",
+        "detail": "Figshare article 24050751; reference [77] names the Medium article. Crossref lists no reference data for this DOI, so this entry is curated rather than auto-synced."
+      }
+    },
+    {
+      "id": 1414,
+      "kind": "patent",
+      "title": "Automated transcript generation from multi-channel audio",
+      "authors": "Donofrio, DaSilva, Maraska, Kaplan",
+      "authorFull": "Veritext LLC",
+      "assignee": "Veritext LLC",
+      "year": "2021\u20132025",
+      "url": "https://patents.google.com/patent/US12387741B2/en",
+      "documents": [
+        {
+          "number": "US10930300B2",
+          "year": 2021,
+          "url": "https://patents.google.com/patent/US10930300B2/en"
+        },
+        {
+          "number": "US20220005492A1",
+          "year": 2022,
+          "url": "https://patents.google.com/patent/US20220005492A1/en"
+        },
+        {
+          "number": "US12387741B2",
+          "year": 2025,
+          "url": "https://patents.google.com/patent/US12387741B2/en"
+        }
+      ],
+      "cites": [
+        {
+          "title": "Who's Speaking?: Speaker Diarization with Watson",
+          "venue": "Medium \u00b7 IBM Developer",
+          "date": "2017-05",
+          "url": "https://vidyasagarmsc.medium.com/track-whos-speaking-with-speaker-diarization-2e3eac2de2c3"
+        }
+      ],
+      "note": "The three documents in this family are the three citations Google Scholar lists on my profile. Inventors: Donofrio, DaSilva, Maraska and Kaplan; assignee: Veritext LLC.",
+      "curated": true,
+      "verification": {
+        "source": "Google Patents citation lists",
+        "checked": "2026-11-01",
+        "detail": "The family cites the Medium article in its prior-art citations. Google Patents blocks automated queries, so this entry is curated rather than auto-synced."
+      }
+    }
+  ]
+}

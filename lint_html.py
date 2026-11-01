@@ -245,7 +245,8 @@ def check_stat_fallbacks(site_js, pages_html):
     data = json.load(open('public/data/stats.json', encoding='utf-8'))
     for label, got, key in (('dzone_articles', data['dzone_articles'], 'dzoneArticles'),
                             ('dzone_views', data['dzone_views'], 'dzoneViews'),
-                            ('dzone_reputation', data['dzone_reputation'], 'dzoneReputation')):
+                            ('dzone_reputation', data['dzone_reputation'], 'dzoneReputation'),
+                            ('scholar_citations', data.get('scholar_citations'), 'scholarCitations')):
         # Compare digits only. SITE_STATS holds the display form, which carries a
         # thousands separator for reputation ("7,206"), while stats.json holds the
         # raw value ("7206"). Those are the same figure in two representations,
@@ -254,7 +255,7 @@ def check_stat_fallbacks(site_js, pages_html):
         def digits(v):
             return re.sub(r'[^0-9]', '', str(v))
         if digits(source.get(key)) != digits(got):
-            err('public/data/stats.json', 0, 'dzone-figures-mismatch',
+            err('public/data/stats.json', 0, 'stats-figures-mismatch',
                 'stats.json %s is %r but SITE_STATS.%s is %r'
                 % (label, got, key, source.get(key)))
 
