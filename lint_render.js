@@ -116,7 +116,7 @@ const IDS = [
   'topicFilters', 'trendingGrid', 'knowledgeGraph', 'talksList', 'talkCount',
   'speakingStat', 'latestPostsGrid', 'yearRail', 'resultCount', 'indexCount',
   'pubCount', 'resultsCount', 'pubMore', 'searchResults', 'searchInput',
-  'researchSearch', 'citationTimeline', 'pubCards'
+  'researchSearch', 'citationTimeline', 'pubCards', 'journalReferences'
 ];
 
 const byId = {};
@@ -242,6 +242,7 @@ const unlinked = Object.assign({}, article, { url: null, legacy: true, archived:
 const calls = [
   ['renderTalks', []],
   ['renderFeaturedResearch', []],
+  ['renderJournalReferences', []],
   ['renderPlatformGrid', []],
   ['renderTopicExplorer', []],
   ['renderTopicFilters', ['']],
@@ -282,6 +283,7 @@ function scanOutput(label, html) {
 }
 scanOutput('#talksList', byId.talksList.innerHTML);
 scanOutput('#featuredResearch', byId.featuredResearch.innerHTML);
+scanOutput('#journalReferences', byId.journalReferences.innerHTML);
 scanOutput('#platformGrid', byId.platformGrid.innerHTML);
 scanOutput('#publicationsGrid', byId.publicationsGrid.innerHTML);
 scanOutput('#latestPostsGrid', byId.latestPostsGrid.innerHTML);
@@ -289,6 +291,25 @@ scanOutput('#latestPostsGrid', byId.latestPostsGrid.innerHTML);
 notes.push('#talksList rendered ' + (byId.talksList.innerHTML.match(/talk-item/g) || []).length + ' talk entries');
 notes.push('#latestPostsGrid rendered ' + (byId.latestPostsGrid.innerHTML.match(/latest-post-card/g) || []).length + ' rows');
 notes.push('#publicationsGrid rendered ' + (byId.publicationsGrid.innerHTML.match(/pub-card/g) || []).length + ' cards');
+
+// A journal-reference card carries another author's paper, so it must render
+// the attribution cue and the DOI. Silence here would let a later edit promote
+// someone else's paper back into my library without a failure.
+const jrCount = (byId.journalReferences.innerHTML.match(/jr-card/g) || []).length;
+// Top-level `const` in the loaded scripts is a lexical binding, not a property
+// of the context object, so read the dataset back through the context.
+const jrExpected = vm.runInContext('researchData.journalReferences.length', ctx);
+notes.push('#journalReferences rendered ' + jrCount + ' journal-reference card(s)');
+if (jrCount !== jrExpected) {
+  problems.push('#journalReferences rendered ' + jrCount + ' cards for ' +
+                jrExpected + ' references');
+}
+if (jrCount && !/not my publication/.test(byId.journalReferences.innerHTML)) {
+  problems.push('#journalReferences is missing the "not my publication" attribution cue');
+}
+if (jrCount && !/doi\.org/.test(byId.journalReferences.innerHTML)) {
+  problems.push('#journalReferences is missing the DOI link');
+}
 
 // Give any rejected promises a turn to surface.
 setTimeout(function () {

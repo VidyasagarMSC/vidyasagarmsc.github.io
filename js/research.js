@@ -47,12 +47,9 @@ const researchData = {
     { id: 1038, title: "Troubleshooting SSL: Why Your SSL Certificate Isn't Working on Windows", platform: "Hackernoon", platforms: ["Hackernoon"], year: 2025, date: "2025-06-13", topics: ["Security"], url: "https://hackernoon.com/troubleshooting-ssl-why-your-ssl-certificate-isnt-working-on-windows", readingTime: "7 min", summary: "SSL certificates are stored in various file formats, each with its own structure and purpose." },
     { id: 1039, title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-06-13", topics: ["AI", "Architecture"], isFeatured: true, url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide", views: "7.4K", summary: "AI agent architectures provide structural blueprints for designing intelligent systems that perceive environments, process information, and execute…" },
     { id: 1040, title: "Post-Quantum Cryptography: The Next Frontier in Cybersecurity", platform: "Substack", platforms: ["Substack"], year: 2025, date: "2025-05-26", topics: ["Quantum", "Security", "Developer Advocacy"], url: "https://vmacwrites.substack.com/p/post-quantum-cryptography-the-next", summary: "Don’t wait for quantum computers to arrive. Start your post-quantum journey today." },
-    { id: 1412, title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns", platform: "European Modern Studies Journal", platforms: ["European Modern Studies Journal"], year: 2025, date: "2025-05-15", topics: ["AI", "Architecture", "Developer Advocacy"], isFeatured: true, url: "https://doi.org/10.59573/emsj.9(5).2025.103", summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns — how AI agents are transforming interactive development environments." },
     { id: 1041, title: "The Essential Role of Process Monitoring Scripts in Linux Environments", platform: "Medium", platforms: ["Medium", "Dev.to"], year: 2025, date: "2025-05-12", topics: ["Observability"], url: "https://vidyasagarmsc.medium.com/the-essential-role-of-process-monitoring-scripts-in-linux-environments-50d6a241f924", also: {"Dev.to": "https://dev.to/vidyasagarmsc/the-essential-role-of-process-monitoring-scripts-in-linux-environments-2pe5"}, readingTime: "4 min", summary: "In today’s complex computing environments, keeping tabs on running processes isn’t just good practice — it’s absolutely critical. Whether…" },
     { id: 1042, title: "A Complete Guide to Modern AI Developer Tools", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-05-09", topics: ["AI"], url: "https://dzone.com/articles/a-complete-guide-to-modern-ai-developer-tools", views: "1.8K", summary: "A complete guide to modern AI developer tools, covering the landscape of AI-assisted coding environments, code generation frameworks, and productivity plugins available to developers today.",
   },
-  // 1412 above is the peer-reviewed journal article (DOI-registered); the rows
-  // below continue the 2025 archive in date order.
     { id: 1043, title: "Podman: Detailed Overview, Advantages, Disadvantages, and Setup", platform: "Dev.to", platforms: ["Dev.to"], year: 2025, date: "2025-05-04", topics: ["Containers", "Developer Advocacy", "Open Source"], url: "https://dev.to/vidyasagarmsc/podman-detailed-overview-advantages-disadvantages-and-setup-31gg", readingTime: "3 min", summary: "Podman is an open-source container engine that enables users to create, manage, and run OCI..." },
     { id: 1044, title: "Emerging Data Architectures: The Future of Data Management", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-04-15", topics: ["Data Science", "Architecture"], url: "https://dzone.com/articles/data-architectures-future-of-data-management", views: "8.2K", summary: "This article explores the latest advancements in data architecture, focusing on frameworks and newer paradigms such as LakeDB and zero ETL architectures." },
     { id: 1045, title: "Ansible Security and Testing Tools for Automation", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-03-28", topics: ["Security", "DevOps"], url: "https://dzone.com/articles/ansible-security-and-testing-tools-for-automation", views: "9.1K", summary: "Essential collection of security and testing tools and framework for your Ansible automation. Reduce the security risk using the tools." },
@@ -291,10 +288,32 @@ const researchData = {
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
   ],
-  // Journal references and cross-platform citations.
+  // Peer-reviewed journal articles BY OTHER AUTHORS that cite my work.
+  //
+  // These are not my publications and must never be counted as such: they live
+  // outside `articles` so the library, the year rail and every article count
+  // reflect only what I wrote. Verified against Crossref metadata for the DOI.
   journalReferences: [
-      { id: 1411, title: "AI-Era Cybersecurity, Part 1: Mapping Glasswing, Daybreak, Lightwell and the Tools Racing to Find and Fix Bugs", platform: "LoroJournals", platforms: ["LoroJournals"], year: 2026, date: "2026-10-14", topics: ["AI", "Security"], url: "https://lorojournals.com/index.php/emsj/en/article/view/1676", summary: "Peer-reviewed journal article on cybersecurity in the AI era; references the DZone series on AI-augmented bug-fixing tools.", alsoPublished: [{ venue: "DZone", date: "2026-10-14", url: "https://dzone.com/articles/ai-cybersecurity-bug-fixing" }] },
-    { id: 1412, title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns", platform: "European Modern Studies Journal", platforms: ["European Modern Studies Journal"], year: 2025, date: "2025-05-15", topics: ["AI", "Developer Tools", "Usability", "Architectural Patterns"], url: "https://doi.org/10.59573/emsj.9(5).2025.103", summary: "Peer-reviewed journal article on AI-powered developer tools, usability, and architectural patterns. Explores how AI agents are transforming interactive development environments, focusing on usability evaluation, architectural pattern detection, and the trade-offs of agent-mediated code modification.", },
+    {
+      id: 1412,
+      title: "Interactive Developer Tools Powered by AI Agents: Usability and Architectural Patterns",
+      authors: "Soni, N.",
+      authorFull: "Navin Soni",
+      journal: "European Modern Studies Journal",
+      year: 2025,
+      date: "2025-10-13",
+      volume: "9(5)",
+      pages: "1125\u20131135",
+      doi: "10.59573/emsj.9(5).2025.103",
+      url: "https://doi.org/10.59573/emsj.9(5).2025.103",
+      cites: [{
+        title: "AI Agent Architectures: Patterns, Applications, and Implementation Guide",
+        venue: "DZone",
+        date: "2025-06-13",
+        url: "https://dzone.com/articles/ai-agent-architectures-patterns-applications-guide",
+      }],
+      note: "Crossref lists my DZone article as one of the 12 references in this paper. The paper itself is authored by Navin Soni.",
+    },
   ],
   // Speaking engagements, newest first.
   //
@@ -848,6 +867,13 @@ function renderFeaturedResearch() {
   const container = document.getElementById('featuredResearch');
   if (!container) return;
   const featured = researchData.articles.filter(a => a.isFeatured || a.citations);
+  // Which of my articles are cited by a peer-reviewed paper? The cited card
+  // links across to the journal-reference card so the direction is unmistakable:
+  // the journal cites my article, not the other way round.
+  const citedUrls = new Set();
+  (researchData.journalReferences || []).forEach(r => {
+    (r.cites || []).forEach(c => { if (c.url) citedUrls.add(c.url); });
+  });
   // A featured card without a visible link strands the reader: the publications
   // grid carries a Read Publication anchor and so must this grid.
   container.innerHTML = featured.map(a => {
@@ -859,6 +885,8 @@ function renderFeaturedResearch() {
     const authors = '<div class="pub-authors"><strong>Vidyasagar Machupalli</strong></div>';
     const link = a.url && a.url !== '#'
       ? `<a href="${a.url}" target="_blank" rel="noopener" class="pub-link">${a.archived ? 'Read Archived Copy' : 'Read Publication'} <i class="fas fa-arrow-right"></i></a>` : '';
+    const citedBy = a.url && citedUrls.has(a.url)
+      ? '<a href="#journal-references" class="pub-citedby"><i class="fas fa-quote-right"></i> Cited by a peer-reviewed journal</a>' : '';
     return `<div class="pub-card" style="border-left:4px solid var(--orange);">
       <div class="pub-top"><span class="pub-year-badge"><i class="fas fa-calendar"></i> ${a.year}</span><span class="pub-platform-badge" style="background:var(--orange);color:white;">${a.citations ? 'Cited Publication' : 'Featured'}</span></div>
       <h4>${a.title}</h4>
@@ -868,7 +896,48 @@ function renderFeaturedResearch() {
       <div class="pub-tags">${ct} ${tt} ${tags}</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
         ${link}
+        ${citedBy}
         <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Journal articles that cite my work belong to their authors, so they get a
+// different card and an explicit "not my publication" line. The card's job is
+// provenance: who wrote it, where it was published, and which of my articles it
+// references -- with both links one click away.
+function renderJournalReferences() {
+  const container = document.getElementById('journalReferences');
+  if (!container) return;
+  const refs = researchData.journalReferences || [];
+  if (!refs.length) {
+    const section = document.getElementById('journal-references');
+    if (section) section.hidden = true;
+    return;
+  }
+  container.innerHTML = refs.map(r => {
+    const cites = (r.cites || []).map(c => {
+      const where = [c.venue, c.date ? prettyDate(c.date) : ''].filter(Boolean).join(' \u00b7 ');
+      return `<li><a href="${c.url}" target="_blank" rel="noopener">${c.title}</a>${where ? ` <span class="jr-where">${where}</span>` : ''}</li>`;
+    }).join('');
+    const meta = [r.volume ? `vol. ${r.volume}` : '', r.pages ? `pp. ${r.pages}` : ''].filter(Boolean).join(' \u00b7 ');
+    return `<div class="pub-card jr-card" data-id="${r.id}">
+      <div class="pub-top">
+        <span class="pub-year-badge"><i class="fas fa-calendar"></i> ${r.year || ''}</span>
+        <span class="pub-platform-badge" style="${getPlatformStyle(r.journal)}"><i class="fas fa-quote-right"></i> Reference only</span>
+      </div>
+      <h4>${r.title}</h4>
+      <div class="pub-authors"><strong>${r.authors || r.authorFull || 'Unknown author'}</strong><span class="jr-owner"> \u2014 not my publication</span></div>
+      <div class="pub-meta">
+        <span><i class="fas fa-book-open"></i> ${r.journal}${meta ? ' \u00b7 ' + meta : ''}</span>
+        ${r.doi ? `<span><i class="fas fa-link"></i> DOI ${r.doi}</span>` : ''}
+      </div>
+      <p class="jr-cites-label">This peer-reviewed article cites my work:</p>
+      <ul class="jr-cites">${cites}</ul>
+      ${r.note ? `<p class="jr-note">${r.note}</p>` : ''}
+      <div class="jr-actions">
+        <a href="${r.url}" target="_blank" rel="noopener" class="pub-link"><i class="fas fa-external-link-alt"></i> View journal article</a>
       </div>
     </div>`;
   }).join('');
@@ -1440,6 +1509,7 @@ function initResearchFadeIn() {
 async function init() {
   initSearch();
   renderFeaturedResearch();
+  renderJournalReferences();
   renderPlatformGrid();
   renderTopicExplorer();
   renderTrending();
