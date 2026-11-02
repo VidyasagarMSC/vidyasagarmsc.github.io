@@ -575,6 +575,28 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .about-copy strong { color: var(--ink); font-weight: 600; }
 
 .about-aside { display: flex; flex-direction: column; gap: 1rem; }
+
+/* The two supporting photographs carried over from the old About page. They sit
+   below the copy so the section still opens on the argument, not on decoration —
+   and they give a long text block somewhere to rest the eye. */
+.about-media {
+  display: grid; grid-template-columns: 1.35fr 1fr;
+  gap: var(--gap); margin-top: clamp(2rem, 4vw, 3rem);
+}
+.about-media figure {
+  overflow: hidden; border: 1px solid var(--line);
+  border-radius: var(--r-md); background: var(--paper-raised);
+}
+.about-media img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  transition: transform .7s var(--ease-out);
+}
+.about-media figure:hover img { transform: scale(1.03); }
+.about-media figcaption {
+  padding: .75rem 1rem;
+  font-family: var(--font-mono); font-size: .5625rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+}
 .chip-card, .stack-card {
   padding: 1.375rem 1.375rem 1.5rem;
   background: var(--paper-raised);
@@ -876,6 +898,27 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
 }
 .meta-pill i { font-size: var(--t-xs); color: var(--accent); }
+
+/* In-page jump links in a subpage hero. The writing archive is ~24,000px tall,
+   so the two destinations a reader actually wants need to be reachable without
+   scrolling past the whole index. */
+.page-jump {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .5rem; margin-top: 1.5rem;
+}
+.page-jump a {
+  display: inline-flex; align-items: center;
+  min-height: 34px; padding: .35rem .875rem;
+  border: 1px solid var(--line-hi); border-radius: 999px;
+  font-family: var(--font-mono); font-size: .625rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
+  transition: border-color .2s var(--ease-out), color .2s var(--ease-out),
+              background-color .2s var(--ease-out);
+}
+.page-jump a:hover {
+  border-color: var(--accent); color: var(--accent);
+  background: var(--accent-fill);
+}
 
 .back-link {
   display: inline-flex; align-items: center; gap: .5rem;
@@ -1424,6 +1467,56 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
    an index reads like a journal's contents and lets a reader scan titles and
    dates at a glance. The rows also carry the summaries the cards had, so
    nothing was traded away to get the density back. */
+
+/* An explanatory note about the index itself, kept next to the controls rather
+   than under 300 rows where nobody would ever reach it. */
+.index-note {
+  max-width: 72ch; margin: 0 0 1.5rem;
+  font-size: var(--t-sm); line-height: 1.7; color: var(--muted);
+}
+.index-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* One toolbar for the three ways of navigating the index. Grouping them means
+   the reader learns the controls once, and on desktop the bar stays pinned
+   below the nav while the 283 rows scroll past. */
+.archive-toolbar {
+  margin: 0 0 1.75rem; padding: 1rem 1.125rem;
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--paper-raised);
+}
+.archive-toolbar-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem 1.5rem; flex-wrap: wrap;
+}
+.archive-toolbar .filter-controls { margin: 0; flex: 1 1 32rem; }
+.archive-toolbar .filter-result { margin-left: auto; padding-left: 0; }
+.archive-toolbar .year-rail { margin: 1rem 0 0; }
+.archive-toolbar .density-toggle { margin: 0; flex: none; }
+
+@media (min-width: 861px) {
+  .archive-toolbar {
+    position: sticky; top: var(--nav-h); z-index: 20;
+    box-shadow: var(--shadow-sm);
+    background: color-mix(in srgb, var(--paper-raised) 94%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  /* The sticky toolbar sits over the top of the index, so a year link needs
+     enough run-up that its heading lands below both the nav and the toolbar
+     instead of underneath them. */
+  .year-group, .era-band { scroll-margin-top: calc(var(--nav-h) + 9rem); }
+}
+
+.archive-top { margin-top: 2rem; text-align: right; }
+.archive-top a {
+  display: inline-flex; align-items: center; gap: .45rem;
+  min-height: 32px;
+  font-family: var(--font-mono); font-size: .625rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--dim);
+  transition: color .2s var(--ease-out);
+}
+.archive-top a:hover { color: var(--accent); }
+
 .article-index { display: block; }
 .year-group + .year-group { margin-top: clamp(2.25rem, 5vw, 3.5rem); }
 .year-head {
@@ -1449,7 +1542,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   display: grid;
   grid-template-columns: 5.75rem minmax(0, 1fr) 6.5rem;
   gap: 0 1.5rem; align-items: start;
-  padding: 1.125rem .75rem 1.125rem .25rem;
+  padding: 1.375rem .75rem 1.375rem .25rem;
   border-bottom: 1px solid var(--line);
   transition: background-color .2s var(--ease-out);
 }
@@ -1474,12 +1567,19 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .era-head:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .era-chevron {
   flex: none; display: grid; place-items: center;
-  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  width: 1.75rem; height: 1.75rem; border-radius: 50%;
   border: 1px solid var(--line-hi); color: var(--dim);
-  font-size: .625rem;
-  transition: transform .2s var(--ease-out), border-color .2s var(--ease-out);
+  font-size: .6875rem;
+  transition: transform .2s var(--ease-out), border-color .2s var(--ease-out),
+              color .2s var(--ease-out);
 }
+.era-head:hover .era-chevron { border-color: var(--accent); color: var(--accent); }
 .era-band.is-collapsed .era-chevron { transform: rotate(-90deg); }
+/* A word beside the count so the band reads as a control, not a heading. */
+.era-toggle-label {
+  font-family: var(--font-mono); font-size: .5625rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+}
 .era-text { display: block; min-width: 0; flex: 1; }
 .era-label {
   display: block;
@@ -1510,7 +1610,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
    scrolls itself horizontally on overflow, so the counts stay reachable at
    320px without wrapping into a second row of chrome. */
 .year-rail {
-  display: flex; gap: .375rem; align-items: stretch;
+  display: flex; gap: .25rem; align-items: stretch;
   margin: 0 0 1.5rem; padding: .375rem;
   overflow-x: auto; overscroll-behavior-x: contain;
   scrollbar-width: thin;
@@ -1520,7 +1620,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 .year-rail:empty { display: none; }
 .year-pip {
   flex: none; display: flex; flex-direction: column; align-items: center; gap: .0625rem;
-  padding: .375rem .5625rem; border-radius: 4px;
+  padding: .3125rem .4375rem; border-radius: 4px;
   text-decoration: none; color: var(--dim);
   transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
 }
@@ -1593,10 +1693,10 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
 }
 .lpc-main { display: block; min-width: 0; }
 .lpc-title {
-  display: block; margin-bottom: .3125rem;
+  display: block; margin-bottom: .4375rem;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: var(--t-md); font-weight: 500; letter-spacing: -.014em;
-  line-height: 1.32; color: var(--ink); text-wrap: pretty;
+  font-size: 1.125rem; font-weight: 500; letter-spacing: -.014em;
+  line-height: 1.34; color: var(--ink); text-wrap: pretty;
   /* Titles come verbatim from six publishing platforms, so they carry
      identifiers like RSRC_INSUFFICIENT_REQ_MEMORY that have no break
      opportunity. Without this one 29-char token pushed the whole index 7px
@@ -1609,8 +1709,8 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
    enough to judge relevance and keeps the whole index a predictable rhythm. */
 .lpc-summary {
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
-  overflow: hidden;
-  font-size: var(--t-sm); line-height: 1.62; color: var(--muted); text-wrap: pretty;
+  overflow: hidden; max-width: 68ch;
+  font-size: var(--t-base); line-height: 1.62; color: var(--muted); text-wrap: pretty;
 }
 /* Venue rail. Most rows carry one venue; a cross-posted article stacks two or
    three, so the column stays 6.5rem wide no matter how often an article ran.
@@ -1622,9 +1722,9 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
 }
 .lpc-platform-name {
   text-align: right;
-  padding: .2rem .5rem; border-radius: 4px;
-  font-family: var(--font-mono); font-size: .5rem; font-weight: 600;
-  letter-spacing: .09em; text-transform: uppercase; color: var(--dim);
+  padding: .22rem .55rem; border-radius: 4px;
+  font-family: var(--font-mono); font-size: .625rem; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase; color: var(--dim);
   transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
 }
 /* Secondary venues step back so the primary one leads the eye. */
@@ -1704,50 +1804,6 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
 }
 .talk-source:hover { color: var(--accent); }
 .talk-source i { font-size: .5rem; }
-
-/* ---------- 32. ABOUT PAGE ---------- */
-.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); align-items: start; }
-.about-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--line-hi); border-radius: var(--r-md);
-  overflow: hidden; box-shadow: var(--shadow-sm);
-  transition: transform .28s var(--ease-out), border-color .28s var(--ease-out),
-              box-shadow .28s var(--ease-out);
-}
-.about-card:hover { transform: translateY(-3px); border-color: var(--ink); box-shadow: var(--shadow-md); }
-.about-card-media {
-  aspect-ratio: 16 / 9; overflow: hidden;
-  border-bottom: 1px solid var(--line); background: var(--paper-sunk);
-}
-.about-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease-out); }
-.about-card:hover .about-card-media img { transform: scale(1.04); }
-.about-card-body { padding: 1.625rem 1.5rem 1.75rem; }
-.about-card-body h2 {
-  font-family: var(--font-display); font-optical-sizing: auto;
-  font-size: var(--t-xl); font-weight: 500; letter-spacing: -.02em;
-  color: var(--ink); margin-bottom: 1.125rem;
-}
-.about-card-body p {
-  font-size: var(--t-base); line-height: 1.75; color: var(--muted);
-  margin-bottom: .875rem; text-wrap: pretty;
-}
-.about-card-body p:last-child { margin-bottom: 0; }
-.about-card-body strong { color: var(--ink); font-weight: 600; }
-
-.role-list { display: flex; flex-direction: column; }
-.role-row {
-  display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
-  padding: .7rem 0; border-bottom: 1px solid var(--line);
-}
-.role-row:last-child { border-bottom: 0; }
-.role-when {
-  flex: none; min-width: 8.5rem;
-  font-family: var(--font-mono); font-size: .5625rem; font-weight: 500;
-  letter-spacing: .09em; text-transform: uppercase; color: var(--accent);
-}
-.role-name {
-  flex: 1; min-width: 0; font-size: .8125rem; line-height: 1.5; color: var(--ink-soft);
-}
 
 /* ---------- 33. BLOG VENUES ---------- */
 .venue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
@@ -1858,11 +1914,20 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .about-aside { display: grid; grid-template-columns: repeat(2, 1fr); }
   .exp-grid { grid-template-columns: 1fr; }
   .exp-rail-inner { position: static; }
-  .about-cards, .venue-grid { grid-template-columns: 1fr 1fr; }
+  .venue-grid { grid-template-columns: 1fr 1fr; }
   .gallery { columns: 2; }
 }
-
 @media (max-width: 860px) {
+  /* The toolbar stops being sticky at this width: the filter row wraps to
+     several lines, and a pinned bar would eat half the viewport. */
+  .archive-toolbar { padding: .875rem; }
+  .archive-toolbar-top { flex-direction: column; align-items: stretch; }
+  /* Once the top row is a column, `flex: 1 1 32rem` resolves against height,
+     which stretched the two wrapped filter lines 512px apart. */
+  .archive-toolbar .filter-controls { flex: 0 1 auto; }
+  .archive-toolbar .density-toggle { align-self: flex-start; }
+  .archive-toolbar .year-rail { margin-top: .875rem; }
+
   /* Slide-in drawer from the right, as in the earlier build, rather than a
      full-width dropdown. A drawer keeps the page visible behind it, which
      makes it obvious where you are and where you came back to. */
@@ -1946,7 +2011,10 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
      line. */
   .era-head { flex-wrap: wrap; row-gap: .5rem; }
   .era-text { flex: 1 1 100%; order: 2; }
-  .era-meta { order: 3; margin-left: 2.5rem; }
+  .era-meta { order: 3; margin-left: 0; }
+  /* The chevron would sit alone on its own line above the title once the text
+     wraps to full width; the Collapse/Expand word is the clearer affordance. */
+  .era-chevron { display: none; }
 
   /* Talks: the fixed date rail has no room at this width, so it folds above
      the title and the list becomes a single column of records. */
@@ -1971,8 +2039,9 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .stat { border-left: 0; border-top: 1px solid var(--line); padding: 1.125rem 1rem; }
   .stat:nth-child(-n+2) { border-top: 0; }
   .stat:nth-child(even) { border-left: 1px solid var(--line); }
-  .about-cards, .venue-grid { grid-template-columns: 1fr; }
+  .venue-grid { grid-template-columns: 1fr; }
   .about-aside { grid-template-columns: 1fr; }
+  .about-media { grid-template-columns: 1fr; }
   .gallery { columns: 1; }
   .awards-grid { grid-template-columns: 1fr; }
   .work-grid, .trending-grid, .publications-grid, .reading-paths, .platform-grid { grid-template-columns: 1fr; }
@@ -1986,8 +2055,6 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .sr-tags { display: none; }
   .citation-actions { flex-direction: column; }
   .cite-copy-btn, .cite-download-btn { justify-content: center; width: 100%; }
-  .role-row { flex-direction: column; gap: .25rem; }
-  .role-when { min-width: 0; }
   /* Stacking the role name above its date also turns the name's flex-basis into
      a *height*: the desktop rule is `flex: 1 1 14rem`, sized so the name and the
      date sit side by side. In a column container that basis became a 224px

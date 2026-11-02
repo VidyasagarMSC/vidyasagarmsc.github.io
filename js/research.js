@@ -1671,7 +1671,7 @@ function initLatestPosts() {
           <span class="era-label">${era.label}</span>
           <span class="era-blurb">${era.blurb}</span>
         </span>
-        <span class="era-meta"><span class="era-span">${span}</span><span class="era-count">${n} article${n === 1 ? '' : 's'}</span></span>
+        <span class="era-meta"><span class="era-span">${span}</span><span class="era-count">${n} article${n === 1 ? '' : 's'}</span><span class="era-toggle-label">Collapse</span></span>
       </button>
       <div class="era-body" id="era-body-${era.id}">${ys.map(yearSection).join('')}</div>
     </section>`;
@@ -1707,6 +1707,8 @@ function initEraToggles() {
     if (!body || !head) return;
     band.classList.toggle('is-collapsed', !open);
     head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    const label = head.querySelector('.era-toggle-label');
+    if (label) label.textContent = open ? 'Collapse' : 'Expand';
     if (persist) {
       let next = {};
       try { next = JSON.parse(localStorage.getItem(ERA_KEY) || '{}'); } catch (e) { next = {}; }

@@ -78,8 +78,14 @@
       if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
       themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
-    var meta = document.querySelector('meta[name="theme-color"]:not([media])');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0d1014' : '#eff2f1');
+    // The two theme-color metas are media-scoped, so a manual toggle has to move
+    // the media scope with it — otherwise the browser chrome keeps the OS
+    // preference while the page itself switches.
+    document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+      var isDark = (m.getAttribute('media') || '').indexOf('dark') !== -1;
+      m.setAttribute('media', isDark === (theme === 'dark') ? 'all' : 'not all');
+      m.setAttribute('content', theme === 'dark' ? '#0d1014' : '#eff2f1');
+    });
   }
 
   if (themeBtn) {
@@ -229,8 +235,11 @@
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var filter = btn.dataset.filter;
-        filterBtns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
+        filterBtns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
 
         // `hidden` rather than an inline display value: the rows are CSS grid,
         // so writing style.display would overwrite the layout on every row.
