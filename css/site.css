@@ -541,7 +541,7 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 /* Stats strip */
 .stats-strip {
   grid-column: 1 / -1;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   margin-top: .5rem;
   border: 1px solid var(--line-hi); border-radius: var(--r-md);
   background: var(--paper-raised); overflow: hidden;
@@ -715,6 +715,29 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
   font-family: var(--font-grot); font-size: var(--t-ui); font-weight: 600;
   letter-spacing: var(--ls-snug); color: var(--ink); line-height: 1.35;
 }
+
+/* Curated wall, continued: the disclosure row folds 11 earlier awards and
+   internal certificates out of the default view. Native <details>, so it works
+   with JavaScript off — and its summary needs the UA marker hiding because it
+   already carries its own chevron. */
+.awards-more summary {
+  display: flex; align-items: center; gap: .625rem;
+  width: 100%; min-height: 48px; padding: .375rem .25rem;
+  cursor: pointer; list-style: none;
+  font-family: var(--font-mono); font-size: .6875rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  transition: color .2s var(--ease-out);
+}
+.awards-more summary::-webkit-details-marker { display: none; }
+.awards-more summary:hover { color: var(--accent); }
+.awards-more .chev {
+  font-size: .625rem; color: var(--dim);
+  transition: transform .2s var(--ease-out), color .2s var(--ease-out);
+}
+.awards-more[open] .chev { transform: rotate(180deg); color: var(--accent); }
+.awards-more[open] summary { color: var(--accent); }
+/* The folded grid's own border-top is the separator; no extra rule needed. */
+.awards-more .awards-grid { border-top: 0; border-bottom: 1px solid var(--line); }
 
 /* ---------- 14. WORK ---------- */
 .work-grid {
