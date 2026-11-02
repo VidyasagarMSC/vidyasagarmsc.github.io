@@ -196,7 +196,7 @@ const SRC = ['js/site.js', 'js/research.js'];
 
 (function assertLoadOrder() {
   const fs2 = require('fs');
-  for (const page of ['research.html', 'latest-posts.html']) {
+  for (const page of ['research.html', 'writing.html']) {
     const html = fs2.readFileSync(path.join(ROOT, page), 'utf8');
     const order = (html.match(/src="js\/([a-z]+)\.js/g) || [])
       .map(s => 'js/' + s.match(/js\/([a-z]+)\.js/)[1] + '.js');

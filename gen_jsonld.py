@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate latest-posts.html's TechArticle/BlogPosting JSON-LD from
+"""Regenerate writing.html's TechArticle/BlogPosting JSON-LD from
 js/research.js so the structured data can never drift from the index again.
 
 The previous block was hand-written and had already rotted: every DZone entry
@@ -14,7 +14,7 @@ import re
 import sys
 
 SRC = 'js/research.js'
-PAGE = 'latest-posts.html'
+PAGE = 'writing.html'
 N = 8
 AUTHOR = 'Vidyasagar Machupalli'
 

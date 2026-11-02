@@ -521,8 +521,8 @@ def main():
     # Write to file
     try:
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        template_path = os.path.join(base_dir, 'templates', 'latest-posts-template.html')
-        output_path = os.path.join(base_dir, 'latest-posts.html')
+        template_path = os.path.join(base_dir, 'templates', 'writing-template.html')
+        output_path = os.path.join(base_dir, 'writing.html')
         
         with open(output_path, 'w', encoding='utf-8') as f:
             # Read the template
@@ -565,7 +565,7 @@ def main():
 
             f.write(final_html)
 
-        logger.info("Successfully generated latest-posts.html")
+        logger.info("Successfully generated writing.html")
         logger.info(f"Total posts: {len(posts)}")
 
     except Exception as e:

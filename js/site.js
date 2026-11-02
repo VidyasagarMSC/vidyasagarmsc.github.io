@@ -203,7 +203,7 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ---------- Blog platform filters (latest-posts.html) ---------- */
+  /* ---------- Blog platform filters (writing.html) ---------- */
   // A row's data-platform lists every venue it ran on, joined by VENUE_SEP, and
   // filtering is a membership test over that list — a cross-posted article stays
   // one row, so testing equality on a single primary venue would hide it from

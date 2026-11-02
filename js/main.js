@@ -113,7 +113,7 @@ function initFadeIn() {
 }
 
 // ============================================
-// BLOG FILTERS (latest-posts.html)
+// BLOG FILTERS (writing.html)
 // ============================================
 function initBlogFilters() {
   const filterBtns = document.querySelectorAll('.platform-filters .filter-btn');

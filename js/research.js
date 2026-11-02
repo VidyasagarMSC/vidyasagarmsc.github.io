@@ -785,7 +785,7 @@ function prettyDate(raw) {
 }
 
 // The full bibliography is 310 items, and this grid is a filterable hub rather
-// than the reading surface — latest-posts.html carries the complete dated index.
+// than the reading surface — writing.html carries the complete dated index.
 // Rendering all of them here produced a 6,000-node, 52,000px wall, so the grid
 // pages itself and filters still narrow it from the top.
 const PUB_PAGE = 24;
@@ -837,7 +837,7 @@ function renderPublicationCards(articles) {
   }
   const remaining = articles.length - shown.length;
   more.innerHTML = `<button type="button" class="pub-more-btn" id="pubMoreBtn">Show ${remaining} more <i class="fas fa-chevron-down"></i></button>
-    <p class="pub-more-note">Showing ${shown.length} of ${articles.length} — the <a href="latest-posts.html">full dated index</a> lists every article.</p>`;
+    <p class="pub-more-note">Showing ${shown.length} of ${articles.length} — the <a href="writing.html">full dated index</a> lists every article.</p>`;
   more.querySelector('#pubMoreBtn').addEventListener('click', () => {
     pubVisible += PUB_PAGE;
     // Keep the current filter; only the offset moves.
