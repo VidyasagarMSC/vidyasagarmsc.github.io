@@ -510,13 +510,13 @@ const researchData = {
       evidence: 'self'
     },
     {
-      date: '2016-10', year: 2016, kind: 'Talk',
-      title: 'Bringing Swift to Cloud',
+      date: '2016-10-27', year: 2016, kind: 'Talk',
+      title: 'Bringing Swift to Cloud to Simplify End-to-End Development of Apps',
       venue: 'IBM Cloud Technical University 2016, Madrid, Spain',
       role: 'Speaker — my first international presentation',
-      detail: 'Taking Swift from the client to the server side on IBM Cloud, with Kitura as the framework on the back end.',
+      detail: 'Session C315, presented 27 October 2016 at the IBM Cloud Technical University in Madrid. Taking Swift from the client to the server side on IBM Cloud, with Kitura as the framework on the back end.',
       url: 'https://www.slideshare.net/vidyasagarMachupalli',
-      source: 'https://vmacwrites.wordpress.com/about/my-contributions-to-developer-community/',
+      source: 'https://learnquest.com/assets/pdfs/AgendaCTU20160826.pdf',
       evidence: 'self'
     },
     {
