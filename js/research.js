@@ -1813,4 +1813,11 @@ if (document.getElementById('publicationsGrid')) {
   } else {
     initLatestPosts();
   }
+} else if (document.getElementById('talksList')) {
+  // The standalone talks page renders the same talk list the research page does.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 }
