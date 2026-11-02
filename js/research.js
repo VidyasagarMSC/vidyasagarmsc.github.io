@@ -692,7 +692,7 @@ function alsoPublishedLinks(a) {
     const inner = `<i class="${getPlatformIcon(x.venue)}"></i> ${x.venue}${when}`;
     return x.url
       ? `<a href="${x.url}" target="_blank" rel="noopener" class="pub-also-link" data-venue="${x.venue}">${inner}</a>`
-      : `<span class="pub-also-link is-gone" data-venue="${x.venue}" title="Removed from ${x.venue}; no copy survives">${inner}</span>`;
+      : `<span class="pub-also-link is-gone" data-venue="${x.venue}" title="Removed from ${x.venue}; no archived copy">${inner}</span>`;
   }).join('') + `</div>`;
 }
 
@@ -815,7 +815,7 @@ function renderPublicationCards(articles) {
           ? `<a href="${a.url}" target="_blank" rel="noopener" class="pub-link">${a.archived ? 'Read Archived Copy' : 'Read Publication'} <i class="fas fa-arrow-right"></i></a>`
           : ''}
         ${a.legacy && !(a.url && a.url !== '#')
-          ? '<span class="pub-gone-note"><i class="fas fa-box-archive"></i> Removed from DZone &mdash; no surviving copy</span>' : ''}
+          ? '<span class="pub-gone-note" title="Removed from DZone with no archived copy"><i class="fas fa-box-archive"></i> Offline</span>' : ''}
         <button class="cite-btn" onclick="window.openCitation(${a.id})"><i class="fas fa-quote-right"></i> Cite</button>
       </div>
       ${alsoPublishedLinks(a)}
@@ -1542,22 +1542,14 @@ function initLatestPosts() {
   const grid = document.getElementById('latestPostsGrid');
   if (!grid) return;
 
-  // A row with no surviving copy still belongs in the index. DZone removed 49 of
-  // these guides, and only 9 have an archived copy, so the old `a.url` guard
-  // silently dropped all 49 -- which is how a real body of work went missing.
-  // Unlinked rows render as non-anchors carrying the same data-platform hook, so
-  // filtering and counting treat them exactly like every other row.
+  // A row with no surviving copy still belongs in the index. The old `a.url`
+  // guard silently dropped all such rows -- which is how a real body of work
+  // went missing. Unlinked rows render as non-anchors carrying the same
+  // data-platform hook, so filtering and counting treat them like every other
+  // row.
   const articles = [...researchData.articles]
     .filter(a => a && a.url !== '#')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const indexCount = document.getElementById('indexCount');
-  const unlinked = articles.filter(a => !a.url).length;
-  if (indexCount) {
-    indexCount.textContent = unlinked
-      ? `${articles.length} entries · ${unlinked} no longer online`
-      : `${articles.length} entries`;
-  }
 
   // Group by year, newest first. Writing is listed as a dated index rather than
   // a card grid, and with 300+ entries spanning 2010–2026 the year headings are

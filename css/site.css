@@ -1241,8 +1241,8 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 
 /* A card for one of the DZone guides that were unpublished. It is not a button
    and does not pretend to be one — it replaces the "Read Publication" link so
-   the card's action row does not read as broken, and says why there is nothing
-   to click. */
+   the card's action row does not read as broken. The explanation lives in the
+   hover title, not in sight of every reader. */
 .pub-gone-note {
   display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
   min-height: 36px; padding: .45rem .8rem; border-radius: 7px;
@@ -1490,14 +1490,6 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
    an index reads like a journal's contents and lets a reader scan titles and
    dates at a glance. The rows also carry the summaries the cards had, so
    nothing was traded away to get the density back. */
-
-/* An explanatory note about the index itself, kept next to the controls rather
-   than under 300 rows where nobody would ever reach it. */
-.index-note {
-  max-width: 72ch; margin: 0 0 1.5rem;
-  font-size: var(--t-sm); line-height: 1.7; color: var(--muted);
-}
-.index-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 
 /* One toolbar for the three ways of navigating the index. Grouping them means
    the reader learns the controls once, and on desktop the bar stays pinned

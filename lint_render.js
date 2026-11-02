@@ -114,7 +114,7 @@ function makeEl(id) {
 const IDS = [
   'publicationsGrid', 'platformGrid', 'topicExplorer',
   'topicFilters', 'trendingGrid', 'knowledgeGraph', 'talksList', 'talkCount',
-  'speakingStat', 'latestPostsGrid', 'yearRail', 'resultCount', 'indexCount',
+  'speakingStat', 'latestPostsGrid', 'yearRail', 'resultCount',
   'pubCount', 'resultsCount', 'pubMore', 'searchResults', 'searchInput',
   'researchSearch', 'citationTimeline', 'pubCards', 'journalReferences'
 ];
