@@ -44,8 +44,7 @@ def norm(s):
     s = unicodedata.normalize('NFKD', s)
     return ''.join(c for c in s if not unicodedata.combining(c)).strip().lower()
 
-SITE = '/Users/leef/Documents/code/vidyasagarmsc.github.io/js/research.js'
-TMP = '/private/var/folders/1s/1193p4wn5t501p60l32t8qmh0000gn/T/opencode'
+SITE = 'js/research.js'
 VALID_VENUES = {'DZone', 'DZone Legacy', 'Medium', 'Dev.to', 'Hackernoon',
                 'Substack', 'VMacWrites', 'Featured', 'Chatbots Life'}
 
