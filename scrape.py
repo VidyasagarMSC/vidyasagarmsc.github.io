@@ -25,9 +25,9 @@ TODAY = date.today().strftime("%B %d, %Y")
 # total with a subset every week. It is maintained by hand from the dashboard, and
 # js/site.js SITE_STATS is the figure the site renders.
 BLOG_DEFAULTS = {
-    "dzone_views": "656.8K",
-    "dzone_articles": "109",
-    "dzone_reputation": "7348",
+    "dzone_views": "664.6K",
+    "dzone_articles": "110",
+    "dzone_reputation": "7419",
     "medium_followers": "717",
     "wordpress_followers": "1.1K",
     "last_updated": TODAY,
