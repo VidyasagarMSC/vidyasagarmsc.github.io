@@ -301,14 +301,27 @@ const researchData = {
   //
   // evidence is provenance, not presentation -- it is not rendered. It records
   // what backs each row so a future edit knows what to re-verify:
-  //   recording  an organiser or publisher page names the session
-  //   deck       a deck or recording exists naming the event
-  //   self       the row rests on the author's own engagement list
+  //   recording   an organiser or publisher page names the session
+  //   deck        a deck or recording exists naming the event
+  //   certificate a certificate or letter from the organiser names session and
+  //               date -- stronger than the author's own list, but the document
+  //               is an image in images/, not a page that can be linked twice
+  //   self        the row rests on the author's own engagement list
   //
   // role is what was actually done. A panel is not a talk, moderating a Q&A is
   // not presenting, and a track owner owns the track rather than giving one
   // session. source is mandatory: every entry has a page a reader can open.
   talks: [
+    {
+      date: '2026-07-24', year: 2026, kind: 'Lecture',
+      title: 'Mathematics Behind Modern AI: Theory, Algorithms, and Research Opportunities',
+      venue: 'VIT-AP University, School of Advanced Sciences — Industry Guest Lecture',
+      role: 'Resource person — invited lecture, 6:30–8:30 PM IST',
+      detail: 'For research scholars, students and faculty: the mathematics underpinning modern machine learning and deep learning — linear algebra, calculus, probability, statistics, optimization, graph theory and information theory — then the research challenges shaping AI (explainability, robustness, uncertainty quantification, fairness, generalization) and the directions where the two meet: geometric deep learning, topological data analysis, scientific machine learning, physics-informed neural networks, federated learning and trustworthy AI.',
+      url: 'images/1785503387517.jpeg',
+      source: 'images/1785503387529-2.jpeg',
+      evidence: 'certificate'
+    },
     {
       date: '2021-03-12', year: 2021, kind: 'Webinar',
       title: 'Chatbot Development for Enhancing Customer Experience',
@@ -704,10 +717,12 @@ function alsoPublishedLinks(a) {
 //
 // The evidence field on each entry is deliberately not rendered. It is an
 // internal record of provenance -- 'recording' where the organiser who ran the
-// event names the session, 'deck' where a deck or recording survives, 'self'
-// where the entry rests on the author's own list -- kept so a future edit knows
-// which rows to re-verify. It was on screen briefly and read as hedging; the
-// author asked for it to come off, which is a fair editorial call.
+// event names the session, 'deck' where a deck or recording survives,
+// 'certificate' where the organiser issued a document naming the session and
+// date, 'self' where the entry rests on the author's own list -- kept so a
+// future edit knows which rows to re-verify. It was on screen briefly and read
+// as hedging; the author asked for it to come off, which is a fair editorial
+// call.
 function talkDateLabel(t) {
   // Three granularities, because the sources are that precise: a session with a
   // slot time, an event with only a month, and a conference year.

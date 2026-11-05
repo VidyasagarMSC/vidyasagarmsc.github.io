@@ -206,7 +206,7 @@ print()
 talk_block = '\n'.join(SRC[SRC.index('  talks: ['):SRC.index('  platforms: [')]) if '  talks: [' in SRC else ''
 if talk_block:
     entries = re.findall(r"\{\s*\n\s*date: '([^']+)',\s*year: (\d{4}),\s*kind: '([^']+)'(.*?)\n    \}", talk_block, re.S)
-    KNOWN_EVIDENCE = {'recording', 'deck', 'self'}
+    KNOWN_EVIDENCE = {'recording', 'deck', 'certificate', 'self'}
 
     for d, y, kind, rest in entries:
         label = '%s %s' % (d, kind)

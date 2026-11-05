@@ -576,27 +576,6 @@ main > section { padding-block: clamp(4rem, 9vw, 7.5rem); }
 
 .about-aside { display: flex; flex-direction: column; gap: 1rem; }
 
-/* The two supporting photographs carried over from the old About page. They sit
-   below the copy so the section still opens on the argument, not on decoration —
-   and they give a long text block somewhere to rest the eye. */
-.about-media {
-  display: grid; grid-template-columns: 1.35fr 1fr;
-  gap: var(--gap); margin-top: clamp(2rem, 4vw, 3rem);
-}
-.about-media figure {
-  overflow: hidden; border: 1px solid var(--line);
-  border-radius: var(--r-md); background: var(--paper-raised);
-}
-.about-media img {
-  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
-  transition: transform .7s var(--ease-out);
-}
-.about-media figure:hover img { transform: scale(1.03); }
-.about-media figcaption {
-  padding: .75rem 1rem;
-  font-family: var(--font-mono); font-size: .5625rem; font-weight: 500;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
-}
 .chip-card, .stack-card {
   padding: 1.375rem 1.375rem 1.5rem;
   background: var(--paper-raised);
@@ -1832,6 +1811,66 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
 .talk-source:hover { color: var(--accent); }
 .talk-source i { font-size: .5rem; }
 
+/* One engagement that earned a write-up gets its own spread above the list.
+   The recap carries the prose and the two topic rows; the rail carries the
+   session poster and the certificate, which are the evidence for the entry.
+   The row reads as prose -> labels -> prose on narrow screens, so the images
+   fall below the text rather than above it. */
+.talk-recap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+/* Prose capped at 58ch wherever it sits — the same measure the section lede
+   above uses — so the line length never follows the grid out to 100
+   characters when the layout stacks. */
+.talk-recap-copy p {
+  margin: 0 0 1.125rem;
+  max-width: 58ch;
+  font-size: var(--t-ui); line-height: 1.78; color: var(--muted);
+  text-wrap: pretty;
+}
+.talk-recap-copy strong { color: var(--ink); font-weight: 600; }
+/* Sub-heads inside the recap are labels, not headings: the section heading
+   above already carries the display face, so a second one would compete. */
+.talk-recap-copy h3 {
+  font-family: var(--font-grot); font-size: var(--t-xs); font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--dim);
+  margin: 1.875rem 0 .75rem;
+}
+.talk-recap-tags { margin: 0 0 .25rem; }
+/* The closing question is the point of the write-up, so it gets the one
+   tinted surface on the page. Specificity has to beat `.talk-recap-copy p`. */
+.talk-recap-copy .talk-recap-question {
+  margin: 1.75rem 0 0;
+  /* The same 58ch measure as the paragraphs, re-expressed for this rule's
+     larger 17px face (58 x 15 / 17) so the box lines up with the prose. */
+  max-width: 51.2ch;
+  padding: 1rem 1.125rem;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--r-sm);
+  font-family: var(--font-display); font-style: italic;
+  font-size: var(--t-md); line-height: 1.5; color: var(--ink);
+}
+.talk-recap-media { display: flex; flex-direction: column; gap: var(--gap); }
+.talk-recap-media figure {
+  margin: 0; overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md); background: var(--paper-raised);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .28s var(--ease-out), box-shadow .28s var(--ease-out);
+}
+.talk-recap-media figure:hover { border-color: var(--ink); box-shadow: var(--shadow-md); }
+.talk-recap-media a { display: block; }
+.talk-recap-media img { display: block; width: 100%; height: auto; }
+.talk-recap-media figcaption {
+  padding: .75rem 1rem;
+  font-family: var(--font-mono); font-size: .5625rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
+}
+
 /* ---------- 33. BLOG VENUES ---------- */
 .venue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 .venue {
@@ -1938,6 +1977,10 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .hero-grid { grid-template-columns: 1fr; }
   .portrait { max-width: 24rem; }
   .about-grid { grid-template-columns: 1fr; }
+  /* Stacked, the rail would take the full container and upscale the 480px
+     poster to more than twice its size. Capped, it stays near natural size. */
+  .talk-recap { grid-template-columns: minmax(0, 1fr); }
+  .talk-recap-media { max-width: 34rem; }
   .exp-grid { grid-template-columns: 1fr; }
   .exp-rail-inner { position: static; }
   .venue-grid { grid-template-columns: 1fr 1fr; }
@@ -2066,7 +2109,6 @@ html[data-index-density="compact"] .year-group + .year-group { margin-top: 1.5re
   .stat:nth-child(-n+2) { border-top: 0; }
   .stat:nth-child(even) { border-left: 1px solid var(--line); }
   .venue-grid { grid-template-columns: 1fr; }
-  .about-media { grid-template-columns: 1fr; }
   .gallery { columns: 1; }
   .awards-grid { grid-template-columns: 1fr; }
   .work-grid, .trending-grid, .publications-grid, .reading-paths, .platform-grid { grid-template-columns: 1fr; }
