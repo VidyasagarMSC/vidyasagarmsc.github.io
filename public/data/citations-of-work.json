@@ -1,6 +1,6 @@
 {
   "$comment": "Works by other authors that cite my articles. The site renders this file directly; sync_citations.py keeps it current. Entries marked curated are hand-verified and are never rewritten by the sync.",
-  "last_updated": "2026-11-01",
+  "last_updated": "2026-11-07",
   "references": [
     {
       "id": 1412,
@@ -12,7 +12,7 @@
       "year": 2025,
       "date": "2025-10-13",
       "volume": "9(5)",
-      "pages": "1125\u20131135",
+      "pages": "1125–1135",
       "doi": "10.59573/emsj.9(5).2025.103",
       "url": "https://doi.org/10.59573/emsj.9(5).2025.103",
       "cites": [
@@ -46,7 +46,7 @@
       "cites": [
         {
           "title": "Who's Speaking?: Speaker Diarization with Watson",
-          "venue": "Medium \u00b7 IBM Developer",
+          "venue": "Medium · IBM Developer",
           "date": "2017-05",
           "url": "https://vidyasagarmsc.medium.com/track-whos-speaking-with-speaker-diarization-2e3eac2de2c3"
         }
@@ -66,7 +66,7 @@
       "authors": "Donofrio, DaSilva, Maraska, Kaplan",
       "authorFull": "Veritext LLC",
       "assignee": "Veritext LLC",
-      "year": "2021\u20132025",
+      "year": "2021–2025",
       "url": "https://patents.google.com/patent/US12387741B2/en",
       "documents": [
         {
@@ -88,7 +88,7 @@
       "cites": [
         {
           "title": "Who's Speaking?: Speaker Diarization with Watson",
-          "venue": "Medium \u00b7 IBM Developer",
+          "venue": "Medium · IBM Developer",
           "date": "2017-05",
           "url": "https://vidyasagarmsc.medium.com/track-whos-speaking-with-speaker-diarization-2e3eac2de2c3"
         }
@@ -100,6 +100,36 @@
         "checked": "2026-11-01",
         "detail": "The family cites the Medium article in its prior-art citations. Google Patents blocks automated queries, so this entry is curated rather than auto-synced."
       }
+    },
+    {
+      "kind": "journal",
+      "title": "Novel Architectures for Unsupervised Information Bottleneck Based Speaker Diarization of Meetings",
+      "authors": "Dawalatabad, N., Madikeri, S., Sekhar, C., Murthy, H.",
+      "authorFull": "Nauman Dawalatabad, Srikanth Madikeri, C. Chandra Sekhar, Hema A. Murthy",
+      "journal": "IEEE/ACM Transactions on Audio, Speech, and Language Processing",
+      "year": 2021,
+      "date": "2021",
+      "volume": "29",
+      "pages": "14-27",
+      "doi": "https://doi.org/10.1109/taslp.2020.3036231",
+      "url": "https://doi.org/10.1109/taslp.2020.3036231",
+      "cites": [
+        {
+          "title": "Who's Speaking?: Speaker Diarization with Watson",
+          "venue": "Medium · IBM Developer",
+          "date": "2017-05",
+          "url": "https://vidyasagarmsc.medium.com/track-whos-speaking-with-speaker-diarization-2e3eac2de2c3"
+        }
+      ],
+      "note": "Automatically added by sync_citations.py after Crossref verification.",
+      "curated": false,
+      "openalex_id": "https://openalex.org/W3092655842",
+      "verification": {
+        "source": "OpenAlex full-text search + Crossref reference list",
+        "checked": "2026-11-07",
+        "matched_reference": "0 ref2 IBM Watson: Who's speaking? : Speaker Diarization with Watson Speech-to-Text API"
+      },
+      "id": 1415
     }
   ]
 }

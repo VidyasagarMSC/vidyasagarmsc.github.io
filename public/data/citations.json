@@ -1,44 +1,45 @@
 {
   "source": "openalex",
   "metrics": {
-    "total_citations": 1,
+    "total_citations": 33,
     "h_index": 1,
     "i10_index": 0,
-    "works_count": 1,
-    "oa_cited_by_count": 0,
+    "works_count": 2,
     "counts_by_year": [
       {
-        "year": 2015,
-        "works_count": 1,
-        "oa_works_count": 0,
+        "year": 2021,
         "cited_by_count": 0
       },
       {
-        "year": 2017,
-        "works_count": 0,
-        "oa_works_count": 0,
+        "year": 2022,
+        "cited_by_count": 2
+      },
+      {
+        "year": 2023,
         "cited_by_count": 1
+      },
+      {
+        "year": 2024,
+        "cited_by_count": 11
+      },
+      {
+        "year": 2025,
+        "cited_by_count": 11
       }
     ],
-    "openalex_id": "https://openalex.org/A5059192917",
+    "openalex_id": "",
     "scholar_url": "https://scholar.google.com/citations?user=dbcWkvwAAAAJ",
     "source": "openalex",
     "this_year_citations": 0,
-    "projected_year_citations": 0
+    "projected_year_citations": 11
   },
   "yearly_citations": {
-    "2015": 0,
-    "2017": 1
+    "2021": 0,
+    "2022": 2,
+    "2023": 1,
+    "2024": 11,
+    "2025": 11
   },
-  "works": [
-    {
-      "title": "Windows 10 Development Recipes: A Problem-Solution Approach in HTML and JavaScript",
-      "doi": null,
-      "citations": 1,
-      "year": 2015,
-      "source": "International Linear Collider",
-      "openalex_url": "https://openalex.org/W2503816627"
-    }
-  ],
-  "last_updated": "Oct 31, 2026 at 03:55 AM"
+  "works": [],
+  "last_updated": "Nov 07, 2026 at 04:29 AM"
 }
