@@ -929,6 +929,12 @@ const REFERENCE_KINDS = {
     action: 'Read the thesis',
     cites: 'This thesis cites my work:',
   },
+  article: {
+    label: 'Practitioner article',
+    icon: 'fas fa-newspaper',
+    action: 'Read the citing article',
+    cites: 'This article cites my work:',
+  },
   patent: {
     label: 'Patent family',
     icon: 'fas fa-file-signature',

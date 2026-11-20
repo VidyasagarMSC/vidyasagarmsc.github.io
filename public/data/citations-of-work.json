@@ -1,6 +1,6 @@
 {
   "$comment": "Works by other authors that cite my articles. The site renders this file directly; sync_citations.py keeps it current. Entries marked curated are hand-verified and are never rewritten by the sync.",
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-19",
   "references": [
     {
       "id": 1412,
@@ -130,6 +130,59 @@
         "matched_reference": "0 ref2 IBM Watson: Who's speaking? : Speaker Diarization with Watson Speech-to-Text API"
       },
       "id": 1415
+    },
+    {
+      "id": 1416,
+      "kind": "thesis",
+      "title": "A managerial framework for implementing chatbots in e-commerce businesses",
+      "authors": "Van Heerden, J.",
+      "authorFull": "J. van Heerden",
+      "venue": "North-West University",
+      "degree": "MBA mini-dissertation",
+      "year": 2020,
+      "date": "2020",
+      "url": "https://hdl.handle.net/10394/35913",
+      "cites": [
+        {
+          "title": "A Voice-enabled ChatBot powered by IBM Watson in Mins",
+          "venue": "VMacWrites",
+          "date": "2017-01-05",
+          "url": "https://vmacwrites.wordpress.com/2017/01/05/an-android-chatbot-powered-by-ibm-watson/"
+        }
+      ],
+      "note": "Figure 2-4 of the dissertation reproduces the WatBot screenshot and credits Machupalli (2017). The bibliography lists the post as 'Machupalli, V. 2017. A Voice-enabled ChatBot powered by IBM Watson in Mins' with an access date of 5 April 2019.",
+      "curated": true,
+      "verification": {
+        "source": "Deposited PDF, North-West University repository",
+        "checked": "2026-11-19",
+        "detail": "Handle 10394/35913. Figure 2-4 carries 'Source: Machupalli, (2017)' and the reference list gives the vmacwrites.wordpress.com URL."
+      }
+    },
+    {
+      "id": 1417,
+      "kind": "article",
+      "title": "From PoC to Production: Why DSPy Is Becoming Essential for Prompt Engineering",
+      "authors": "Singh, B.",
+      "authorFull": "Bavalpreet Singh",
+      "journal": "Towards Dev (Medium)",
+      "year": 2025,
+      "date": "2025-11-30",
+      "url": "https://medium.com/towardsdev/from-poc-to-production-why-dspy-is-becoming-essential-for-prompt-engineering-597687ba8c46",
+      "cites": [
+        {
+          "title": "DSPy Framework: A Comprehensive Technical Guide With Executable Examples",
+          "venue": "DZone",
+          "date": "2025-08-11",
+          "url": "https://dzone.com/articles/dspy-framework-technical-guide"
+        }
+      ],
+      "note": "Reference 5 of the article reads 'Vidyasagar (Sarath Chandra) Machupalli, DSPy Framework: A Comprehensive Technical Guide. DZone, Aug 11 2025.' This is a practitioner article, not a peer-reviewed paper.",
+      "curated": true,
+      "verification": {
+        "source": "Published article's reference list",
+        "checked": "2026-11-19",
+        "detail": "The References section at the end of the Medium post lists the DZone guide as item 5, with the author's full name and the DZone URL."
+      }
     }
   ]
 }
