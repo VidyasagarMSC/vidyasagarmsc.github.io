@@ -3,7 +3,6 @@
 // ============================================
 const researchData = {
   articles: [
-    { id: 1413, title: "2026 Observability Reloaded Trend Report", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-11-19", topics: ["Observability", "AI"], url: "https://dzone.com/trendreports/observability-reloaded", summary: "Software teams running distributed systems can already generate endless telemetry yet still struggle to understand what's happening when performance degrades or incidents occur. As environments expand across complex cloud and hybrid infrastructure and AI workloads, the challenge is connecting signals into a clear narrative that explains what changed, what's at risk, and what to do next." },
     { id: 1412, title: "Reflecting on 2026: Agentic AI, Cloud Architecture, and Engineering Excellence", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2026, date: "2026-11-13", topics: ["AI", "Cloud", "Architecture", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2026/11/13/reflecting-on-2026-agentic-ai-cloud-architecture-and-engineering-excellence/", summary: "In his 2026 annual reflection, the author highlights professional growth, extensive technical writing, and exploration of agentic AI, cloud architecture, AIOps, cybersecurity, developer productivity, and AI mathematics. Key achievements include 18 published articles, a DZone Refcard, a VIT-AP guest lecture, and IBM's watsonx Challenge." },
     { id: 1411, title: "Constrained Decoding Models Explained: Encoders, Decoders and When to Use Them", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-11-05", topics: ["AI"], url: "https://dzone.com/articles/constrained-decoding-models-explained", summary: "A constrained decoding model (CDM) is a normal decoder LLM with a rule engine attached. The engine blocks every word piece that would break your schema." },
     { id: 1410, title: "AI-Era Cybersecurity, Part 2: Building the System Context, Governance and Agent Identity", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-10-15", topics: ["AI", "Security"], isFeatured: true, url: "https://dzone.com/articles/ai-cybersecurity-system-context", summary: "Part 2 covers the missing context layer, treating AI agents as identities, the rulebooks that set priorities, and a 90-day plan." },
@@ -14,7 +13,6 @@ const researchData = {
     { id: 1002, title: "Graph Engineering: The Layer After Loop Engineering", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-08-14", topics: ["AI"], url: "https://dzone.com/articles/understanding-graph-engineering", views: "2.6K", summary: "A single agent is just the smallest possible graph: one node with an edge back to itself. Most tasks should stay that simple." },
     { id: 1003, title: "Incident Management and the Rise of AI SRE Agents", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-08-11", topics: ["AI", "Observability"], url: "https://dzone.com/articles/ai-sre-agents", views: "2.6K", summary: "A newer category, dedicated AI SRE agents, goes further: they actively query logs, metrics, and deploy history live during an incident." },
     { id: 1004, title: "Loop Engineering: The Layer After Prompt, Context, and Harness Engineering", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-07-01", topics: ["AI", "Architecture"], url: "https://dzone.com/articles/loop-engineering-llms", views: "2.9K", summary: "This article walks through all four layers side by side, with comparison tables for when to use each one and which agent architecture fits which job." },
-    { id: 1005, title: "Code Review Core Practices", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-06-29", topics: ["DevOps", "Architecture", "Security"], url: "https://dzone.com/refcardz/code-review-patterns-and-anti-patterns", summary: "Refcard #291 — Practical guidance for human, automated, and AI-assisted code review workflows. Covers how each layer contributes and where the handoffs go wrong." },
     { id: 1006, title: "No VIP? No Problem: Pacemaker-Based SAP HANA High Availability Using a Load Balancer Health Check", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-06-25", topics: ["Cloud"], url: "https://dzone.com/articles/sap-hana-ha-pacemaker", views: "1.8K", summary: "Many cloud platforms do not support floating virtual IPs, which breaks the standard RHEL Pacemaker setup for SAP HANA HA. Use a network load balancer." },
     { id: 1007, title: "From MkDocs 1.6 to Zensical — Here’s Why I Finally Made the Move", platform: "Medium", platforms: ["Medium"], year: 2026, date: "2026-05-08", topics: ["Developer Advocacy"], url: "https://vidyasagarmsc.medium.com/from-mkdocs-1-6-to-zensical-heres-why-i-finally-made-the-move-53b273b49cdd", readingTime: "6 min", summary: "I want to tell you about a warning message that showed up in my terminal one afternoon and completely changed how I think about my…" },
     { id: 1008, title: "From Prompts to Harnesses: How AI Engineering Has Grown Up", platform: "Hackernoon", platforms: ["Hackernoon"], year: 2026, date: "2026-05-05", topics: ["AI"], url: "https://hackernoon.com/from-prompts-to-harnesses-how-ai-engineering-has-grown-up", readingTime: "16 min", summary: "Prompt engineering got us started. Context engineering made things consistent. Harness engineering is what makes AI agents reliable in production. Here is…" },
@@ -26,7 +24,6 @@ const researchData = {
     { id: 1014, title: "ToolOrchestra vs Mixture of Experts: Routing Intelligence at Scale", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-01-30", topics: ["Architecture"], url: "https://dzone.com/articles/toolorchestra-vs-mixture-of-experts-routing-intelligence", views: "2.4K", summary: "Learn about two fundamental architectural patterns reshaping how we build intelligent systems. Explore ToolOrchestra, Mixture of Experts (MoE), and other…" },
     { id: 1015, title: "Database Evolution: From Traditional RDBMS to AI-Native and Quantum-Ready Systems", platform: "Hackernoon", platforms: ["Hackernoon"], year: 2026, date: "2026-01-11", topics: ["Quantum", "AI", "Data Science"], url: "https://hackernoon.com/database-evolution-from-traditional-rdbms-to-ai-native-and-quantum-ready-systems", readingTime: "10 min", summary: "In this article, you will learn about the evolution of modern databases, how they're adapting to AI workloads, what quantum computing means for data…" },
     { id: 1016, title: "Developer Tools That Actually Matter in 2026", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026-01-06", topics: ["Developer Advocacy"], url: "https://dzone.com/articles/developer-tools-that-actually-matter-in-2026", views: "9.4K", summary: "The developer tools making real differences today are the ones solving the actual problems we face as developers every day." },
-    { id: 1017, title: "Shipping Production-Grade AI Agents", platform: "DZone", platforms: ["DZone"], year: 2026, date: "2026", topics: ["AI", "DevOps", "Security"], url: "https://dzone.com/refcardz/shipping-production-grade-ai-agents", summary: "Refcard #403 — Practical guidance for shipping reliable AI agents with guardrails, eval gates, secure config, deployment workflows, monitoring, and cost controls." },
     { id: 1018, title: "Quantum Security Governance: Building a Framework for the Post-Quantum World", platform: "Hackernoon", platforms: ["Hackernoon"], year: 2025, date: "2025-12-18", topics: ["Quantum", "Security"], url: "https://hackernoon.com/quantum-security-governance-building-a-framework-for-the-post-quantum-world", readingTime: "8 min", summary: "The convergence of quantum computing advancements and evolving cybersecurity regulations is reshaping how organizations approach security governance." },
     { id: 1019, title: "Infrastructure as Code: How Automation Evolved to Power AI Workloads", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-12-18", topics: ["AI", "DevOps"], url: "https://dzone.com/articles/infrastructure-as-code-automation-ai-workloads", views: "2.3K", summary: "Learn about how Infrastructure as Code progressed in 2025 and how it helped automation, particularly for provisioning AI infrastructure." },
     { id: 1020, title: "Architectural Understanding of CPUs, GPUs, and TPUs", platform: "DZone", platforms: ["DZone"], year: 2025, date: "2025-12-04", topics: ["Architecture"], url: "https://dzone.com/articles/understanding-cpus-gpus-and-tpus", views: "7.5K", summary: "Learn about CPUs, GPUs, and TPUs — definitions, use cases, architectural differences, and above all, when to use CPUs, GPUs, and TPUs." },
@@ -290,6 +287,19 @@ const researchData = {
     { id: 1258, title: "WINDOWS AZURE", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-28", topics: ["Cloud", "Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/28/windows-azure/", summary: "WCF, REST and URL Rewriting with Windows Azure! http://blogs.msdn.com/davidlem/archive/2010/04/26/wcf-rest-and-url-rewriting-with-windows-azure.aspx…" },
     { id: 1259, title: "Visual C# 2010 Samples", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-27", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/27/visual-c-2010-samples/", summary: "The Visual Studio 2010 RTM Samples are now live! Samples and documents for C# 4.0 can be found on the Downloads page. The CSharpDynamic samples include…" },
     { id: 1260, title: "Get Ready For C# 4.0!", platform: "VMacWrites", platforms: ["VMacWrites"], year: 2010, date: "2010-04-23", topics: ["Developer Advocacy"], url: "https://vmacwrites.wordpress.com/2010/04/23/csharp4-0/", summary: "Visual Studio 2010 is here! And of course this means that C# 4.0 is also here. Let’s do a quick review of the new language features added in this release.…" }
+  ],
+  // Refcards, trend reports and similar commissioned publications. They are
+  // writing, but not articles: a Refcard is a reference sheet and a trend
+  // report is an editorial package, so counting them as articles overstates
+  // the bibliography and buries them in a list sorted by day. `kind` drives
+  // the badge; `number` is DZone's own Refcard number, shown when present.
+  //
+  // Newest first. A year-only date stays year-only: the source page publishes
+  // no day, and inventing one would make the entry sort and read wrongly.
+  resources: [
+    { id: 1413, kind: "trend-report", title: "2026 Observability Reloaded Trend Report", platform: "DZone", year: 2026, date: "2026-11-19", topics: ["Observability", "AI"], url: "https://dzone.com/trendreports/observability-reloaded", summary: "Software teams running distributed systems can already generate endless telemetry yet still struggle to understand what's happening when performance degrades or incidents occur. As environments expand across complex cloud and hybrid infrastructure and AI workloads, the challenge is connecting signals into a clear narrative that explains what changed, what's at risk, and what to do next." },
+    { id: 1017, kind: "refcard", number: 403, title: "Shipping Production-Grade AI Agents", platform: "DZone", year: 2026, date: "2026", topics: ["AI", "DevOps", "Security"], url: "https://dzone.com/refcardz/shipping-production-grade-ai-agents", summary: "Practical guidance for shipping reliable AI agents with guardrails, eval gates, secure config, deployment workflows, monitoring, and cost controls." },
+    { id: 1005, kind: "refcard", number: 291, title: "Code Review Core Practices", platform: "DZone", year: 2026, date: "2026-06-29", topics: ["DevOps", "Architecture", "Security"], url: "https://dzone.com/refcardz/code-review-patterns-and-anti-patterns", summary: "Practical guidance for human, automated, and AI-assisted code review workflows. Covers how each layer contributes and where the handoffs go wrong." }
   ],
   // Works BY OTHER AUTHORS that cite my work: journal articles, theses and
   // patent families. The authoritative list is public/data/citations-of-work.json,
@@ -860,6 +870,49 @@ function renderPublicationCards(articles) {
     pubVisible += PUB_PAGE;
     // Keep the current filter; only the offset moves.
     updatePublications(false);
+  });
+}
+
+const RESOURCE_KINDS = {
+  'trend-report': { label: 'Trend report', icon: 'fas fa-chart-line', action: 'Read trend report' },
+  refcard: { label: 'Refcard', icon: 'fas fa-file-lines', action: 'Read refcard' },
+  guide: { label: 'Guide', icon: 'fas fa-book-open', action: 'Read guide' },
+};
+
+// Refcards and trend reports are publications, but not articles: a Refcard is a
+// reference sheet and a trend report is an editorial package. Left inside
+// `articles` they inflated the article count and competed for space in a list
+// sorted by day, where a Nov 19 trend report outranked a Nov 13 post. They keep
+// their own array, their own section, and their own card here.
+function renderResources() {
+  const grids = document.querySelectorAll('[data-resources-grid]');
+  if (!grids.length) return;
+  const resources = (researchData.resources || []).filter(r => r && typeof r === 'object');
+
+  const counts = document.querySelectorAll('[data-resources-count]');
+  counts.forEach(el => {
+    el.textContent = resources.length ? `(${resources.length})` : '';
+  });
+
+  grids.forEach(grid => {
+    grid.innerHTML = resources.map(r => {
+      const kind = RESOURCE_KINDS[r.kind] || RESOURCE_KINDS.refcard;
+      const badge = `<span class="pub-platform-badge" style="${getPlatformStyle(r.platform)}"><i class="${getPlatformIcon(r.platform)}"></i> ${r.platform}</span>`;
+      const yb = `<span class="pub-year-badge"><i class="fas fa-calendar"></i> ${r.year}</span>`;
+      const kb = `<span class="pub-kind-badge"><i class="${kind.icon}"></i> ${kind.label}${r.number ? ' #' + r.number : ''}</span>`;
+      const tags = (r.topics || [])
+        .map(t => `<span class="pub-tag-topic">${topicIcons[t] || ''} ${t}</span>`).join('');
+      return `<article class="pub-card pub-resource" data-resource-id="${r.id}" data-kind="${r.kind}">
+        <div class="pub-top">${kb} ${yb} ${badge}</div>
+        <h4>${r.title}</h4>
+        <div class="pub-meta"><span><i class="fas fa-calendar-alt"></i> ${prettyDate(r.date)}</span></div>
+        ${r.summary ? `<div class="pub-abstract">${r.summary}</div>` : ''}
+        <div class="pub-tags">${tags}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;">
+          ${r.url ? `<a href="${r.url}" target="_blank" rel="noopener" class="pub-link">${kind.action} <i class="fas fa-arrow-right"></i></a>` : ''}
+        </div>
+      </article>`;
+    }).join('');
   });
 }
 
@@ -1510,6 +1563,7 @@ async function init() {
   renderTopicFilters('');
   updatePublications();
   renderTalks();
+  renderResources();
   animateCounters();
   drawKnowledgeGraph();
   initResearchFadeIn();
@@ -1693,6 +1747,7 @@ function initLatestPosts() {
   initEraToggles();
   initYearRail();
   initDensityToggle();
+  renderResources();
 
   // Announce that the rows now exist. site.js runs before this one (both are
   // deferred, in document order), so anything it needs a row count for has to
